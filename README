@@ -1,10 +1,11 @@
 Syntax Coloring
 ***************
-For Syntac Coloring look at the http://github.com/araxara/
+For Syntac Coloring look at the http://github.com/araxara/ repository
+
+
 
 File Templates
 **************
-
-Copy the content of the Folder File Templates into the following path
+Copy the content of the Folder 'File Templates' into the following path
 	/Library/Xcode/File Templates
 	

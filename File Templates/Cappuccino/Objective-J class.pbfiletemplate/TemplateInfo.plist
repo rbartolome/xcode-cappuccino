@@ -1,0 +1,4 @@
+{
+	MainTemplateFile = "class.j";
+	Description = "An Objective-J class file. with an optional header which includes the <Foundation/CPObject.j> header.";
+}

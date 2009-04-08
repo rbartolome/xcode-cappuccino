@@ -6,7 +6,7 @@
 //  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
 //
 
-import <Foundation/CPObject.j>
+@import <Foundation/CPObject.j>
 
 
 @implementation «FILEBASENAMEASIDENTIFIER» : CPObject

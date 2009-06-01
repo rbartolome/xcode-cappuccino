@@ -1,4 +1,8 @@
 
+Before you can use the following templates, you have to install the cappuccino developer tools by default.
+(Default: "/usr/local/share/objj")
+
+
 File Templates
 **************
 Copy the content of the Folder 'File Templates' into the following path

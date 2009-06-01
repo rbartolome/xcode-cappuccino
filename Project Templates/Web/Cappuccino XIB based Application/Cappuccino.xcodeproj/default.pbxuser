@@ -1,0 +1,276 @@
+// !$*UTF8*$!
+{
+	64200A3C0FD424DD005D41CE /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 64200DD80FD4268D005D41CE /* Release (Safari) */;
+		activeTarget = 64200DBC0FD42578005D41CE /* Untitled */;
+		addToTargets = (
+			64200DBC0FD42578005D41CE /* Untitled */,
+		);
+		codeSenseManager = 64200A410FD424DD005D41CE /* Code sense */;
+		executables = (
+			64200DD80FD4268D005D41CE /* Release (Safari) */,
+			644D8C300FD448060026CF4E /* Release (Firefox) */,
+		);
+		ignoreBreakpointsInProjectsDict = {
+		};
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					229,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					301,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 265572455;
+			PBXWorkspaceStateSaveDate = 265572455;
+		};
+		perUserProjectItems = {
+			64200DC60FD425B7005D41CE /* PBXTextBookmark */ = 64200DC60FD425B7005D41CE /* PBXTextBookmark */;
+			64200E0F0FD43007005D41CE /* PBXTextBookmark */ = 64200E0F0FD43007005D41CE /* PBXTextBookmark */;
+			64200E100FD43007005D41CE /* PBXTextBookmark */ = 64200E100FD43007005D41CE /* PBXTextBookmark */;
+			64C346B70FD450570036BAB2 /* PBXTextBookmark */ = 64C346B70FD450570036BAB2 /* PBXTextBookmark */;
+			64C346BD0FD450680036BAB2 /* PBXTextBookmark */ = 64C346BD0FD450680036BAB2 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 64200A400FD424DD005D41CE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	64200A400FD424DD005D41CE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	64200A410FD424DD005D41CE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	64200A4A0FD4250F005D41CE /* main.j */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {960, 816}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 316}";
+			sepNavWindowFrame = "{{15, 215}, {1019, 958}}";
+		};
+	};
+	64200A4C0FD4250F005D41CE /* index.html */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1230, 952}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 418}";
+		};
+	};
+	64200A4D0FD4250F005D41CE /* AppController.j */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {660, 308}}";
+			sepNavSelRange = "{130, 0}";
+			sepNavVisRange = "{0, 503}";
+			sepNavWindowFrame = "{{61, 173}, {1019, 958}}";
+		};
+	};
+	64200DBC0FD42578005D41CE /* Untitled */ = {
+		activeExec = 0;
+	};
+	64200DC60FD425B7005D41CE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64200A4D0FD4250F005D41CE /* AppController.j */;
+		name = "AppController.j: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 503;
+		vrLoc = 0;
+	};
+	64200DD80FD4268D005D41CE /* Release (Safari) */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+			YES,
+		);
+		argumentStrings = (
+			"\"$(PROJECT_DIR)\"/index.html",
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 64200DD90FD4268D005D41CE /* Safari.app */;
+		libgmallocEnabled = 0;
+		name = "Safari («PROJECTNAME»)";
+		sourceDirectories = (
+		);
+		startupPath = "<<ProductDirectory>>";
+	};
+	64200DD90FD4268D005D41CE /* Safari.app */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = wrapper.application;
+		name = Safari.app;
+		path = /Applications/Safari.app;
+		sourceTree = "<absolute>";
+	};
+	64200E0F0FD43007005D41CE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64200A4C0FD4250F005D41CE /* index.html */;
+		name = "index.html: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 418;
+		vrLoc = 0;
+	};
+	64200E100FD43007005D41CE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64200A4C0FD4250F005D41CE /* index.html */;
+		name = "index.html: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 418;
+		vrLoc = 0;
+	};
+	644D8C300FD448060026CF4E /* Release (Firefox) */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+			YES,
+		);
+		argumentStrings = (
+			"\"$(PROJECT_DIR)\"/index.html",
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 644D8C310FD448060026CF4E /* Firefox.app */;
+		libgmallocEnabled = 0;
+		name = "Firefox («PROJECTNAME»)";
+		sourceDirectories = (
+		);
+	};
+	644D8C310FD448060026CF4E /* Firefox.app */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = wrapper.application;
+		name = Firefox.app;
+		path = /Applications/Firefox.app;
+		sourceTree = "<absolute>";
+	};
+	64C346B70FD450570036BAB2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64200A4D0FD4250F005D41CE /* AppController.j */;
+		name = "AppController.j: 10";
+		rLen = 0;
+		rLoc = 130;
+		rType = 0;
+		vrLen = 503;
+		vrLoc = 0;
+	};
+	64C346BD0FD450680036BAB2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 64200A4D0FD4250F005D41CE /* AppController.j */;
+		name = "AppController.j: 10";
+		rLen = 0;
+		rLoc = 130;
+		rType = 0;
+		vrLen = 503;
+		vrLoc = 0;
+	};
+}

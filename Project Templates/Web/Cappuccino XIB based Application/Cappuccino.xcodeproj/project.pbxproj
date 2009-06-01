@@ -1,0 +1,143 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		64200DBC0FD42578005D41CE /* «PROJECTNAME» */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 64200DCB0FD425B7005D41CE /* Build configuration list for PBXAggregateTarget "«PROJECTNAME»" */;
+			buildPhases = (
+				64200DE70FD428F4005D41CE /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "«PROJECTNAME»";
+			productName = "«PROJECTNAME»";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXFileReference section */
+		641D44E00FD437FB00EACBFF /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = /usr/local/share/objj/lib/Frameworks; sourceTree = "<absolute>"; };
+		64200A490FD4250F005D41CE /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		64200A4A0FD4250F005D41CE /* main.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = main.j; sourceTree = "<group>"; };
+		64200A4B0FD4250F005D41CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64200A4C0FD4250F005D41CE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		64200A4D0FD4250F005D41CE /* AppController.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = AppController.j; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		64200A3A0FD424DD005D41CE = {
+			isa = PBXGroup;
+			children = (
+				64200DB90FD42540005D41CE /* Classes */,
+				64200DBA0FD4254B005D41CE /* Others */,
+				64200A470FD4250F005D41CE /* Resources */,
+				641D44E00FD437FB00EACBFF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		64200A470FD4250F005D41CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64200A490FD4250F005D41CE /* MainMenu.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		64200DB90FD42540005D41CE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				64200A4D0FD4250F005D41CE /* AppController.j */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		64200DBA0FD4254B005D41CE /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				64200A4A0FD4250F005D41CE /* main.j */,
+				64200A4B0FD4250F005D41CE /* Info.plist */,
+				64200A4C0FD4250F005D41CE /* index.html */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		64200A3C0FD424DD005D41CE /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 64200A3F0FD424DD005D41CE /* Build configuration list for PBXProject "Cappuccino" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = 64200A3A0FD424DD005D41CE;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64200DBC0FD42578005D41CE /* «PROJECTNAME» */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64200DE70FD428F4005D41CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\ncp -rf /usr/local/share/objj/lib/Frameworks .\n\nPATH=${PATH}:/usr/local/share/objj/bin\n\nfind . -type f -name \"*.xib\" -exec nib2cib {} \\;";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		64200A3E0FD424DD005D41CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		64200DBE0FD42578005D41CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "«PROJECTNAME»";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64200A3F0FD424DD005D41CE /* Build configuration list for PBXProject "Cappuccino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64200A3E0FD424DD005D41CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64200DCB0FD425B7005D41CE /* Build configuration list for PBXAggregateTarget "«PROJECTNAME»" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64200DBE0FD42578005D41CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64200A3C0FD424DD005D41CE /* Project object */;
+}

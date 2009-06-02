@@ -140,7 +140,7 @@
 			YES,
 		);
 		argumentStrings = (
-			"\"$(PROJECT_DIR)\"/index.html",
+			"\"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
 		);
 		autoAttachOnCrash = 1;
 		breakpointsEnabled = 0;
@@ -210,7 +210,7 @@
 			YES,
 		);
 		argumentStrings = (
-			"\"$(PROJECT_DIR)\"/index.html",
+			"\"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
 		);
 		autoAttachOnCrash = 1;
 		breakpointsEnabled = 0;

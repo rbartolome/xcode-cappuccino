@@ -1,10 +1,10 @@
-/*
- * main.j
- * Untitled
- *
- * Created by __Me__ on __Date__.
- * Copyright 2008 __MyCompanyName__. All rights reserved.
- */
+//
+//  «FILENAME»
+//  «PROJECTNAME»
+//
+//  Created by «FULLUSERNAME» on «DATE».
+//  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
+//
 
 @import <Foundation/Foundation.j>
 @import <AppKit/AppKit.j>

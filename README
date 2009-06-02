@@ -15,7 +15,17 @@ Copy the content of the Folder 'Project Templates' into the following path
 	
 	
 	
+Specifications
+**************
+Copy the content of the Folder 'Specifications' into the following path
+	/Library/Xcode/Specifications
+
+
 
 Syntax Coloring (from araxara)
 ******************************
+I have copy araxara files into the Specifications folder.
+
+If you need the latest Version go to:
 For Syntax Coloring look at the http://github.com/araxara/ repository
+or http://github.com/280north/cappuccino

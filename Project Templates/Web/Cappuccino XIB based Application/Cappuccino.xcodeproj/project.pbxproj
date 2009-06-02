@@ -27,6 +27,7 @@
 		64200A4B0FD4250F005D41CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64200A4C0FD4250F005D41CE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		64200A4D0FD4250F005D41CE /* AppController.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = AppController.j; sourceTree = "<group>"; };
+        64B168F30FD4E529001197CA /* index-debug.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "index-debug.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -62,6 +63,7 @@
 				64200A4A0FD4250F005D41CE /* main.j */,
 				64200A4B0FD4250F005D41CE /* Info.plist */,
 				64200A4C0FD4250F005D41CE /* index.html */,
+				64B168F30FD4E529001197CA /* index-debug.html */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -104,6 +106,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				INDEX_FILE = index.html;
 			};
 			name = Release;
 		};
@@ -113,10 +116,29 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "«PROJECTNAME»";
+				PRODUCT_NAME = Untitled;
 				ZERO_LINK = NO;
 			};
 			name = Release;
+		};
+		64A306A10FD4E183000D6AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				INDEX_FILE = "index-debug.html";
+			};
+			name = Debug;
+		};
+		64A306A20FD4E183000D6AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Untitled;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -124,6 +146,7 @@
 		64200A3F0FD424DD005D41CE /* Build configuration list for PBXProject "Cappuccino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+			    64A306A10FD4E183000D6AD7 /* Debug */,
 				64200A3E0FD424DD005D41CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -132,6 +155,7 @@
 		64200DCB0FD425B7005D41CE /* Build configuration list for PBXAggregateTarget "«PROJECTNAME»" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+			    64A306A20FD4E183000D6AD7 /* Debug */,
 				64200DBE0FD42578005D41CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

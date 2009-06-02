@@ -4,5 +4,13 @@
 <dict>
 	<key>Description</key>
 	<string>This template provides a starting point for an cappuccino xib based application.</string>
+	<key>FilesToMacroExpand</key>
+	<array>
+		<string>AppController.j</string>
+		<string>main.j</string>
+		<string>index.html</string>
+		<string>index-debug.html</string>
+		<string>Info.plist</string>
+	</array>
 </dict>
 </plist>

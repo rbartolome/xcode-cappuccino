@@ -97,7 +97,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\ncp -rf /usr/local/share/objj/lib/Frameworks .\n\nPATH=${PATH}:/usr/local/share/objj/bin\n\nfind . -type f -name \"*.xib\" -exec nib2cib {} \\;";
+			shellScript = "#!/bin/sh\ntest /usr/local/share/objj/lib/Frameworks -nt ./Frameworks && cp -rf /usr/local/share/objj/lib/Frameworks . || echo \"test\"\n\nPATH=${PATH}:/usr/local/share/objj/bin\n\nfind . -type f -name \"*.xib\" -exec nib2cib {} \\;";
 		};
 /* End PBXShellScriptBuildPhase section */
 

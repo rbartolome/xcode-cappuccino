@@ -1,9 +1,9 @@
 //
-//  Â«FILENAMEÂ»
-//  Â«PROJECTNAMEÂ»
+//  main.j
+//  ÇPROJECTNAMEÈ
 //
-//  Created by Â«FULLUSERNAMEÂ» on Â«DATEÂ».
-//  Copyright Â«ORGANIZATIONNAMEÂ» Â«YEARÂ». All rights reserved.
+//  Created by ÇFULLUSERNAMEÈ on ÇDATEÈ.
+//  Copyright ÇORGANIZATIONNAMEÈ ÇYEARÈ. All rights reserved.
 //
 
 @import <Foundation/Foundation.j>

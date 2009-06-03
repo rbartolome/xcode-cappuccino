@@ -97,7 +97,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\ntest /usr/local/share/objj/lib/Frameworks -nt ./Frameworks && cp -rf /usr/local/share/objj/lib/Frameworks . || echo \"test\"\n\nPATH=${PATH}:/usr/local/share/objj/bin\n\nfind . -type f -name \"*.xib\" -exec nib2cib {} \\;";
+            shellScript = "#!/bin/sh\n\ntest /usr/local/share/objj/lib/Frameworks -nt ./Frameworks && rm -rf ./Frameworks; cp -rf /usr/local/share/objj/lib/Frameworks .;\n\nPATH=${PATH}:/usr/local/share/objj/bin;\n\n#for xib files\nxibFiles=$(find . -type f -name \"*.xib\");\nfor xibFile in $xibFiles; do\n cibFile=$(echo $xibFile | sed -e 's/\\.xib$/.cib/');\n test $xibFile -nt $cibFile && nib2cib $xibFile || echo \"$cibFile is up-to-date\";\ndone;\n\n#for nib files\nnibFiles=$(find . -type d -name \"*.nib\");\nfor nibFile in $nibFiles; do\n \tcibFile=$(echo $nibFile | sed -e 's/\\.nib$/.cib/');\n\n\ttest $nibFile -nt $cibFile && nib2cib $nibFile || echo \"$cibFile is up-to-date\";\ndone;\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

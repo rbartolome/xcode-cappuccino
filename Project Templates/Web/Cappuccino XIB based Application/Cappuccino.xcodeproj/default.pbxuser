@@ -140,7 +140,7 @@
 			YES,
 		);
 		argumentStrings = (
-			"\"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
+			"-a Safari.app \"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
 		);
 		autoAttachOnCrash = 1;
 		breakpointsEnabled = 0;
@@ -162,6 +162,9 @@
 			};
 		};
 		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
 		dylibVariantSuffix = "";
@@ -170,18 +173,21 @@
 		);
 		executableSystemSymbolLevel = 0;
 		executableUserSymbolLevel = 0;
-		launchableReference = 64200DD90FD4268D005D41CE /* Safari.app */;
+		launchableReference = 64200DD90FD4268D005D41CE /* open */;
 		libgmallocEnabled = 0;
-		name = "Safari («PROJECTNAME»)";
+		name = Safari;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
 		sourceDirectories = (
 		);
-		startupPath = "<<ProductDirectory>>";
+		startupPath = "<<ProjectDirectory>>";
 	};
-	64200DD90FD4268D005D41CE /* Safari.app */ = {
+	64200DD90FD4268D005D41CE /* open */ = {
 		isa = PBXFileReference;
-		lastKnownFileType = wrapper.application;
-		name = Safari.app;
-		path = /Applications/Safari.app;
+		lastKnownFileType = "compiled.mach-o.executable";
+		name = open;
+		path = /usr/bin/open;
 		sourceTree = "<absolute>";
 	};
 	64200E0F0FD43007005D41CE /* PBXTextBookmark */ = {
@@ -210,28 +216,16 @@
 			YES,
 		);
 		argumentStrings = (
-			"\"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
+			"-a Firefox.app \"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
 		);
 		autoAttachOnCrash = 1;
 		breakpointsEnabled = 0;
 		configStateDict = {
-			"PBXLSLaunchAction-0" = {
-				PBXLSLaunchAction = 0;
-				PBXLSLaunchStartAction = 1;
-				PBXLSLaunchStdioStyle = 2;
-				PBXLSLaunchStyle = 0;
-				class = PBXLSRunLaunchConfig;
-				commandLineArgs = (
-				);
-				displayName = "Executable Runner";
-				environment = {
-				};
-				identifier = com.apple.Xcode.launch.runConfig;
-				remoteHostInfo = "";
-				startActionInfo = "";
-			};
 		};
 		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
 		dylibVariantSuffix = "";
@@ -240,17 +234,21 @@
 		);
 		executableSystemSymbolLevel = 0;
 		executableUserSymbolLevel = 0;
-		launchableReference = 644D8C310FD448060026CF4E /* Firefox.app */;
+		launchableReference = 644D8C310FD448060026CF4E /* open */;
 		libgmallocEnabled = 0;
-		name = "Firefox («PROJECTNAME»)";
+		name = Firefox;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		startupPath = "<<ProjectDirectory>>";
 	};
-	644D8C310FD448060026CF4E /* Firefox.app */ = {
+	644D8C310FD448060026CF4E /* open */ = {
 		isa = PBXFileReference;
-		lastKnownFileType = wrapper.application;
-		name = Firefox.app;
-		path = /Applications/Firefox.app;
+		lastKnownFileType = "compiled.mach-o.executable";
+		name = open;
+		path = /usr/bin/open;
 		sourceTree = "<absolute>";
 	};
 	64C346B70FD450570036BAB2 /* PBXTextBookmark */ = {

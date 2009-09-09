@@ -107,6 +107,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				INDEX_FILE = index.html;
+				BROWSER_APP_NAME = Safari.app;
 			};
 			name = Release;
 		};
@@ -126,6 +127,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				INDEX_FILE = "index-debug.html";
+				BROWSER_APP_NAME = Safari.app;
 			};
 			name = Debug;
 		};

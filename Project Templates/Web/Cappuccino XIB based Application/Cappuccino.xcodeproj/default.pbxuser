@@ -9,8 +9,7 @@
 		);
 		codeSenseManager = 64200A410FD424DD005D41CE /* Code sense */;
 		executables = (
-			64200DD80FD4268D005D41CE /* Release (Safari) */,
-			644D8C300FD448060026CF4E /* Release (Firefox) */,
+			64200DD80FD4268D005D41CE /* Release */,
 		);
 		ignoreBreakpointsInProjectsDict = {
 		};
@@ -140,7 +139,7 @@
 			YES,
 		);
 		argumentStrings = (
-			"-a Safari.app \"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
+			"-a \"$(BROWSER_APP_NAME)\" \"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
 		);
 		autoAttachOnCrash = 1;
 		breakpointsEnabled = 0;
@@ -175,7 +174,7 @@
 		executableUserSymbolLevel = 0;
 		launchableReference = 64200DD90FD4268D005D41CE /* open */;
 		libgmallocEnabled = 0;
-		name = Safari;
+		name = "«PROJECTNAME»";
 		savedGlobals = {
 		};
 		showTypeColumn = 0;
@@ -209,47 +208,6 @@
 		rType = 0;
 		vrLen = 418;
 		vrLoc = 0;
-	};
-	644D8C300FD448060026CF4E /* Release (Firefox) */ = {
-		isa = PBXExecutable;
-		activeArgIndices = (
-			YES,
-		);
-		argumentStrings = (
-			"-a Firefox.app \"$(PROJECT_DIR)\"/\"$(INDEX_FILE)\"",
-		);
-		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
-		configStateDict = {
-		};
-		customDataFormattersEnabled = 1;
-		dataTipCustomDataFormattersEnabled = 1;
-		dataTipShowTypeColumn = 1;
-		dataTipSortType = 0;
-		debuggerPlugin = GDBDebugging;
-		disassemblyDisplayState = 0;
-		dylibVariantSuffix = "";
-		enableDebugStr = 1;
-		environmentEntries = (
-		);
-		executableSystemSymbolLevel = 0;
-		executableUserSymbolLevel = 0;
-		launchableReference = 644D8C310FD448060026CF4E /* open */;
-		libgmallocEnabled = 0;
-		name = Firefox;
-		savedGlobals = {
-		};
-		showTypeColumn = 0;
-		sourceDirectories = (
-		);
-		startupPath = "<<ProjectDirectory>>";
-	};
-	644D8C310FD448060026CF4E /* open */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = "compiled.mach-o.executable";
-		name = open;
-		path = /usr/bin/open;
-		sourceTree = "<absolute>";
 	};
 	64C346B70FD450570036BAB2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

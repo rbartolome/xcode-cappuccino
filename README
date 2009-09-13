@@ -6,19 +6,19 @@ Before you can use the following templates, you have to install the cappuccino d
 File Templates
 **************
 Copy the content of the Folder 'File Templates' into the following path
-	/Developer/Library/Xcode/File Templates
+	~/Library/Application Support/Developer/Shared/Xcode/File Templates
 	
 Project Templates
 **************
 Copy the content of the Folder 'Project Templates' into the following path
-	/Developer/Library/Xcode/Project Templates	
+	~/Library/Application Support/Developer/Shared/Xcode/Project Templates	
 	
 	
 	
 Specifications
 **************
 Copy the content of the Folder 'Specifications' into the following path
-	/Developer/Library/Xcode/Specifications
+	~/Library/Application Support/Developer/Shared/Xcode/Specifications
 
 
 

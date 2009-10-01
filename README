@@ -20,6 +20,12 @@ Copy the content of the Folder 'Specifications' into the following path
 	~/Library/Application Support/Developer/Shared/Xcode/Specifications
 
 
+Target Templates
+****************
+Copy the content of the Folder 'Specifications' into the following path
+	~/Library/Application Support/Developer/Shared/Xcode/Target Templates
+
+
 
 Custom Build Target Keys
 ************************

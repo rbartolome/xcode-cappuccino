@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXFileReference section */
-		641D44E00FD437FB00EACBFF /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = /usr/local/share/objj/lib/Frameworks; sourceTree = "<absolute>"; };
+		641D44E00FD437FB00EACBFF /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = Frameworks; sourceTree = SOURCE_ROOT; };
 		64200A490FD4250F005D41CE /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		64200A4A0FD4250F005D41CE /* main.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = main.j; sourceTree = "<group>"; };
 		64200A4B0FD4250F005D41CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,11 +93,12 @@
 			);
 			inputPaths = (
 			);
+			name = "Build Application";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-            shellScript = "#!/bin/sh\n\ntest /usr/local/share/objj/lib/Frameworks -nt ./Frameworks && rm -rf ./Frameworks; cp -rf /usr/local/share/objj/lib/Frameworks .;\n\nPATH=${PATH}:/usr/local/share/objj/bin;\n\n#for xib files\nxibFiles=$(find . -type f -name \"*.xib\");\nfor xibFile in $xibFiles; do\n cibFile=$(echo $xibFile | sed -e 's/\\.xib$/.cib/');\n test $xibFile -nt $cibFile && nib2cib $xibFile || echo \"$cibFile is up-to-date\";\ndone;\n\n#for nib files\nnibFiles=$(find . -type d -name \"*.nib\");\nfor nibFile in $nibFiles; do\n \tcibFile=$(echo $nibFile | sed -e 's/\\.nib$/.cib/');\n\n\ttest $nibFile -nt $cibFile && nib2cib $nibFile || echo \"$cibFile is up-to-date\";\ndone;\n\n";
+			shellScript = "#!/bin/sh\n\n#setup objj bin and Frameworks path\nif test -n \"$OBJJ_INSTALLATION_PATH\";\nthen\n\tdefaultPath=\"$OBJJ_INSTALLATION_PATH/lib/Frameworks\";\n\tdefaultBinFolderPath=\"$OBJJ_INSTALLATION_PATH/bin\";\nelse\n\tdefaultPath=\"/usr/local/share/objj/lib/Frameworks\";\n\tdefaultBinFolderPath=\"/usr/local/share/objj/bin\";\nfi\n\nif test -n \"$OBJJ_INSTALLATION_PATH\";\nthen\necho \"Use Cappuccino Installation at '$defaultPath'\";\necho \"Check Cappuccino Frameworks ...\";\n\nif test -d \"$defaultPath\";\nthen\n\tif test \"$defaultPath\" -nt ./Frameworks;\n\tthen\n\t\trm -rf ./Frameworks; cp -rf $defaultPath .;\n\t\techo \"Copied Cappuccino Frameworks from location '$defaultPath'\";\n\telse\n\t\techo \"Cappuccino Frameworks are up-to-date\";\n\tfi\nfi\n\necho \"Check Interface Builder Files ....\";\n\n\nif test -d \"$defaultBinFolderPath\";\nthen\n\tPATH=${PATH}:$defaultBinFolderPath;\nfi\n\n\n#for xib files\nxibFiles=$(find . -type f -name \"*.xib\");\nfor xibFile in $xibFiles; do\n cibFile=$(echo $xibFile | sed -e 's/\\.xib$/.cib/');\n test $xibFile -nt $cibFile && nib2cib $xibFile || echo \"Interface Builder File '$cibFile' is up-to-date\";\ndone;\n\n#for nib files\nnibFiles=$(find . -type d -name \"*.nib\");\nfor nibFile in $nibFiles; do\n \tcibFile=$(echo $nibFile | sed -e 's/\\.nib$/.cib/');\n\ttest $nibFile -nt $cibFile && nib2cib $nibFile || echo \"Interface Builder File \\'$cibFile\\' is up-to-date\";\ndone;\nelse\n\techo \"Please setup your build settings key 'OBJJ_INSTALLATION_PATH' with your objj installation path\";\n\techo \"The default path is '/usr/local/share/objj'\"\n\terror 1;\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

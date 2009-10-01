@@ -1,24 +1,34 @@
 
-Before you can use the following templates, you have to install the cappuccino developer tools by default.
-(Default: "/usr/local/share/objj")
-
+Before you can use the following templates, 
+you need to install the cappuccino developer tools from http://cappuccino.org or http://github.com/280north/cappuccino
 
 File Templates
 **************
 Copy the content of the Folder 'File Templates' into the following path
 	~/Library/Application Support/Developer/Shared/Xcode/File Templates
+
 	
 Project Templates
-**************
+*****************
 Copy the content of the Folder 'Project Templates' into the following path
-	~/Library/Application Support/Developer/Shared/Xcode/Project Templates	
-	
+	~/Library/Application Support/Developer/Shared/Xcode/Project Templates		
 	
 	
 Specifications
 **************
 Copy the content of the Folder 'Specifications' into the following path
 	~/Library/Application Support/Developer/Shared/Xcode/Specifications
+
+
+
+Custom Build Target Keys
+************************
+- custom cappuccino installation:
+	key: 	OBJJ_INSTALLATION_PATH
+	value:	path to obi folder (exp.:/usr/local/share/objj)
+- custom browser:
+	key:	BROWSER_APP_NAME
+	value:	the browser app bundle name (exp.:Safari.app)
 
 
 

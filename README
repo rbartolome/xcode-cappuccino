@@ -30,8 +30,13 @@ Copy the content of the Folder 'Specifications' into the following path
 Custom Build Target Keys
 ************************
 - custom cappuccino installation:
-	key: 	OBJJ_INSTALLATION_PATH
-	value:	path to obi folder (exp.:/usr/local/share/objj)
+	key: 	OBJJ_FRAMEWORKS_PATH
+	value:	path to objj folder (exp.:/usr/local/share/objj)
+
+- custom cappuccino installation:
+	key: 	OBJJ_BIN_PATH
+	value:	path to objj folder (exp.:/usr/local/bin)
+
 - custom browser:
 	key:	BROWSER_APP_NAME
 	value:	the browser app bundle name (exp.:Safari.app)

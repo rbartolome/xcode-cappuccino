@@ -1,0 +1,5 @@
+{
+	"CounterpartTemplateFile" = "header.h";
+	MainTemplateFile = "class.j";
+	Description = "An Objective-J class with header file.";
+}

@@ -6,7 +6,10 @@
 //  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
 //
 
-@interface «FILEBASENAMEASIDENTIFIER» : CPObject
+@import <AppKit/AppKit.j>
+@import <Foundation/Foundation.j>
+
+@interface «FILEBASENAMEASIDENTIFIER» : NSView
 {
 }
 

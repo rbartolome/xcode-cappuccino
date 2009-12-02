@@ -6,10 +6,10 @@
 //  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
 //
 
-@import <Foundation/CPObject.j>
+@import <Foundation/Foundation.j>
+@import <AppKit/CPDocument.j>
 
-
-@implementation «FILEBASENAMEASIDENTIFIER» : CPObject
+@interface «FILEBASENAMEASIDENTIFIER» : CPDocument
 {
 }
 

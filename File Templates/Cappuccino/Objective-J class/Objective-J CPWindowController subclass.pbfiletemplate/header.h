@@ -6,9 +6,10 @@
 //  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
 //
 
+@import <AppKit/AppKit.j>
 @import <Foundation/Foundation.j>
 
-@interface «FILEBASENAMEASIDENTIFIER» : CPObject
+@interface «FILEBASENAMEASIDENTIFIER» : CPWindowController
 {
 }
 

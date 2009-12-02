@@ -8,7 +8,7 @@
 
 @import <Foundation/Foundation.j>
 
-@interface «FILEBASENAMEASIDENTIFIER» : CPObject
+@implementation «FILEBASENAMEASIDENTIFIER» : CPObject
 {
 }
 

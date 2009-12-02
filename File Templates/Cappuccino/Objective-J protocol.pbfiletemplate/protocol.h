@@ -6,10 +6,9 @@
 //  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
 //
 
-@import <Foundation/Foundation.j>
+#import <Foundation/Foundation.h>
 
-@interface «FILEBASENAMEASIDENTIFIER» : CPObject
-{
-}
+@protocol «FILEBASENAMEASIDENTIFIER»
+
 
 @end

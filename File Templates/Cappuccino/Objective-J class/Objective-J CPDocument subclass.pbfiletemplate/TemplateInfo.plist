@@ -1,0 +1,5 @@
+{
+	"CounterpartTemplateFile" = "header.h";
+	MainTemplateFile = "class.j";
+	Description = "An Objective-J class which is a subclass of CPDocument, with an optional header file which includes AppKit and Foundation header.";
+}

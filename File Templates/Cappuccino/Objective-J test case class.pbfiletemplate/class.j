@@ -6,10 +6,9 @@
 //  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
 //
 
-@import <Foundation/CPObject.j>
+@import <Foundation/Foundation.j>
 
-
-@implementation «FILEBASENAMEASIDENTIFIER» : CPObject
+@implementation «FILEBASENAMEASIDENTIFIER» : OJTestCase
 {
 }
 

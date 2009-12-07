@@ -28,7 +28,6 @@
 		64200A4C0FD4250F005D41CE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		64200A4D0FD4250F005D41CE /* AppController.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = AppController.j; sourceTree = "<group>"; };
 		64B168F30FD4E529001197CA /* index-debug.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "index-debug.html"; sourceTree = "<group>"; };
-		6F087B9A10CD4C00000C2CBC /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -65,7 +64,6 @@
 				64200A4B0FD4250F005D41CE /* Info.plist */,
 				64200A4C0FD4250F005D41CE /* index.html */,
 				64B168F30FD4E529001197CA /* index-debug.html */,
-				6F087B9A10CD4C00000C2CBC /* Rakefile */,
 			);
 			name = Others;
 			sourceTree = "<group>";

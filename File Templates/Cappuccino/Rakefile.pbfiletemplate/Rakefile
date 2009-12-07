@@ -14,10 +14,10 @@ end
 
 ObjectiveJ::BundleTask.new(:YourProjectName) do |t|
     t.name          = '«PROJECTNAME»'
-    t.identifier    = 'com.yourcompany.«PROJECTNAME»'
+    t.identifier    = '«IDENTIFIER»'
     t.version       = '1.0'
-    t.author        = '«ORGANIZATIONNAME»'
-    t.email         = 'feedback @nospam@ «ORGANIZATIONNAME»'
+    t.author        = '«com.yourcompany.«ORGANIZATIONNAME»'
+    t.email         = 'feedback@«ORGANIZATIONNAME».com'
     t.summary       = '«PROJECTNAME»'
     t.sources       = FileList['*.j']
     t.resources     = FileList['Resources/*']

@@ -12,7 +12,7 @@ if !ENV['CONFIG']
     ENV['CONFIG'] = 'Debug'
 end
 
-ObjectiveJ::BundleTask.new(:YourProjectName) do |t|
+ObjectiveJ::BundleTask.new(:«PROJECTNAME») do |t|
     t.name          = '«PROJECTNAME»'
     t.identifier    = '«IDENTIFIER»'
     t.version       = '1.0'

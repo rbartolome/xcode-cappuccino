@@ -1,4 +1,4 @@
 {
-	MainTemplateFile = "Project Rakefile";
+	MainTemplateFile = Rakefile;
 	Description = "An Cappuccino Project Rakefile Template";
 }

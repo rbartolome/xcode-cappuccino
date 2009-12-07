@@ -1,0 +1,35 @@
+h1. Xcode extensions for Cappuccino and Objective-J
+
+Before you can use the following templates, you need to install the developer
+tools from "cappuccino.org":http://cappuccino.org or the "Cappuccino repository on GitHub":http://github.com/280north/cappuccino
+
+h2. Installation
+
+In order to use the extensions you have to copy the folders
+* File Templates
+* Project Templates
+* Specifications
+* Target Templates
+
+to the following directory:
+  
+  ~/Library/Application Support/Developer/Shared/Xcode/
+
+If you got rake installed, you can copy the files by running  
+
+  _rake install_
+
+h2. Custom Build Target Keys
+
+| Key                    | Value                        | Example                                           |
+| *OBJJ_FRAMEWORKS_PATH* | Cappuccino frameworks folder | /usr/local/narwhal/packages/cappuccino/Frameworks |
+| *OBJJ_BIN_PATH*        | Objective-J folder           | /usr/local/narwhal/bin                            |
+| *BROWSER_APP_NAME*     | Browser app bundle name      | Safari.app                                        |
+
+h2. Syntax Coloring
+
+The syntax coloring has been taken from "araxara":http://github.com/araxara
+
+If you need the latest version check out
+* "http://github.com/araxara/":http://github.com/araxara/ or
+* "http://github.com/280north/cappuccino":http://github.com/280north/cappuccino

@@ -1,0 +1,31 @@
+#
+#  «FILENAME»
+#
+#  Created by «FULLUSERNAME» on «DATE».
+#  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
+#
+
+require 'objective-j'
+require 'objective-j/bundletask'
+
+if !ENV['CONFIG']
+    ENV['CONFIG'] = 'Debug'
+end
+
+ObjectiveJ::BundleTask.new(:YourProjectName) do |t|
+    t.name          = '«PROJECTNAME»'
+    t.identifier    = 'com.yourcompany.«PROJECTNAME»'
+    t.version       = '1.0'
+    t.author        = '«ORGANIZATIONNAME»'
+    t.email         = 'feedback @nospam@ «ORGANIZATIONNAME»'
+    t.summary       = '«PROJECTNAME»'
+    t.sources       = FileList['*.j']
+    t.resources     = FileList['Resources/*']
+    t.index_file    = 'index.html'
+    t.info_plist    = 'Info.plist'
+    t.build_path    = File.join('Build', ENV['CONFIG'], '«PROJECTNAME»')
+    t.flag          = '-DDEBUG' if ENV['CONFIG'] == 'Debug'
+    t.flag          = '-O' if ENV['CONFIG'] == 'Release'
+end
+
+task :default => [:«PROJECTNAME»]

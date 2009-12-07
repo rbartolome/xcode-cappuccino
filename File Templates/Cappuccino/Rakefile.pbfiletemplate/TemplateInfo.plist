@@ -1,0 +1,4 @@
+{
+	MainTemplateFile = Rakefile;
+	Description = "An Objective-J protocol which includes the <Foundation/Foundation.j> header.";
+}

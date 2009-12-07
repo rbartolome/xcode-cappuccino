@@ -98,7 +98,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n#setup objj bin and Frameworks path\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\n\tdefaultPath=\"$OBJJ_FRAMEWORKS_PATH/lib/Frameworks\";\nelse\n\tdefaultPath=\"/usr/local/share/objj/lib/Frameworks\";\nfi\n\nif test -n \"$OBJJ_BIN_PATH\";\nthen\n\tdefaultBinFolderPath=\"$OBJJ_BIN_PATH\";\nelse\n\tdefaultBinFolderPath=\"/usr/local/share/objj/bin\";\nfi\n\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\necho \"Use Cappuccino Installation at '$defaultPath'\";\necho \"Check Cappuccino Frameworks ...\";\n\nif test -d \"$defaultPath\";\nthen\n\tif test \"$defaultPath\" -nt ./Frameworks;\n\tthen\n\t\trm -rf ./Frameworks; cp -rf $defaultPath .;\n\t\techo \"Copied Cappuccino Frameworks from location '$defaultPath'\";\n\telse\n\t\techo \"Cappuccino Frameworks are up-to-date\";\n\tfi\nfi\n\necho \"Check Interface Builder Files ....\";\n\n\nif test -d \"$defaultBinFolderPath\";\nthen\n\tPATH=${PATH}:$defaultBinFolderPath;\nfi\n\n\n#for xib files\nxibFiles=$(find . -type f -name \"*.xib\");\nfor xibFile in $xibFiles; do\n cibFile=$(echo $xibFile | sed -e 's/\\.xib$/.cib/');\n test $xibFile -nt $cibFile && nib2cib $xibFile || echo \"Interface Builder File '$cibFile' is up-to-date\";\ndone;\n\n#for nib files\nnibFiles=$(find . -type d -name \"*.nib\");\nfor nibFile in $nibFiles; do\n \tcibFile=$(echo $nibFile | sed -e 's/\\.nib$/.cib/');\n\ttest $nibFile -nt $cibFile && nib2cib $nibFile || echo \"Interface Builder File \\'$cibFile\\' is up-to-date\";\ndone;\nelse\n\techo \"Please setup your build settings key 'OBJJ_FRAMEWORKS_PATH' with your objj framework path\";\n\techo \"The default path is '/usr/local/share/objj'\"\n\techo \"Also setup the build settings key 'OBJJ_BIN_PATH' with your objj bin path\";\n\terror 1;\nfi";
+			shellScript = "#!/bin/sh\n\n#setup objj bin and Frameworks path\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\n\tdefaultPath=\"$OBJJ_FRAMEWORKS_PATH\";\nelse\n\tdefaultPath=\"/usr/local/narwhal/packages/cappuccino/Frameworks\";\nfi\n\nif test -n \"$OBJJ_BIN_PATH\";\nthen\n\tdefaultBinFolderPath=\"$OBJJ_BIN_PATH\";\nelse\n\tdefaultBinFolderPath=\"/usr/local/narwhal/bin\";\nfi\n\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\necho \"Use Cappuccino Installation at '$defaultPath'\";\necho \"Check Cappuccino Frameworks ...\";\n\nif test -d \"$defaultPath\";\nthen\n\tif test \"$defaultPath\" -nt ./Frameworks;\n\tthen\n\t\trm -rf ./Frameworks; cp -rf $defaultPath .;\n\t\techo \"Copied Cappuccino Frameworks from location '$defaultPath'\";\n\telse\n\t\techo \"Cappuccino Frameworks are up-to-date\";\n\tfi\nfi\n\necho \"Check Interface Builder Files ....\";\n\n\nif test -d \"$defaultBinFolderPath\";\nthen\n\tPATH=${PATH}:$defaultBinFolderPath;\nfi\n\n\n#for xib files\nxibFiles=$(find . -type f -name \"*.xib\");\nfor xibFile in $xibFiles; do\n cibFile=$(echo $xibFile | sed -e 's/\\.xib$/.cib/');\n test $xibFile -nt $cibFile && nib2cib $xibFile || echo \"Interface Builder File '$cibFile' is up-to-date\";\ndone;\n\n#for nib files\nnibFiles=$(find . -type d -name \"*.nib\");\nfor nibFile in $nibFiles; do\n \tcibFile=$(echo $nibFile | sed -e 's/\\.nib$/.cib/');\n\ttest $nibFile -nt $cibFile && nib2cib $nibFile || echo \"Interface Builder File \\'$cibFile\\' is up-to-date\";\ndone;\nelse\n\techo \"Please setup your build settings key 'OBJJ_FRAMEWORKS_PATH' with your objj framework path\";\n\techo \"The default path is '/usr/local/narwhal/packages/cappuccino'\"\n\techo \"Also setup the build settings key 'OBJJ_BIN_PATH' with your objj bin path\";\n\terror 1;\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -107,6 +107,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
+				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
 				INDEX_FILE = index.html;
 				BROWSER_APP_NAME = Safari.app;
 			};
@@ -127,6 +129,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
+				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
 				INDEX_FILE = "index-debug.html";
 				BROWSER_APP_NAME = Safari.app;
 			};

@@ -31,11 +31,11 @@ Custom Build Target Keys
 ************************
 - custom cappuccino installation:
 	key: 	OBJJ_FRAMEWORKS_PATH
-	value:	path to objj folder (exp.:/usr/local/share/objj)
+	value:	path to the cappuccino frameworks folder (exp.:/usr/local/narwhal/packages/cappuccino/Frameworks)
 
 - custom cappuccino installation:
 	key: 	OBJJ_BIN_PATH
-	value:	path to objj folder (exp.:/usr/local/bin)
+	value:	path to objj folder (exp.:/usr/local/narwhal/bin)
 
 - custom browser:
 	key:	BROWSER_APP_NAME

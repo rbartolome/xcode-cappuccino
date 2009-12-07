@@ -11,7 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 64200DCB0FD425B7005D41CE /* Build configuration list for PBXAggregateTarget "«PROJECTNAME»" */;
 			buildPhases = (
-				64200DE70FD428F4005D41CE /* ShellScript */,
+				64200DE70FD428F4005D41CE /* Build Application */,
 			);
 			dependencies = (
 			);
@@ -21,13 +21,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXFileReference section */
-		641D44E00FD437FB00EACBFF /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = Frameworks; sourceTree = SOURCE_ROOT; };
+		641D44E00FD437FB00EACBFF /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Frameworks; sourceTree = SOURCE_ROOT; };
 		64200A490FD4250F005D41CE /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		64200A4A0FD4250F005D41CE /* main.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = main.j; sourceTree = "<group>"; };
 		64200A4B0FD4250F005D41CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64200A4C0FD4250F005D41CE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		64200A4D0FD4250F005D41CE /* AppController.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = AppController.j; sourceTree = "<group>"; };
-        64B168F30FD4E529001197CA /* index-debug.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "index-debug.html"; sourceTree = "<group>"; };
+		64B168F30FD4E529001197CA /* index-debug.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "index-debug.html"; sourceTree = "<group>"; };
+		6F087B9A10CD4C00000C2CBC /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -64,6 +65,7 @@
 				64200A4B0FD4250F005D41CE /* Info.plist */,
 				64200A4C0FD4250F005D41CE /* index.html */,
 				64B168F30FD4E529001197CA /* index-debug.html */,
+				6F087B9A10CD4C00000C2CBC /* Rakefile */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -86,7 +88,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		64200DE70FD428F4005D41CE /* ShellScript */ = {
+		64200DE70FD428F4005D41CE /* Build Application */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,11 +108,11 @@
 		64200A3E0FD424DD005D41CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
-				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
-				INDEX_FILE = index.html;
 				BROWSER_APP_NAME = Safari.app;
+				COPY_PHASE_STRIP = YES;
+				INDEX_FILE = index.html;
+				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
+				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
 			};
 			name = Release;
 		};
@@ -128,11 +130,11 @@
 		64A306A10FD4E183000D6AD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
-				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
-				INDEX_FILE = "index-debug.html";
 				BROWSER_APP_NAME = Safari.app;
+				COPY_PHASE_STRIP = YES;
+				INDEX_FILE = "index-debug.html";
+				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
+				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
 			};
 			name = Debug;
 		};
@@ -153,7 +155,7 @@
 		64200A3F0FD424DD005D41CE /* Build configuration list for PBXProject "Cappuccino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-			    64A306A10FD4E183000D6AD7 /* Debug */,
+				64A306A10FD4E183000D6AD7 /* Debug */,
 				64200A3E0FD424DD005D41CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -162,7 +164,7 @@
 		64200DCB0FD425B7005D41CE /* Build configuration list for PBXAggregateTarget "«PROJECTNAME»" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-			    64A306A20FD4E183000D6AD7 /* Debug */,
+				64A306A20FD4E183000D6AD7 /* Debug */,
 				64200DBE0FD42578005D41CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

@@ -28,6 +28,7 @@
 		64200A4C0FD4250F005D41CE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		64200A4D0FD4250F005D41CE /* AppController.j */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; path = AppController.j; sourceTree = "<group>"; };
 		64B168F30FD4E529001197CA /* index-debug.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "index-debug.html"; sourceTree = "<group>"; };
+		6F087B9A10CD4C00000C2CBC /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -64,6 +65,7 @@
 				64200A4B0FD4250F005D41CE /* Info.plist */,
 				64200A4C0FD4250F005D41CE /* index.html */,
 				64B168F30FD4E529001197CA /* index-debug.html */,
+				6F087B9A10CD4C00000C2CBC /* Rakefile */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -98,7 +100,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n#setup objj bin and Frameworks path\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\n\tdefaultPath=\"$OBJJ_FRAMEWORKS_PATH\";\nelse\n\tdefaultPath=\"/usr/local/narwhal/packages/cappuccino/Frameworks\";\nfi\n\nif test -n \"$OBJJ_BIN_PATH\";\nthen\n\tdefaultBinFolderPath=\"$OBJJ_BIN_PATH\";\nelse\n\tdefaultBinFolderPath=\"/usr/local/narwhal/bin\";\nfi\n\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\necho \"Use Cappuccino Installation at '$defaultPath'\";\necho \"Check Cappuccino Frameworks ...\";\n\nif test -d \"$defaultPath\";\nthen\n\tif test \"$defaultPath\" -nt ./Frameworks;\n\tthen\n\t\trm -rf ./Frameworks; cp -rf $defaultPath .;\n\t\techo \"Copied Cappuccino Frameworks from location '$defaultPath'\";\n\telse\n\t\techo \"Cappuccino Frameworks are up-to-date\";\n\tfi\nfi\n\necho \"Check Interface Builder Files ....\";\n\n\nif test -d \"$defaultBinFolderPath\";\nthen\n\tPATH=${PATH}:$defaultBinFolderPath;\nfi\n\n\n#for xib files\nxibFiles=$(find . -type f -name \"*.xib\");\nfor xibFile in $xibFiles; do\n cibFile=$(echo $xibFile | sed -e 's/\\.xib$/.cib/');\n test $xibFile -nt $cibFile && nib2cib $xibFile || echo \"Interface Builder File '$cibFile' is up-to-date\";\ndone;\n\n#for nib files\nnibFiles=$(find . -type d -name \"*.nib\");\nfor nibFile in $nibFiles; do\n \tcibFile=$(echo $nibFile | sed -e 's/\\.nib$/.cib/');\n\ttest $nibFile -nt $cibFile && nib2cib $nibFile || echo \"Interface Builder File \\'$cibFile\\' is up-to-date\";\ndone;\nelse\n\techo \"Please setup your build settings key 'OBJJ_FRAMEWORKS_PATH' with your objj framework path\";\n\techo \"The default path is '/usr/local/narwhal/packages/cappuccino'\"\n\techo \"Also setup the build settings key 'OBJJ_BIN_PATH' with your objj bin path\";\n\terror 1;\nfi";
+			shellScript = "#!/bin/sh\n\n#setup objj bin and Frameworks path\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\n\tdefaultPath=\"$OBJJ_FRAMEWORKS_PATH\";\nelse\n\tdefaultPath=\"/usr/local/narwhal/packages/cappuccino/Frameworks\";\nfi\n\nif test -n \"$OBJJ_BIN_PATH\";\nthen\n\tdefaultBinFolderPath=\"$OBJJ_BIN_PATH\";\nelse\n\tdefaultBinFolderPath=\"/usr/local/narwhal/bin\";\nfi\n\n### copy cappuccino frameworks\nif test -n \"$OBJJ_FRAMEWORKS_PATH\";\nthen\necho \"Use Cappuccino Installation at '$defaultPath'\";\necho \"Check Cappuccino Frameworks ...\";\n\nif test -d \"$defaultPath\";\nthen\n#\tif test \"$defaultPath\" -nt ./Frameworks;\n#\tthen\n#\t\trm -rf ./Frameworks; cp -rf $defaultPath .;\n#\t\techo \"Copied Cappuccino Frameworks from location '$defaultPath'\";\n#\telse\n#\t\techo \"Cappuccino Frameworks are up-to-date\";\n#\tfi\n\trm -rf ./Frameworks; cp -rf $defaultPath .;\n\techo \"Copied Cappuccino Frameworks from location '$defaultPath'\";\nfi\n\n### copy the objective-j runtime\nif test -d \"$OBJJ_RUNTIME_PATH\";\nthen\n\tcp -rf $OBJJ_RUNTIME_PATH/* Frameworks/\nfi\n\n## copy custom frameworks or files to Frameworks\ncp -rf $CUSTOM_FRAMEWORKS Frameworks/\n\n\n### setup PATH for binaries we need\nif test -d \"$defaultBinFolderPath\";\nthen\n\tPATH=${PATH}:$defaultBinFolderPath;\nfi\n\nif test -d \"$NARWHAL_BIN_PATH\";\nthen\n\tPATH=${PATH}:$NARWHAL_BIN_PATH;\nfi\n\necho \"Check Interface Builder Files ....\";\n\n\n### for xib files\nxibFiles=$(find . -type f -name \"*.xib\");\nfor xibFile in $xibFiles; do\n cibFile=$(echo $xibFile | sed -e 's/\\.xib$/.cib/');\n test $xibFile -nt $cibFile && nib2cib $xibFile || echo \"Interface Builder File '$cibFile' is up-to-date\";\ndone;\n\n### for nib files\nnibFiles=$(find . -type d -name \"*.nib\");\nfor nibFile in $nibFiles; do\n \tcibFile=$(echo $nibFile | sed -e 's/\\.nib$/.cib/');\n\ttest $nibFile -nt $cibFile && nib2cib $nibFile || echo \"Interface Builder File \\'$cibFile\\' is up-to-date\";\ndone;\nelse\n\techo \"Please setup your build settings key 'OBJJ_FRAMEWORKS_PATH' with your objj framework path\";\n\techo \"The default path is '/usr/local/narwhal/packages/cappuccino'\"\n\techo \"Also setup the build settings key 'OBJJ_BIN_PATH' with your objj bin path\";\n\terror 1;\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -109,8 +111,11 @@
 				BROWSER_APP_NAME = Safari.app;
 				COPY_PHASE_STRIP = YES;
 				INDEX_FILE = index.html;
-				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
+				OBJJ_BIN_PATH = /usr/local/narwhal/packages/cappuccino/bin;
 				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
+				OBJJ_RUNTIME_PATH = /usr/local/narwhal/packages/objective-j/Frameworks;
+				NARWHAL_BIN_PATH = /usr/local/narwhal/bin;
+				CUSTOM_FRAMEWORKS = "";
 			};
 			name = Release;
 		};
@@ -131,8 +136,11 @@
 				BROWSER_APP_NAME = Safari.app;
 				COPY_PHASE_STRIP = YES;
 				INDEX_FILE = "index-debug.html";
-				OBJJ_BIN_PATH = /usr/local/narwhal/bin;
+				OBJJ_BIN_PATH = /usr/local/narwhal/packages/cappuccino/bin;
 				OBJJ_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
+				OBJJ_RUNTIME_PATH = /usr/local/narwhal/packages/objective-j/Frameworks;
+				NARWHAL_BIN_PATH = /usr/local/narwhal/bin;
+				CUSTOM_FRAMEWORKS = "";
 			};
 			name = Debug;
 		};

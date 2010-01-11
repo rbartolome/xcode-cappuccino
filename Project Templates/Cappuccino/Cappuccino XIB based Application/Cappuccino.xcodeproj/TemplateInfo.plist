@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>This template provides a starting point for an cappuccino xib based application.</string>
+	<string>This template provides a starting point for a cappuccino xib based application.</string>
 	<key>FilesToMacroExpand</key>
 	<array>
 		<string>MainMenu.xib</string>

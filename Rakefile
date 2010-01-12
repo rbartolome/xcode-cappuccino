@@ -2,7 +2,9 @@
 
 require 'rake'
 
-mkdir "#{ENV['HOME']}/Library/Application Support/Developer/Shared/Xcode/"
+if !File.exist?("#{ENV['HOME']}/Library/Application Support/Developer/Shared/Xcode/")
+  mkdir "#{ENV['HOME']}/Library/Application Support/Developer/Shared/Xcode/"
+end
 
 task :install do
   ["File Templates", "Project Templates", "Specifications", "Target Templates"].each do |directory|

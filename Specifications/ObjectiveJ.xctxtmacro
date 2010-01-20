@@ -280,7 +280,7 @@
             BasedOn = objj;
             IsMenuItem = YES;
             Name = "#Import Statement";
-            TextString = "#import \"<#!file!#>\"";
+            TextString = "@import \"<#!file!#>\"";
             CompletionPrefix = pim;
             CycleList = (
                 objj.import,
@@ -294,7 +294,7 @@
             BasedOn = objj.import;
             IsMenuItem = NO;
             Name = "#Import Statement (System)";
-            TextString = "#import <<#!file!#>>";
+            TextString = "@import <<#!file!#>>";
             CompletionPrefix = pims;
         },
         {

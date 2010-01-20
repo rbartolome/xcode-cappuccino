@@ -22,12 +22,12 @@ If you got rake installed, you can copy the files by running
 h2. Custom Build Target Keys
 
 | Key                    | Value                        | Example                                           |
-| *OBJJ_FRAMEWORKS_PATH* | Cappuccino frameworks folder | /usr/local/narwhal/packages/cappuccino/Frameworks |
-| *OBJJ_BIN_PATH*        | Objective-J binaries folder  | /usr/local/narwhal/packages/cappuccino/bin        |
-| *NARWHAL_BIN_PATH*     | Narwhal binaries folder		| /usr/local/narwhal/bin					        |
-| *OBJJ_RUNTIME_PATH*    | Objective-J runtime folder	| /usr/local/narwhal/packages/objective-j/Frameworks|
-| *CUSTOM_FRAMEWORKS*    | whitespace separated list of files/folders 
-that needs to be copied into the Project Frameworks folder	| /MyFrameworks/CoreData /MoreFrameworks/LPKit		|
+| *CAPP_FRAMEWORKS_PATH* | Cappuccino frameworks folder | /usr/local/narwhal/packages/cappuccino/Frameworks |
+| *CAPP_BIN_PATH* 		 | Cappuccino binary folder 	| /usr/local/narwhal/packages/cappuccino/bin		|
+| *OBJJ_BIN_PATH*        | Objective-J binaries folder  | /usr/local/narwhal/packages/objective-j/bin       |
+| *OBJJ_RUNTIME_PATH*    | Objective-J Frameworks folder| /usr/local/narwhal/packages/objective-j/Frameworks|
+| *CUSTOM_FRAMEWORKS*    | whitespace separated list of files/folders
+that needs to be copied into the Project Frameworks folder	| /MyFrameworks/CoreData /MoreFrameworks/LPKit	|
 | *BROWSER_APP_NAME*     | Browser app bundle name      | Safari.app                                        |
 
 h2. Syntax Coloring

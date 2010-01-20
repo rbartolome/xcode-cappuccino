@@ -1,14 +1,5 @@
 #!/bin/sh
 
-# Default variables
-#CAPP_FRAMEWORKS_PATH = /usr/local/narwhal/packages/cappuccino/Frameworks;
-#CAPP_BIN_PATH = /usr/local/narwhal/packages/cappuccino/bin;
-#OBJJ_RUNTIME_PATH = /usr/local/narwhal/packages/objective-j/Frameworks;
-#OBJJ_BIN_PATH = /usr/local/narwhal/packages/objective-j/bin;
-#CUSTOM_FRAMEWORKS = "";
-#INDEX_FILE = "index.html";
-#BROWSER_APP_NAME = Safari.app;
-
 ### CAPPUCCINO
 #validate cappuccino Frameworks path
 if test -n "$CAPP_FRAMEWORKS_PATH";
@@ -47,9 +38,10 @@ else
 fi
 
 # copy the objective-j runtime
-if test -d "$OBJJ_RUNTIME_PATH";
+if test -d $objjRuntimePath;
 then
-	cp -rf $objjRuntimePath/* Frameworks/
+	echo "Copy Objective-J Frameworks from location '$objjRuntimePath'";
+	cp -rf $objjRuntimePath/* Frameworks
 fi
 
 # validate objj bin path
@@ -66,7 +58,7 @@ PATH=${PATH}:$objjBinPath;
 
 ### Handle custom frameworks
 #copy custom frameworks or files to Frameworks
-cp -rf $CUSTOM_FRAMEWORKS Frameworks/
+cp -rf $CUSTOM_FRAMEWORKS ./Frameworks/
 
 
 ### Handle nib and cib files

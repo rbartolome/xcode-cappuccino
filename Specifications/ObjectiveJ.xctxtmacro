@@ -11,7 +11,7 @@
     //
     {
         Identifier = objj;
-        Name = "Objective J";
+        Name = "Objective-J";
         IsMenu = YES;
 // Can be set (for all languages) with the XCCodeSenseFormattingOptions user default
 //        DefaultSettings = {
@@ -302,7 +302,7 @@
             BasedOn = objj.import;
             IsMenuItem = NO;
             Name = "#Import Statement (Framework)";
-            TextString = "#import <<#framework#>/<#!file!#>>";
+            TextString = "@import <<#framework#>/<#!file!#>>";
             CompletionPrefix = pimf;
         },
 
@@ -415,7 +415,7 @@
             IsMenuItem = YES;
             Name = "observeValueForKeyPath: Definition";
             TextString =
-"-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)observeValueForKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString *)$(MessageArgSpacing)keyPath ofObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)object change$(PreColonSpacing):$(PostColonSpacing)(CPDictionary *)$(MessageArgSpacing)change context$(PreColonSpacing):$(PostColonSpacing)(void *)$(MessageArgSpacing)context$(FunctionBlockSeparator){
+"-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)observeValueForKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)keyPath ofObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)object change$(PreColonSpacing):$(PostColonSpacing)(CPDictionary)$(MessageArgSpacing)change context$(PreColonSpacing):$(PostColonSpacing)(void)$(MessageArgSpacing)context$(FunctionBlockSeparator){
     if$(PreExpressionsSpacing)($(InExpressionsSpacing)context == <#context#>$(InExpressionsSpacing))$(BlockSeparator){
 		<#work#>
 	}$(PostBlockSeparator)\telse$(BlockSeparator){
@@ -433,7 +433,7 @@
             BasedOn = objj;
             IsMenuItem = YES;
             Name = "observeValueForKeyPath: Declaration";
-            TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)observeValueForKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString *)$(MessageArgSpacing)keyPath ofObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)object change$(PreColonSpacing):$(PostColonSpacing)(CPDictionary *)$(MessageArgSpacing)change context$(PreColonSpacing):$(PostColonSpacing)(void *)$(MessageArgSpacing)context;\n";
+            TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)observeValueForKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)keyPath ofObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)object change$(PreColonSpacing):$(PostColonSpacing)(CPDictionary)$(MessageArgSpacing)change context$(PreColonSpacing):$(PostColonSpacing)(void)$(MessageArgSpacing)context;\n";
             CompletionPrefix = observeValueForKeyPath;
             IncludeContexts = ( "xcode.lang.objj.interface" );
             ExcludeContexts = ( "xcode.lang.objj.block" );
@@ -445,7 +445,7 @@
             IsMenuItem = YES;
             Name = "bind: Definition";
             TextString =
-"-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)bind$(PreColonSpacing):$(PostColonSpacing)(CPString *)$(MessageArgSpacing)binding toObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)observable withKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString *)$(MessageArgSpacing)keyPath options$(PreColonSpacing):$(PostColonSpacing)(CPDictionary *)$(MessageArgSpacing)options$(FunctionBlockSeparator){
+"-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)bind$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)binding toObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)observable withKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)keyPath options$(PreColonSpacing):$(PostColonSpacing)(CPDictionary)$(MessageArgSpacing)options$(FunctionBlockSeparator){
 	if$(PreExpressionsSpacing)($(InExpressionsSpacing)[$(InMessageSpacing)binding isEqualToString$(PreColonSpacing):$(PostColonSpacing)<#bindingName#>$(InMessageSpacing)]$(InExpressionsSpacing))$(BlockSeparator){
 		[$(InMessageSpacing)observable addObserver$(PreColonSpacing):$(PostColonSpacing)self forKeyPath$(PreColonSpacing):$(PostColonSpacing)keyPath options$(PreColonSpacing):$(PostColonSpacing)0 context$(PreColonSpacing):$(PostColonSpacing)<#context#>$(InMessageSpacing)];
 		<#store binding info#>
@@ -464,7 +464,7 @@
             BasedOn = objj;
             IsMenuItem = YES;
             Name = "bind: Declaration";
-            TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)bind$(PreColonSpacing):$(PostColonSpacing)(CPString *)$(MessageArgSpacing)binding toObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)observable withKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString *)$(MessageArgSpacing)keyPath options$(PreColonSpacing):$(PostColonSpacing)(CPDictionary *)$(MessageArgSpacing)options;\n";
+            TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)bind$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)binding toObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)observable withKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)keyPath options$(PreColonSpacing):$(PostColonSpacing)(CPDictionary)$(MessageArgSpacing)options;\n";
             CompletionPrefix = bind;
             IncludeContexts = ( "xcode.lang.objj.interface" );
             ExcludeContexts = ( "xcode.lang.objj.block" );

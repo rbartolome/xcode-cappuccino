@@ -8,8 +8,16 @@
 		Type = FileType;
 		Identifier = sourcecode.objj;
 		BasedOn = sourcecode;
-		Name = "Objective-J file";
-		Extensions = ( j , h );
+		Name = "Objective-J File";
+		Extensions = ( j );
+		Language = "xcode.lang.objj";
+	},
+	{
+		Type = FileType;
+		Identifier = sourcecode.objj.h;
+		BasedOn = sourcecode.objj;
+		Name = "Objective-J Header File";
+		Extensions = ( h );
 		Language = "xcode.lang.objj";
 	}
 )

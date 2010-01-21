@@ -56,12 +56,11 @@
                 "while",
                 "with",
                 "class",
-                "window",
-                "document",
 
                 // Select keywords from Objective-C
                 "@end",
                 "@implementation",
+				"@interface",
                 "@import",
                 "@private",
                 "@property",

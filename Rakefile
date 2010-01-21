@@ -12,9 +12,13 @@ task :install do
     cp_r directory, "#{ENV['HOME']}/Library/Application Support/Developer/Shared/Xcode/"
   end
 
-if !File.exist?("#{ENV['HOME']}/Library/Developer/Shared/")
-	mkdir "#{ENV['HOME']}/Library/Developer/Shared/"
+if !File.exist?("#{ENV['HOME']}/Library/Developer/")
+	mkdir "#{ENV['HOME']}/Library/Developer/"
 end
+if !File.exist?("#{ENV['HOME']}/Library/Developer/Shared")
+	mkdir "#{ENV['HOME']}/Library/Developer/Shared"
+end
+
 cp_r "Documentation", "#{ENV['HOME']}/Library/Developer/Shared/"
 
 end

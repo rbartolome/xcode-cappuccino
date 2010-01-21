@@ -21,7 +21,7 @@ If you got rake installed, you can copy the files by running
 
 h2. Custom Build Target Keys
 
-| Key                    | Value                        | Example                                           |
+| Key                    | Value                        | Default Values                                    |
 | *CAPP_FRAMEWORKS_PATH* | Cappuccino frameworks folder | /usr/local/narwhal/packages/cappuccino/Frameworks |
 | *CAPP_BIN_PATH* 		 | Cappuccino binary folder 	| /usr/local/narwhal/packages/cappuccino/bin		|
 | *OBJJ_BIN_PATH*        | Objective-J binaries folder  | /usr/local/narwhal/packages/objective-j/bin       |
@@ -29,6 +29,8 @@ h2. Custom Build Target Keys
 | *CUSTOM_FRAMEWORKS*    | whitespace separated list of files/folders
 that needs to be copied into the Project Frameworks folder	| /MyFrameworks/CoreData /MoreFrameworks/LPKit	|
 | *BROWSER_APP_NAME*     | Browser app bundle name      | Safari.app                                        |
+
+Every 'Key' will be validated with 'Spotlight' if the value is missing. If you remove a default path, the script search for the latest Version on your local maschine.
 
 h2. Syntax Coloring
 

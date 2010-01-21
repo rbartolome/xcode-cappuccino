@@ -30,7 +30,7 @@ h2. Custom Build Target Keys
 that needs to be copied into the Project Frameworks folder	| /MyFrameworks/CoreData /MoreFrameworks/LPKit	|
 | *BROWSER_APP_NAME*     | Browser app bundle name      | Safari.app                                        |
 
-Every 'Key' will be validated with 'Spotlight' if the value is missing. If you remove a default path, the script search for the latest Version on your local maschine.
+If your leave a value for key blank the build script search for the latest version on your local maschine, and hopefully with a result :-)
 
 h2. Syntax Coloring
 

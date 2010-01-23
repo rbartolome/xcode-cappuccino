@@ -5,7 +5,7 @@
 ##################
 
 #validate cappuccino Frameworks path
-if test -n "$CAPP_FRAMEWORKS_PATH";
+if test -d "$CAPP_FRAMEWORKS_PATH";
 then
 	cappFrameworksPath=$CAPP_FRAMEWORKS_PATH;
 else
@@ -16,8 +16,13 @@ else
 		if test $aCappFrameworksPath -nt $cappFrameworksPath;
 		then
 			if test ! -z "$(echo $aCappFrameworksPath | awk '/cappuccino\/Frameworks/')";
-				then 
+			then 
 				cappFrameworksPath=$aCappFrameworksPath;
+			else
+				if test ! -z "$(echo $aCappFrameworksPath | awk '/objj\/lib\/Frameworks/')";
+				then 
+					cappFrameworksPath=$aCappFrameworksPath;
+				fi
 			fi
 		fi
 	done;
@@ -48,7 +53,7 @@ else
 			fi
 		fi
 	done;
-	cappBinPath=$(echo $cappBinPath | sed -e 's/\/objj$//');
+	cappBinPath=$(echo $cappBinPath | sed -e 's/\/nib2cib$//');
 fi
 
 echo "Cappuccino binary path is '$cappBinPath'";
@@ -62,7 +67,7 @@ PATH=${PATH}:$cappBinPath;
 ##################
 
 # validate objj runtime path
-if test -n "$OBJJ_RUNTIME_PATH";
+if test -d "$OBJJ_RUNTIME_PATH";
 then
 	objjRuntimePath="$OBJJ_RUNTIME_PATH";
 else
@@ -89,7 +94,7 @@ then
 fi
 
 # validate objj bin path
-if test -n "$OBJJ_BIN_PATH";
+if test -d "$OBJJ_BIN_PATH";
 then
 	objjBinPath="$OBJJ_BIN_PATH";
 else

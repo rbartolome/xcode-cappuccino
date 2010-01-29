@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: Foundation/CPLog.j tiedostoreferenssi</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li><a href="annotated.html"><span>Luokat</span></a></li>
+      <li class="current"><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Tiedostolista</span></a></li>
+      <li><a href="globals.html"><span>Tiedoston&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Foundation/CPLog.j tiedostoreferenssi</h1><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Funktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#aa03ade023bf2b006cd4ccc1281326167">for</a> (var i=0;i&lt; CPLogLevels.length;i++) _CPLogLevelsInverted[<a class="el" href="_c_p_log_8j.html#a6b3c16e5d35f3b64811f677224a6a79b">CPLogLevels</a>[i]]</td></tr>
+<tr><td colspan="2"><h2>Muuttujat</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">window&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a5a6d036c57d782789a66da19a86312b4">CPLogDisable</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a9bb573f11828a6e182d742c175967514">CPLogDefaultTitle</a> = &quot;Cappuccino&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a6b3c16e5d35f3b64811f677224a6a79b">CPLogLevels</a> = [&quot;fatal&quot;, &quot;error&quot;, &quot;warn&quot;, &quot;info&quot;, &quot;debug&quot;, &quot;trace&quot;]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a7d9cf594a702feefe3e0fe3caf806383">CPLogDefaultLevel</a> = <a class="el" href="_c_p_log_8j.html#a6b3c16e5d35f3b64811f677224a6a79b">CPLogLevels</a>[3]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a624c1436acd001e589906663b6035d04">ANSI_ESC</a> = String.fromCharCode(0x1B)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#ac81aa97e59f5c22163620a3141501b76">ANSI_CSI</a> = <a class="el" href="_c_p_log_8j.html#a624c1436acd001e589906663b6035d04">ANSI_ESC</a> + '['</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#afe5a29fa7f926c734965e8df7e9abecf">ANSI_TEXT_PROP</a> = 'm'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a967fe35e71447c0c83ddd0d0ca30c925">ANSI_RESET</a> = '0'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#af593592fe8ea0c4a1090bc1d6bf0c367">ANSI_BOLD</a> = '1'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a4eb6c0036f37e9245c26597da8bb75e7">ANSI_FAINT</a> = '2'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a589a41b367c2eae830cd429f1bc59cf7">ANSI_NORMAL</a> = '22'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a5c20801e14d351d26a9278c020d8401e">ANSI_ITALIC</a> = '3'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a8ba630c7bae3c340a59abd23dfffeb8b">ANSI_UNDER</a> = '4'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a0b4a2c5804256a624de62a033d5a6cdd">ANSI_UNDER_DBL</a> = '21'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#aa188965bad1f56562d3b1c886a50dccb">ANSI_UNDER_OFF</a> = '24'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a095ca804bf73dc16190e0518ecaf332a">ANSI_BLINK</a> = '5'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a9f091322f04a026507fea991b1d09dd9">ANSI_BLINK_FAST</a> = '6'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a94bd6b50f6f75959e6ddcb51fb68e60c">ANSI_BLINK_OFF</a> = '25'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#aa8309bd562c26bd2982c8d0828bc7781">ANSI_REVERSE</a> = '7'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a55b926cbb19956908da9795677f73c06">ANSI_POSITIVE</a> = '27'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a4a4071138330ae2ac35a0a84003a9236">ANSI_CONCEAL</a> = '8'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#aa3e5efd4a6c92cc9fdfb3cdb6fd36711">ANSI_REVEAL</a> = '28'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a3f7a7bc8c58e99e3a7d58a412ab4fc8d">ANSI_FG</a> = '3'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a50c929a47dcedfb3e08a66cb7c1a13f3">ANSI_BG</a> = '4'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#abd956b57ffae2c7367b267ecdfd2d629">ANSI_FG_INTENSE</a> = '9'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a08b2313300618c57c85743518f1771e3">ANSI_BG_INTENSE</a> = '10'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a8b05850f9e6857a3881f88b3ca6a83d1">ANSI_BLACK</a> = '0'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a5adfd86c0aa568eacf44fc2de3e0e272">ANSI_RED</a> = '1'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a5a1c62e7370884007a359c133b55ceac">ANSI_GREEN</a> = '2'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a705cb2ed27c2e3f2ea71611103f5b356">ANSI_YELLOW</a> = '3'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a97bf5f98b689b7fa3b69764e42cf4a25">ANSI_BLUE</a> = '4'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#aae98a02f2c4b0a71360609de22a842fc">ANSI_MAGENTA</a> = '5'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a6a59133b3ff329dd7dc9181222ca8a24">ANSI_CYAN</a> = '6'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#a8a50c944b8382b75374bd83cb92990fc">ANSI_WHITE</a> = '7'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">var&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_p_log_8j.html#aac2a6aa67574a9f9784a338b127cec9d">colorCodeMap</a></td></tr>
+</table>
+<hr/><h2>Funktioiden dokumentaatio</h2>
+<a class="anchor" id="aa03ade023bf2b006cd4ccc1281326167"></a><!-- doxytag: member="CPLog.j::for" ref="aa03ade023bf2b006cd4ccc1281326167" args="(var i=0;i&lt; CPLogLevels.length;i++) _CPLogLevelsInverted[CPLogLevels[i]]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">for </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Muuttujien dokumentaatio</h2>
+<a class="anchor" id="a50c929a47dcedfb3e08a66cb7c1a13f3"></a><!-- doxytag: member="CPLog.j::ANSI_BG" ref="a50c929a47dcedfb3e08a66cb7c1a13f3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a50c929a47dcedfb3e08a66cb7c1a13f3">ANSI_BG</a> = '4'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08b2313300618c57c85743518f1771e3"></a><!-- doxytag: member="CPLog.j::ANSI_BG_INTENSE" ref="a08b2313300618c57c85743518f1771e3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a08b2313300618c57c85743518f1771e3">ANSI_BG_INTENSE</a> = '10'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b05850f9e6857a3881f88b3ca6a83d1"></a><!-- doxytag: member="CPLog.j::ANSI_BLACK" ref="a8b05850f9e6857a3881f88b3ca6a83d1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a8b05850f9e6857a3881f88b3ca6a83d1">ANSI_BLACK</a> = '0'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a095ca804bf73dc16190e0518ecaf332a"></a><!-- doxytag: member="CPLog.j::ANSI_BLINK" ref="a095ca804bf73dc16190e0518ecaf332a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a095ca804bf73dc16190e0518ecaf332a">ANSI_BLINK</a> = '5'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9f091322f04a026507fea991b1d09dd9"></a><!-- doxytag: member="CPLog.j::ANSI_BLINK_FAST" ref="a9f091322f04a026507fea991b1d09dd9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a9f091322f04a026507fea991b1d09dd9">ANSI_BLINK_FAST</a> = '6'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a94bd6b50f6f75959e6ddcb51fb68e60c"></a><!-- doxytag: member="CPLog.j::ANSI_BLINK_OFF" ref="a94bd6b50f6f75959e6ddcb51fb68e60c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a94bd6b50f6f75959e6ddcb51fb68e60c">ANSI_BLINK_OFF</a> = '25'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a97bf5f98b689b7fa3b69764e42cf4a25"></a><!-- doxytag: member="CPLog.j::ANSI_BLUE" ref="a97bf5f98b689b7fa3b69764e42cf4a25" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a97bf5f98b689b7fa3b69764e42cf4a25">ANSI_BLUE</a> = '4'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af593592fe8ea0c4a1090bc1d6bf0c367"></a><!-- doxytag: member="CPLog.j::ANSI_BOLD" ref="af593592fe8ea0c4a1090bc1d6bf0c367" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#af593592fe8ea0c4a1090bc1d6bf0c367">ANSI_BOLD</a> = '1'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4a4071138330ae2ac35a0a84003a9236"></a><!-- doxytag: member="CPLog.j::ANSI_CONCEAL" ref="a4a4071138330ae2ac35a0a84003a9236" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a4a4071138330ae2ac35a0a84003a9236">ANSI_CONCEAL</a> = '8'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac81aa97e59f5c22163620a3141501b76"></a><!-- doxytag: member="CPLog.j::ANSI_CSI" ref="ac81aa97e59f5c22163620a3141501b76" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#ac81aa97e59f5c22163620a3141501b76">ANSI_CSI</a> = <a class="el" href="_c_p_log_8j.html#a624c1436acd001e589906663b6035d04">ANSI_ESC</a> + '['</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6a59133b3ff329dd7dc9181222ca8a24"></a><!-- doxytag: member="CPLog.j::ANSI_CYAN" ref="a6a59133b3ff329dd7dc9181222ca8a24" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a6a59133b3ff329dd7dc9181222ca8a24">ANSI_CYAN</a> = '6'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a624c1436acd001e589906663b6035d04"></a><!-- doxytag: member="CPLog.j::ANSI_ESC" ref="a624c1436acd001e589906663b6035d04" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a624c1436acd001e589906663b6035d04">ANSI_ESC</a> = String.fromCharCode(0x1B)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4eb6c0036f37e9245c26597da8bb75e7"></a><!-- doxytag: member="CPLog.j::ANSI_FAINT" ref="a4eb6c0036f37e9245c26597da8bb75e7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a4eb6c0036f37e9245c26597da8bb75e7">ANSI_FAINT</a> = '2'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3f7a7bc8c58e99e3a7d58a412ab4fc8d"></a><!-- doxytag: member="CPLog.j::ANSI_FG" ref="a3f7a7bc8c58e99e3a7d58a412ab4fc8d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a3f7a7bc8c58e99e3a7d58a412ab4fc8d">ANSI_FG</a> = '3'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd956b57ffae2c7367b267ecdfd2d629"></a><!-- doxytag: member="CPLog.j::ANSI_FG_INTENSE" ref="abd956b57ffae2c7367b267ecdfd2d629" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#abd956b57ffae2c7367b267ecdfd2d629">ANSI_FG_INTENSE</a> = '9'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a1c62e7370884007a359c133b55ceac"></a><!-- doxytag: member="CPLog.j::ANSI_GREEN" ref="a5a1c62e7370884007a359c133b55ceac" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a5a1c62e7370884007a359c133b55ceac">ANSI_GREEN</a> = '2'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5c20801e14d351d26a9278c020d8401e"></a><!-- doxytag: member="CPLog.j::ANSI_ITALIC" ref="a5c20801e14d351d26a9278c020d8401e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a5c20801e14d351d26a9278c020d8401e">ANSI_ITALIC</a> = '3'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aae98a02f2c4b0a71360609de22a842fc"></a><!-- doxytag: member="CPLog.j::ANSI_MAGENTA" ref="aae98a02f2c4b0a71360609de22a842fc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#aae98a02f2c4b0a71360609de22a842fc">ANSI_MAGENTA</a> = '5'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a589a41b367c2eae830cd429f1bc59cf7"></a><!-- doxytag: member="CPLog.j::ANSI_NORMAL" ref="a589a41b367c2eae830cd429f1bc59cf7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a589a41b367c2eae830cd429f1bc59cf7">ANSI_NORMAL</a> = '22'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55b926cbb19956908da9795677f73c06"></a><!-- doxytag: member="CPLog.j::ANSI_POSITIVE" ref="a55b926cbb19956908da9795677f73c06" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a55b926cbb19956908da9795677f73c06">ANSI_POSITIVE</a> = '27'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5adfd86c0aa568eacf44fc2de3e0e272"></a><!-- doxytag: member="CPLog.j::ANSI_RED" ref="a5adfd86c0aa568eacf44fc2de3e0e272" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a5adfd86c0aa568eacf44fc2de3e0e272">ANSI_RED</a> = '1'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a967fe35e71447c0c83ddd0d0ca30c925"></a><!-- doxytag: member="CPLog.j::ANSI_RESET" ref="a967fe35e71447c0c83ddd0d0ca30c925" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a967fe35e71447c0c83ddd0d0ca30c925">ANSI_RESET</a> = '0'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3e5efd4a6c92cc9fdfb3cdb6fd36711"></a><!-- doxytag: member="CPLog.j::ANSI_REVEAL" ref="aa3e5efd4a6c92cc9fdfb3cdb6fd36711" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#aa3e5efd4a6c92cc9fdfb3cdb6fd36711">ANSI_REVEAL</a> = '28'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa8309bd562c26bd2982c8d0828bc7781"></a><!-- doxytag: member="CPLog.j::ANSI_REVERSE" ref="aa8309bd562c26bd2982c8d0828bc7781" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#aa8309bd562c26bd2982c8d0828bc7781">ANSI_REVERSE</a> = '7'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afe5a29fa7f926c734965e8df7e9abecf"></a><!-- doxytag: member="CPLog.j::ANSI_TEXT_PROP" ref="afe5a29fa7f926c734965e8df7e9abecf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#afe5a29fa7f926c734965e8df7e9abecf">ANSI_TEXT_PROP</a> = 'm'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ba630c7bae3c340a59abd23dfffeb8b"></a><!-- doxytag: member="CPLog.j::ANSI_UNDER" ref="a8ba630c7bae3c340a59abd23dfffeb8b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a8ba630c7bae3c340a59abd23dfffeb8b">ANSI_UNDER</a> = '4'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0b4a2c5804256a624de62a033d5a6cdd"></a><!-- doxytag: member="CPLog.j::ANSI_UNDER_DBL" ref="a0b4a2c5804256a624de62a033d5a6cdd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a0b4a2c5804256a624de62a033d5a6cdd">ANSI_UNDER_DBL</a> = '21'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa188965bad1f56562d3b1c886a50dccb"></a><!-- doxytag: member="CPLog.j::ANSI_UNDER_OFF" ref="aa188965bad1f56562d3b1c886a50dccb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#aa188965bad1f56562d3b1c886a50dccb">ANSI_UNDER_OFF</a> = '24'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8a50c944b8382b75374bd83cb92990fc"></a><!-- doxytag: member="CPLog.j::ANSI_WHITE" ref="a8a50c944b8382b75374bd83cb92990fc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a8a50c944b8382b75374bd83cb92990fc">ANSI_WHITE</a> = '7'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a705cb2ed27c2e3f2ea71611103f5b356"></a><!-- doxytag: member="CPLog.j::ANSI_YELLOW" ref="a705cb2ed27c2e3f2ea71611103f5b356" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_c_p_log_8j.html#a705cb2ed27c2e3f2ea71611103f5b356">ANSI_YELLOW</a> = '3'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aac2a6aa67574a9f9784a338b127cec9d"></a><!-- doxytag: member="CPLog.j::colorCodeMap" ref="aac2a6aa67574a9f9784a338b127cec9d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">var <a class="el" href="_c_p_log_8j.html#aac2a6aa67574a9f9784a338b127cec9d">colorCodeMap</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d9cf594a702feefe3e0fe3caf806383"></a><!-- doxytag: member="CPLog.j::CPLogDefaultLevel" ref="a7d9cf594a702feefe3e0fe3caf806383" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">var <a class="el" href="_c_p_log_8j.html#a7d9cf594a702feefe3e0fe3caf806383">CPLogDefaultLevel</a> = <a class="el" href="_c_p_log_8j.html#a6b3c16e5d35f3b64811f677224a6a79b">CPLogLevels</a>[3]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9bb573f11828a6e182d742c175967514"></a><!-- doxytag: member="CPLog.j::CPLogDefaultTitle" ref="a9bb573f11828a6e182d742c175967514" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">var <a class="el" href="_c_p_log_8j.html#a9bb573f11828a6e182d742c175967514">CPLogDefaultTitle</a> = &quot;Cappuccino&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a6d036c57d782789a66da19a86312b4"></a><!-- doxytag: member="CPLog.j::CPLogDisable" ref="a5a6d036c57d782789a66da19a86312b4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">window <a class="el" href="_c_p_log_8j.html#a5a6d036c57d782789a66da19a86312b4">CPLogDisable</a> = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6b3c16e5d35f3b64811f677224a6a79b"></a><!-- doxytag: member="CPLog.j::CPLogLevels" ref="a6b3c16e5d35f3b64811f677224a6a79b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">var <a class="el" href="_c_p_log_8j.html#a6b3c16e5d35f3b64811f677224a6a79b">CPLogLevels</a> = [&quot;fatal&quot;, &quot;error&quot;, &quot;warn&quot;, &quot;info&quot;, &quot;debug&quot;, &quot;trace&quot;]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

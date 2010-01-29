@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: CPValue luokkareferenssi</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Luokat</span></a></li>
+      <li><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Luokkalista</span></a></li>
+      <li><a href="functions.html"><span>Luokan&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>CPValue luokkareferenssi<br/>
+<small>
+[<a class="el" href="group__foundation.html">Foundation</a>]</small>
+</h1><!-- doxytag: class="CPValue" -->
+<p>A generic "value". Can be subclassed to hold specific data types.  
+<a href="#_details">Lisää...</a></p>
+
+<p><a href="class_c_p_value-members.html">Lista kaikista jäsenistä.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_value.html#a6b4a8497ed71eae1a49bc9214db1421a">initWithJSObject:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(JSObject)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_value.html#ad5734bc649fbf94262f3b2b32052093a">JSObject</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_value.html#a535a4833f922fd6f3dd7f647928e7ede">initWithCoder:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_value.html#afbfc727457083c349db5fd99249cf83b">encodeWithCoder:</a><code> [implementation]</code></td></tr>
+<tr><td colspan="2"><h2>Staattiset julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_value.html#a469a2250da862906c848e571a508e645">valueWithJSObject:</a><code> [implementation]</code></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+<p>A generic "value". Can be subclassed to hold specific data types. </p>
+<p>The class can be subclassed to hold different types of scalar values. </p>
+<hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
+<a class="anchor" id="afbfc727457083c349db5fd99249cf83b"></a><!-- doxytag: member="CPValue::encodeWithCoder:" ref="afbfc727457083c349db5fd99249cf83b" args="(CPCoder aCoder)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) encodeWithCoder: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_coder.html">CPCoder</a>)&nbsp;</td>
+          <td class="paramname"> <em>aCoder</em></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Encodes the data into the specified coder. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>the</em>&nbsp;</td><td>coder into which the data will be written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a535a4833f922fd6f3dd7f647928e7ede"></a><!-- doxytag: member="CPValue::initWithCoder:" ref="a535a4833f922fd6f3dd7f647928e7ede" args="(CPCoder aCoder)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithCoder: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_coder.html">CPCoder</a>)&nbsp;</td>
+          <td class="paramname"> <em>aCoder</em></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the value from a coder. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aCoder</em>&nbsp;</td><td>the coder from which to initialize </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized <a class="el" href="class_c_p_value.html" title="A generic &quot;value&quot;. Can be subclassed to hold specific data types.">CPValue</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b4a8497ed71eae1a49bc9214db1421a"></a><!-- doxytag: member="CPValue::initWithJSObject:" ref="a6b4a8497ed71eae1a49bc9214db1421a" args="(JSObject aJSObject)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithJSObject: </td>
+          <td></td>
+          <td class="paramtype">(JSObject)&nbsp;</td>
+          <td class="paramname"> <em>aJSObject</em></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the value from a JavaScript object </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aJSObject</em>&nbsp;</td><td>the object to get data from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized <a class="el" href="class_c_p_value.html" title="A generic &quot;value&quot;. Can be subclassed to hold specific data types.">CPValue</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad5734bc649fbf94262f3b2b32052093a"></a><!-- doxytag: member="CPValue::JSObject" ref="ad5734bc649fbf94262f3b2b32052093a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (JSObject) JSObject </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the JavaScript object backing this value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a469a2250da862906c848e571a508e645"></a><!-- doxytag: member="CPValue::valueWithJSObject:" ref="a469a2250da862906c848e571a508e645" args="(JSObject aJSObject)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (id) valueWithJSObject: </td>
+          <td></td>
+          <td class="paramtype">(JSObject)&nbsp;</td>
+          <td class="paramname"> <em>aJSObject</em></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Creates a value from the specified JavaScript object </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aJSObject</em>&nbsp;</td><td>a JavaScript object containing a value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the converted <a class="el" href="class_c_p_value.html" title="A generic &quot;value&quot;. Can be subclassed to hold specific data types.">CPValue</a> </dd></dl>
+
+</div>
+</div>
+<hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
+<li>Foundation/<a class="el" href="_c_p_value_8j.html">CPValue.j</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

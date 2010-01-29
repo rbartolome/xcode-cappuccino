@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: CPURLConnection luokkareferenssi</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Luokat</span></a></li>
+      <li><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Luokkalista</span></a></li>
+      <li><a href="functions.html"><span>Luokan&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>CPURLConnection luokkareferenssi<br/>
+<small>
+[<a class="el" href="group__foundation.html">Foundation</a>]</small>
+</h1><!-- doxytag: class="CPURLConnection" -->
+<p>Provides loading of a URL request.  
+<a href="#_details">Lisää...</a></p>
+
+<p><a href="class_c_p_u_r_l_connection-members.html">Lista kaikista jäsenistä.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_u_r_l_connection.html#a62293797eb2dc211d147ab826c3e71b2">initWithRequest:delegate:startImmediately:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_u_r_l_connection.html#aecfa22f8c95edc6d5022117f7578026b">initWithRequest:delegate:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_u_r_l_connection.html#a14205617fa4da2200b76d1f4d87a2d23">start</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_u_r_l_connection.html#aea5796f30cbb18972c7f183d8126c446">cancel</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_u_r_l_connection.html#a437cae36f68a1cb5bd7c0c6a0dcbcea1">isLocalFileConnection</a><code> [implementation]</code></td></tr>
+<tr><td colspan="2"><h2>Staattiset julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_u_r_l_connection.html#ab5880c5dac87a2a8e64a2fb32f9e5ae1">setClassDelegate:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_data.html">CPData</a>)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_u_r_l_connection.html#a3a87c76b450b8c246cfe5da09a72c730">sendSynchronousRequest:returningResponse:error:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_u_r_l_connection.html">CPURLConnection</a>)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_u_r_l_connection.html#a5f38828bd714d6b9eca92551ae1d9468">connectionWithRequest:delegate:</a><code> [implementation]</code></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+<p>Provides loading of a URL request. </p>
+<p>An interface to downloading content at a specified URL. Using one of the class methods, you can obtain the data.</p>
+<p>-(void)connection:(CPURLConnection)connection didFailWithError:(id)error; Called when the connection encounters an error. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connection</em>&nbsp;</td><td>the connection that had an error </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>error</em>&nbsp;</td><td>the error, which is either a javascript DOMException or an http status code (javascript number/CPNumber)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>-(void)connection:(CPURLConnection)connection didReceiveResponse:(CPHTTPURLResponse)response; Called when the connection receives a response. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connection</em>&nbsp;</td><td>the connection that received a response </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>response</em>&nbsp;</td><td>the received response</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>-(void)connection:(CPURLConnection)connection didReceiveData:(CPString)data; Called when the connection has received data. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connection</em>&nbsp;</td><td>the connection that received data </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the received data</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>-(void)connectionDidFinishLoading:(CPURLConnection)connection; Called when the URL has finished loading. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connection</em>&nbsp;</td><td>the connection that finished loading</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Class Delegate Method:</p>
+<p>-(void)connectionDidReceiveAuthenticationChallenge:(id)connection The class delegate allows you to set global behavior for when authentication challenges (401 status codes) are returned.</p>
+<p>The recommended way to handle this method is to store a reference to the connection, and then use whatever method you have to authenticate yourself. Once you've authenticated yourself, you should cancel and then start the connection:</p>
+<pre>
+[connection cancel];
+[connection start];
+</pre><dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>connection</em>&nbsp;</td><td>the connection that received the authentication challenge. </td></tr>
+  </table>
+  </dd>
+</dl>
+<hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
+<a class="anchor" id="aea5796f30cbb18972c7f183d8126c446"></a><!-- doxytag: member="CPURLConnection::cancel" ref="aea5796f30cbb18972c7f183d8126c446" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) cancel </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5f38828bd714d6b9eca92551ae1d9468"></a><!-- doxytag: member="CPURLConnection::connectionWithRequest:delegate:" ref="a5f38828bd714d6b9eca92551ae1d9468" args="(CPURLRequest aRequest,[delegate] id aDelegate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="class_c_p_u_r_l_connection.html">CPURLConnection</a>) connectionWithRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>aDelegate</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a64b355907daa70fc2a0b6bbc01ce65fd"></a><!-- doxytag: member="CPURLConnection::delegate" ref="a64b355907daa70fc2a0b6bbc01ce65fd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) delegate </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aecfa22f8c95edc6d5022117f7578026b"></a><!-- doxytag: member="CPURLConnection::initWithRequest:delegate:" ref="aecfa22f8c95edc6d5022117f7578026b" args="(CPURLRequest aRequest,[delegate] id aDelegate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>aDelegate</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a62293797eb2dc211d147ab826c3e71b2"></a><!-- doxytag: member="CPURLConnection::initWithRequest:delegate:startImmediately:" ref="a62293797eb2dc211d147ab826c3e71b2" args="(CPURLRequest aRequest,[delegate] id aDelegate,[startImmediately] BOOL shouldStartImmediately)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>aDelegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startImmediately:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&nbsp;</td>
+          <td class="paramname"> <em>shouldStartImmediately</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a437cae36f68a1cb5bd7c0c6a0dcbcea1"></a><!-- doxytag: member="CPURLConnection::isLocalFileConnection" ref="a437cae36f68a1cb5bd7c0c6a0dcbcea1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isLocalFileConnection </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3a87c76b450b8c246cfe5da09a72c730"></a><!-- doxytag: member="CPURLConnection::sendSynchronousRequest:returningResponse:error:" ref="a3a87c76b450b8c246cfe5da09a72c730" args="(CPURLRequest aRequest,[returningResponse]{CPURLResponse}aURLResponse,[error]{CPError}anError)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="class_c_p_data.html">CPData</a>) sendSynchronousRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">returningResponse:</td>
+          <td></td>
+          <td class="paramtype">({<a class="el" href="class_c_p_u_r_l_response.html">CPURLResponse</a>})&nbsp;</td>
+          <td class="paramname"> <em>aURLResponse</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">error:</td>
+          <td></td>
+          <td class="paramtype">({CPError})&nbsp;</td>
+          <td class="paramname"> <em>anError</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab5880c5dac87a2a8e64a2fb32f9e5ae1"></a><!-- doxytag: member="CPURLConnection::setClassDelegate:" ref="ab5880c5dac87a2a8e64a2fb32f9e5ae1" args="(id delegate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (void) setClassDelegate: </td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a14205617fa4da2200b76d1f4d87a2d23"></a><!-- doxytag: member="CPURLConnection::start" ref="a14205617fa4da2200b76d1f4d87a2d23" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) start </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
+<li>Foundation/<a class="el" href="_c_p_u_r_l_connection_8j.html">CPURLConnection.j</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

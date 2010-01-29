@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: CPException luokkareferenssi</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Luokat</span></a></li>
+      <li><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Luokkalista</span></a></li>
+      <li><a href="functions.html"><span>Luokan&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>CPException luokkareferenssi<br/>
+<small>
+[<a class="el" href="group__foundation.html">Foundation</a>]</small>
+</h1><!-- doxytag: class="CPException" -->
+<p>Used to implement exception handling (creating &amp; raising).  
+<a href="#_details">Lisää...</a></p>
+
+<p><a href="class_c_p_exception-members.html">Lista kaikista jäsenistä.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a556f18ad723ce3f34d320f2f394d720e">initWithName:reason:userInfo:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a06a61739c4a38ed44ef2506c52c6a2d0">name</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a3b5a2a3dd133a21c6863d4b79ffabd04">reason</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a750feb80da51185523c64e333c5cc7f0">description</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a1428cc4e84f1d200dea624a85d6c9336">raise</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a4d22c3bf8f65e3cc731f0855fab766f5">copy</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#af45c39a952bb3ff7d06bbaa07757af1d">initWithCoder:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_exception.html#a6672dd68bf2c48367a51987180340927">encodeWithCoder:</a><code> [implementation]</code></td></tr>
+<tr><td colspan="2"><h2>Staattiset julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_exception.html#ac8f34bd11868822e26a7b952810128b8">raise:reason:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_exception.html">CPException</a>)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_exception.html#a44c9e2d9ffa44471351ac8086093f542">exceptionWithName:reason:userInfo:</a><code> [implementation]</code></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+<p>Used to implement exception handling (creating &amp; raising). </p>
+<p>An example of throwing an exception in Objective-J: </p>
+<pre>
+// some code here...
+if (input == nil)
+    [<a class="el" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp; raising).">CPException</a> raise:"MyException" reason:"You didn't do something right."];</pre><pre>// code that gets executed if no exception was raised
+</pre> <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
+<a class="anchor" id="a4d22c3bf8f65e3cc731f0855fab766f5"></a><!-- doxytag: member="CPException::copy" ref="a4d22c3bf8f65e3cc731f0855fab766f5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) copy </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a750feb80da51185523c64e333c5cc7f0"></a><!-- doxytag: member="CPException::description" ref="a750feb80da51185523c64e333c5cc7f0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="class_c_p_string.html">CPString</a>) description </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the exception's reason. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6672dd68bf2c48367a51987180340927"></a><!-- doxytag: member="CPException::encodeWithCoder:" ref="a6672dd68bf2c48367a51987180340927" args="(CPCoder aCoder)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) encodeWithCoder: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_coder.html">CPCoder</a>)&nbsp;</td>
+          <td class="paramname"> <em>aCoder</em></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Encodes the exception's data into a coder. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aCoder</em>&nbsp;</td><td>the coder to which the data will be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a44c9e2d9ffa44471351ac8086093f542"></a><!-- doxytag: member="CPException::exceptionWithName:reason:userInfo:" ref="a44c9e2d9ffa44471351ac8086093f542" args="(CPString aName,[reason] CPString aReason,[userInfo] CPDictionary aUserInfo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="class_c_p_exception.html">CPException</a>) exceptionWithName: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">reason:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aReason</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">userInfo:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>)&nbsp;</td>
+          <td class="paramname"> <em>aUserInfo</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Creates an exception with a name, reason and user info. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aName</em>&nbsp;</td><td>the name of the exception </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>aReason</em>&nbsp;</td><td>the reason the exception occurred </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>aUserInfo</em>&nbsp;</td><td>a dictionary containing information about the exception </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the new exception </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af45c39a952bb3ff7d06bbaa07757af1d"></a><!-- doxytag: member="CPException::initWithCoder:" ref="af45c39a952bb3ff7d06bbaa07757af1d" args="(CPCoder aCoder)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithCoder: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_coder.html">CPCoder</a>)&nbsp;</td>
+          <td class="paramname"> <em>aCoder</em></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the exception with data from a coder. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aCoder</em>&nbsp;</td><td>the coder from which to read the exception data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized exception </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a556f18ad723ce3f34d320f2f394d720e"></a><!-- doxytag: member="CPException::initWithName:reason:userInfo:" ref="a556f18ad723ce3f34d320f2f394d720e" args="(CPString aName,[reason] CPString aReason,[userInfo] CPDictionary aUserInfo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithName: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">reason:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aReason</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">userInfo:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>)&nbsp;</td>
+          <td class="paramname"> <em>aUserInfo</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the exception. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aName</em>&nbsp;</td><td>the name of the exception </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>aReason</em>&nbsp;</td><td>the reason for the exception </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>aUserInfo</em>&nbsp;</td><td>a dictionary containing information about the exception </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized exception </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a06a61739c4a38ed44ef2506c52c6a2d0"></a><!-- doxytag: member="CPException::name" ref="a06a61739c4a38ed44ef2506c52c6a2d0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="class_c_p_string.html">CPString</a>) name </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the name of the exception. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1428cc4e84f1d200dea624a85d6c9336"></a><!-- doxytag: member="CPException::raise" ref="a1428cc4e84f1d200dea624a85d6c9336" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) raise </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Raises the exception and causes the program to go to the exception handler. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac8f34bd11868822e26a7b952810128b8"></a><!-- doxytag: member="CPException::raise:reason:" ref="ac8f34bd11868822e26a7b952810128b8" args="(CPString aName,[reason] CPString aReason)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (void) raise: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">reason:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aReason</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Raises an exception with a name and reason. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aName</em>&nbsp;</td><td>the name of the exception to raise </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>aReason</em>&nbsp;</td><td>the reason for the exception </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3b5a2a3dd133a21c6863d4b79ffabd04"></a><!-- doxytag: member="CPException::reason" ref="a3b5a2a3dd133a21c6863d4b79ffabd04" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="class_c_p_string.html">CPString</a>) reason </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the reason for the exception. </p>
+
+</div>
+</div>
+<a class="anchor" id="a81c441e5cf29613a7731718da9df3c8f"></a><!-- doxytag: member="CPException::userInfo" ref="a81c441e5cf29613a7731718da9df3c8f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>) userInfo </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns data containing info about the receiver. </p>
+
+</div>
+</div>
+<hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
+<li>Foundation/<a class="el" href="_c_p_exception_8j.html">CPException.j</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

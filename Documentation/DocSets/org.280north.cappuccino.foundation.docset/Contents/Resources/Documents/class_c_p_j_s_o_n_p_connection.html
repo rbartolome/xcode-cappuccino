@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: CPJSONPConnection luokkareferenssi</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Luokat</span></a></li>
+      <li><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Luokkalista</span></a></li>
+      <li><a href="functions.html"><span>Luokan&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>CPJSONPConnection luokkareferenssi<br/>
+<small>
+[<a class="el" href="group__foundation.html">Foundation</a>]</small>
+</h1><!-- doxytag: class="CPJSONPConnection" -->
+<p>Allows cross domain connections using JSONP protocol.  
+<a href="#_details">Lisää...</a></p>
+
+<p><a href="class_c_p_j_s_o_n_p_connection-members.html">Lista kaikista jäsenistä.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_j_s_o_n_p_connection.html#a6e4223996758d33b2dd1c8636e7bbe48">initWithRequest:callback:delegate:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_j_s_o_n_p_connection.html#a4cfc2bd2bc74589e0c5c54b93726d31c">initWithRequest:callback:delegate:startImmediately:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_j_s_o_n_p_connection.html#a2ee39d8225428479df829f15a470ad7e">start</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_j_s_o_n_p_connection.html#aea3b69f0b3bba4ee550a0fc034f83776">removeScriptTag</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_j_s_o_n_p_connection.html#aa915f8b07110dff1355c52905acc47fc">cancel</a><code> [implementation]</code></td></tr>
+<tr><td colspan="2"><h2>Staattiset julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_j_s_o_n_p_connection.html">CPJSONPConnection</a>)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_j_s_o_n_p_connection.html#acb4b69eb5147f203f815b6dbd68fdff1">sendRequest:callback:delegate:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_j_s_o_n_p_connection.html">CPJSONPConnection</a>)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_j_s_o_n_p_connection.html#a86a8bdcebda7a0919849500561dd7440">connectionWithRequest:callback:delegate:</a><code> [implementation]</code></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+<p>Allows cross domain connections using JSONP protocol. </p>
+<p>Important note: <a class="el" href="class_c_p_j_s_o_n_p_connection.html" title="Allows cross domain connections using JSONP protocol.">CPJSONPConnection</a> is <b>only</b> for JSONP APIs. If aren't sure you <b>need</b> <a href="http://ajaxian.com/archives/jsonp-json-with-padding">JSON<b>P</b></a>, you most likely don't want to use <a class="el" href="class_c_p_j_s_o_n_p_connection.html" title="Allows cross domain connections using JSONP protocol.">CPJSONPConnection</a>, but rather the more standard <a class="el" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a>. <a class="el" href="class_c_p_j_s_o_n_p_connection.html" title="Allows cross domain connections using JSONP protocol.">CPJSONPConnection</a> is designed for cross-domain connections, and if you are making requests to the same domain (as most web applications do), you do not need it. </p>
+<hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
+<a class="anchor" id="aa915f8b07110dff1355c52905acc47fc"></a><!-- doxytag: member="CPJSONPConnection::cancel" ref="aa915f8b07110dff1355c52905acc47fc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) cancel </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86a8bdcebda7a0919849500561dd7440"></a><!-- doxytag: member="CPJSONPConnection::connectionWithRequest:callback:delegate:" ref="a86a8bdcebda7a0919849500561dd7440" args="(CPURLRequest aRequest,[callback] CPString callbackParameter,[delegate] id aDelegate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="class_c_p_j_s_o_n_p_connection.html">CPJSONPConnection</a>) connectionWithRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">callback:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>callbackParameter</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>aDelegate</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6e4223996758d33b2dd1c8636e7bbe48"></a><!-- doxytag: member="CPJSONPConnection::initWithRequest:callback:delegate:" ref="a6e4223996758d33b2dd1c8636e7bbe48" args="(CPURLRequest aRequest,[callback] CPString aString,[delegate] id aDelegate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">callback:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aString</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>aDelegate</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4cfc2bd2bc74589e0c5c54b93726d31c"></a><!-- doxytag: member="CPJSONPConnection::initWithRequest:callback:delegate:startImmediately:" ref="a4cfc2bd2bc74589e0c5c54b93726d31c" args="(CPURLRequest aRequest,[callback] CPString aString,[delegate] id aDelegate,[startImmediately] BOOL shouldStartImmediately)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">callback:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aString</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>aDelegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startImmediately:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&nbsp;</td>
+          <td class="paramname"> <em>shouldStartImmediately</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea3b69f0b3bba4ee550a0fc034f83776"></a><!-- doxytag: member="CPJSONPConnection::removeScriptTag" ref="aea3b69f0b3bba4ee550a0fc034f83776" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) removeScriptTag </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acb4b69eb5147f203f815b6dbd68fdff1"></a><!-- doxytag: member="CPJSONPConnection::sendRequest:callback:delegate:" ref="acb4b69eb5147f203f815b6dbd68fdff1" args="(CPURLRequest aRequest,[callback] CPString callbackParameter,[delegate] id aDelegate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="class_c_p_j_s_o_n_p_connection.html">CPJSONPConnection</a>) sendRequest: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_u_r_l_request.html">CPURLRequest</a>)&nbsp;</td>
+          <td class="paramname"> <em>aRequest</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">callback:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>callbackParameter</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>aDelegate</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Vanhentunut:</a></b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ee39d8225428479df829f15a470ad7e"></a><!-- doxytag: member="CPJSONPConnection::start" ref="a2ee39d8225428479df829f15a470ad7e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) start </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
+<li>Foundation/<a class="el" href="_c_p_j_s_o_n_p_connection_8j.html">CPJSONPConnection.j</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

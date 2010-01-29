@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: CPNotification luokkareferenssi</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Luokat</span></a></li>
+      <li><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Luokkalista</span></a></li>
+      <li><a href="functions.html"><span>Luokan&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>CPNotification luokkareferenssi<br/>
+<small>
+[<a class="el" href="group__foundation.html">Foundation</a>]</small>
+</h1><!-- doxytag: class="CPNotification" -->
+<p>A notification that can be posted to a <a class="el" href="class_c_p_notification_center.html" title="Sends messages (CPNotification) between objects.">CPNotificationCenter</a>.  
+<a href="#_details">Lisää...</a></p>
+
+<p><a href="class_c_p_notification-members.html">Lista kaikista jäsenistä.</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_notification.html#a22d9d1151939575f19c1c9696fa29796">init</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_notification.html#a72649655d083ced1c2bbbf372cfd51b6">initWithName:object:userInfo:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_notification.html#a0ddf3837c1d325016b9c59a99247a9ef">name</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_notification.html#a0a912e9648acf5e7f669aed339474158">object</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_notification.html#a2c441e9231e4d97445571728cc4117c6">userInfo</a><code> [implementation]</code></td></tr>
+<tr><td colspan="2"><h2>Staattiset julkiset jäsenfunktiot</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_notification.html">CPNotification</a>)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_notification.html#a03911b34d9b367606d5b0c0a4b1ea720">notificationWithName:object:userInfo:</a><code> [implementation]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_notification.html">CPNotification</a>)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_notification.html#accba1a5e72cbca3d83838ce3405ec136">notificationWithName:object:</a><code> [implementation]</code></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+<p>A notification that can be posted to a <a class="el" href="class_c_p_notification_center.html" title="Sends messages (CPNotification) between objects.">CPNotificationCenter</a>. </p>
+<p>Represents a notification for posting to an <a class="el" href="class_c_p_notification_center.html" title="Sends messages (CPNotification) between objects.">CPNotificationCenter</a>. Consists of a name, an object, and an optional dictionary. The notification center will check for observers registered to receive either notifications with the name, the object, or both and pass the notification instance on to them.</p>
+<p>To create a notification use one of the class methods. The default init method will throw a CPUnsupportedMethodException. </p>
+<hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
+<a class="anchor" id="a22d9d1151939575f19c1c9696fa29796"></a><!-- doxytag: member="CPNotification::init" ref="a22d9d1151939575f19c1c9696fa29796" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) init </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Poikkeukset:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>CPUnsupportedMethodException</em>&nbsp;</td><td>always, because the method should not be used </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a72649655d083ced1c2bbbf372cfd51b6"></a><!-- doxytag: member="CPNotification::initWithName:object:userInfo:" ref="a72649655d083ced1c2bbbf372cfd51b6" args="(CPString aNotificationName,[object] id anObject,[userInfo] CPDictionary aUserInfo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithName: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aNotificationName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">object:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>anObject</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">userInfo:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>)&nbsp;</td>
+          <td class="paramname"> <em>aUserInfo</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the notification with a name, object and dictionary </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aNotificationName</em>&nbsp;</td><td>the name of the notification </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anObject</em>&nbsp;</td><td>the associated object </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>aUserInfo</em>&nbsp;</td><td>the associated dictionary </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized notification  </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0ddf3837c1d325016b9c59a99247a9ef"></a><!-- doxytag: member="CPNotification::name" ref="a0ddf3837c1d325016b9c59a99247a9ef" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="class_c_p_string.html">CPString</a>) name </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the notification name. </p>
+
+</div>
+</div>
+<a class="anchor" id="accba1a5e72cbca3d83838ce3405ec136"></a><!-- doxytag: member="CPNotification::notificationWithName:object:" ref="accba1a5e72cbca3d83838ce3405ec136" args="(CPString aNotificationName,[object] id anObject)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="class_c_p_notification.html">CPNotification</a>) notificationWithName: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aNotificationName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">object:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>anObject</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Creates a new notification with the specified name and object. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aNotificationName</em>&nbsp;</td><td>the name of the notification </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anObject</em>&nbsp;</td><td>the associated object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the new notification </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a03911b34d9b367606d5b0c0a4b1ea720"></a><!-- doxytag: member="CPNotification::notificationWithName:object:userInfo:" ref="a03911b34d9b367606d5b0c0a4b1ea720" args="(CPString aNotificationName,[object] id anObject,[userInfo] CPDictionary aUserInfo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="class_c_p_notification.html">CPNotification</a>) notificationWithName: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_string.html">CPString</a>)&nbsp;</td>
+          <td class="paramname"> <em>aNotificationName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">object:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>anObject</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">userInfo:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>)&nbsp;</td>
+          <td class="paramname"> <em>aUserInfo</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Creates a new notification with the specified name, object and dictionary. </p>
+<dl><dt><b>Parametrit:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>aNotificationName</em>&nbsp;</td><td>the name of the notification </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>anObject</em>&nbsp;</td><td>the associated object </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>aUserInfo</em>&nbsp;</td><td>the associated dictionary </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Palauttaa:</b></dt><dd>the new notification </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a912e9648acf5e7f669aed339474158"></a><!-- doxytag: member="CPNotification::object" ref="a0a912e9648acf5e7f669aed339474158" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) object </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the notification's object. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2c441e9231e4d97445571728cc4117c6"></a><!-- doxytag: member="CPNotification::userInfo" ref="a2c441e9231e4d97445571728cc4117c6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>) userInfo </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns the notification's dictionary. </p>
+
+</div>
+</div>
+<hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
+<li>Foundation/<a class="el" href="_c_p_notification_8j.html">CPNotification.j</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

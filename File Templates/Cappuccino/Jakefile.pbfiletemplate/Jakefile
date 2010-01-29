@@ -1,0 +1,37 @@
+/*
+*  «FILENAME»
+*
+*  Created by «FULLUSERNAME» on «DATE».
+*  Copyright «ORGANIZATIONNAME» «YEAR». All rights reserved.
+*/
+
+var ENV = require("system").env,
+    FILE = require("file"),
+    task = require("jake").task,
+    FileList = require("jake").FileList,
+    app = require("cappuccino/jake").app,
+    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug";
+
+app ("«PROJECTNAME»", function(task)
+{
+    task.setBuildIntermediatesPath(FILE.join("build", "«PROJECTNAME».build", configuration));
+    task.setBuildPath(FILE.join("build", configuration));
+
+    task.setProductName("«PROJECTNAME»");
+    task.setIdentifier("«IDENTIFIER»");
+    task.setVersion("1.0");
+    task.setAuthor("«ORGANIZATIONNAME»");
+    task.setEmail("feedback@«ORGANIZATIONNAME».com");
+    task.setSummary("«PROJECTNAME»");
+    task.setSources(new FileList("**/*.j"));
+    task.setResources(new FileList("Resources/*"));
+    task.setIndexFilePath("index.html");
+    task.setInfoPlistPath("Info.plist");
+
+    if (configuration === "Debug")
+        task.setCompilerFlags("-DDEBUG -g");
+    else
+        task.setCompilerFlags("-O");
+});
+
+task ("default", ["«PROJECTNAME»"]);

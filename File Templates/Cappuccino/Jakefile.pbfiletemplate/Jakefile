@@ -36,7 +36,7 @@ app ("«PROJECTNAME»", function(task)
         task.setCompilerFlags("-O");
 });
 
-CLEAN.include(FILE.join("Build", "CoreData.build"));
+CLEAN.include(FILE.join("Build", "«PROJECTNAME».build"));
 
 task ("default", ["«PROJECTNAME»", "clean"]);
 

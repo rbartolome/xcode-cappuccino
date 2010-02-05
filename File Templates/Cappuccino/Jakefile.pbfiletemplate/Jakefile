@@ -8,11 +8,12 @@
 var ENV = require("system").env,
     FILE = require("file"),
     task = require("jake").task,
+    CLEAN = require("jake/clean").CLEAN,
     FileList = require("jake").FileList,
-    app = require("cappuccino/jake").app,
+    application = require("cappuccino/jake").framework,
     configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug";
 
-app ("«PROJECTNAME»", function(task)
+application ("«PROJECTNAME»", function(task)
 {
     task.setBuildIntermediatesPath(FILE.join("build", "«PROJECTNAME».build", configuration));
     task.setBuildPath(FILE.join("build", configuration));
@@ -25,7 +26,7 @@ app ("«PROJECTNAME»", function(task)
     task.setSummary("«PROJECTNAME»");
     task.setSources(new FileList("**/*.j"));
     task.setResources(new FileList("Resources/*"));
-    task.setIndexFilePath("index.html");
+    task.setFlattensSources(true);
     task.setInfoPlistPath("Info.plist");
 
     if (configuration === "Debug")
@@ -34,4 +35,7 @@ app ("«PROJECTNAME»", function(task)
         task.setCompilerFlags("-O");
 });
 
-task ("default", ["«PROJECTNAME»"]);
+CLEAN.include(FILE.join("Build", "CoreData.build"));
+
+task ("default", ["«PROJECTNAME»", "clean"]);
+

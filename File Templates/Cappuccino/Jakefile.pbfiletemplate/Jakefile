@@ -11,7 +11,7 @@ var ENV = require("system").env,
     CLEAN = require("jake/clean").CLEAN,
     FileList = require("jake").FileList,
     app = require("cappuccino/jake").app,
-    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug";
+    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Release";
 
 app ("«PROJECTNAME»", function(task)
 {

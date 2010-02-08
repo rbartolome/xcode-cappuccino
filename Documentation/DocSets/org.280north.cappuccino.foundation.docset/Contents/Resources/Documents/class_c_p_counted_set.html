@@ -43,6 +43,8 @@
 </table>
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>An mutable collection which may contain a specific object numerous times. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_counted_set_8j_source.html">CPCountedSet.j</a> rivillä <a class="el" href="_c_p_counted_set_8j_source.html#l00031">31</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="af3c59e2587aac1ae1adeaec06a9aed13"></a><!-- doxytag: member="CPCountedSet::addObject:" ref="af3c59e2587aac1ae1adeaec06a9aed13" args="(id anObject)" -->
 <div class="memitem">
@@ -59,6 +61,24 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_counted_set_8j_source.html">CPCountedSet.j</a> rivillä <a class="el" href="_c_p_counted_set_8j_source.html#l00036">36</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00036"></a>00036                  :(id)anObject
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038     <span class="keywordflow">if</span> (!_counts)
+<a name="l00039"></a>00039         _counts = {};
+<a name="l00040"></a>00040     
+<a name="l00041"></a>00041     [super addObject:anObject];
+<a name="l00042"></a>00042     
+<a name="l00043"></a>00043     var UID = [anObject UID];
+<a name="l00044"></a>00044     
+<a name="l00045"></a>00045     <span class="keywordflow">if</span> (_counts[UID] === undefined)
+<a name="l00046"></a>00046         _counts[UID] = 1;
+<a name="l00047"></a>00047     <span class="keywordflow">else</span>
+<a name="l00048"></a>00048         ++_counts[UID];
+<a name="l00049"></a>00049 }
+</pre></div></p>
 
 </div>
 </div>
@@ -78,6 +98,22 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_counted_set_8j_source.html">CPCountedSet.j</a> rivillä <a class="el" href="_c_p_counted_set_8j_source.html#l00083">83</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00083"></a>00083                           :(id)anObject
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     <span class="keywordflow">if</span> (!_counts)
+<a name="l00086"></a>00086         _counts = {};
+<a name="l00087"></a>00087     
+<a name="l00088"></a>00088     var UID = [anObject UID];
+<a name="l00089"></a>00089     
+<a name="l00090"></a>00090     <span class="keywordflow">if</span> (_counts[UID] === undefined)
+<a name="l00091"></a>00091         <span class="keywordflow">return</span> 0;
+<a name="l00092"></a>00092     
+<a name="l00093"></a>00093     <span class="keywordflow">return</span> _counts[UID];
+<a name="l00094"></a>00094 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a138161fe1d343e367c4f41015990297a"></a><!-- doxytag: member="CPCountedSet::removeAllObjects" ref="a138161fe1d343e367c4f41015990297a" args="()" -->
@@ -94,6 +130,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_counted_set_8j_source.html">CPCountedSet.j</a> rivillä <a class="el" href="_c_p_counted_set_8j_source.html#l00073">73</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00074"></a>00074 {
+<a name="l00075"></a>00075     [super <a class="code" href="class_c_p_counted_set.html#a138161fe1d343e367c4f41015990297a">removeAllObjects</a>];
+<a name="l00076"></a>00076     _counts = {};
+<a name="l00077"></a>00077 }
+</pre></div></p>
 
 </div>
 </div>
@@ -113,10 +157,35 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_counted_set_8j_source.html">CPCountedSet.j</a> rivillä <a class="el" href="_c_p_counted_set_8j_source.html#l00051">51</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00051"></a>00051                     :(id)anObject
+<a name="l00052"></a>00052 {
+<a name="l00053"></a>00053     <span class="keywordflow">if</span> (!_counts)
+<a name="l00054"></a>00054         <span class="keywordflow">return</span>;
+<a name="l00055"></a>00055         
+<a name="l00056"></a>00056     var UID = [anObject UID];
+<a name="l00057"></a>00057     
+<a name="l00058"></a>00058     <span class="keywordflow">if</span> (_counts[UID] === undefined)
+<a name="l00059"></a>00059         <span class="keywordflow">return</span>;
+<a name="l00060"></a>00060     
+<a name="l00061"></a>00061     <span class="keywordflow">else</span>
+<a name="l00062"></a>00062     {
+<a name="l00063"></a>00063         --_counts[UID];
+<a name="l00064"></a>00064         
+<a name="l00065"></a>00065         <span class="keywordflow">if</span> (_counts[UID] === 0)
+<a name="l00066"></a>00066         {
+<a name="l00067"></a>00067             <span class="keyword">delete</span> _counts[UID];
+<a name="l00068"></a>00068             [super removeObject:anObject];
+<a name="l00069"></a>00069         }
+<a name="l00070"></a>00070     }
+<a name="l00071"></a>00071 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_counted_set_8j.html">CPCountedSet.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_counted_set_8j_source.html">CPCountedSet.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

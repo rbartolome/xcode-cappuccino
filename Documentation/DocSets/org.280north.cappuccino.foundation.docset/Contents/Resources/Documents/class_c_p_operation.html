@@ -55,6 +55,8 @@
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>Represents an operation that can be run in an <a class="el" href="class_c_p_operation_queue.html" title="Represents an operation queue that can run CPOperations.">CPOperationQueue</a>. </p>
 <p>It should be subclassed an the subclass should implement its own main method to do the actual work. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00066">66</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a326292add5785c11667ab2c4030a5262"></a><!-- doxytag: member="CPOperation::addDependency:" ref="a326292add5785c11667ab2c4030a5262" args="(CPOperation anOperation)" -->
 <div class="memitem">
@@ -79,6 +81,21 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00188">188</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00188"></a>00188                      :(<a class="code" href="class_c_p_operation.html" title="Represents an operation that can be run in an CPOperationQueue.">CPOperation</a>)anOperation 
+<a name="l00189"></a>00189 {
+<a name="l00190"></a>00190     [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;dependencies&quot;</span>];
+<a name="l00191"></a>00191     [anOperation addObserver:<span class="keyword">self</span>
+<a name="l00192"></a>00192                   forKeyPath:<span class="stringliteral">@&quot;isFinished&quot;</span>
+<a name="l00193"></a>00193                      options:(<a class="code" href="_c_p_key_value_observing_8j.html#ae30e675d39ba94f39d2c5344f1958c09">CPKeyValueObservingOptionNew</a>)
+<a name="l00194"></a>00194                      context:NULL];
+<a name="l00195"></a>00195     [_dependencies addObject:anOperation];
+<a name="l00196"></a>00196     [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;dependencies&quot;</span>];
+<a name="l00197"></a>00197     [<span class="keyword">self</span> _updateIsReadyState];
+<a name="l00198"></a>00198 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aab311e9fa7b919ed5b88c77cc595d29f"></a><!-- doxytag: member="CPOperation::cancel" ref="aab311e9fa7b919ed5b88c77cc595d29f" args="()" -->
@@ -96,6 +113,15 @@
 </div>
 <div class="memdoc">
 <p>Advises the operation object that it should stop executing its task. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00233">233</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00234"></a>00234 {
+<a name="l00235"></a>00235     [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;isCancelled&quot;</span>];
+<a name="l00236"></a>00236     _cancelled = YES;
+<a name="l00237"></a>00237     [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;isCancelled&quot;</span>];
+<a name="l00238"></a>00238 }
+</pre></div></p>
 
 </div>
 </div>
@@ -116,6 +142,13 @@
 <p>The JS function that should be run after the main method </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>JS function </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00171">171</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00172"></a>00172 {
+<a name="l00173"></a>00173     <span class="keywordflow">return</span> _completionFunction;
+<a name="l00174"></a>00174 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ad9b869ec3eb0393c2eb59981e7802fd2"></a><!-- doxytag: member="CPOperation::dependencies" ref="ad9b869ec3eb0393c2eb59981e7802fd2" args="()" -->
@@ -135,6 +168,13 @@
 <p>The operations that the receiver depends on </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>array of operations </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00218">218</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00219"></a>00219 {
+<a name="l00220"></a>00220     <span class="keywordflow">return</span> _dependencies;
+<a name="l00221"></a>00221 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a322ca060f4ed8585911b9a94876e82e4"></a><!-- doxytag: member="CPOperation::init" ref="a322ca060f4ed8585911b9a94876e82e4" args="()" -->
@@ -151,6 +191,22 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00084">84</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00085"></a>00085 {
+<a name="l00086"></a>00086     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [super <a class="code" href="class_c_p_operation.html#a322ca060f4ed8585911b9a94876e82e4">init</a>]) 
+<a name="l00087"></a>00087     {
+<a name="l00088"></a>00088         _cancelled = NO;
+<a name="l00089"></a>00089         _executing = NO;
+<a name="l00090"></a>00090         _finished = NO;
+<a name="l00091"></a>00091         _ready = YES;
+<a name="l00092"></a>00092         _dependencies = [[<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a> alloc] init];
+<a name="l00093"></a>00093         _queuePriority = <a class="code" href="_c_p_operation_8j.html#a36ee93cb8aee90db5cd71ecd381d0008">CPOperationQueuePriorityNormal</a>;
+<a name="l00094"></a>00094     }
+<a name="l00095"></a>00095     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00096"></a>00096 }
+</pre></div></p>
 
 </div>
 </div>
@@ -171,6 +227,13 @@
 <p>Indicates if this operation has been cancelled </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>if this operation has been cancelled </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00126">126</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00127"></a>00127 {
+<a name="l00128"></a>00128     <span class="keywordflow">return</span> _cancelled;
+<a name="l00129"></a>00129 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aa3f87f45789fe7be7cab0e18195dded3"></a><!-- doxytag: member="CPOperation::isConcurrent" ref="aa3f87f45789fe7be7cab0e18195dded3" args="()" -->
@@ -189,6 +252,13 @@
 <div class="memdoc">
 <p>Just added for Cocoa compatibility </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>always false </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00153">153</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00154"></a>00154 {
+<a name="l00155"></a>00155     <span class="keywordflow">return</span> NO;
+<a name="l00156"></a>00156 }
+</pre></div></p>
 
 </div>
 </div>
@@ -209,6 +279,13 @@
 <p>Indicates if this operation is currently executing </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>if this operation is currently executing </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00135">135</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00136"></a>00136 {
+<a name="l00137"></a>00137     <span class="keywordflow">return</span> _executing;
+<a name="l00138"></a>00138 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a2f145b5f92f52fcd74edb12a0e860b4c"></a><!-- doxytag: member="CPOperation::isFinished" ref="a2f145b5f92f52fcd74edb12a0e860b4c" args="()" -->
@@ -227,6 +304,13 @@
 <div class="memdoc">
 <p>Indicates if this operation has finished running </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>if this operation has finished running </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00144">144</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00145"></a>00145 {
+<a name="l00146"></a>00146     <span class="keywordflow">return</span> _finished;
+<a name="l00147"></a>00147 }
+</pre></div></p>
 
 </div>
 </div>
@@ -247,6 +331,13 @@
 <p>Indicates if this operation is ready to be executed. Takes the "isFinished" state of dependent operations into account </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>if this operation is ready to run </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00162">162</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00163"></a>00163 {    
+<a name="l00164"></a>00164     <span class="keywordflow">return</span> _ready;
+<a name="l00165"></a>00165 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a11eb4ee2cdba0a9a99f091e7e78cb83a"></a><!-- doxytag: member="CPOperation::main" ref="a11eb4ee2cdba0a9a99f091e7e78cb83a" args="()" -->
@@ -263,6 +354,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00079">79</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00080"></a>00080 {
+<a name="l00081"></a>00081     <span class="comment">// should be overridden in child class</span>
+<a name="l00082"></a>00082 }
+</pre></div></p>
 
 </div>
 </div>
@@ -303,6 +401,20 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00259">259</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00259"></a>00259                               :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)keyPath
+<a name="l00260"></a>00260                       ofObject:(<span class="keywordtype">id</span>)<span class="keywordtype">object</span>
+<a name="l00261"></a>00261                         change:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)change
+<a name="l00262"></a>00262                        context:(<span class="keywordtype">void</span>)context
+<a name="l00263"></a>00263 {
+<a name="l00264"></a>00264     <span class="keywordflow">if</span> (keyPath == <span class="stringliteral">@&quot;isFinished&quot;</span>) 
+<a name="l00265"></a>00265     {
+<a name="l00266"></a>00266         [<span class="keyword">self</span> _updateIsReadyState];
+<a name="l00267"></a>00267     }
+<a name="l00268"></a>00268 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aa513ea7c11e1dbfdf40dece3952ef0f6"></a><!-- doxytag: member="CPOperation::queuePriority" ref="aa513ea7c11e1dbfdf40dece3952ef0f6" args="()" -->
@@ -321,6 +433,13 @@
 <div class="memdoc">
 <p>The priority of the operation when used in an operation queue. </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the priority </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00253">253</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00254"></a>00254 {
+<a name="l00255"></a>00255     <span class="keywordflow">return</span> _queuePriority;
+<a name="l00256"></a>00256 }
+</pre></div></p>
 
 </div>
 </div>
@@ -347,6 +466,19 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00204">204</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00204"></a>00204                         :(<a class="code" href="class_c_p_operation.html" title="Represents an operation that can be run in an CPOperationQueue.">CPOperation</a>)anOperation 
+<a name="l00205"></a>00205 {
+<a name="l00206"></a>00206     [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;dependencies&quot;</span>];
+<a name="l00207"></a>00207     [_dependencies removeObject:anOperation];
+<a name="l00208"></a>00208     [anOperation removeObserver:<span class="keyword">self</span>
+<a name="l00209"></a>00209                      forKeyPath:<span class="stringliteral">@&quot;isFinished&quot;</span>];                 
+<a name="l00210"></a>00210     [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;dependencies&quot;</span>];
+<a name="l00211"></a>00211     [<span class="keyword">self</span> _updateIsReadyState];
+<a name="l00212"></a>00212 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a97db31f76973301e63084e359741bfed"></a><!-- doxytag: member="CPOperation::setCompletionFunction:" ref="a97db31f76973301e63084e359741bfed" args="(JSObject aJavaScriptFunction)" -->
@@ -365,6 +497,14 @@
 </div>
 <div class="memdoc">
 <p>Sets the JS function that should be run after the main method </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00179">179</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00179"></a>00179                              :(JSObject)aJavaScriptFunction 
+<a name="l00180"></a>00180 {
+<a name="l00181"></a>00181     _completionFunction = aJavaScriptFunction;
+<a name="l00182"></a>00182 }
+</pre></div></p>
 
 </div>
 </div>
@@ -391,6 +531,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00244">244</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00244"></a>00244                         :(int)priority 
+<a name="l00245"></a>00245 {
+<a name="l00246"></a>00246     _queuePriority = priority;
+<a name="l00247"></a>00247 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a32d1c8f784ad5a1d4ecd96776c0d9251"></a><!-- doxytag: member="CPOperation::start" ref="a32d1c8f784ad5a1d4ecd96776c0d9251" args="()" -->
@@ -408,6 +556,29 @@
 </div>
 <div class="memdoc">
 <p>Starts the operation (runs the main method), sets all the status flags and runs the completion function if it's set </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00101">101</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00102"></a>00102 {
+<a name="l00103"></a>00103     <span class="keywordflow">if</span> (!_cancelled) 
+<a name="l00104"></a>00104     {
+<a name="l00105"></a>00105         [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;isExecuting&quot;</span>];
+<a name="l00106"></a>00106         _executing = YES;
+<a name="l00107"></a>00107         [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;isExecuting&quot;</span>];
+<a name="l00108"></a>00108         [<span class="keyword">self</span> <a class="code" href="class_c_p_operation.html#a11eb4ee2cdba0a9a99f091e7e78cb83a">main</a>];
+<a name="l00109"></a>00109         <span class="keywordflow">if</span> (_completionFunction) 
+<a name="l00110"></a>00110         {
+<a name="l00111"></a>00111             _completionFunction();
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113         [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;isExecuting&quot;</span>];
+<a name="l00114"></a>00114         _executing = NO;
+<a name="l00115"></a>00115         [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;isExecuting&quot;</span>];
+<a name="l00116"></a>00116         [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;isFinished&quot;</span>];
+<a name="l00117"></a>00117         _finished = YES;
+<a name="l00118"></a>00118         [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;isFinished&quot;</span>];
+<a name="l00119"></a>00119     }
+<a name="l00120"></a>00120 }
+</pre></div></p>
 
 </div>
 </div>
@@ -427,10 +598,16 @@
 <div class="memdoc">
 <p>Just added for Cocoa compatibility, doesn't do anything </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a> rivillä <a class="el" href="_c_p_operation_8j_source.html#l00226">226</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00227"></a>00227 {
+<a name="l00228"></a>00228 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_operation_8j.html">CPOperation.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_operation_8j_source.html">CPOperation.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

@@ -80,7 +80,9 @@ CPLog("Got some class: %", inst);
     would output:
     <code>Got</code> <code>some</code> <code>class:</code> <code>&lt;SomeClass</code> <code>10&gt;</code> </pre><pre>    <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Vielä tehtävänä:</a></b></dt><dd>document KVC usage.
  </dd></dl>
-</pre><hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
+</pre>
+<p>Määrittely tiedoston <a class="el" href="_c_p_array_09_k_v_o_8j_source.html">CPArray+KVO.j</a> rivillä <a class="el" href="_c_p_array_09_k_v_o_8j_source.html#l00026">26</a>.</p>
+<hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="ac0008753a3b95a99e6c21f25d7fda94d"></a><!-- doxytag: member="CPObject::accessInstanceVariablesDirectly" ref="ac0008753a3b95a99e6c21f25d7fda94d" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -95,6 +97,13 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00038">38</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00039"></a>00039 {
+<a name="l00040"></a>00040     <span class="keywordflow">return</span> YES;
+<a name="l00041"></a>00041 }
+</pre></div></p>
 
 </div>
 </div>
@@ -135,6 +144,17 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00049">49</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00049"></a>00049                    :(id)anObserver forKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath options:(unsigned)options context:(<span class="keywordtype">id</span>)aContext
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051     <span class="keywordflow">if</span> (!anObserver || !aPath)
+<a name="l00052"></a>00052         <span class="keywordflow">return</span>;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     [[_CPKVOProxy proxyForObject:<span class="keyword">self</span>] _addObserver:anObserver forKeyPath:aPath options:options context:aContext];
+<a name="l00055"></a>00055 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a1f95c4c7c21ecbb654d77fe40ef569e5"></a><!-- doxytag: member="CPObject::applyChange:toKeyPath:" ref="a1f95c4c7c21ecbb654d77fe40ef569e5" args="(CPDictionary aChange,[toKeyPath] CPString aKeyPath)" -->
@@ -162,6 +182,35 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00081">81</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00081"></a>00081                    :(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aChange toKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKeyPath
+<a name="l00082"></a>00082 {
+<a name="l00083"></a>00083     var changeKind = [aChange objectForKey:<a class="code" href="_c_p_key_value_observing_8j.html#ae3eb495c587c25ab32bd2e86e1ff55af">CPKeyValueChangeKindKey</a>];
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085     <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#ab38f2aa9a0051d00c8f26a6e0242de3c">CPKeyValueChangeSetting</a>)
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087         var value = [aChange objectForKey:<a class="code" href="_c_p_key_value_observing_8j.html#a21cb19f9980d336bdc6bf8f2362eac84">CPKeyValueChangeNewKey</a>];
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         [<span class="keyword">self</span> setValue:value === [<a class="code" href="class_c_p_null.html" title="An object representation of nil.">CPNull</a> null] ? nil : value forKeyPath:aKeyPath];
+<a name="l00090"></a>00090     }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a0ec9dcd852629ef5bb58f3f3ef252b9f">CPKeyValueChangeInsertion</a>)
+<a name="l00093"></a>00093         [[<span class="keyword">self</span> mutableArrayValueForKeyPath:aKeyPath]
+<a name="l00094"></a>00094             insertObjects:[aChange objectForKey:<a class="code" href="_c_p_key_value_observing_8j.html#a21cb19f9980d336bdc6bf8f2362eac84">CPKeyValueChangeNewKey</a>]
+<a name="l00095"></a>00095                 atIndexes:[aChange objectForKey:<a class="code" href="_c_p_key_value_observing_8j.html#aff839d4c208add6d8a47f219efc01c63">CPKeyValueChangeIndexesKey</a>]];
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a8808275b0d3f2ba94f7fe97e50180b5e">CPKeyValueChangeRemoval</a>)
+<a name="l00098"></a>00098         [[<span class="keyword">self</span> mutableArrayValueForKeyPath:aKeyPath]
+<a name="l00099"></a>00099             removeObjectsAtIndexes:[aChange objectForKey:<a class="code" href="_c_p_key_value_observing_8j.html#aff839d4c208add6d8a47f219efc01c63">CPKeyValueChangeIndexesKey</a>]];
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a9eb88fc0de123f2f74c169f2a8d24259">CPKeyValueChangeReplacement</a>)
+<a name="l00102"></a>00102         [[<span class="keyword">self</span> mutableArrayValueForKeyPath:aKeyPath]
+<a name="l00103"></a>00103             replaceObjectAtIndexes:[aChange objectForKey:<a class="code" href="_c_p_key_value_observing_8j.html#aff839d4c208add6d8a47f219efc01c63">CPKeyValueChangeIndexesKey</a>]
+<a name="l00104"></a>00104                        withObjects:[aChange objectForKey:<a class="code" href="_c_p_key_value_observing_8j.html#a21cb19f9980d336bdc6bf8f2362eac84">CPKeyValueChangeNewKey</a>]];
+<a name="l00105"></a>00105 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ae1e48d37201aa0b1226b3a163806656b"></a><!-- doxytag: member="CPObject::automaticallyNotifiesObserversForKey:" ref="ae1e48d37201aa0b1226b3a163806656b" args="(CPString aKey)" -->
@@ -179,6 +228,14 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00065">65</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00065"></a>00065                                             :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00066"></a>00066 {
+<a name="l00067"></a>00067     <span class="keywordflow">return</span> YES;
+<a name="l00068"></a>00068 }
+</pre></div></p>
 
 </div>
 </div>
@@ -206,6 +263,14 @@ CPLog("Got some class: %", inst);
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the original object or it's substitute. </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00155">155</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00155"></a>00155                           :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aDecoder
+<a name="l00156"></a>00156 {
+<a name="l00157"></a>00157     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00158"></a>00158 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a21149e974cddbbcc422071ed3a58baa9"></a><!-- doxytag: member="CPObject::dictionaryWithValuesForKeys:" ref="a21149e974cddbbcc422071ed3a58baa9" args="(CPArray keys)" -->
@@ -223,6 +288,29 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00190">190</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00190"></a>00190                                            :(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)keys
+<a name="l00191"></a>00191 {
+<a name="l00192"></a>00192     var index = 0,
+<a name="l00193"></a>00193         count = keys.length,
+<a name="l00194"></a>00194         dictionary = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00195"></a>00195     
+<a name="l00196"></a>00196     <span class="keywordflow">for</span> (; index &lt; count; ++index)
+<a name="l00197"></a>00197     {
+<a name="l00198"></a>00198         var key = keys[index],
+<a name="l00199"></a>00199             value = [<span class="keyword">self</span> valueForKey:key];
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201         <span class="keywordflow">if</span> (value === nil)
+<a name="l00202"></a>00202             [dictionary setObject:[<a class="code" href="class_c_p_null.html" title="An object representation of nil.">CPNull</a> null] forKey:key];
+<a name="l00203"></a>00203         <span class="keywordflow">else</span>
+<a name="l00204"></a>00204             [dictionary setObject:value forKey:key];
+<a name="l00205"></a>00205     }
+<a name="l00206"></a>00206     
+<a name="l00207"></a>00207     <span class="keywordflow">return</span> dictionary;
+<a name="l00208"></a>00208 }
+</pre></div></p>
 
 </div>
 </div>
@@ -257,6 +345,13 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00045">45</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00045"></a>00045                  :(CPKeyValueChange)change valuesAtIndexes:(<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a>)indexes forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)key
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a764b53263b46c458c3fa3b32b3feaeea"></a><!-- doxytag: member="CPObject::didChangeValueForKey:" ref="a764b53263b46c458c3fa3b32b3feaeea" args="(CPString aKey)" -->
@@ -274,6 +369,13 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00037">37</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00037"></a>00037                             :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039 }
+</pre></div></p>
 
 </div>
 </div>
@@ -293,6 +395,20 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00070">70</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00070"></a>00070                                               :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00071"></a>00071 {
+<a name="l00072"></a>00072     var capitalizedKey = aKey.charAt(0).toUpperCase() + aKey.substring(1);
+<a name="l00073"></a>00073         selector = <span class="stringliteral">&quot;keyPathsForValuesAffecting&quot;</span> + capitalizedKey;
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     <span class="keywordflow">if</span> ([[<span class="keyword">self</span> <span class="keyword">class</span>] respondsToSelector:selector])
+<a name="l00076"></a>00076         <span class="keywordflow">return</span> objj_msgSend([<span class="keyword">self</span> <span class="keyword">class</span>], selector);
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     <span class="keywordflow">return</span> [<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a> <span class="keyword">set</span>];
+<a name="l00079"></a>00079 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a44684200255d0a39108c23ecbe7f85a4"></a><!-- doxytag: member="CPObject::mutableArrayValueForKey:" ref="a44684200255d0a39108c23ecbe7f85a4" args="(id aKey)" -->
@@ -311,6 +427,14 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_array_09_k_v_o_8j_source.html">CPArray+KVO.j</a> rivillä <a class="el" href="_c_p_array_09_k_v_o_8j_source.html#l00028">28</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00028"></a>00028                              :(id)aKey
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030         <span class="keywordflow">return</span> [[_CPKVCArray alloc] initWithKey:aKey forProxyObject:<span class="keyword">self</span>];
+<a name="l00031"></a>00031 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a79125a117f577a4e45157860afaef619"></a><!-- doxytag: member="CPObject::mutableArrayValueForKeyPath:" ref="a79125a117f577a4e45157860afaef619" args="(id aKeyPath)" -->
@@ -328,6 +452,22 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_array_09_k_v_o_8j_source.html">CPArray+KVO.j</a> rivillä <a class="el" href="_c_p_array_09_k_v_o_8j_source.html#l00033">33</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00033"></a>00033                                  :(id)aKeyPath
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035     var dotIndex = aKeyPath.indexOf(<span class="stringliteral">&quot;.&quot;</span>);
+<a name="l00036"></a>00036     
+<a name="l00037"></a>00037     <span class="keywordflow">if</span> (dotIndex &lt; 0)
+<a name="l00038"></a>00038         <span class="keywordflow">return</span> [<span class="keyword">self</span> mutableArrayValueForKey:aKeyPath];
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     var firstPart = aKeyPath.substring(0, dotIndex),
+<a name="l00041"></a>00041         lastPart = aKeyPath.substring(dotIndex+1);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043     <span class="keywordflow">return</span> [[<span class="keyword">self</span> valueForKeyPath:firstPart] valueForKeyPath:lastPart];
+<a name="l00044"></a>00044 }
+</pre></div></p>
 
 </div>
 </div>
@@ -356,6 +496,17 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00057">57</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00057"></a>00057                       :(id)anObserver forKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keywordflow">if</span> (!anObserver || !aPath)
+<a name="l00060"></a>00060         <span class="keywordflow">return</span>;
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062     [<span class="keyword">self</span>[<a class="code" href="_c_p_key_value_observing_8j.html#aee97d4ac7f5705928e8220e462fc3873">KVOProxyKey</a>] _removeObserver:anObserver forKeyPath:aPath];
+<a name="l00063"></a>00063 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a3e3a01189604b96a53e7489ff4b9ce5e"></a><!-- doxytag: member="CPObject::setValue:forKey:" ref="a3e3a01189604b96a53e7489ff4b9ce5e" args="(id aValue,[forKey] CPString aKey)" -->
@@ -382,6 +533,36 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00232">232</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00232"></a>00232                 :(id)aValue forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00233"></a>00233 {
+<a name="l00234"></a>00234     var theClass = [<span class="keyword">self</span> <span class="keyword">class</span>],
+<a name="l00235"></a>00235         selector = [theClass _modifierForKey:aKey];
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237     <span class="keywordflow">if</span> (selector)
+<a name="l00238"></a>00238         <span class="keywordflow">return</span> objj_msgSend(<span class="keyword">self</span>, selector, aValue);
+<a name="l00239"></a>00239     
+<a name="l00240"></a>00240     <span class="keywordflow">if</span>([theClass <a class="code" href="class_c_p_object.html#ac0008753a3b95a99e6c21f25d7fda94d">accessInstanceVariablesDirectly</a>])
+<a name="l00241"></a>00241     {
+<a name="l00242"></a>00242         var ivar = [<span class="keyword">self</span> _ivarForKey:aKey];
+<a name="l00243"></a>00243         
+<a name="l00244"></a>00244         <span class="keywordflow">if</span> (ivar)
+<a name="l00245"></a>00245         {
+<a name="l00246"></a>00246             [<span class="keyword">self</span> willChangeValueForKey:aKey];
+<a name="l00247"></a>00247             
+<a name="l00248"></a>00248             <span class="keyword">self</span>[ivar] = aValue;
+<a name="l00249"></a>00249         
+<a name="l00250"></a>00250             [<span class="keyword">self</span> didChangeValueForKey:aKey];
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252             <span class="keywordflow">return</span>;
+<a name="l00253"></a>00253         }
+<a name="l00254"></a>00254     }
+<a name="l00255"></a>00255     
+<a name="l00256"></a>00256     [<span class="keyword">self</span> setValue:aValue forUndefinedKey:aKey];
+<a name="l00257"></a>00257 }
+</pre></div></p>
 
 </div>
 </div>
@@ -410,6 +591,24 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00217">217</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00217"></a>00217                 :(id)aValue forKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKeyPath
+<a name="l00218"></a>00218 {
+<a name="l00219"></a>00219     <span class="keywordflow">if</span> (!aKeyPath) aKeyPath = <span class="stringliteral">&quot;self&quot;</span>;
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221     var i = 0,
+<a name="l00222"></a>00222         keys = aKeyPath.split(<span class="stringliteral">&quot;.&quot;</span>),
+<a name="l00223"></a>00223         count = keys.<a class="code" href="class_c_p_string.html#a995ca4d2f7167db0da2fad02a444ec73">length</a> - 1,
+<a name="l00224"></a>00224         owner = <span class="keyword">self</span>;
+<a name="l00225"></a>00225 
+<a name="l00226"></a>00226     <span class="keywordflow">for</span>(; i &lt; count; ++i) 
+<a name="l00227"></a>00227         owner = [owner valueForKey:keys[i]];
+<a name="l00228"></a>00228     
+<a name="l00229"></a>00229     [owner setValue:aValue forKey:keys[i]];
+<a name="l00230"></a>00230 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a2e7f645ffbafb1556cc41358cf718618"></a><!-- doxytag: member="CPObject::setValue:forUndefinedKey:" ref="a2e7f645ffbafb1556cc41358cf718618" args="(id aValue,[forUndefinedKey] CPString aKey)" -->
@@ -437,6 +636,16 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00259">259</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00259"></a>00259                 :(id)aValue forUndefinedKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00260"></a>00260 {
+<a name="l00261"></a>00261     [[<a class="code" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp;amp; raising).">CPException</a> exceptionWithName:<a class="code" href="_c_p_key_value_coding_8j.html#af3713a4c5a74d29a45a8902865dbe918">CPUndefinedKeyException</a>
+<a name="l00262"></a>00262                             reason:[<span class="keyword">self</span> description] + <span class="stringliteral">&quot; is not key value coding-compliant for the key &quot;</span> + aKey
+<a name="l00263"></a>00263                           userInfo:[<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionaryWithObjects:[<span class="keyword">self</span>, aKey] forKeys:[<a class="code" href="_c_p_key_value_coding_8j.html#afbfa8dafaa29037bcf1b4e1fb5d32273">CPTargetObjectUserInfoKey</a>, <a class="code" href="_c_p_key_value_coding_8j.html#a8cc9766afc5ab7797ff602f9b92700e6">CPUnknownUserInfoKey</a>]]] <span class="keyword">raise</span>];
+<a name="l00264"></a>00264 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a423a221c534e9e2f6e76497465ec0219"></a><!-- doxytag: member="CPObject::valueForKey:" ref="a423a221c534e9e2f6e76497465ec0219" args="(CPString aKey)" -->
@@ -454,6 +663,28 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00156">156</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00156"></a>00156                  :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00157"></a>00157 {
+<a name="l00158"></a>00158     var theClass = [<span class="keyword">self</span> <span class="keyword">class</span>],
+<a name="l00159"></a>00159         selector = [theClass _accessorForKey:aKey];
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161     <span class="keywordflow">if</span> (selector)
+<a name="l00162"></a>00162         <span class="keywordflow">return</span> objj_msgSend(<span class="keyword">self</span>, selector);
+<a name="l00163"></a>00163     
+<a name="l00164"></a>00164     <span class="keywordflow">if</span>([theClass <a class="code" href="class_c_p_object.html#ac0008753a3b95a99e6c21f25d7fda94d">accessInstanceVariablesDirectly</a>])
+<a name="l00165"></a>00165     {
+<a name="l00166"></a>00166         var ivar = [<span class="keyword">self</span> _ivarForKey:aKey];
+<a name="l00167"></a>00167         
+<a name="l00168"></a>00168         <span class="keywordflow">if</span> (ivar)
+<a name="l00169"></a>00169             <span class="keywordflow">return</span> <span class="keyword">self</span>[ivar];
+<a name="l00170"></a>00170     }
+<a name="l00171"></a>00171     
+<a name="l00172"></a>00172     <span class="keywordflow">return</span> [<span class="keyword">self</span> valueForUndefinedKey:aKey];
+<a name="l00173"></a>00173 }
+</pre></div></p>
 
 </div>
 </div>
@@ -473,6 +704,24 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00175">175</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00175"></a>00175                      :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKeyPath
+<a name="l00176"></a>00176 {
+<a name="l00177"></a>00177     var keys = aKeyPath.split(<span class="stringliteral">&quot;.&quot;</span>),
+<a name="l00178"></a>00178     
+<a name="l00179"></a>00179         index = 0,
+<a name="l00180"></a>00180         count = keys.<a class="code" href="class_c_p_string.html#a995ca4d2f7167db0da2fad02a444ec73">length</a>,
+<a name="l00181"></a>00181         
+<a name="l00182"></a>00182         value = <span class="keyword">self</span>;
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184     <span class="keywordflow">for</span>(; index &lt; count; ++index)
+<a name="l00185"></a>00185         value = [value valueForKey:keys[index]];
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187     <span class="keywordflow">return</span> value;
+<a name="l00188"></a>00188 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="acc3f457258dd8ac4efcbd03c8892e41d"></a><!-- doxytag: member="CPObject::valueForUndefinedKey:" ref="acc3f457258dd8ac4efcbd03c8892e41d" args="(CPString aKey)" -->
@@ -490,6 +739,16 @@ CPLog("Got some class: %", inst);
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a> rivillä <a class="el" href="_c_p_key_value_coding_8j_source.html#l00210">210</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00210"></a>00210                           :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00211"></a>00211 {
+<a name="l00212"></a>00212     [[<a class="code" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp;amp; raising).">CPException</a> exceptionWithName:<a class="code" href="_c_p_key_value_coding_8j.html#af3713a4c5a74d29a45a8902865dbe918">CPUndefinedKeyException</a>
+<a name="l00213"></a>00213                             reason:[<span class="keyword">self</span> description] + <span class="stringliteral">&quot; is not key value coding-compliant for the key &quot;</span> + aKey
+<a name="l00214"></a>00214                           userInfo:[<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionaryWithObjects:[<span class="keyword">self</span>, aKey] forKeys:[<a class="code" href="_c_p_key_value_coding_8j.html#afbfa8dafaa29037bcf1b4e1fb5d32273">CPTargetObjectUserInfoKey</a>, <a class="code" href="_c_p_key_value_coding_8j.html#a8cc9766afc5ab7797ff602f9b92700e6">CPUnknownUserInfoKey</a>]]] <span class="keyword">raise</span>];
+<a name="l00215"></a>00215 }
+</pre></div></p>
 
 </div>
 </div>
@@ -524,6 +783,13 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00041">41</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00041"></a>00041                   :(CPKeyValueChange)change valuesAtIndexes:(<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a>)indexes forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)key
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a2345edff8debed53e4629f605d645fdb"></a><!-- doxytag: member="CPObject::willChangeValueForKey:" ref="a2345edff8debed53e4629f605d645fdb" args="(CPString aKey)" -->
@@ -542,13 +808,20 @@ CPLog("Got some class: %", inst);
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a> rivillä <a class="el" href="_c_p_key_value_observing_8j_source.html#l00033">33</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00033"></a>00033                              :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavista tiedostoista:<ul>
-<li>Foundation/<a class="el" href="_c_p_array_09_k_v_o_8j.html">CPArray+KVO.j</a></li>
-<li>Foundation/<a class="el" href="_c_p_coder_8j.html">CPCoder.j</a></li>
-<li>Foundation/<a class="el" href="_c_p_key_value_coding_8j.html">CPKeyValueCoding.j</a></li>
-<li>Foundation/<a class="el" href="_c_p_key_value_observing_8j.html">CPKeyValueObserving.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_array_09_k_v_o_8j_source.html">CPArray+KVO.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_key_value_coding_8j_source.html">CPKeyValueCoding.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_key_value_observing_8j_source.html">CPKeyValueObserving.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

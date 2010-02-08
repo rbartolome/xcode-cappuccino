@@ -49,6 +49,8 @@
 <p>A notification that can be posted to a <a class="el" href="class_c_p_notification_center.html" title="Sends messages (CPNotification) between objects.">CPNotificationCenter</a>. </p>
 <p>Represents a notification for posting to an <a class="el" href="class_c_p_notification_center.html" title="Sends messages (CPNotification) between objects.">CPNotificationCenter</a>. Consists of a name, an object, and an optional dictionary. The notification center will check for observers registered to receive either notifications with the name, the object, or both and pass the notification instance on to them.</p>
 <p>To create a notification use one of the class methods. The default init method will throw a CPUnsupportedMethodException. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00040">40</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a22d9d1151939575f19c1c9696fa29796"></a><!-- doxytag: member="CPNotification::init" ref="a22d9d1151939575f19c1c9696fa29796" args="()" -->
 <div class="memitem">
@@ -70,6 +72,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00073">73</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00074"></a>00074 {
+<a name="l00075"></a>00075     [<a class="code" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp;amp; raising).">CPException</a> <span class="keyword">raise</span>:<a class="code" href="_c_p_exception_8j.html#aa22e47259ba202d50bf0efdf350c78df">CPUnsupportedMethodException</a>
+<a name="l00076"></a>00076                 reason:<span class="stringliteral">&quot;CPNotification&#39;s init method should not be used&quot;</span>];
+<a name="l00077"></a>00077 }
+</pre></div></p>
 
 </div>
 </div>
@@ -114,6 +124,23 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized notification  </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00087">87</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00087"></a>00087                   :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aNotificationName <span class="keywordtype">object</span>:(<span class="keywordtype">id</span>)anObject <a class="code" href="class_c_p_notification.html#a2c441e9231e4d97445571728cc4117c6">userInfo</a>:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aUserInfo
+<a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <span class="keyword">self</span> = [super <a class="code" href="class_c_p_notification.html#a22d9d1151939575f19c1c9696fa29796">init</a>];
+<a name="l00090"></a>00090     
+<a name="l00091"></a>00091     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00092"></a>00092     {
+<a name="l00093"></a>00093         _name = aNotificationName;
+<a name="l00094"></a>00094         _object = anObject;
+<a name="l00095"></a>00095         _userInfo = aUserInfo;
+<a name="l00096"></a>00096     }
+<a name="l00097"></a>00097     
+<a name="l00098"></a>00098     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00099"></a>00099 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0ddf3837c1d325016b9c59a99247a9ef"></a><!-- doxytag: member="CPNotification::name" ref="a0ddf3837c1d325016b9c59a99247a9ef" args="()" -->
@@ -131,6 +158,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the notification name. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00104">104</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00105"></a>00105 {
+<a name="l00106"></a>00106     <span class="keywordflow">return</span> _name;
+<a name="l00107"></a>00107 }
+</pre></div></p>
 
 </div>
 </div>
@@ -167,6 +201,14 @@
   </dd>
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the new notification </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00065">65</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00065"></a>00065                                       :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aNotificationName <span class="keywordtype">object</span>:(<span class="keywordtype">id</span>)anObject
+<a name="l00066"></a>00066 {
+<a name="l00067"></a>00067     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithName:aNotificationName <span class="keywordtype">object</span>:anObject <a class="code" href="class_c_p_notification.html#a2c441e9231e4d97445571728cc4117c6">userInfo</a>:nil];
+<a name="l00068"></a>00068 }
+</pre></div></p>
 
 </div>
 </div>
@@ -211,6 +253,14 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the new notification </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00054">54</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00054"></a>00054                                       :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aNotificationName <span class="keywordtype">object</span>:(<span class="keywordtype">id</span>)anObject <a class="code" href="class_c_p_notification.html#a2c441e9231e4d97445571728cc4117c6">userInfo</a>:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aUserInfo
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithName:aNotificationName <span class="keywordtype">object</span>:anObject <a class="code" href="class_c_p_notification.html#a2c441e9231e4d97445571728cc4117c6">userInfo</a>:aUserInfo];
+<a name="l00057"></a>00057 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0a912e9648acf5e7f669aed339474158"></a><!-- doxytag: member="CPNotification::object" ref="a0a912e9648acf5e7f669aed339474158" args="()" -->
@@ -228,6 +278,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the notification's object. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00112">112</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00113"></a>00113 {
+<a name="l00114"></a>00114     <span class="keywordflow">return</span> _object;
+<a name="l00115"></a>00115 }
+</pre></div></p>
 
 </div>
 </div>
@@ -247,10 +304,17 @@
 <div class="memdoc">
 <p>Returns the notification's dictionary. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a> rivillä <a class="el" href="_c_p_notification_8j_source.html#l00120">120</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00121"></a>00121 {
+<a name="l00122"></a>00122     <span class="keywordflow">return</span> _userInfo;
+<a name="l00123"></a>00123 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_notification_8j.html">CPNotification.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_notification_8j_source.html">CPNotification.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

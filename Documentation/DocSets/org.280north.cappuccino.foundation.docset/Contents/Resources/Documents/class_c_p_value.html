@@ -46,6 +46,8 @@
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>A generic "value". Can be subclassed to hold specific data types. </p>
 <p>The class can be subclassed to hold different types of scalar values. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_value_8j_source.html">CPValue.j</a> rivillä <a class="el" href="_c_p_value_8j_source.html#l00034">34</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="afbfc727457083c349db5fd99249cf83b"></a><!-- doxytag: member="CPValue::encodeWithCoder:" ref="afbfc727457083c349db5fd99249cf83b" args="(CPCoder aCoder)" -->
 <div class="memitem">
@@ -69,6 +71,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_value_8j_source.html">CPValue.j</a> rivillä <a class="el" href="_c_p_value_8j_source.html#l00097">97</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00097"></a>00097                        :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00098"></a>00098 {
+<a name="l00099"></a>00099     [aCoder encodeObject:JSON.stringify(_JSObject) forKey:<a class="code" href="_c_p_value_8j.html#af75ad0c8eb4a7afe6a2cd8c18427ad67">CPValueValueKey</a>];
+<a name="l00100"></a>00100 }
+</pre></div></p>
 
 </div>
 </div>
@@ -96,6 +106,19 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized <a class="el" href="class_c_p_value.html" title="A generic &quot;value&quot;. Can be subclassed to hold specific data types.">CPValue</a> </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_value_8j_source.html">CPValue.j</a> rivillä <a class="el" href="_c_p_value_8j_source.html#l00083">83</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00083"></a>00083                    :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     <span class="keyword">self</span> = [super init];
+<a name="l00086"></a>00086     
+<a name="l00087"></a>00087     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00088"></a>00088         _JSObject = JSON.parse([aCoder decodeObjectForKey:<a class="code" href="_c_p_value_8j.html#af75ad0c8eb4a7afe6a2cd8c18427ad67">CPValueValueKey</a>]);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00091"></a>00091 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6b4a8497ed71eae1a49bc9214db1421a"></a><!-- doxytag: member="CPValue::initWithJSObject:" ref="a6b4a8497ed71eae1a49bc9214db1421a" args="(JSObject aJSObject)" -->
@@ -122,6 +145,19 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized <a class="el" href="class_c_p_value.html" title="A generic &quot;value&quot;. Can be subclassed to hold specific data types.">CPValue</a> </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_value_8j_source.html">CPValue.j</a> rivillä <a class="el" href="_c_p_value_8j_source.html#l00054">54</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00054"></a>00054                       :(<a class="code" href="class_c_p_value.html#ad5734bc649fbf94262f3b2b32052093a">JSObject</a>)aJSObject
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     <span class="keyword">self</span> = [super init];
+<a name="l00057"></a>00057     
+<a name="l00058"></a>00058     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00059"></a>00059         _JSObject = aJSObject;
+<a name="l00060"></a>00060     
+<a name="l00061"></a>00061     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00062"></a>00062 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ad5734bc649fbf94262f3b2b32052093a"></a><!-- doxytag: member="CPValue::JSObject" ref="ad5734bc649fbf94262f3b2b32052093a" args="()" -->
@@ -139,6 +175,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the JavaScript object backing this value. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_value_8j_source.html">CPValue.j</a> rivillä <a class="el" href="_c_p_value_8j_source.html#l00067">67</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00068"></a>00068 {
+<a name="l00069"></a>00069     <span class="keywordflow">return</span> _JSObject;
+<a name="l00070"></a>00070 }
+</pre></div></p>
 
 </div>
 </div>
@@ -166,10 +209,18 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the converted <a class="el" href="class_c_p_value.html" title="A generic &quot;value&quot;. Can be subclassed to hold specific data types.">CPValue</a> </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_value_8j_source.html">CPValue.j</a> rivillä <a class="el" href="_c_p_value_8j_source.html#l00044">44</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00044"></a>00044                        :(<a class="code" href="class_c_p_value.html#ad5734bc649fbf94262f3b2b32052093a">JSObject</a>)aJSObject
+<a name="l00045"></a>00045 {
+<a name="l00046"></a>00046     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithJSObject:aJSObject];
+<a name="l00047"></a>00047 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_value_8j.html">CPValue.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_value_8j_source.html">CPValue.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

@@ -103,6 +103,8 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00102">102</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a00286e3fcde68a7a37dd42e4076da794"></a><!-- doxytag: member="CPKeyedArchiver::allowsKeyedCoding" ref="a00286e3fcde68a7a37dd42e4076da794" args="()" -->
 <div class="memitem">
@@ -118,6 +120,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00138">138</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00139"></a>00139 {
+<a name="l00140"></a>00140     <span class="keywordflow">return</span> YES;
+<a name="l00141"></a>00141 }
+</pre></div></p>
 
 </div>
 </div>
@@ -144,6 +153,20 @@
   </dd>
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the archived object </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00148">148</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00148"></a>00148                                     :(id)anObject
+<a name="l00149"></a>00149 {
+<a name="l00150"></a>00150     var data = [<a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a> dataWithPlistObject:nil],
+<a name="l00151"></a>00151         archiver = [[<span class="keyword">self</span> alloc] initForWritingWithMutableData:data];
+<a name="l00152"></a>00152     
+<a name="l00153"></a>00153     [archiver encodeObject:anObject forKey:<span class="stringliteral">@&quot;root&quot;</span>];
+<a name="l00154"></a>00154     [archiver <a class="code" href="class_c_p_keyed_archiver.html#aef9c52e1b064549c7af965a44c30f0a7">finishEncoding</a>];
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156     <span class="keywordflow">return</span> data;
+<a name="l00157"></a>00157 }
+</pre></div></p>
 
 </div>
 </div>
@@ -179,6 +202,19 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the name of the substitute class, or <code>nil</code> if there is no substitute class </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00432">432</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00432"></a>00432                              :(Class)aClass
+<a name="l00433"></a>00433 {
+<a name="l00434"></a>00434     <span class="keywordflow">if</span> (!<a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a>)
+<a name="l00435"></a>00435         <span class="keywordflow">return</span> aClass.name;
+<a name="l00436"></a>00436 
+<a name="l00437"></a>00437     var className = [<a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a> objectForKey:<a class="code" href="_c_p_obj_j_runtime_8j.html#a49e200efd01d55599d5876d32dc5bfdb">CPStringFromClass</a>(aClassName)];
+<a name="l00438"></a>00438     
+<a name="l00439"></a>00439     <span class="keywordflow">return</span> className ? className : aClass.name;
+<a name="l00440"></a>00440 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6737b4c175f2c370c937c73b046b37cf"></a><!-- doxytag: member="CPKeyedArchiver::delegate" ref="a6737b4c175f2c370c937c73b046b37cf" args="()" -->
@@ -196,6 +232,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the keyed archiver's delegate </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00316">316</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00317"></a>00317 {
+<a name="l00318"></a>00318     <span class="keywordflow">return</span> _delegate;
+<a name="l00319"></a>00319 }
+</pre></div></p>
 
 </div>
 </div>
@@ -232,6 +275,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00253">253</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00253"></a>00253                   :(BOOL)aBOOL forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00254"></a>00254 {
+<a name="l00255"></a>00255     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, aBOOL, NO) forKey:aKey];
+<a name="l00256"></a>00256 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6a5f75746a5d081b3b86dfe9fc48bcbb"></a><!-- doxytag: member="CPKeyedArchiver::encodeConditionalObject:forKey:" ref="a6a5f75746a5d081b3b86dfe9fc48bcbb" args="(id anObject,[forKey] CPString aKey)" -->
@@ -266,6 +317,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00358">358</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00358"></a>00358                                :(id)anObject forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00359"></a>00359 {
+<a name="l00360"></a>00360     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, anObject, YES) forKey:aKey];
+<a name="l00361"></a>00361 }
+</pre></div></p>
 
 </div>
 </div>
@@ -302,6 +361,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00263">263</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00263"></a>00263                     :(double)aDouble forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00264"></a>00264 {
+<a name="l00265"></a>00265     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, aDouble, NO) forKey:aKey];
+<a name="l00266"></a>00266 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="acee1cef5b97581b017e08e731209cedb"></a><!-- doxytag: member="CPKeyedArchiver::encodeFloat:forKey:" ref="acee1cef5b97581b017e08e731209cedb" args="(float aFloat,[forKey] CPString aKey)" -->
@@ -336,6 +403,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00273">273</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00273"></a>00273                    :(float)aFloat forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00274"></a>00274 {
+<a name="l00275"></a>00275     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, aFloat, NO) forKey:aKey];
+<a name="l00276"></a>00276 }
+</pre></div></p>
 
 </div>
 </div>
@@ -372,6 +447,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00283">283</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00283"></a>00283                  :(float)anInt forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00284"></a>00284 {
+<a name="l00285"></a>00285     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, anInt, NO) forKey:aKey];
+<a name="l00286"></a>00286 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0f83d58d42c83fe2d4ba7697f76d8a59"></a><!-- doxytag: member="CPKeyedArchiver::encodeNumber:forKey:" ref="a0f83d58d42c83fe2d4ba7697f76d8a59" args="(CPNumber aNumber,[forKey] CPString aKey)" -->
@@ -406,6 +489,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00368">368</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00368"></a>00368                     :(<a class="code" href="class_c_p_number.html" title="A bridged object to native Javascript numbers.">CPNumber</a>)aNumber forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00369"></a>00369 {
+<a name="l00370"></a>00370     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, aNumber, NO) forKey:aKey];
+<a name="l00371"></a>00371 }
+</pre></div></p>
 
 </div>
 </div>
@@ -442,6 +533,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00378">378</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00378"></a>00378                     :(id)anObject forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00379"></a>00379 {
+<a name="l00380"></a>00380     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, anObject, NO) forKey:aKey]; 
+<a name="l00381"></a>00381 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a1c6bcdc71e8c3d2c1c085858f13dd65c"></a><!-- doxytag: member="CPKeyedArchiver::encodePoint:forKey:" ref="a1c6bcdc71e8c3d2c1c085858f13dd65c" args="(CGPoint aPoint,[forKey] CPString aKey)" -->
@@ -476,6 +575,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00326">326</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00326"></a>00326                    :(CGPoint)aPoint forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00327"></a>00327 {
+<a name="l00328"></a>00328     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, CPStringFromPoint(aPoint), NO) forKey:aKey];
+<a name="l00329"></a>00329 }
+</pre></div></p>
 
 </div>
 </div>
@@ -512,6 +619,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00336">336</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00336"></a>00336                   :(CGRect)aRect forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00337"></a>00337 {
+<a name="l00338"></a>00338     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, CPStringFromRect(aRect), NO) forKey:aKey];
+<a name="l00339"></a>00339 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="af4ec17639b1949ae228a02d8d40321ae"></a><!-- doxytag: member="CPKeyedArchiver::encodeSize:forKey:" ref="af4ec17639b1949ae228a02d8d40321ae" args="(CGSize aSize,[forKey] CPString aKey)" -->
@@ -547,6 +662,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00346">346</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00346"></a>00346                   :(CGSize)aSize forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00347"></a>00347 {
+<a name="l00348"></a>00348     [_plistObject setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, CPStringFromSize(aSize), NO) forKey:aKey];
+<a name="l00349"></a>00349 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aef9c52e1b064549c7af965a44c30f0a7"></a><!-- doxytag: member="CPKeyedArchiver::finishEncoding" ref="aef9c52e1b064549c7af965a44c30f0a7" args="()" -->
@@ -564,6 +687,45 @@
 </div>
 <div class="memdoc">
 <p>Finishes up writing any left over data, and notifies delegates. After calling this method, the archiver can not encode anymore objects. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00194">194</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00195"></a>00195 {
+<a name="l00196"></a>00196     <span class="keywordflow">if</span> (_delegate &amp;&amp; _delegateSelectors &amp; _CPKeyedArchiverWillFinishSelector)
+<a name="l00197"></a>00197         [_delegate archiverWillFinish:<span class="keyword">self</span>];
+<a name="l00198"></a>00198     
+<a name="l00199"></a>00199     var i = 0,
+<a name="l00200"></a>00200         topObject = _plistObject,
+<a name="l00201"></a>00201         classes = [];
+<a name="l00202"></a>00202     
+<a name="l00203"></a>00203     <span class="keywordflow">for</span> (; i &lt; _objects.length; ++i)
+<a name="l00204"></a>00204     {
+<a name="l00205"></a>00205         var <span class="keywordtype">object</span> = _objects[i],
+<a name="l00206"></a>00206             theClass = [<span class="keywordtype">object</span> classForKeyedArchiver];
+<a name="l00207"></a>00207         
+<a name="l00208"></a>00208         <span class="comment">// Do whatever with the class, yo.</span>
+<a name="l00209"></a>00209         <span class="comment">// We call willEncodeObject previously.</span>
+<a name="l00210"></a>00210         
+<a name="l00211"></a>00211         _plistObject = _plistObjects[[_UIDs objectForKey:[<span class="keywordtype">object</span> UID]]];
+<a name="l00212"></a>00212         [<span class="keywordtype">object</span> encodeWithCoder:<span class="keyword">self</span>];
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214         <span class="keywordflow">if</span> (_delegate &amp;&amp; _delegateSelectors &amp; _CPKeyedArchiverDidEncodeObjectSelector)
+<a name="l00215"></a>00215             [_delegate archiver:<span class="keyword">self</span> didEncodeObject:object];
+<a name="l00216"></a>00216     }
+<a name="l00217"></a>00217     
+<a name="l00218"></a>00218     _plistObject = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00219"></a>00219     
+<a name="l00220"></a>00220     [_plistObject setObject:topObject forKey:_CPKeyedArchiverTopKey];
+<a name="l00221"></a>00221     [_plistObject setObject:_plistObjects forKey:_CPKeyedArchiverObjectsKey];
+<a name="l00222"></a>00222     [_plistObject setObject:[<span class="keyword">self</span> className] forKey:_CPKeyedArchiverArchiverKey];
+<a name="l00223"></a>00223     [_plistObject setObject:<span class="stringliteral">@&quot;100000&quot;</span> forKey:_CPKeyedArchiverVersionKey];
+<a name="l00224"></a>00224     
+<a name="l00225"></a>00225     [_data setPlistObject:_plistObject];
+<a name="l00226"></a>00226 
+<a name="l00227"></a>00227     <span class="keywordflow">if</span> (_delegate &amp;&amp; _delegateSelectors &amp; _CPKeyedArchiverDidFinishSelector)
+<a name="l00228"></a>00228         [_delegate archiverDidFinish:<span class="keyword">self</span>];
+<a name="l00229"></a>00229 }
+</pre></div></p>
 
 </div>
 </div>
@@ -591,6 +753,33 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized keyed archiver </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00165">165</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00165"></a>00165                                    :(CPMutableData)data
+<a name="l00166"></a>00166 {
+<a name="l00167"></a>00167     <span class="keyword">self</span> = [super init];
+<a name="l00168"></a>00168     
+<a name="l00169"></a>00169     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00170"></a>00170     {
+<a name="l00171"></a>00171         _data = data;
+<a name="l00172"></a>00172         
+<a name="l00173"></a>00173         _objects = [];
+<a name="l00174"></a>00174         
+<a name="l00175"></a>00175         _UIDs = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00176"></a>00176         _conditionalUIDs = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00177"></a>00177         
+<a name="l00178"></a>00178         _replacementObjects = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00179"></a>00179         
+<a name="l00180"></a>00180         _data = data;
+<a name="l00181"></a>00181         
+<a name="l00182"></a>00182         _plistObject = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00183"></a>00183         _plistObjects = [<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a> arrayWithObject:_CPKeyedArchiverNullString];
+<a name="l00184"></a>00184     }
+<a name="l00185"></a>00185     
+<a name="l00186"></a>00186     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00187"></a>00187 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ade8e662cdb3901316f18091ce9e20cfe"></a><!-- doxytag: member="CPKeyedArchiver::initialize" ref="ade8e662cdb3901316f18091ce9e20cfe" args="()" -->
@@ -607,6 +796,19 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00127">127</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00128"></a>00128 {
+<a name="l00129"></a>00129     <span class="keywordflow">if</span> (<span class="keyword">self</span> != [<a class="code" href="class_c_p_keyed_archiver.html" title="Implements keyed archiving of object graphs (e.g. for storing data).">CPKeyedArchiver</a> <span class="keyword">class</span>])
+<a name="l00130"></a>00130         <span class="keywordflow">return</span>;
+<a name="l00131"></a>00131     
+<a name="l00132"></a>00132     _CPKeyedArchiverStringClass = [<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a> <span class="keyword">class</span>];
+<a name="l00133"></a>00133     _CPKeyedArchiverNumberClass = [<a class="code" href="class_c_p_number.html" title="A bridged object to native Javascript numbers.">CPNumber</a> <span class="keyword">class</span>];
+<a name="l00134"></a>00134     
+<a name="l00135"></a>00135     _CPKeyedArchiverNullReference = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionaryWithObject:0 forKey:_CPKeyedArchiverUIDKey];
+<a name="l00136"></a>00136 }
+</pre></div></p>
 
 </div>
 </div>
@@ -625,6 +827,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the property list format used to archive objects. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00234">234</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00235"></a>00235 {
+<a name="l00236"></a>00236     <span class="keywordflow">return</span> _outputFormat;
+<a name="l00237"></a>00237 }
+</pre></div></p>
 
 </div>
 </div>
@@ -669,6 +878,17 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00417">417</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00417"></a>00417                     :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aClassName forClass:(Class)aClass
+<a name="l00418"></a>00418 {
+<a name="l00419"></a>00419     <span class="keywordflow">if</span> (!<a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a>)
+<a name="l00420"></a>00420         <a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a> = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00421"></a>00421     
+<a name="l00422"></a>00422     [<a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a> setObject:aClassName forKey:<a class="code" href="_c_p_obj_j_runtime_8j.html#a49e200efd01d55599d5876d32dc5bfdb">CPStringFromClass</a>(aClass)];
+<a name="l00423"></a>00423 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ae3d617ef11effee505746e3dceec367e"></a><!-- doxytag: member="CPKeyedArchiver::setDelegate:" ref="ae3d617ef11effee505746e3dceec367e" args="(id aDelegate)" -->
@@ -687,6 +907,30 @@
 </div>
 <div class="memdoc">
 <p>Sets the keyed archiver's delegate </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00292">292</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00292"></a>00292                    :(id)aDelegate
+<a name="l00293"></a>00293 {
+<a name="l00294"></a>00294     _delegate = aDelegate;
+<a name="l00295"></a>00295     
+<a name="l00296"></a>00296     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:didEncodeObject:)])
+<a name="l00297"></a>00297         _delegateSelectors |= _CPKeyedArchiverDidEncodeObjectSelector;
+<a name="l00298"></a>00298         
+<a name="l00299"></a>00299     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:willEncodeObject:)])
+<a name="l00300"></a>00300         _delegateSelectors |= _CPKeyedArchiverWillEncodeObjectSelector;
+<a name="l00301"></a>00301     
+<a name="l00302"></a>00302     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:willReplaceObject:withObject:)])
+<a name="l00303"></a>00303         _delegateSelectors |= _CPKeyedArchiverWillReplaceObjectWithObjectSelector;
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:didFinishEncoding:)])
+<a name="l00306"></a>00306         _delegateSelectors |= _CPKeyedArchiverDidFinishEncodingSelector;
+<a name="l00307"></a>00307         
+<a name="l00308"></a>00308     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:willFinishEncoding:)])
+<a name="l00309"></a>00309         _delegateSelectors |= _CPKeyedArchiverWillFinishEncodingSelector;
+<a name="l00310"></a>00310     
+<a name="l00311"></a>00311 }
+</pre></div></p>
 
 </div>
 </div>
@@ -713,10 +957,18 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a> rivillä <a class="el" href="_c_p_keyed_archiver_8j_source.html#l00243">243</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00243"></a>00243                        :(CPPropertyListFormat)aPropertyListFormat
+<a name="l00244"></a>00244 {
+<a name="l00245"></a>00245     _outputFormat = aPropertyListFormat;
+<a name="l00246"></a>00246 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_keyed_archiver_8j.html">CPKeyedArchiver.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_keyed_archiver_8j_source.html">CPKeyedArchiver.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

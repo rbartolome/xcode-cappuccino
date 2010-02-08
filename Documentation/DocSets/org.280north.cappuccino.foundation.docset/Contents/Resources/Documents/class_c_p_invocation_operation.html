@@ -42,6 +42,8 @@
 </table>
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>Represents an operation using an invocation that can be run in an <a class="el" href="class_c_p_operation_queue.html" title="Represents an operation queue that can run CPOperations.">CPOperationQueue</a>. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a> rivillä <a class="el" href="_c_p_invocation_operation_8j_source.html#l00031">31</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a6e9c0c4a03afce4bff3c8cb87ee10b94"></a><!-- doxytag: member="CPInvocationOperation::init" ref="a6e9c0c4a03afce4bff3c8cb87ee10b94" args="()" -->
 <div class="memitem">
@@ -57,6 +59,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a> rivillä <a class="el" href="_c_p_invocation_operation_8j_source.html#l00045">45</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00046"></a>00046 {
+<a name="l00047"></a>00047     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [super <a class="code" href="class_c_p_invocation_operation.html#a6e9c0c4a03afce4bff3c8cb87ee10b94">init</a>]) 
+<a name="l00048"></a>00048     {
+<a name="l00049"></a>00049         _invocation = nil;
+<a name="l00050"></a>00050     }
+<a name="l00051"></a>00051     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00052"></a>00052 }
+</pre></div></p>
 
 </div>
 </div>
@@ -82,6 +95,19 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a> rivillä <a class="el" href="_c_p_invocation_operation_8j_source.html#l00058">58</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00058"></a>00058                         :(<a class="code" href="class_c_p_invocation.html" title="An object representation of a message.">CPInvocation</a>)inv 
+<a name="l00059"></a>00059 {
+<a name="l00060"></a>00060     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [<span class="keyword">self</span> <a class="code" href="class_c_p_invocation_operation.html#a6e9c0c4a03afce4bff3c8cb87ee10b94">init</a>]) 
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         _invocation = inv;
+<a name="l00063"></a>00063     }
+<a name="l00064"></a>00064     
+<a name="l00065"></a>00065     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00066"></a>00066 }
+</pre></div></p>
 
 </div>
 </div>
@@ -125,6 +151,19 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a> rivillä <a class="el" href="_c_p_invocation_operation_8j_source.html#l00074">74</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00074"></a>00074                     :(id)target selector:(<span class="keywordtype">SEL</span>)sel <span class="keywordtype">object</span>:(id)arg 
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076     var inv = [[<a class="code" href="class_c_p_invocation.html" title="An object representation of a message.">CPInvocation</a> alloc] initWithMethodSignature:nil];
+<a name="l00077"></a>00077     [inv setTarget:target];
+<a name="l00078"></a>00078     [inv setSelector:sel];
+<a name="l00079"></a>00079     [inv setArgument:arg atIndex:2];
+<a name="l00080"></a>00080     
+<a name="l00081"></a>00081     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithInvocation:inv];
+<a name="l00082"></a>00082 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a4e700fe520f9d5ac22f6bbc844588911"></a><!-- doxytag: member="CPInvocationOperation::invocation" ref="a4e700fe520f9d5ac22f6bbc844588911" args="()" -->
@@ -143,6 +182,13 @@
 <div class="memdoc">
 <p>Returns the receiver’s invocation object. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a> rivillä <a class="el" href="_c_p_invocation_operation_8j_source.html#l00087">87</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <span class="keywordflow">return</span> _invocation;
+<a name="l00090"></a>00090 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0f221c2f6cb65523c7c804843805a105"></a><!-- doxytag: member="CPInvocationOperation::main" ref="a0f221c2f6cb65523c7c804843805a105" args="()" -->
@@ -159,6 +205,16 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a> rivillä <a class="el" href="_c_p_invocation_operation_8j_source.html#l00037">37</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00038"></a>00038 {
+<a name="l00039"></a>00039     <span class="keywordflow">if</span> (_invocation) 
+<a name="l00040"></a>00040     {
+<a name="l00041"></a>00041         [_invocation invoke];
+<a name="l00042"></a>00042     }
+<a name="l00043"></a>00043 }
+</pre></div></p>
 
 </div>
 </div>
@@ -178,10 +234,22 @@
 <div class="memdoc">
 <p>Returns the result of the invocation or method. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a> rivillä <a class="el" href="_c_p_invocation_operation_8j_source.html#l00095">95</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00096"></a>00096 {
+<a name="l00097"></a>00097     <span class="keywordflow">if</span> ([<span class="keyword">self</span> isFinished] &amp;&amp; _invocation) 
+<a name="l00098"></a>00098     {
+<a name="l00099"></a>00099         <span class="keywordflow">return</span> [_invocation returnValue];
+<a name="l00100"></a>00100     }
+<a name="l00101"></a>00101     
+<a name="l00102"></a>00102     <span class="keywordflow">return</span> nil;
+<a name="l00103"></a>00103 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_invocation_operation_8j.html">CPInvocationOperation.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_invocation_operation_8j_source.html">CPInvocationOperation.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

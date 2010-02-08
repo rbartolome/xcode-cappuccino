@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: /Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPKeyedArchiver.j lähdekooditiedosto</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li><a href="annotated.html"><span>Luokat</span></a></li>
+      <li class="current"><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Tiedostolista</span></a></li>
+      <li><a href="globals.html"><span>Tiedoston&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+<h1>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPKeyedArchiver.j</h1><a href="_c_p_keyed_archiver_8j.html">Siirry tämän tiedoston dokumentaatioon.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * CPKeyedArchiver.j</span>
+<a name="l00003"></a>00003 <span class="comment"> * Foundation</span>
+<a name="l00004"></a>00004 <span class="comment"> *</span>
+<a name="l00005"></a>00005 <span class="comment"> * Created by Francisco Tolmasky.</span>
+<a name="l00006"></a>00006 <span class="comment"> * Copyright 2008, 280 North, Inc.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> * This library is free software; you can redistribute it and/or</span>
+<a name="l00009"></a>00009 <span class="comment"> * modify it under the terms of the GNU Lesser General Public</span>
+<a name="l00010"></a>00010 <span class="comment"> * License as published by the Free Software Foundation; either</span>
+<a name="l00011"></a>00011 <span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"> *</span>
+<a name="l00013"></a>00013 <span class="comment"> * This library is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU</span>
+<a name="l00016"></a>00016 <span class="comment"> * Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"> *</span>
+<a name="l00018"></a>00018 <span class="comment"> * You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00019"></a>00019 <span class="comment"> * License along with this library; if not, write to the Free Software</span>
+<a name="l00020"></a>00020 <span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span>
+<a name="l00021"></a>00021 <span class="comment"> */</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPData.j&quot;</span>
+<a name="l00024"></a>00024 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPCoder.j&quot;</span>
+<a name="l00025"></a>00025 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPArray.j&quot;</span>
+<a name="l00026"></a>00026 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPString.j&quot;</span>
+<a name="l00027"></a>00027 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPNumber.j&quot;</span>
+<a name="l00028"></a>00028 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPDictionary.j&quot;</span>
+<a name="l00029"></a>00029 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPValue.j&quot;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">00032</a> var <a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a>                     = nil;
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 var _CPKeyedArchiverDidEncodeObjectSelector             = 1,
+<a name="l00035"></a>00035     _CPKeyedArchiverWillEncodeObjectSelector            = 2,
+<a name="l00036"></a>00036     _CPKeyedArchiverWillReplaceObjectWithObjectSelector = 4,
+<a name="l00037"></a>00037     _CPKeyedArchiverDidFinishSelector                   = 8,
+<a name="l00038"></a>00038     _CPKeyedArchiverWillFinishSelector                  = 16;
+<a name="l00039"></a>00039     
+<a name="l00040"></a>00040 var _CPKeyedArchiverNullString                          = <span class="stringliteral">&quot;$null&quot;</span>,
+<a name="l00041"></a>00041     _CPKeyedArchiverNullReference                       = nil,
+<a name="l00042"></a>00042     
+<a name="l00043"></a>00043     _CPKeyedArchiverUIDKey                              = <span class="stringliteral">&quot;CP$UID&quot;</span>,
+<a name="l00044"></a>00044     
+<a name="l00045"></a>00045     _CPKeyedArchiverTopKey                              = <span class="stringliteral">&quot;$top&quot;</span>,
+<a name="l00046"></a>00046     _CPKeyedArchiverObjectsKey                          = <span class="stringliteral">&quot;$objects&quot;</span>,
+<a name="l00047"></a>00047     _CPKeyedArchiverArchiverKey                         = <span class="stringliteral">&quot;$archiver&quot;</span>,
+<a name="l00048"></a>00048     _CPKeyedArchiverVersionKey                          = <span class="stringliteral">&quot;$version&quot;</span>,
+<a name="l00049"></a>00049     
+<a name="l00050"></a>00050     _CPKeyedArchiverClassNameKey                        = <span class="stringliteral">&quot;$classname&quot;</span>,
+<a name="l00051"></a>00051     _CPKeyedArchiverClassesKey                          = <span class="stringliteral">&quot;$classes&quot;</span>,
+<a name="l00052"></a>00052     _CPKeyedArchiverClassKey                            = <span class="stringliteral">&quot;$class&quot;</span>;                     
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 var _CPKeyedArchiverStringClass                         = Nil,
+<a name="l00055"></a>00055     _CPKeyedArchiverNumberClass                         = Nil;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="comment">/* @ignore */</span>
+<a name="l00058"></a>00058 <span class="keyword">@implementation </span>_CPKeyedArchiverValue : <a class="code" href="class_c_p_value.html" title="A generic &amp;quot;value&amp;quot;. Can be subclassed to hold specific data types.">CPValue</a>
+<a name="l00059"></a>00059 {
+<a name="l00060"></a>00060 }
+<a name="l00061"></a>00061 <span class="keyword">@end</span>
+<a name="l00062"></a>00062 
+<a name="l00102"></a><a class="code" href="class_c_p_keyed_archiver.html">00102</a> <span class="keyword">@implementation </span><a class="code" href="class_c_p_keyed_archiver.html" title="Implements keyed archiving of object graphs (e.g. for storing data).">CPKeyedArchiver</a> : <a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>
+<a name="l00103"></a>00103 {
+<a name="l00104"></a>00104     <span class="keywordtype">id</span>                      _delegate;
+<a name="l00105"></a>00105     <span class="keywordtype">unsigned</span>                _delegateSelectors;
+<a name="l00106"></a>00106     
+<a name="l00107"></a>00107     <a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a>                  _data;
+<a name="l00108"></a>00108     
+<a name="l00109"></a>00109     <a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>                 _objects;
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111     <a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>            _UIDs;
+<a name="l00112"></a>00112     <a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>            _conditionalUIDs;
+<a name="l00113"></a>00113     
+<a name="l00114"></a>00114     <a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>            _replacementObjects;
+<a name="l00115"></a>00115     <a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>            _replacementClassNames;
+<a name="l00116"></a>00116     
+<a name="l00117"></a>00117     <span class="keywordtype">id</span>                      _plistObject;
+<a name="l00118"></a>00118     <a class="code" href="class_c_p_mutable_array.html">CPMutableArray</a>          _plistObjects;
+<a name="l00119"></a>00119     
+<a name="l00120"></a>00120     CPPropertyListFormat    _outputFormat;
+<a name="l00121"></a>00121     
+<a name="l00122"></a>00122 }
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 <span class="comment">/*</span>
+<a name="l00125"></a>00125 <span class="comment">    @ignore</span>
+<a name="l00126"></a>00126 <span class="comment">*/</span>
+<a name="l00127"></a><a class="code" href="class_c_p_keyed_archiver.html#ade8e662cdb3901316f18091ce9e20cfe">00127</a> + (void)initialize
+<a name="l00128"></a>00128 {
+<a name="l00129"></a>00129     <span class="keywordflow">if</span> (<span class="keyword">self</span> != [<a class="code" href="class_c_p_keyed_archiver.html" title="Implements keyed archiving of object graphs (e.g. for storing data).">CPKeyedArchiver</a> <span class="keyword">class</span>])
+<a name="l00130"></a>00130         <span class="keywordflow">return</span>;
+<a name="l00131"></a>00131     
+<a name="l00132"></a>00132     _CPKeyedArchiverStringClass = [<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a> class];
+<a name="l00133"></a>00133     _CPKeyedArchiverNumberClass = [<a class="code" href="class_c_p_number.html" title="A bridged object to native Javascript numbers.">CPNumber</a> class];
+<a name="l00134"></a>00134     
+<a name="l00135"></a>00135     _CPKeyedArchiverNullReference = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">dictionaryWithObject</a>:0 <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">forKey</a>:_CPKeyedArchiverUIDKey];
+<a name="l00136"></a>00136 }
+<a name="l00137"></a>00137 
+<a name="l00138"></a><a class="code" href="class_c_p_keyed_archiver.html#a00286e3fcde68a7a37dd42e4076da794">00138</a> + (BOOL)allowsKeyedCoding
+<a name="l00139"></a>00139 {
+<a name="l00140"></a>00140     <span class="keywordflow">return</span> YES;
+<a name="l00141"></a>00141 }
+<a name="l00142"></a>00142 
+<a name="l00148"></a><a class="code" href="class_c_p_keyed_archiver.html#ac8e2ae91f9747f762e797c1950fd1c08">00148</a> + (<a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a>)archivedDataWithRootObject:(<span class="keywordtype">id</span>)anObject
+<a name="l00149"></a>00149 {
+<a name="l00150"></a>00150     var data = [<a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a> <a class="code" href="class_c_p_data.html#a35106789eb851d1b5708f1111af82b07">dataWithPlistObject</a>:nil],
+<a name="l00151"></a>00151         archiver = [[<span class="keyword">self</span> alloc] initForWritingWithMutableData:data];
+<a name="l00152"></a>00152     
+<a name="l00153"></a>00153     [archiver encodeObject:anObject forKey:@&quot;root&quot;];
+<a name="l00154"></a>00154     [archiver finishEncoding];
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156     <span class="keywordflow">return</span> data;
+<a name="l00157"></a>00157 }
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159 <span class="comment">// Initializing an NSKeyedArchiver object</span>
+<a name="l00165"></a><a class="code" href="class_c_p_keyed_archiver.html#a086c8af36f0d9c32da9534c07ed06a02">00165</a> <span class="comment"></span>- (id)initForWritingWithMutableData:(CPMutableData)data
+<a name="l00166"></a>00166 {
+<a name="l00167"></a>00167     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00168"></a>00168     
+<a name="l00169"></a>00169     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00170"></a>00170     {
+<a name="l00171"></a>00171         _data = data;
+<a name="l00172"></a>00172         
+<a name="l00173"></a>00173         _objects = [];
+<a name="l00174"></a>00174         
+<a name="l00175"></a>00175         _UIDs = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00176"></a>00176         _conditionalUIDs = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00177"></a>00177         
+<a name="l00178"></a>00178         _replacementObjects = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00179"></a>00179         
+<a name="l00180"></a>00180         _data = data;
+<a name="l00181"></a>00181         
+<a name="l00182"></a>00182         _plistObject = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00183"></a>00183         _plistObjects = [<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a> <a class="code" href="class_c_p_array.html#a75a09e8530bb9a8d7084f11df833674d">arrayWithObject</a>:_CPKeyedArchiverNullString];
+<a name="l00184"></a>00184     }
+<a name="l00185"></a>00185     
+<a name="l00186"></a>00186     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00187"></a>00187 }
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189 <span class="comment">// Archiving Data</span>
+<a name="l00194"></a><a class="code" href="class_c_p_keyed_archiver.html#aef9c52e1b064549c7af965a44c30f0a7">00194</a> <span class="comment"></span>- (void)finishEncoding
+<a name="l00195"></a>00195 {
+<a name="l00196"></a>00196     <span class="keywordflow">if</span> (_delegate &amp;&amp; _delegateSelectors &amp; _CPKeyedArchiverWillFinishSelector)
+<a name="l00197"></a>00197         [_delegate archiverWillFinish:self];
+<a name="l00198"></a>00198     
+<a name="l00199"></a>00199     var i = 0,
+<a name="l00200"></a>00200         topObject = _plistObject,
+<a name="l00201"></a>00201         classes = [];
+<a name="l00202"></a>00202     
+<a name="l00203"></a>00203     <span class="keywordflow">for</span> (; i &lt; _objects.length; ++i)
+<a name="l00204"></a>00204     {
+<a name="l00205"></a>00205         var <span class="keywordtype">object</span> = _objects[i],
+<a name="l00206"></a>00206             theClass = [object classForKeyedArchiver];
+<a name="l00207"></a>00207         
+<a name="l00208"></a>00208         <span class="comment">// Do whatever with the class, yo.</span>
+<a name="l00209"></a>00209         <span class="comment">// We call willEncodeObject previously.</span>
+<a name="l00210"></a>00210         
+<a name="l00211"></a>00211         _plistObject = _plistObjects[[_UIDs objectForKey:[object UID]]];
+<a name="l00212"></a>00212         [object encodeWithCoder:self];
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214         <span class="keywordflow">if</span> (_delegate &amp;&amp; _delegateSelectors &amp; _CPKeyedArchiverDidEncodeObjectSelector)
+<a name="l00215"></a>00215             [_delegate archiver:self didEncodeObject:object];
+<a name="l00216"></a>00216     }
+<a name="l00217"></a>00217     
+<a name="l00218"></a>00218     _plistObject = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00219"></a>00219     
+<a name="l00220"></a>00220     [_plistObject setObject:topObject forKey:_CPKeyedArchiverTopKey];
+<a name="l00221"></a>00221     [_plistObject setObject:_plistObjects forKey:_CPKeyedArchiverObjectsKey];
+<a name="l00222"></a>00222     [_plistObject setObject:[<span class="keyword">self</span> className] forKey:_CPKeyedArchiverArchiverKey];
+<a name="l00223"></a>00223     [_plistObject setObject:@&quot;100000&quot; forKey:_CPKeyedArchiverVersionKey];
+<a name="l00224"></a>00224     
+<a name="l00225"></a>00225     [_data setPlistObject:_plistObject];
+<a name="l00226"></a>00226 
+<a name="l00227"></a>00227     <span class="keywordflow">if</span> (_delegate &amp;&amp; _delegateSelectors &amp; _CPKeyedArchiverDidFinishSelector)
+<a name="l00228"></a>00228         [_delegate archiverDidFinish:self];
+<a name="l00229"></a>00229 }
+<a name="l00230"></a>00230 
+<a name="l00234"></a><a class="code" href="class_c_p_keyed_archiver.html#a16161adfe07e9832358def74e8fe2e8b">00234</a> - (CPPropertyListFormat)outputFormat
+<a name="l00235"></a>00235 {
+<a name="l00236"></a>00236     <span class="keywordflow">return</span> _outputFormat;
+<a name="l00237"></a>00237 }
+<a name="l00238"></a>00238 
+<a name="l00243"></a><a class="code" href="class_c_p_keyed_archiver.html#a132257655a11a14ef6b15aecad5d70d4">00243</a> - (void)setOutputFormat:(CPPropertyListFormat)aPropertyListFormat
+<a name="l00244"></a>00244 {
+<a name="l00245"></a>00245     _outputFormat = aPropertyListFormat;
+<a name="l00246"></a>00246 }
+<a name="l00247"></a>00247 
+<a name="l00253"></a><a class="code" href="class_c_p_keyed_archiver.html#aa1b2e2e40048cf5827e0fcb7fc87d7b8">00253</a> - (void)encodeBool:(BOOL)aBOOL forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00254"></a>00254 {
+<a name="l00255"></a>00255     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, aBOOL, NO) forKey:aKey];
+<a name="l00256"></a>00256 }
+<a name="l00257"></a>00257 
+<a name="l00263"></a><a class="code" href="class_c_p_keyed_archiver.html#ab6cc963b91077aa2dc022538da4d85a2">00263</a> - (void)encodeDouble:(<span class="keywordtype">double</span>)aDouble forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00264"></a>00264 {
+<a name="l00265"></a>00265     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, aDouble, NO) forKey:aKey];
+<a name="l00266"></a>00266 }
+<a name="l00267"></a>00267 
+<a name="l00273"></a><a class="code" href="class_c_p_keyed_archiver.html#acee1cef5b97581b017e08e731209cedb">00273</a> - (void)encodeFloat:(<span class="keywordtype">float</span>)aFloat forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00274"></a>00274 {
+<a name="l00275"></a>00275     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, aFloat, NO) forKey:aKey];
+<a name="l00276"></a>00276 }
+<a name="l00277"></a>00277 
+<a name="l00283"></a><a class="code" href="class_c_p_keyed_archiver.html#abd074640d8f1dc34dae4c0b964702954">00283</a> - (void)encodeInt:(<span class="keywordtype">float</span>)anInt forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00284"></a>00284 {
+<a name="l00285"></a>00285     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, anInt, NO) forKey:aKey];
+<a name="l00286"></a>00286 }
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288 <span class="comment">// Managing Delegates</span>
+<a name="l00292"></a><a class="code" href="class_c_p_keyed_archiver.html#ae3d617ef11effee505746e3dceec367e">00292</a> <span class="comment"></span>- (void)setDelegate:(<span class="keywordtype">id</span>)aDelegate
+<a name="l00293"></a>00293 {
+<a name="l00294"></a>00294     _delegate = aDelegate;
+<a name="l00295"></a>00295     
+<a name="l00296"></a>00296     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:didEncodeObject:)])
+<a name="l00297"></a>00297         _delegateSelectors |= _CPKeyedArchiverDidEncodeObjectSelector;
+<a name="l00298"></a>00298         
+<a name="l00299"></a>00299     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:willEncodeObject:)])
+<a name="l00300"></a>00300         _delegateSelectors |= _CPKeyedArchiverWillEncodeObjectSelector;
+<a name="l00301"></a>00301     
+<a name="l00302"></a>00302     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:willReplaceObject:withObject:)])
+<a name="l00303"></a>00303         _delegateSelectors |= _CPKeyedArchiverWillReplaceObjectWithObjectSelector;
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:didFinishEncoding:)])
+<a name="l00306"></a>00306         _delegateSelectors |= _CPKeyedArchiverDidFinishEncodingSelector;
+<a name="l00307"></a>00307         
+<a name="l00308"></a>00308     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(archiver:willFinishEncoding:)])
+<a name="l00309"></a>00309         _delegateSelectors |= _CPKeyedArchiverWillFinishEncodingSelector;
+<a name="l00310"></a>00310     
+<a name="l00311"></a>00311 }
+<a name="l00312"></a>00312 
+<a name="l00316"></a><a class="code" href="class_c_p_keyed_archiver.html#a6737b4c175f2c370c937c73b046b37cf">00316</a> - (id)delegate
+<a name="l00317"></a>00317 {
+<a name="l00318"></a>00318     <span class="keywordflow">return</span> _delegate;
+<a name="l00319"></a>00319 }
+<a name="l00320"></a>00320 
+<a name="l00326"></a><a class="code" href="class_c_p_keyed_archiver.html#a1c6bcdc71e8c3d2c1c085858f13dd65c">00326</a> - (void)encodePoint:(CGPoint)aPoint forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00327"></a>00327 {
+<a name="l00328"></a>00328     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, CPStringFromPoint(aPoint), NO) forKey:aKey];
+<a name="l00329"></a>00329 }
+<a name="l00330"></a>00330 
+<a name="l00336"></a><a class="code" href="class_c_p_keyed_archiver.html#aaf8967f38ed06f75c0415dffb9801cf9">00336</a> - (void)encodeRect:(CGRect)aRect forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00337"></a>00337 {
+<a name="l00338"></a>00338     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, CPStringFromRect(aRect), NO) forKey:aKey];
+<a name="l00339"></a>00339 }
+<a name="l00340"></a>00340 
+<a name="l00346"></a><a class="code" href="class_c_p_keyed_archiver.html#af4ec17639b1949ae228a02d8d40321ae">00346</a> - (void)encodeSize:(CGSize)aSize forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00347"></a>00347 {
+<a name="l00348"></a>00348     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, CPStringFromSize(aSize), NO) forKey:aKey];
+<a name="l00349"></a>00349 }
+<a name="l00350"></a>00350 
+<a name="l00358"></a><a class="code" href="class_c_p_keyed_archiver.html#a6a5f75746a5d081b3b86dfe9fc48bcbb">00358</a> - (void)encodeConditionalObject:(<span class="keywordtype">id</span>)anObject forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00359"></a>00359 {
+<a name="l00360"></a>00360     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, anObject, YES) forKey:aKey];
+<a name="l00361"></a>00361 }
+<a name="l00362"></a>00362 
+<a name="l00368"></a><a class="code" href="class_c_p_keyed_archiver.html#a0f83d58d42c83fe2d4ba7697f76d8a59">00368</a> - (void)encodeNumber:(<a class="code" href="class_c_p_number.html" title="A bridged object to native Javascript numbers.">CPNumber</a>)aNumber forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00369"></a>00369 {
+<a name="l00370"></a>00370     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, aNumber, NO) forKey:aKey];
+<a name="l00371"></a>00371 }
+<a name="l00372"></a>00372 
+<a name="l00378"></a><a class="code" href="class_c_p_keyed_archiver.html#a63928e039ca939f8d2d77ece7fbd3855">00378</a> - (void)encodeObject:(<span class="keywordtype">id</span>)anObject forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00379"></a>00379 {
+<a name="l00380"></a>00380     [_plistObject setObject:_CPKeyedArchiverEncodeObject(self, anObject, NO) forKey:aKey]; 
+<a name="l00381"></a>00381 }
+<a name="l00382"></a>00382 
+<a name="l00383"></a>00383 <span class="comment">/* @ignore */</span>
+<a name="l00384"></a>00384 - (void)_encodeArrayOfObjects:(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)objects forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00385"></a>00385 {
+<a name="l00386"></a>00386     var i = 0,
+<a name="l00387"></a>00387         count = objects.length,
+<a name="l00388"></a>00388         references = [<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a> <a class="code" href="class_c_p_array.html#a8fd54c22825fa5409bff74ca03101235">arrayWithCapacity</a>:count];
+<a name="l00389"></a>00389         
+<a name="l00390"></a>00390     <span class="keywordflow">for</span> (; i &lt; count; ++i)
+<a name="l00391"></a>00391         [references addObject:_CPKeyedArchiverEncodeObject(self, objects[i], NO)];
+<a name="l00392"></a>00392         
+<a name="l00393"></a>00393     [_plistObject setObject:references forKey:aKey];
+<a name="l00394"></a>00394 }
+<a name="l00395"></a>00395 
+<a name="l00396"></a>00396 <span class="comment">/* @ignore */</span>
+<a name="l00397"></a>00397 - (void)_encodeDictionaryOfObjects:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aDictionary forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00398"></a>00398 {
+<a name="l00399"></a>00399     var key,
+<a name="l00400"></a>00400         keys = [aDictionary <a class="code" href="class_c_p_dictionary.html#ad94d667a0996444a0d487fe7039287dd">keyEnumerator</a>],
+<a name="l00401"></a>00401         references = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00402"></a>00402     
+<a name="l00403"></a>00403     <span class="keywordflow">while</span> (key = [keys nextObject])
+<a name="l00404"></a>00404         [references setObject:_CPKeyedArchiverEncodeObject(<span class="keyword">self</span>, [aDictionary objectForKey:key], NO) forKey:key];
+<a name="l00405"></a>00405     
+<a name="l00406"></a>00406     [_plistObject setObject:references forKey:aKey];
+<a name="l00407"></a>00407 }
+<a name="l00408"></a>00408 
+<a name="l00409"></a>00409 <span class="comment">// Managing classes and class names</span>
+<a name="l00417"></a><a class="code" href="class_c_p_keyed_archiver.html#a4e4f2334925384a36a4e8ed01d747201">00417</a> <span class="comment"></span>+ (void)setClassName:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aClassName forClass:(Class)aClass
+<a name="l00418"></a>00418 {
+<a name="l00419"></a>00419     <span class="keywordflow">if</span> (!<a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a>)
+<a name="l00420"></a>00420         <a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a> = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00421"></a>00421     
+<a name="l00422"></a>00422     [CPArchiverReplacementClassNames setObject:aClassName forKey:CPStringFromClass(aClass)];
+<a name="l00423"></a>00423 }
+<a name="l00424"></a>00424 
+<a name="l00432"></a><a class="code" href="class_c_p_keyed_archiver.html#a8c45ef521e158acd69e3930f8d178ee7">00432</a> + (<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)classNameForClass:(Class)aClass
+<a name="l00433"></a>00433 {
+<a name="l00434"></a>00434     <span class="keywordflow">if</span> (!<a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a>)
+<a name="l00435"></a>00435         <span class="keywordflow">return</span> aClass.name;
+<a name="l00436"></a>00436 
+<a name="l00437"></a>00437     var className = [<a class="code" href="_c_p_keyed_archiver_8j.html#aeea08fff164873f76060db6c0225b1cf">CPArchiverReplacementClassNames</a> objectForKey:<a class="code" href="_c_p_obj_j_runtime_8j.html#a49e200efd01d55599d5876d32dc5bfdb">CPStringFromClass</a>(aClassName)];
+<a name="l00438"></a>00438     
+<a name="l00439"></a>00439     <span class="keywordflow">return</span> className ? className : aClass.name;
+<a name="l00440"></a>00440 }
+<a name="l00441"></a>00441 
+<a name="l00449"></a>00449 - (void)setClassName:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aClassName forClass:(Class)aClass
+<a name="l00450"></a>00450 {
+<a name="l00451"></a>00451     <span class="keywordflow">if</span> (!_replacementClassNames)
+<a name="l00452"></a>00452         _replacementClassNames = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00453"></a>00453     
+<a name="l00454"></a>00454     [_replacementClassNames setObject:aClassName forKey:CPStringFromClass(aClass)];
+<a name="l00455"></a>00455 }
+<a name="l00456"></a>00456 
+<a name="l00462"></a>00462 - (<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)classNameForClass:(Class)aClass
+<a name="l00463"></a>00463 {
+<a name="l00464"></a>00464     <span class="keywordflow">if</span> (!_replacementClassNames)
+<a name="l00465"></a>00465         <span class="keywordflow">return</span> aClass.name;
+<a name="l00466"></a>00466 
+<a name="l00467"></a>00467     var className = [_replacementClassNames objectForKey:<a class="code" href="_c_p_obj_j_runtime_8j.html#a49e200efd01d55599d5876d32dc5bfdb">CPStringFromClass</a>(aClassName)];
+<a name="l00468"></a>00468     
+<a name="l00469"></a>00469     <span class="keywordflow">return</span> className ? className : aClass.name;
+<a name="l00470"></a>00470 }
+<a name="l00471"></a>00471 
+<a name="l00472"></a>00472 <span class="keyword">@end</span>
+<a name="l00473"></a>00473 
+<a name="l00474"></a>00474 var _CPKeyedArchiverEncodeObject = function(<span class="keyword">self</span>, anObject, isConditional)
+<a name="l00475"></a>00475 {
+<a name="l00476"></a>00476     <span class="comment">// We wrap primitive JavaScript objects in a unique subclass of CPValue.</span>
+<a name="l00477"></a>00477     <span class="comment">// This way, when we unarchive, we know to unwrap it, since </span>
+<a name="l00478"></a>00478     <span class="comment">// _CPKeyedArchiverValue should not be used anywhere else.</span>
+<a name="l00479"></a>00479     <span class="keywordflow">if</span> (anObject !== nil &amp;&amp; !anObject.isa)
+<a name="l00480"></a>00480         anObject = [_CPKeyedArchiverValue valueWithJSObject:anObject];
+<a name="l00481"></a>00481     
+<a name="l00482"></a>00482     <span class="comment">// Get the proper replacement object</span>
+<a name="l00483"></a>00483     var GUID = [anObject UID],
+<a name="l00484"></a>00484         <span class="keywordtype">object</span> = [<span class="keyword">self</span>._replacementObjects objectForKey:GUID];
+<a name="l00485"></a>00485 
+<a name="l00486"></a>00486     <span class="comment">// If a replacement object doesn&#39;t exist, then actually ask for one.</span>
+<a name="l00487"></a>00487     <span class="comment">// Explicitly compare to nil because object could be === 0.</span>
+<a name="l00488"></a>00488     <span class="keywordflow">if</span> (<span class="keywordtype">object</span> === nil)
+<a name="l00489"></a>00489     {
+<a name="l00490"></a>00490         <span class="keywordtype">object</span> = [anObject replacementObjectForKeyedArchiver:self];
+<a name="l00491"></a>00491         
+<a name="l00492"></a>00492         <span class="comment">// Notify our delegate of this replacement.</span>
+<a name="l00493"></a>00493         <span class="keywordflow">if</span> (<span class="keyword">self</span>._delegate)
+<a name="l00494"></a>00494         {
+<a name="l00495"></a>00495             <span class="keywordflow">if</span> (<span class="keywordtype">object</span> !== anObject &amp;&amp; <span class="keyword">self</span>._delegateSelectors &amp; _CPKeyedArchiverWillReplaceObjectWithObjectSelector)
+<a name="l00496"></a>00496                 [<span class="keyword">self</span>._delegate archiver:self willReplaceObject:anObject withObject:object];
+<a name="l00497"></a>00497             
+<a name="l00498"></a>00498             <span class="keywordflow">if</span> (<span class="keyword">self</span>._delegateSelectors &amp; _CPKeyedArchiverWillEncodeObjectSelector)
+<a name="l00499"></a>00499             {
+<a name="l00500"></a>00500                 anObject = [<span class="keyword">self</span>._delegate archiver:self willEncodeObject:object];
+<a name="l00501"></a>00501                 
+<a name="l00502"></a>00502                 <span class="keywordflow">if</span> (anObject !== <span class="keywordtype">object</span> &amp;&amp; <span class="keyword">self</span>._delegateSelectors &amp; _CPKeyedArchiverWillReplaceObjectWithObjectSelector)
+<a name="l00503"></a>00503                     [<span class="keyword">self</span>._delegate archiver:self willReplaceObject:object withObject:anObject];
+<a name="l00504"></a>00504                     
+<a name="l00505"></a>00505                 <span class="keywordtype">object</span> = anObject;
+<a name="l00506"></a>00506             }
+<a name="l00507"></a>00507         }
+<a name="l00508"></a>00508         
+<a name="l00509"></a>00509         [<span class="keyword">self</span>._replacementObjects setObject:object forKey:GUID];
+<a name="l00510"></a>00510     }
+<a name="l00511"></a>00511     
+<a name="l00512"></a>00512     <span class="comment">// If we still don&#39;t have an object by this point, then return a </span>
+<a name="l00513"></a>00513     <span class="comment">// reference to the null object.</span>
+<a name="l00514"></a>00514     <span class="comment">// Explicitly compare to nil because object could be === 0.</span>
+<a name="l00515"></a>00515     <span class="keywordflow">if</span> (<span class="keywordtype">object</span> === nil)
+<a name="l00516"></a>00516         <span class="keywordflow">return</span> _CPKeyedArchiverNullReference;
+<a name="l00517"></a>00517     
+<a name="l00518"></a>00518     <span class="comment">// If not, then grab the object&#39;s UID</span>
+<a name="l00519"></a>00519     var UID = [<span class="keyword">self</span>._UIDs objectForKey:GUID = [object UID]];
+<a name="l00520"></a>00520     
+<a name="l00521"></a>00521     <span class="comment">// If this object doesn&#39;t have a unique index in the object table yet, </span>
+<a name="l00522"></a>00522     <span class="comment">// then it also hasn&#39;t been properly encoded.  We explicitly compare </span>
+<a name="l00523"></a>00523     <span class="comment">// index to nil since it could be 0, which would also evaluate to false.</span>
+<a name="l00524"></a>00524     <span class="keywordflow">if</span> (UID === nil)
+<a name="l00525"></a>00525     {
+<a name="l00526"></a>00526         <span class="comment">// If it is being conditionally encoded, then </span>
+<a name="l00527"></a>00527         <span class="keywordflow">if</span> (isConditional)
+<a name="l00528"></a>00528         {
+<a name="l00529"></a>00529             <span class="comment">// If we haven&#39;t already noted this conditional object...</span>
+<a name="l00530"></a>00530             <span class="keywordflow">if</span> ((UID = [<span class="keyword">self</span>._conditionalUIDs objectForKey:GUID]) === nil)
+<a name="l00531"></a>00531             {
+<a name="l00532"></a>00532                 <span class="comment">// Use the null object as a placeholder.</span>
+<a name="l00533"></a>00533                 [<span class="keyword">self</span>._conditionalUIDs setObject:UID = [<span class="keyword">self</span>._plistObjects count] forKey:GUID];
+<a name="l00534"></a>00534                 [<span class="keyword">self</span>._plistObjects addObject:_CPKeyedArchiverNullString];
+<a name="l00535"></a>00535             }
+<a name="l00536"></a>00536         }
+<a name="l00537"></a>00537         <span class="keywordflow">else</span>
+<a name="l00538"></a>00538         {
+<a name="l00539"></a>00539             var theClass = [object classForKeyedArchiver],
+<a name="l00540"></a>00540                 plistObject = nil;
+<a name="l00541"></a>00541             
+<a name="l00542"></a>00542             <span class="keywordflow">if</span> ((theClass === _CPKeyedArchiverStringClass) || (theClass === _CPKeyedArchiverNumberClass))<span class="comment">// || theClass == _CPKeyedArchiverBooleanClass)</span>
+<a name="l00543"></a>00543                 plistObject = object;
+<a name="l00544"></a>00544             <span class="keywordflow">else</span>
+<a name="l00545"></a>00545             {
+<a name="l00546"></a>00546                 <span class="comment">// Only actually encode the object and create a plist representation if it is not a simple type.</span>
+<a name="l00547"></a>00547                 plistObject = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00548"></a>00548                 
+<a name="l00549"></a>00549                 [<span class="keyword">self</span>._objects addObject:object];
+<a name="l00550"></a>00550                 
+<a name="l00551"></a>00551                 var className = [<span class="keyword">self</span> classNameForClass:theClass];
+<a name="l00552"></a>00552     
+<a name="l00553"></a>00553                 <span class="keywordflow">if</span> (!className)
+<a name="l00554"></a>00554                     className = [[<span class="keyword">self</span> class] classNameForClass:theClass];
+<a name="l00555"></a>00555                 
+<a name="l00556"></a>00556                 <span class="keywordflow">if</span> (!className)
+<a name="l00557"></a>00557                     className = theClass.name;
+<a name="l00558"></a>00558                 <span class="keywordflow">else</span>
+<a name="l00559"></a>00559                     theClass = window[className];
+<a name="l00560"></a>00560 
+<a name="l00561"></a>00561                 var classUID = [<span class="keyword">self</span>._UIDs objectForKey:className];
+<a name="l00562"></a>00562                 
+<a name="l00563"></a>00563                 <span class="keywordflow">if</span> (!classUID)
+<a name="l00564"></a>00564                 {
+<a name="l00565"></a>00565                     var plistClass = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>],
+<a name="l00566"></a>00566                         hierarchy = [];
+<a name="l00567"></a>00567                     
+<a name="l00568"></a>00568                     [plistClass setObject:className forKey:_CPKeyedArchiverClassNameKey];
+<a name="l00569"></a>00569                     
+<a name="l00570"></a>00570                     <span class="keywordflow">do</span>
+<a name="l00571"></a>00571                     {
+<a name="l00572"></a>00572                         [hierarchy addObject:CPStringFromClass(theClass)];
+<a name="l00573"></a>00573                     } <span class="keywordflow">while</span> (theClass = [theClass superclass]);
+<a name="l00574"></a>00574                     
+<a name="l00575"></a>00575                     [plistClass setObject:hierarchy forKey:_CPKeyedArchiverClassesKey];
+<a name="l00576"></a>00576                     
+<a name="l00577"></a>00577                     classUID = [<span class="keyword">self</span>._plistObjects count];
+<a name="l00578"></a>00578                     [<span class="keyword">self</span>._plistObjects addObject:plistClass];
+<a name="l00579"></a>00579                     [<span class="keyword">self</span>._UIDs setObject:classUID forKey:className];
+<a name="l00580"></a>00580                 }
+<a name="l00581"></a>00581 
+<a name="l00582"></a>00582                 [plistObject setObject:[<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">dictionaryWithObject</a>:classUID <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">forKey</a>:_CPKeyedArchiverUIDKey] <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">forKey</a>:_CPKeyedArchiverClassKey];
+<a name="l00583"></a>00583             }
+<a name="l00584"></a>00584             
+<a name="l00585"></a>00585             UID = [<span class="keyword">self</span>._conditionalUIDs objectForKey:GUID];
+<a name="l00586"></a>00586             
+<a name="l00587"></a>00587             <span class="comment">// If this object WAS previously encoded conditionally...</span>
+<a name="l00588"></a>00588             <span class="keywordflow">if</span> (UID !== nil)
+<a name="l00589"></a>00589             {
+<a name="l00590"></a>00590                 [<span class="keyword">self</span>._UIDs setObject:UID forKey:GUID];
+<a name="l00591"></a>00591                 [<span class="keyword">self</span>._plistObjects replaceObjectAtIndex:UID withObject:plistObject];
+<a name="l00592"></a>00592             }
+<a name="l00593"></a>00593             <span class="keywordflow">else</span>
+<a name="l00594"></a>00594             {
+<a name="l00595"></a>00595                 [<span class="keyword">self</span>._UIDs setObject:UID = [<span class="keyword">self</span>._plistObjects count] forKey:GUID];
+<a name="l00596"></a>00596                 [<span class="keyword">self</span>._plistObjects addObject:plistObject];
+<a name="l00597"></a>00597             }
+<a name="l00598"></a>00598         }
+<a name="l00599"></a>00599     }
+<a name="l00600"></a>00600 
+<a name="l00601"></a>00601     <span class="keywordflow">return</span> [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">dictionaryWithObject</a>:UID <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">forKey</a>:_CPKeyedArchiverUIDKey];
+<a name="l00602"></a>00602 }
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

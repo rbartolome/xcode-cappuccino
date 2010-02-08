@@ -51,6 +51,8 @@
 </table>
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>Represents an operation queue that can run CPOperations. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00034">34</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a0faeedd43d53f2aeb4dcea7cfc681407"></a><!-- doxytag: member="CPOperationQueue::accessors" ref="a0faeedd43d53f2aeb4dcea7cfc681407" args="(property=name)" -->
 <div class="memitem">
@@ -93,6 +95,19 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00101">101</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00101"></a>00101                     :(<a class="code" href="class_c_p_operation.html" title="Represents an operation that can be run in an CPOperationQueue.">CPOperation</a>)anOperation 
+<a name="l00102"></a>00102 {
+<a name="l00103"></a>00103     [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;operations&quot;</span>];
+<a name="l00104"></a>00104     [<span class="keyword">self</span> willChangeValueForKey:<span class="stringliteral">@&quot;operationCount&quot;</span>];
+<a name="l00105"></a>00105     [_operations addObject:anOperation];
+<a name="l00106"></a>00106     [<span class="keyword">self</span> _sortOpsByPriority:_operations];
+<a name="l00107"></a>00107     [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;operations&quot;</span>];
+<a name="l00108"></a>00108     [<span class="keyword">self</span> didChangeValueForKey:<span class="stringliteral">@&quot;operationCount&quot;</span>];
+<a name="l00109"></a>00109 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ab44f211b27adba968d318a987afa58fc"></a><!-- doxytag: member="CPOperationQueue::addOperations:waitUntilFinished:" ref="ab44f211b27adba968d318a987afa58fc" args="(CPArray ops,[waitUntilFinished] BOOL wait)" -->
@@ -128,6 +143,24 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00116">116</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00116"></a>00116                      :(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)ops waitUntilFinished:(BOOL)wait 
+<a name="l00117"></a>00117 {
+<a name="l00118"></a>00118     <span class="keywordflow">if</span> (ops) 
+<a name="l00119"></a>00119     {
+<a name="l00120"></a>00120         <span class="keywordflow">if</span> (wait) 
+<a name="l00121"></a>00121         {
+<a name="l00122"></a>00122             [<span class="keyword">self</span> _sortOpsByPriority:ops];
+<a name="l00123"></a>00123             [<span class="keyword">self</span> _runOpsSynchronously:ops];
+<a name="l00124"></a>00124         } 
+<a name="l00125"></a>00125         
+<a name="l00126"></a>00126         [_operations addObjectsFromArray:ops];
+<a name="l00127"></a>00127         [<span class="keyword">self</span> _sortOpsByPriority:_operations];
+<a name="l00128"></a>00128     }    
+<a name="l00129"></a>00129 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ad351bedb166e66eb7c8370b3d842bf6e"></a><!-- doxytag: member="CPOperationQueue::addOperationWithFunction:" ref="ad351bedb166e66eb7c8370b3d842bf6e" args="(JSObject aFunction)" -->
@@ -153,6 +186,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00135">135</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00135"></a>00135                                 :(JSObject)aFunction 
+<a name="l00136"></a>00136 {
+<a name="l00137"></a>00137     [<span class="keyword">self</span> addOperation:[<a class="code" href="class_c_p_function_operation.html" title="Represents an operation using a JavaScript function that can be run in an CPOperationQueue...">CPFunctionOperation</a> functionOperationWithFunction:aFunction]];
+<a name="l00138"></a>00138 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a68a81f69ecdafe53fd842fdd8cb90977"></a><!-- doxytag: member="CPOperationQueue::cancelAllOperations" ref="a68a81f69ecdafe53fd842fdd8cb90977" args="()" -->
@@ -170,6 +211,20 @@
 </div>
 <div class="memdoc">
 <p>Cancels all queued and executing operations. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00158">158</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00159"></a>00159 {
+<a name="l00160"></a>00160     <span class="keywordflow">if</span> (_operations) 
+<a name="l00161"></a>00161     {
+<a name="l00162"></a>00162        var i = 0;
+<a name="l00163"></a>00163        <span class="keywordflow">for</span> (i = 0; i &lt; [_operations count]; i++) 
+<a name="l00164"></a>00164        {
+<a name="l00165"></a>00165            [[_operations objectAtIndex:i] cancel];
+<a name="l00166"></a>00166        }
+<a name="l00167"></a>00167     }
+<a name="l00168"></a>00168 }
+</pre></div></p>
 
 </div>
 </div>
@@ -189,6 +244,13 @@
 <div class="memdoc">
 <p>Convenience method for one system wide singelton queue. Returns the same queue as mainQueue. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00288">288</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00289"></a>00289 {
+<a name="l00290"></a>00290     <span class="keywordflow">return</span> [<a class="code" href="class_c_p_operation_queue.html" title="Represents an operation queue that can run CPOperations.">CPOperationQueue</a> <a class="code" href="class_c_p_operation_queue.html#a377604bbd1df592734464d44c26eae6a">mainQueue</a>];
+<a name="l00291"></a>00291 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a7504c24d779bb51da43e25e1a35aae6d"></a><!-- doxytag: member="CPOperationQueue::init" ref="a7504c24d779bb51da43e25e1a35aae6d" args="()" -->
@@ -205,6 +267,24 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00042">42</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00043"></a>00043 {
+<a name="l00044"></a>00044     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [super <a class="code" href="class_c_p_operation_queue.html#a7504c24d779bb51da43e25e1a35aae6d">init</a>]) 
+<a name="l00045"></a>00045     {
+<a name="l00046"></a>00046         _operations = [[<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a> alloc] init];
+<a name="l00047"></a>00047         _suspended = NO;
+<a name="l00048"></a>00048         _currentlyModifyingOps = NO;
+<a name="l00049"></a>00049         _timer = [<a class="code" href="class_c_p_timer.html" title="A timer object that can send a message after the given time interval.">CPTimer</a> scheduledTimerWithTimeInterval:0.01
+<a name="l00050"></a>00050                                                   target:<span class="keyword">self</span>
+<a name="l00051"></a>00051                                                 selector:<span class="keyword">@selector</span>(_runNextOpsInQueue)
+<a name="l00052"></a>00052                                                 userInfo:nil
+<a name="l00053"></a>00053                                                  repeats:YES];
+<a name="l00054"></a>00054     }
+<a name="l00055"></a>00055     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00056"></a>00056 }
+</pre></div></p>
 
 </div>
 </div>
@@ -224,6 +304,13 @@
 <div class="memdoc">
 <p>Returns a Boolean value indicating whether the receiver is scheduling queued operations for execution. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00207">207</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00208"></a>00208 {
+<a name="l00209"></a>00209     <span class="keywordflow">return</span> _suspended;
+<a name="l00210"></a>00210 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a377604bbd1df592734464d44c26eae6a"></a><!-- doxytag: member="CPOperationQueue::mainQueue" ref="a377604bbd1df592734464d44c26eae6a" args="()" -->
@@ -241,6 +328,19 @@
 </div>
 <div class="memdoc">
 <p>Convenience method for one system wide singelton queue. Returns the same queue as currentQueue. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00274">274</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00275"></a>00275 {
+<a name="l00276"></a>00276     <span class="keywordflow">if</span> (!<a class="code" href="_c_p_operation_queue_8j.html#ad3a6d0f9f5d56073004e0da82411dbd5">cpOperationMainQueue</a>) 
+<a name="l00277"></a>00277     {
+<a name="l00278"></a>00278         <a class="code" href="_c_p_operation_queue_8j.html#ad3a6d0f9f5d56073004e0da82411dbd5">cpOperationMainQueue</a> = [[<a class="code" href="class_c_p_operation_queue.html" title="Represents an operation queue that can run CPOperations.">CPOperationQueue</a> alloc] <a class="code" href="class_c_p_operation_queue.html#a7504c24d779bb51da43e25e1a35aae6d">init</a>];
+<a name="l00279"></a>00279         [<a class="code" href="_c_p_operation_queue_8j.html#ad3a6d0f9f5d56073004e0da82411dbd5">cpOperationMainQueue</a> setName:<span class="stringliteral">@&quot;main&quot;</span>];
+<a name="l00280"></a>00280     }
+<a name="l00281"></a>00281     
+<a name="l00282"></a>00282     <span class="keywordflow">return</span> <a class="code" href="_c_p_operation_queue_8j.html#ad3a6d0f9f5d56073004e0da82411dbd5">cpOperationMainQueue</a>;
+<a name="l00283"></a>00283 }
+</pre></div></p>
 
 </div>
 </div>
@@ -260,6 +360,13 @@
 <div class="memdoc">
 <p>Returns the maximum number of concurrent operations that the receiver can execute. Always returns 1 because JS doesn't have threads </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00189">189</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00190"></a>00190 {
+<a name="l00191"></a>00191     <span class="keywordflow">return</span> 1;
+<a name="l00192"></a>00192 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ada88b752be849ecfdffafcfc98d3028d"></a><!-- doxytag: member="CPOperationQueue::operationCount" ref="ada88b752be849ecfdffafcfc98d3028d" args="()" -->
@@ -277,6 +384,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00145">145</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00146"></a>00146 {
+<a name="l00147"></a>00147     <span class="keywordflow">if</span> (_operations) 
+<a name="l00148"></a>00148     {
+<a name="l00149"></a>00149         <span class="keywordflow">return</span> [_operations count];
+<a name="l00150"></a>00150     }
+<a name="l00151"></a>00151     
+<a name="l00152"></a>00152     <span class="keywordflow">return</span> 0;
+<a name="l00153"></a>00153 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a761548a1e1522f3c95157cca6e0596af"></a><!-- doxytag: member="CPOperationQueue::operations" ref="a761548a1e1522f3c95157cca6e0596af" args="()" -->
@@ -293,6 +412,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00140">140</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00141"></a>00141 {
+<a name="l00142"></a>00142     <span class="keywordflow">return</span> _operations;
+<a name="l00143"></a>00143 }
+</pre></div></p>
 
 </div>
 </div>
@@ -319,6 +445,15 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00198">198</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00198"></a>00198                     :(BOOL)suspend 
+<a name="l00199"></a>00199 {
+<a name="l00200"></a>00200     _suspended = suspend;
+<a name="l00201"></a>00201     [<span class="keyword">self</span> _enableTimer:!suspend];
+<a name="l00202"></a>00202 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a3a76f33ce4daece3ff5017bf12b94797"></a><!-- doxytag: member="CPOperationQueue::waitUntilAllOperationsAreFinished" ref="a3a76f33ce4daece3ff5017bf12b94797" args="()" -->
@@ -337,10 +472,23 @@
 <div class="memdoc">
 <p>Blocks until all of the receiver’s queued and executing operations finish executing. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a> rivillä <a class="el" href="_c_p_operation_queue_8j_source.html#l00173">173</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00174"></a>00174 {
+<a name="l00175"></a>00175     <span class="comment">// lets first stop the timer so it won&#39;t interfere</span>
+<a name="l00176"></a>00176     [<span class="keyword">self</span> _enableTimer:NO];
+<a name="l00177"></a>00177     [<span class="keyword">self</span> _runOpsSynchronously:_operations];
+<a name="l00178"></a>00178     <span class="keywordflow">if</span> (!_suspended) 
+<a name="l00179"></a>00179     {
+<a name="l00180"></a>00180         [<span class="keyword">self</span> _enableTimer:YES];
+<a name="l00181"></a>00181     }
+<a name="l00182"></a>00182 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_operation_queue_8j.html">CPOperationQueue.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_operation_queue_8j_source.html">CPOperationQueue.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

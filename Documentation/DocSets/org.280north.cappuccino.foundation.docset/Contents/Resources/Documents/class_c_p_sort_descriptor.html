@@ -50,6 +50,8 @@
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>Holds attributes necessary to describe how to sort a set of objects. </p>
 <p>A <a class="el" href="class_c_p_sort_descriptor.html" title="Holds attributes necessary to describe how to sort a set of objects.">CPSortDescriptor</a> holds the attributes necessary to describe how to sort a set of objects. The sort descriptor instance holds a property key path to the sort item of the objects to compare, the method selector to call for sorting and the sort order. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00055">55</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="ab236d22719ace27e1476301220f02226"></a><!-- doxytag: member="CPSortDescriptor::ascending" ref="ab236d22719ace27e1476301220f02226" args="()" -->
 <div class="memitem">
@@ -66,6 +68,13 @@
 </div>
 <div class="memdoc">
 <p>Returns <code>YES</code> if the sort descriptor's order is ascending. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00109">109</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00110"></a>00110 {
+<a name="l00111"></a>00111     <span class="keywordflow">return</span> _ascending;
+<a name="l00112"></a>00112 }
+</pre></div></p>
 
 </div>
 </div>
@@ -103,6 +112,14 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the comparison result </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00137">137</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00137"></a>00137                                    :(id)lhsObject withObject:(<span class="keywordtype">id</span>)rhsObject
+<a name="l00138"></a>00138 {
+<a name="l00139"></a>00139     <span class="keywordflow">return</span> (_ascending ? 1 : -1) * [[lhsObject valueForKeyPath:_key] performSelector:_selector withObject:[rhsObject valueForKeyPath:_key]];
+<a name="l00140"></a>00140 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a484c8ebff65b940ff477db7ddd98c1b0"></a><!-- doxytag: member="CPSortDescriptor::initWithKey:ascending:" ref="a484c8ebff65b940ff477db7ddd98c1b0" args="(CPString aKey,[ascending] BOOL isAscending)" -->
@@ -138,6 +155,14 @@
   </dd>
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized sort descriptor </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00074">74</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00074"></a>00074                  :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:(BOOL)isAscending
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithKey:aKey <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:isAscending <a class="code" href="class_c_p_sort_descriptor.html#ae5d1e8d0fd7d361ef705fe591e43e6a5">selector</a>:<span class="keyword">@selector</span>(compare:)];
+<a name="l00077"></a>00077 }
+</pre></div></p>
 
 </div>
 </div>
@@ -181,6 +206,23 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00091">91</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00091"></a>00091                  :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:(BOOL)isAscending <a class="code" href="class_c_p_sort_descriptor.html#ae5d1e8d0fd7d361ef705fe591e43e6a5">selector</a>:(SEL)aSelector
+<a name="l00092"></a>00092 {
+<a name="l00093"></a>00093     <span class="keyword">self</span> = [super init];
+<a name="l00094"></a>00094     
+<a name="l00095"></a>00095     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00096"></a>00096     {
+<a name="l00097"></a>00097         _key = aKey;
+<a name="l00098"></a>00098         _ascending = isAscending;
+<a name="l00099"></a>00099         _selector = aSelector;
+<a name="l00100"></a>00100     }
+<a name="l00101"></a>00101     
+<a name="l00102"></a>00102     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00103"></a>00103 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a54769acc58a12777ddb80ba17c67d93f"></a><!-- doxytag: member="CPSortDescriptor::key" ref="a54769acc58a12777ddb80ba17c67d93f" args="()" -->
@@ -198,6 +240,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the descriptor's property key </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00117">117</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00118"></a>00118 {
+<a name="l00119"></a>00119     <span class="keywordflow">return</span> _key;
+<a name="l00120"></a>00120 }
+</pre></div></p>
 
 </div>
 </div>
@@ -218,6 +267,13 @@
 <p>Makes a copy of this sort descriptor with a reversed sort order. </p>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the reversed copy of the sort descriptor </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00146">146</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00147"></a>00147 {
+<a name="l00148"></a>00148     <span class="keywordflow">return</span> [[[<span class="keyword">self</span> <span class="keyword">class</span>] alloc] initWithKey:_key <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:!_ascending <a class="code" href="class_c_p_sort_descriptor.html#ae5d1e8d0fd7d361ef705fe591e43e6a5">selector</a>:_selector];
+<a name="l00149"></a>00149 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ae5d1e8d0fd7d361ef705fe591e43e6a5"></a><!-- doxytag: member="CPSortDescriptor::selector" ref="ae5d1e8d0fd7d361ef705fe591e43e6a5" args="()" -->
@@ -235,6 +291,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the selector of the method to call when comparing objects. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00125">125</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00126"></a>00126 {
+<a name="l00127"></a>00127     <span class="keywordflow">return</span> _selector;
+<a name="l00128"></a>00128 }
+</pre></div></p>
 
 </div>
 </div>
@@ -262,6 +325,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00062">62</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00062"></a>00062                            :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:(BOOL)isAscending
+<a name="l00063"></a>00063 {
+<a name="l00064"></a>00064     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithKey:aKey <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:isAscending];
+<a name="l00065"></a>00065 }
+</pre></div></p>
 
 </div>
 </div>
@@ -296,10 +367,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a> rivillä <a class="el" href="_c_p_sort_descriptor_8j_source.html#l00079">79</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00079"></a>00079                            :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:(BOOL)isAscending <a class="code" href="class_c_p_sort_descriptor.html#ae5d1e8d0fd7d361ef705fe591e43e6a5">selector</a>:(SEL)aSelector
+<a name="l00080"></a>00080 {
+<a name="l00081"></a>00081     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithKey:aKey <a class="code" href="class_c_p_sort_descriptor.html#ab236d22719ace27e1476301220f02226">ascending</a>:isAscending <a class="code" href="class_c_p_sort_descriptor.html#ae5d1e8d0fd7d361ef705fe591e43e6a5">selector</a>:aSelector];
+<a name="l00082"></a>00082 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_sort_descriptor_8j.html">CPSortDescriptor.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_sort_descriptor_8j_source.html">CPSortDescriptor.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

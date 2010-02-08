@@ -63,6 +63,8 @@
 </table>
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>A representation of a single point in time. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00036">36</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a315ae3e449cc85cfe1844046bd93a960"></a><!-- doxytag: member="CPDate::compare:" ref="a315ae3e449cc85cfe1844046bd93a960" args="(CPDate anotherDate)" -->
 <div class="memitem">
@@ -80,6 +82,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00159">159</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00159"></a>00159                              :(<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a>)anotherDate
+<a name="l00160"></a>00160 {
+<a name="l00161"></a>00161     <span class="keywordflow">return</span> (<span class="keyword">self</span> &gt; anotherDate) ?  <a class="code" href="_c_p_obj_j_runtime_8j.html#aad9efd5d7748d296944239adb552f67c">CPOrderedDescending</a> : ((<span class="keyword">self</span> &lt; anotherDate) ? <a class="code" href="_c_p_obj_j_runtime_8j.html#a3e9b85c1be28d3092262626ffcf41993">CPOrderedAscending</a> : <a class="code" href="_c_p_obj_j_runtime_8j.html#af6563f83ad093188bcbdba78aa1848c5">CPOrderedSame</a>);
+<a name="l00162"></a>00162 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a918222c4282c2e0626f3616403793554"></a><!-- doxytag: member="CPDate::date" ref="a918222c4282c2e0626f3616403793554" args="()" -->
@@ -96,6 +106,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00045">45</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00046"></a>00046 {
+<a name="l00047"></a>00047     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] init];
+<a name="l00048"></a>00048 }
+</pre></div></p>
 
 </div>
 </div>
@@ -115,6 +132,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00055">55</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00055"></a>00055                                    :(CPTimeInterval)seconds 
+<a name="l00056"></a>00056 {
+<a name="l00057"></a>00057     <span class="keywordflow">return</span> [[<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a> alloc] initWithTimeIntervalSince1970:seconds];
+<a name="l00058"></a>00058 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aa769ba4f51e87a34b28632e32b738384"></a><!-- doxytag: member="CPDate::dateWithTimeIntervalSinceNow:" ref="aa769ba4f51e87a34b28632e32b738384" args="(CPTimeInterval seconds)" -->
@@ -132,6 +157,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00050">50</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00050"></a>00050                                   :(CPTimeInterval)seconds
+<a name="l00051"></a>00051 {
+<a name="l00052"></a>00052     <span class="keywordflow">return</span> [[<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a> alloc] initWithTimeIntervalSinceNow:seconds];
+<a name="l00053"></a>00053 }
+</pre></div></p>
 
 </div>
 </div>
@@ -151,6 +184,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00060">60</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00060"></a>00060                                             :(CPTimeInterval)seconds
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062     <span class="keywordflow">return</span> [[<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a> alloc] initWithTimeIntervalSinceReferenceDate:seconds];
+<a name="l00063"></a>00063 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6f1e6c80b69d405ff02c05db04214197"></a><!-- doxytag: member="CPDate::description" ref="a6f1e6c80b69d405ff02c05db04214197" args="()" -->
@@ -169,6 +210,16 @@
 <div class="memdoc">
 <p>Returns the date as a string in the international format YYYY-MM-DD HH:MM:SS ±HHMM. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00178">178</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00179"></a>00179 {
+<a name="l00180"></a>00180     var hours = Math.floor(<span class="keyword">self</span>.getTimezoneOffset() / 60),
+<a name="l00181"></a>00181         minutes = <span class="keyword">self</span>.getTimezoneOffset() - hours * 60;
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183     <span class="keywordflow">return</span> [<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a> stringWithFormat:<span class="stringliteral">@&quot;%04d-%02d-%02d %02d:%02d:%02d +%02d%02d&quot;</span>, <span class="keyword">self</span>.getFullYear(), <span class="keyword">self</span>.getMonth()+1, <span class="keyword">self</span>.getDate(), <span class="keyword">self</span>.getHours(), <span class="keyword">self</span>.getMinutes(), <span class="keyword">self</span>.getSeconds(), hours, minutes];
+<a name="l00184"></a>00184 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="accd51a49fdde49451bdae18b8d91f1b9"></a><!-- doxytag: member="CPDate::distantFuture" ref="accd51a49fdde49451bdae18b8d91f1b9" args="()" -->
@@ -186,6 +237,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00070">70</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00071"></a>00071 {
+<a name="l00072"></a>00072     <span class="keywordflow">return</span> <span class="keyword">new</span> Date(10000,1,1,0,0,0,0);
+<a name="l00073"></a>00073 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a11ee16e89fa330fbde3351f159aafd2d"></a><!-- doxytag: member="CPDate::distantPast" ref="a11ee16e89fa330fbde3351f159aafd2d" args="()" -->
@@ -202,6 +260,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00065">65</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00066"></a>00066 {
+<a name="l00067"></a>00067     <span class="keywordflow">return</span> <span class="keyword">new</span> Date(-10000,1,1,0,0,0,0);
+<a name="l00068"></a>00068 }
+</pre></div></p>
 
 </div>
 </div>
@@ -221,6 +286,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00164">164</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00164"></a>00164                      :(<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a>)anotherDate
+<a name="l00165"></a>00165 {
+<a name="l00166"></a>00166     <span class="keywordflow">return</span> (<span class="keyword">self</span> &lt; anotherDate) ? <span class="keyword">self</span> : anotherDate;
+<a name="l00167"></a>00167 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a8416caefe5efd071334286a486ec76d5"></a><!-- doxytag: member="CPDate::encodeWithCoder:" ref="a8416caefe5efd071334286a486ec76d5" args="(CPCoder aCoder)" -->
@@ -238,6 +311,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00202">202</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00202"></a>00202                        :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00203"></a>00203 {
+<a name="l00204"></a>00204     [aCoder encodeInt:<span class="keyword">self</span>.getTime() forKey:<a class="code" href="_c_p_date_8j.html#a15fa6bfc4290a03a93b275804297e34d">CPDateTimeKey</a>];
+<a name="l00205"></a>00205 }
+</pre></div></p>
 
 </div>
 </div>
@@ -257,6 +338,19 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00192">192</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00192"></a>00192                    :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00193"></a>00193 {
+<a name="l00194"></a>00194     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00195"></a>00195     {
+<a name="l00196"></a>00196         <span class="keyword">self</span>.setTime([aCoder decodeIntForKey:<a class="code" href="_c_p_date_8j.html#a15fa6bfc4290a03a93b275804297e34d">CPDateTimeKey</a>]);
+<a name="l00197"></a>00197     }
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00200"></a>00200 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aa4aee25d604c1e280a460a7a67624f69"></a><!-- doxytag: member="CPDate::initWithString:" ref="aa4aee25d604c1e280a460a7a67624f69" args="(CPString description)" -->
@@ -275,6 +369,29 @@
 </div>
 <div class="memdoc">
 <p>Returns a <a class="el" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a> initialized with a date and time specified by the given string in international date format YYYY-MM-DD HH:MM:SS ±HHMM (e.g. 2009-11-17 17:52:04 +0000). </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00104">104</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00104"></a>00104                     :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)description
+<a name="l00105"></a>00105 {
+<a name="l00106"></a>00106     var <a class="code" href="_c_p_u_r_l_8j.html#adcb923889bccfbcacbd75505c9667b42">format</a> = /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) ([-+])(\d{2})(\d{2})/,
+<a name="l00107"></a>00107         d = description.match(<span class="keyword">new</span> RegExp(format));
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109     <span class="keywordflow">if</span> (!d || d.length != 10)
+<a name="l00110"></a>00110         [<a class="code" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp;amp; raising).">CPException</a> <span class="keyword">raise</span>:<a class="code" href="_c_p_exception_8j.html#a6fa23775ddcbf086beab6aebeea123c3">CPInvalidArgumentException</a>
+<a name="l00111"></a>00111                     reason:<span class="stringliteral">&quot;initWithString: the string must be of YYYY-MM-DD HH:MM:SS ±HHMM format&quot;</span>];
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113     var <a class="code" href="class_c_p_date.html#a918222c4282c2e0626f3616403793554">date</a> = <span class="keyword">new</span> Date(d[1], d[2]-1, d[3]),
+<a name="l00114"></a>00114         timeZoneOffset =  (Number(d[8]) * 60 + Number(d[9])) * (d[7] === <span class="charliteral">&#39;-&#39;</span> ? -1 : 1);
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116     date.setHours(d[4]);
+<a name="l00117"></a>00117     date.setMinutes(d[5]);
+<a name="l00118"></a>00118     date.setSeconds(d[6]);
+<a name="l00119"></a>00119     
+<a name="l00120"></a>00120     <span class="keyword">self</span> = <span class="keyword">new</span> Date(date.getTime() +  (timeZoneOffset - date.getTimezoneOffset()) * 60 * 1000);
+<a name="l00121"></a>00121     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00122"></a>00122 }
+</pre></div></p>
 
 </div>
 </div>
@@ -303,6 +420,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00093">93</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00093"></a>00093                           :(CPTimeInterval)seconds sinceDate:(<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a>)refDate
+<a name="l00094"></a>00094 {
+<a name="l00095"></a>00095     <span class="keyword">self</span> = <span class="keyword">new</span> Date(refDate.getTime() + seconds * 1000);
+<a name="l00096"></a>00096     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00097"></a>00097 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a37fbbb2966a16ba0ddacb3aa51e1cfaa"></a><!-- doxytag: member="CPDate::initWithTimeIntervalSince1970:" ref="a37fbbb2966a16ba0ddacb3aa51e1cfaa" args="(CPTimeInterval seconds)" -->
@@ -320,6 +446,15 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00081">81</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00081"></a>00081                                    :(CPTimeInterval)seconds
+<a name="l00082"></a>00082 {
+<a name="l00083"></a>00083     <span class="keyword">self</span> = <span class="keyword">new</span> Date(seconds * 1000);
+<a name="l00084"></a>00084     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00085"></a>00085 }
+</pre></div></p>
 
 </div>
 </div>
@@ -339,6 +474,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00075">75</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00075"></a>00075                                   :(CPTimeInterval)seconds
+<a name="l00076"></a>00076 {
+<a name="l00077"></a>00077     <span class="keyword">self</span> = <span class="keyword">new</span> Date((<span class="keyword">new</span> Date()).getTime() + seconds * 1000);
+<a name="l00078"></a>00078     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00079"></a>00079 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a9d68e242a23b46c2e96a61b7d6474d55"></a><!-- doxytag: member="CPDate::initWithTimeIntervalSinceReferenceDate:" ref="a9d68e242a23b46c2e96a61b7d6474d55" args="(CPTimeInterval seconds)" -->
@@ -356,6 +500,15 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00087">87</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00087"></a>00087                                             :(CPTimeInterval)seconds
+<a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <span class="keyword">self</span> = [<span class="keyword">self</span> initWithTimeInterval:seconds sinceDate:<a class="code" href="_c_p_date_8j.html#abd2002813470f5c4f41552f591fb7df1">CPDateReferenceDate</a>];
+<a name="l00090"></a>00090     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00091"></a>00091 }
+</pre></div></p>
 
 </div>
 </div>
@@ -375,6 +528,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00149">149</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00149"></a>00149                :(<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a>)aDate
+<a name="l00150"></a>00150 {
+<a name="l00151"></a>00151     <span class="keywordflow">return</span> [<span class="keyword">self</span> isEqualToDate:aDate];
+<a name="l00152"></a>00152 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a4f179beeaca776102a2c331d6e0cd926"></a><!-- doxytag: member="CPDate::isEqualToDate:" ref="a4f179beeaca776102a2c331d6e0cd926" args="(CPDate anotherDate)" -->
@@ -392,6 +553,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00154">154</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00154"></a>00154                      :(<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a>)anotherDate
+<a name="l00155"></a>00155 {
+<a name="l00156"></a>00156     <span class="keywordflow">return</span> !(self &lt; anotherDate || self &gt; anotherDate);
+<a name="l00157"></a>00157 }
+</pre></div></p>
 
 </div>
 </div>
@@ -411,6 +580,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00169">169</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00169"></a>00169                    :(<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a>)anotherDate
+<a name="l00170"></a>00170 {
+<a name="l00171"></a>00171     <span class="keywordflow">return</span> (<span class="keyword">self</span> &gt; anotherDate) ? <span class="keyword">self</span> : anotherDate;
+<a name="l00172"></a>00172 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0eac022a26d2e8b16717bfa28c39f821"></a><!-- doxytag: member="CPDate::timeIntervalSince1970" ref="a0eac022a26d2e8b16717bfa28c39f821" args="()" -->
@@ -427,6 +604,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00134">134</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00135"></a>00135 {
+<a name="l00136"></a>00136     <span class="keywordflow">return</span> <span class="keyword">self</span>.getTime() / 1000.0;
+<a name="l00137"></a>00137 }
+</pre></div></p>
 
 </div>
 </div>
@@ -446,6 +630,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00124">124</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00124"></a>00124                                        :(<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a>)anotherDate
+<a name="l00125"></a>00125 {
+<a name="l00126"></a>00126     <span class="keywordflow">return</span> (<span class="keyword">self</span>.getTime() - anotherDate.getTime()) / 1000.0;
+<a name="l00127"></a>00127 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a03ae420671cd92adc1076af48152ee8a"></a><!-- doxytag: member="CPDate::timeIntervalSinceNow" ref="a03ae420671cd92adc1076af48152ee8a" args="()" -->
@@ -462,6 +654,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00129">129</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00130"></a>00130 {
+<a name="l00131"></a>00131     <span class="keywordflow">return</span> [<span class="keyword">self</span> timeIntervalSinceDate:[<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a> <a class="code" href="class_c_p_date.html#a918222c4282c2e0626f3616403793554">date</a>]];
+<a name="l00132"></a>00132 }
+</pre></div></p>
 
 </div>
 </div>
@@ -480,10 +679,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_date_8j_source.html">CPDate.j</a> rivillä <a class="el" href="_c_p_date_8j_source.html#l00139">139</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00140"></a>00140 {
+<a name="l00141"></a>00141     <span class="keywordflow">return</span> (<span class="keyword">self</span>.getTime() - <a class="code" href="_c_p_date_8j.html#abd2002813470f5c4f41552f591fb7df1">CPDateReferenceDate</a>.getTime()) / 1000.0;
+<a name="l00142"></a>00142 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_date_8j.html">CPDate.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_date_8j_source.html">CPDate.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

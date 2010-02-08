@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: /Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPURLRequest.j lähdekooditiedosto</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li><a href="annotated.html"><span>Luokat</span></a></li>
+      <li class="current"><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Tiedostolista</span></a></li>
+      <li><a href="globals.html"><span>Tiedoston&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+<h1>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPURLRequest.j</h1><a href="_c_p_u_r_l_request_8j.html">Siirry tämän tiedoston dokumentaatioon.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * CPURLRequest.j</span>
+<a name="l00003"></a>00003 <span class="comment"> * Foundation</span>
+<a name="l00004"></a>00004 <span class="comment"> *</span>
+<a name="l00005"></a>00005 <span class="comment"> * Created by Francisco Tolmasky.</span>
+<a name="l00006"></a>00006 <span class="comment"> * Copyright 2008, 280 North, Inc.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> * This library is free software; you can redistribute it and/or</span>
+<a name="l00009"></a>00009 <span class="comment"> * modify it under the terms of the GNU Lesser General Public</span>
+<a name="l00010"></a>00010 <span class="comment"> * License as published by the Free Software Foundation; either</span>
+<a name="l00011"></a>00011 <span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"> *</span>
+<a name="l00013"></a>00013 <span class="comment"> * This library is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU</span>
+<a name="l00016"></a>00016 <span class="comment"> * Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"> *</span>
+<a name="l00018"></a>00018 <span class="comment"> * You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00019"></a>00019 <span class="comment"> * License along with this library; if not, write to the Free Software</span>
+<a name="l00020"></a>00020 <span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span>
+<a name="l00021"></a>00021 <span class="comment"> */</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPObject.j&quot;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 
+<a name="l00034"></a><a class="code" href="class_c_p_u_r_l_request.html">00034</a> <span class="keyword">@implementation </span><a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a> : <a class="code" href="class_c_p_object.html" title="The root class from which most classes are subclassed.">CPObject</a>
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036     <a class="code" href="class_c_p_u_r_l.html">CPURL</a>       _URL;
+<a name="l00037"></a>00037     
+<a name="l00038"></a>00038     <span class="comment">// FIXME: this should be CPData</span>
+<a name="l00039"></a>00039     <a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>        _HTTPBody;
+<a name="l00040"></a>00040     <a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>        _HTTPMethod;
+<a name="l00041"></a>00041     <a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>    _HTTPHeaderFields;
+<a name="l00042"></a>00042 }
+<a name="l00043"></a>00043 
+<a name="l00049"></a><a class="code" href="class_c_p_u_r_l_request.html#af08fd8546ca8555f8e87eae2e59a0669">00049</a> + (id)requestWithURL:(<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)aURL
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051     <span class="keywordflow">return</span> [[<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a> alloc] initWithURL:aURL];
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00059"></a><a class="code" href="class_c_p_u_r_l_request.html#a31434e1cdcd049e1df8f9e4e043f1b8f">00059</a> - (id)initWithURL:(<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)aURL
+<a name="l00060"></a>00060 {
+<a name="l00061"></a>00061     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00062"></a>00062     
+<a name="l00063"></a>00063     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00064"></a>00064     {
+<a name="l00065"></a>00065         [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l_request.html#ac35db38f80bca91556837e3d96c050a1">setURL</a>:aURL];
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         _HTTPBody = <span class="stringliteral">@&quot;&quot;</span>;
+<a name="l00068"></a>00068         _HTTPMethod = <span class="stringliteral">@&quot;GET&quot;</span>;
+<a name="l00069"></a>00069         _HTTPHeaderFields = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00070"></a>00070         
+<a name="l00071"></a>00071         [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l_request.html#a16ab965c81026178b63cd4fa28d0c73e">setValue</a>:&quot;Thu, 1 Jan 1970 00:00:00 GMT&quot; <a class="code" href="class_c_p_u_r_l_request.html#a16ab965c81026178b63cd4fa28d0c73e">forHTTPHeaderField</a>:&quot;If-Modified-Since&quot;];
+<a name="l00072"></a>00072         [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l_request.html#a16ab965c81026178b63cd4fa28d0c73e">setValue</a>:&quot;no-cache&quot; <a class="code" href="class_c_p_u_r_l_request.html#a16ab965c81026178b63cd4fa28d0c73e">forHTTPHeaderField</a>:&quot;Cache-Control&quot;];
+<a name="l00073"></a>00073         [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l_request.html#a16ab965c81026178b63cd4fa28d0c73e">setValue</a>:&quot;XMLHttpRequest&quot; <a class="code" href="class_c_p_u_r_l_request.html#a16ab965c81026178b63cd4fa28d0c73e">forHTTPHeaderField</a>:&quot;X-Requested-With&quot;];
+<a name="l00074"></a>00074     }
+<a name="l00075"></a>00075     
+<a name="l00076"></a>00076     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00082"></a><a class="code" href="class_c_p_u_r_l_request.html#a17d62578c61fd0ca35add55aa16eddf7">00082</a> - (<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)URL
+<a name="l00083"></a>00083 {
+<a name="l00084"></a>00084     <span class="keywordflow">return</span> _URL;
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 
+<a name="l00091"></a><a class="code" href="class_c_p_u_r_l_request.html#ac35db38f80bca91556837e3d96c050a1">00091</a> - (void)setURL:(<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)aURL
+<a name="l00092"></a>00092 {
+<a name="l00093"></a>00093     <span class="keywordflow">if</span> ([aURL isKindOfClass:[<a class="code" href="class_c_p_u_r_l.html">CPURL</a> <span class="keyword">class</span>]])
+<a name="l00094"></a>00094         _URL = aURL;
+<a name="l00095"></a>00095     <span class="keywordflow">else</span>
+<a name="l00096"></a>00096         _URL = [<a class="code" href="class_c_p_u_r_l.html">CPURL</a> <a class="code" href="class_c_p_u_r_l.html#aa3eeb979789d9141888dccc3227eda01">URLWithString</a>:String(aURL)];
+<a name="l00097"></a>00097 }
+<a name="l00098"></a>00098 
+<a name="l00103"></a><a class="code" href="class_c_p_u_r_l_request.html#ae809f2ae1c7bdb160cbefa9b1734fe51">00103</a> - (void)setHTTPBody:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)anHTTPBody
+<a name="l00104"></a>00104 {
+<a name="l00105"></a>00105     _HTTPBody = anHTTPBody;
+<a name="l00106"></a>00106 }
+<a name="l00107"></a>00107 
+<a name="l00111"></a><a class="code" href="class_c_p_u_r_l_request.html#a3e1da3df698d58613ad0f524b8095f47">00111</a> - (<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)HTTPBody
+<a name="l00112"></a>00112 {
+<a name="l00113"></a>00113     <span class="keywordflow">return</span> _HTTPBody;
+<a name="l00114"></a>00114 }
+<a name="l00115"></a>00115 
+<a name="l00120"></a><a class="code" href="class_c_p_u_r_l_request.html#a48c7726d06c326cccd7352534df6d202">00120</a> - (void)setHTTPMethod:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)anHTTPMethod
+<a name="l00121"></a>00121 {
+<a name="l00122"></a>00122     _HTTPMethod = anHTTPMethod;
+<a name="l00123"></a>00123 }
+<a name="l00124"></a>00124 
+<a name="l00128"></a><a class="code" href="class_c_p_u_r_l_request.html#abc2599dc1b6a6a1c9d5709e5249d1607">00128</a> - (<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)HTTPMethod
+<a name="l00129"></a>00129 {
+<a name="l00130"></a>00130     <span class="keywordflow">return</span> _HTTPMethod;
+<a name="l00131"></a>00131 }
+<a name="l00132"></a>00132 
+<a name="l00136"></a><a class="code" href="class_c_p_u_r_l_request.html#a964778231a51f9bac5bf4329506f80fb">00136</a> - (<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)allHTTPHeaderFields
+<a name="l00137"></a>00137 {
+<a name="l00138"></a>00138     <span class="keywordflow">return</span> _HTTPHeaderFields;
+<a name="l00139"></a>00139 }
+<a name="l00140"></a>00140 
+<a name="l00145"></a><a class="code" href="class_c_p_u_r_l_request.html#aeb91f85cbeb48be6ca0cac355c0605b9">00145</a> - (<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)valueForHTTPHeaderField:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aField
+<a name="l00146"></a>00146 {
+<a name="l00147"></a>00147     <span class="keywordflow">return</span> [_HTTPHeaderFields objectForKey:aField];
+<a name="l00148"></a>00148 }
+<a name="l00149"></a>00149 
+<a name="l00155"></a><a class="code" href="class_c_p_u_r_l_request.html#a16ab965c81026178b63cd4fa28d0c73e">00155</a> - (void)setValue:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aValue forHTTPHeaderField:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aField
+<a name="l00156"></a>00156 {
+<a name="l00157"></a>00157     [_HTTPHeaderFields setObject:aValue forKey:aField];
+<a name="l00158"></a>00158 }
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160 <span class="keyword">@end</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

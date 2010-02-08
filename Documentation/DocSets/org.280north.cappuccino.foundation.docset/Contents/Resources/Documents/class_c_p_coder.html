@@ -50,6 +50,8 @@
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>Defines methods for use when archiving &amp; restoring (enc/decoding). </p>
 <p>Top-level class defining methods for use when archiving (encoding) objects to a byte array or file, and when restoring (decoding) objects. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00035">35</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a42d4a3d3347c8fb3047d830c73b648c3"></a><!-- doxytag: member="CPCoder::encodeBycopyObject:" ref="a42d4a3d3347c8fb3047d830c73b648c3" args="(id anObject)" -->
 <div class="memitem">
@@ -73,6 +75,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00131">131</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00131"></a>00131                          :(id)anObject
+<a name="l00132"></a>00132 {
+<a name="l00133"></a>00133    [<span class="keyword">self</span> encodeObject:object];
+<a name="l00134"></a>00134 }
+</pre></div></p>
 
 </div>
 </div>
@@ -99,6 +109,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00140">140</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00140"></a>00140                               :(id)anObject
+<a name="l00141"></a>00141 {
+<a name="l00142"></a>00142    [<span class="keyword">self</span> encodeObject:object];
+<a name="l00143"></a>00143 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a7aa8cfdea5d51c69e0001aa9d2a0f638"></a><!-- doxytag: member="CPCoder::encodeDataObject:" ref="a7aa8cfdea5d51c69e0001aa9d2a0f638" args="(CPData aData)" -->
@@ -123,6 +141,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00065">65</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00065"></a>00065                        :(<a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a>)aData
+<a name="l00066"></a>00066 {
+<a name="l00067"></a>00067    CPInvalidAbstractInvocation();
+<a name="l00068"></a>00068 }
+</pre></div></p>
 
 </div>
 </div>
@@ -149,6 +175,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00074">74</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00074"></a>00074                    :(id)anObject
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076 <span class="comment">//   [self encodeValueOfObjCType:@encode(id) at:object];</span>
+<a name="l00077"></a>00077 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a581508384488b9cefc9052f71aa49be6"></a><!-- doxytag: member="CPCoder::encodePoint:" ref="a581508384488b9cefc9052f71aa49be6" args="(CPPoint aPoint)" -->
@@ -173,6 +207,15 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00083">83</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00083"></a>00083                    :(CPPoint)aPoint
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     [<span class="keyword">self</span> encodeNumber:aPoint.x];
+<a name="l00086"></a>00086     [<span class="keyword">self</span> encodeNumber:aPoint.y];
+<a name="l00087"></a>00087 }
+</pre></div></p>
 
 </div>
 </div>
@@ -199,6 +242,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00113">113</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00113"></a>00113                          :(id)aPropertyList
+<a name="l00114"></a>00114 {
+<a name="l00115"></a>00115 <span class="comment">//   [self encodeValueOfObjCType:@encode(id) at:&amp;propertyList];</span>
+<a name="l00116"></a>00116 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a691b22e9b1d056a60f5b24e11d76cb36"></a><!-- doxytag: member="CPCoder::encodeRect:" ref="a691b22e9b1d056a60f5b24e11d76cb36" args="(CGRect aRect)" -->
@@ -223,6 +274,15 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00093">93</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00093"></a>00093                   :(CGRect)aRect
+<a name="l00094"></a>00094 {
+<a name="l00095"></a>00095     [<span class="keyword">self</span> encodePoint:aRect.origin];
+<a name="l00096"></a>00096     [<span class="keyword">self</span> encodeSize:aRect.size];
+<a name="l00097"></a>00097 }
+</pre></div></p>
 
 </div>
 </div>
@@ -249,6 +309,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00122">122</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00122"></a>00122                        :(id)anObject
+<a name="l00123"></a>00123 {
+<a name="l00124"></a>00124    [<span class="keyword">self</span> encodeObject:anObject];
+<a name="l00125"></a>00125 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a173642698b22e6df2ab3647ae035f4cf"></a><!-- doxytag: member="CPCoder::encodeSize:" ref="a173642698b22e6df2ab3647ae035f4cf" args="(CPSize aSize)" -->
@@ -273,6 +341,15 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00103">103</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00103"></a>00103                   :(CPSize)aSize
+<a name="l00104"></a>00104 {
+<a name="l00105"></a>00105     [<span class="keyword">self</span> encodeNumber:aSize.width];
+<a name="l00106"></a>00106     [<span class="keyword">self</span> encodeNumber:aSize.height];
+<a name="l00107"></a>00107 }
+</pre></div></p>
 
 </div>
 </div>
@@ -309,10 +386,18 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a> rivillä <a class="el" href="_c_p_coder_8j_source.html#l00056">56</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00056"></a>00056                             :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aType at:(<span class="keywordtype">id</span>)anObject
+<a name="l00057"></a>00057 {
+<a name="l00058"></a>00058    CPInvalidAbstractInvocation();
+<a name="l00059"></a>00059 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_coder_8j.html">CPCoder.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_coder_8j_source.html">CPCoder.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

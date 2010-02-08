@@ -1,0 +1,706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: /Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPKeyValueObserving.j lähdekooditiedosto</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li><a href="annotated.html"><span>Luokat</span></a></li>
+      <li class="current"><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Tiedostolista</span></a></li>
+      <li><a href="globals.html"><span>Tiedoston&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+<h1>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPKeyValueObserving.j</h1><a href="_c_p_key_value_observing_8j.html">Siirry tämän tiedoston dokumentaatioon.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * CPKeyValueCoding.j</span>
+<a name="l00003"></a>00003 <span class="comment"> * Foundation</span>
+<a name="l00004"></a>00004 <span class="comment"> *</span>
+<a name="l00005"></a>00005 <span class="comment"> * Created by Ross Boucher.</span>
+<a name="l00006"></a>00006 <span class="comment"> * Copyright 2008, 280 North, Inc.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> * This library is free software; you can redistribute it and/or</span>
+<a name="l00009"></a>00009 <span class="comment"> * modify it under the terms of the GNU Lesser General Public</span>
+<a name="l00010"></a>00010 <span class="comment"> * License as published by the Free Software Foundation; either</span>
+<a name="l00011"></a>00011 <span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"> *</span>
+<a name="l00013"></a>00013 <span class="comment"> * This library is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU</span>
+<a name="l00016"></a>00016 <span class="comment"> * Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"> *</span>
+<a name="l00018"></a>00018 <span class="comment"> * You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00019"></a>00019 <span class="comment"> * License along with this library; if not, write to the Free Software</span>
+<a name="l00020"></a>00020 <span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span>
+<a name="l00021"></a>00021 <span class="comment"> */</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPArray.j&quot;</span>
+<a name="l00024"></a>00024 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPDictionary.j&quot;</span>
+<a name="l00025"></a>00025 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPException.j&quot;</span>
+<a name="l00026"></a>00026 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPNull.j&quot;</span>
+<a name="l00027"></a>00027 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPObject.j&quot;</span>
+<a name="l00028"></a>00028 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPSet.j&quot;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">@implementation </span><a class="code" href="class_c_p_object.html" title="The root class from which most classes are subclassed.">CPObject</a> (KeyValueObserving)
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="class_c_p_object.html#a2345edff8debed53e4629f605d645fdb">00033</a> - (void)willChangeValueForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="class_c_p_object.html#a764b53263b46c458c3fa3b32b3feaeea">00037</a> - (void)didChangeValueForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039 }
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="class_c_p_object.html#afcbc5be019204a8a7220a3e409a1f4a9">00041</a> - (void)willChange:(CPKeyValueChange)change valuesAtIndexes:(<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a>)indexes forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)key
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="class_c_p_object.html#aa7fa96ff8721caadf1a5c5f9f014b3c1">00045</a> - (void)didChange:(CPKeyValueChange)change valuesAtIndexes:(<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a>)indexes forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)key
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a><a class="code" href="class_c_p_object.html#a9954bf5af96fad479a0e69151398e475">00049</a> - (void)addObserver:(<span class="keywordtype">id</span>)anObserver forKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath options:(<span class="keywordtype">unsigned</span>)options context:(<span class="keywordtype">id</span>)aContext
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051     <span class="keywordflow">if</span> (!anObserver || !aPath)
+<a name="l00052"></a>00052         <span class="keywordflow">return</span>;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     [[_CPKVOProxy proxyForObject:self] _addObserver:anObserver forKeyPath:aPath options:options context:aContext];
+<a name="l00055"></a>00055 }
+<a name="l00056"></a>00056 
+<a name="l00057"></a><a class="code" href="class_c_p_object.html#afac0d8a8006c84b4a00feb1c1b440de7">00057</a> - (void)removeObserver:(<span class="keywordtype">id</span>)anObserver forKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keywordflow">if</span> (!anObserver || !aPath)
+<a name="l00060"></a>00060         <span class="keywordflow">return</span>;
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062     [<span class="keyword">self</span>[KVOProxyKey] _removeObserver:anObserver forKeyPath:aPath];
+<a name="l00063"></a>00063 }
+<a name="l00064"></a>00064 
+<a name="l00065"></a><a class="code" href="class_c_p_object.html#ae1e48d37201aa0b1226b3a163806656b">00065</a> + (BOOL)automaticallyNotifiesObserversForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00066"></a>00066 {
+<a name="l00067"></a>00067     <span class="keywordflow">return</span> YES;
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 
+<a name="l00070"></a><a class="code" href="class_c_p_object.html#afe803a24313cff11c88f521243a9000f">00070</a> + (<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)keyPathsForValuesAffectingValueForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00071"></a>00071 {
+<a name="l00072"></a>00072     var capitalizedKey = aKey.charAt(0).toUpperCase() + aKey.substring(1);
+<a name="l00073"></a>00073         selector = <span class="stringliteral">&quot;keyPathsForValuesAffecting&quot;</span> + capitalizedKey;
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     <span class="keywordflow">if</span> ([[<span class="keyword">self</span> <span class="keyword">class</span>] respondsToSelector:selector])
+<a name="l00076"></a>00076         <span class="keywordflow">return</span> objj_msgSend([<span class="keyword">self</span> <span class="keyword">class</span>], selector);
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     <span class="keywordflow">return</span> [<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a> <a class="code" href="class_c_p_set.html#a89623be28c3a0913db1967b667874d39">set</a>];
+<a name="l00079"></a>00079 }
+<a name="l00080"></a>00080 
+<a name="l00081"></a><a class="code" href="class_c_p_object.html#a1f95c4c7c21ecbb654d77fe40ef569e5">00081</a> - (void)applyChange:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aChange toKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKeyPath
+<a name="l00082"></a>00082 {
+<a name="l00083"></a>00083     var changeKind = [aChange <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeKindKey];
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085     <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#ab38f2aa9a0051d00c8f26a6e0242de3c">CPKeyValueChangeSetting</a>)
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087         var value = [aChange <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeNewKey];
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         [<span class="keyword">self</span> setValue:value === [<a class="code" href="class_c_p_null.html" title="An object representation of nil.">CPNull</a> null] ? nil : value forKeyPath:aKeyPath];
+<a name="l00090"></a>00090     }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a0ec9dcd852629ef5bb58f3f3ef252b9f">CPKeyValueChangeInsertion</a>)
+<a name="l00093"></a>00093         [[<span class="keyword">self</span> <a class="code" href="class_c_p_object.html#a79125a117f577a4e45157860afaef619">mutableArrayValueForKeyPath</a>:aKeyPath]
+<a name="l00094"></a>00094             <a class="code" href="class_c_p_array.html#a6b05bd0936b61aa717b32b6b5160ba6b">insertObjects</a>:[aChange <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeNewKey]
+<a name="l00095"></a>00095                 <a class="code" href="class_c_p_array.html#a6b05bd0936b61aa717b32b6b5160ba6b">atIndexes</a>:[aChange <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeIndexesKey]];
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a8808275b0d3f2ba94f7fe97e50180b5e">CPKeyValueChangeRemoval</a>)
+<a name="l00098"></a>00098         [[<span class="keyword">self</span> <a class="code" href="class_c_p_object.html#a79125a117f577a4e45157860afaef619">mutableArrayValueForKeyPath</a>:aKeyPath]
+<a name="l00099"></a>00099             <a class="code" href="class_c_p_array.html#af68b3a09de33332d6a9426080bdbb529">removeObjectsAtIndexes</a>:[aChange <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeIndexesKey]];
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a9eb88fc0de123f2f74c169f2a8d24259">CPKeyValueChangeReplacement</a>)
+<a name="l00102"></a>00102         [[<span class="keyword">self</span> <a class="code" href="class_c_p_object.html#a79125a117f577a4e45157860afaef619">mutableArrayValueForKeyPath</a>:aKeyPath]
+<a name="l00103"></a>00103             replaceObjectAtIndexes:[aChange <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeIndexesKey]
+<a name="l00104"></a>00104                        withObjects:[aChange <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeNewKey]];
+<a name="l00105"></a>00105 }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="keyword">@end</span>
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 <span class="keyword">@implementation </span><a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> (KeyValueObserving)
+<a name="l00110"></a>00110 
+<a name="l00111"></a><a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">00111</a> - (<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>
+<a name="l00112"></a>00112 {
+<a name="l00113"></a>00113     var <a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a> = [<span class="keyword">self</span> mutableCopy],
+<a name="l00114"></a>00114         changeKind = [<span class="keyword">self</span> <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeKindKey];
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116     <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#ab38f2aa9a0051d00c8f26a6e0242de3c">CPKeyValueChangeSetting</a> || changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a9eb88fc0de123f2f74c169f2a8d24259">CPKeyValueChangeReplacement</a>)
+<a name="l00117"></a>00117     {
+<a name="l00118"></a>00118         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>
+<a name="l00119"></a>00119             <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">setObject</a>:[<span class="keyword">self</span> <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeOldKey]
+<a name="l00120"></a>00120                <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">forKey</a>:CPKeyValueChangeNewKey];
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>
+<a name="l00123"></a>00123             <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">setObject</a>:[<span class="keyword">self</span> <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeNewKey]
+<a name="l00124"></a>00124                <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">forKey</a>:CPKeyValueChangeOldKey];
+<a name="l00125"></a>00125     }
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a0ec9dcd852629ef5bb58f3f3ef252b9f">CPKeyValueChangeInsertion</a>)
+<a name="l00128"></a>00128     {
+<a name="l00129"></a>00129         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>
+<a name="l00130"></a>00130             <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">setObject</a>:CPKeyValueChangeRemoval
+<a name="l00131"></a>00131                <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">forKey</a>:CPKeyValueChangeKindKey];
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>
+<a name="l00134"></a>00134             <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">setObject</a>:[<span class="keyword">self</span> <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeNewKey]
+<a name="l00135"></a>00135                <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">forKey</a>:CPKeyValueChangeOldKey];
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a> <a class="code" href="class_c_p_dictionary.html#aabfbe8ab45a35084f0ff7cd9eb76ebd9">removeObjectForKey</a>:CPKeyValueChangeNewKey];
+<a name="l00138"></a>00138     }
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (changeKind === <a class="code" href="_c_p_key_value_observing_8j.html#a8808275b0d3f2ba94f7fe97e50180b5e">CPKeyValueChangeRemoval</a>)
+<a name="l00141"></a>00141     {
+<a name="l00142"></a>00142         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>
+<a name="l00143"></a>00143             <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">setObject</a>:CPKeyValueChangeInsertion
+<a name="l00144"></a>00144                <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">forKey</a>:CPKeyValueChangeKindKey];
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>
+<a name="l00147"></a>00147             <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">setObject</a>:[<span class="keyword">self</span> <a class="code" href="class_c_p_dictionary.html#ab4aaab7d240d27cf2f32c60bffc13d9e">objectForKey</a>:CPKeyValueChangeOldKey]
+<a name="l00148"></a>00148                <a class="code" href="class_c_p_dictionary.html#af045c97d07b1d7313504b86728f15d09">forKey</a>:CPKeyValueChangeNewKey];
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         [<a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a> <a class="code" href="class_c_p_dictionary.html#aabfbe8ab45a35084f0ff7cd9eb76ebd9">removeObjectForKey</a>:CPKeyValueChangeOldKey];
+<a name="l00151"></a>00151     }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153     <span class="keywordflow">return</span> <a class="code" href="class_c_p_dictionary.html#ac8799d0819f746fa6fd616d4eb09f788">inverseChangeDictionary</a>;
+<a name="l00154"></a>00154 }
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156 <span class="keyword">@end</span>
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158 <span class="comment">// KVO Options</span>
+<a name="l00159"></a><a class="code" href="_c_p_key_value_observing_8j.html#ae30e675d39ba94f39d2c5344f1958c09">00159</a> <a class="code" href="_c_p_key_value_observing_8j.html#ae30e675d39ba94f39d2c5344f1958c09">CPKeyValueObservingOptionNew</a>        = 1 &lt;&lt; 0;
+<a name="l00160"></a><a class="code" href="_c_p_key_value_observing_8j.html#a6a56c3925217a460c8919703a2f8b641">00160</a> <a class="code" href="_c_p_key_value_observing_8j.html#a6a56c3925217a460c8919703a2f8b641">CPKeyValueObservingOptionOld</a>        = 1 &lt;&lt; 1;
+<a name="l00161"></a><a class="code" href="_c_p_key_value_observing_8j.html#aaffd46ab3ca6bc9da9543f0cf144d85d">00161</a> <a class="code" href="_c_p_key_value_observing_8j.html#aaffd46ab3ca6bc9da9543f0cf144d85d">CPKeyValueObservingOptionInitial</a>    = 1 &lt;&lt; 2;
+<a name="l00162"></a><a class="code" href="_c_p_key_value_observing_8j.html#a1a8822a2c330400b07c002156ab6c4ac">00162</a> <a class="code" href="_c_p_key_value_observing_8j.html#a1a8822a2c330400b07c002156ab6c4ac">CPKeyValueObservingOptionPrior</a>      = 1 &lt;&lt; 3;
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164 <span class="comment">// KVO Change Dictionary Keys</span>
+<a name="l00165"></a><a class="code" href="_c_p_key_value_observing_8j.html#ae3eb495c587c25ab32bd2e86e1ff55af">00165</a> <a class="code" href="_c_p_key_value_observing_8j.html#ae3eb495c587c25ab32bd2e86e1ff55af">CPKeyValueChangeKindKey</a>                 = <span class="stringliteral">@&quot;CPKeyValueChangeKindKey&quot;</span>;
+<a name="l00166"></a><a class="code" href="_c_p_key_value_observing_8j.html#a21cb19f9980d336bdc6bf8f2362eac84">00166</a> <a class="code" href="_c_p_key_value_observing_8j.html#a21cb19f9980d336bdc6bf8f2362eac84">CPKeyValueChangeNewKey</a>                  = <span class="stringliteral">@&quot;CPKeyValueChangeNewKey&quot;</span>;
+<a name="l00167"></a><a class="code" href="_c_p_key_value_observing_8j.html#a350094ece99205b1123eb4cf46e91aae">00167</a> <a class="code" href="_c_p_key_value_observing_8j.html#a350094ece99205b1123eb4cf46e91aae">CPKeyValueChangeOldKey</a>                  = <span class="stringliteral">@&quot;CPKeyValueChangeOldKey&quot;</span>;
+<a name="l00168"></a><a class="code" href="_c_p_key_value_observing_8j.html#aff839d4c208add6d8a47f219efc01c63">00168</a> <a class="code" href="_c_p_key_value_observing_8j.html#aff839d4c208add6d8a47f219efc01c63">CPKeyValueChangeIndexesKey</a>              = <span class="stringliteral">@&quot;CPKeyValueChangeIndexesKey&quot;</span>;
+<a name="l00169"></a><a class="code" href="_c_p_key_value_observing_8j.html#abc50235281434a52e37d1b0ff9a0b7d6">00169</a> <a class="code" href="_c_p_key_value_observing_8j.html#abc50235281434a52e37d1b0ff9a0b7d6">CPKeyValueChangeNotificationIsPriorKey</a>  = <span class="stringliteral">@&quot;CPKeyValueChangeNotificationIsPriorKey&quot;</span>;
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 <span class="comment">// KVO Change Types</span>
+<a name="l00172"></a><a class="code" href="_c_p_key_value_observing_8j.html#ab38f2aa9a0051d00c8f26a6e0242de3c">00172</a> <a class="code" href="_c_p_key_value_observing_8j.html#ab38f2aa9a0051d00c8f26a6e0242de3c">CPKeyValueChangeSetting</a>     = 1;
+<a name="l00173"></a><a class="code" href="_c_p_key_value_observing_8j.html#a0ec9dcd852629ef5bb58f3f3ef252b9f">00173</a> <a class="code" href="_c_p_key_value_observing_8j.html#a0ec9dcd852629ef5bb58f3f3ef252b9f">CPKeyValueChangeInsertion</a>   = 2;
+<a name="l00174"></a><a class="code" href="_c_p_key_value_observing_8j.html#a8808275b0d3f2ba94f7fe97e50180b5e">00174</a> <a class="code" href="_c_p_key_value_observing_8j.html#a8808275b0d3f2ba94f7fe97e50180b5e">CPKeyValueChangeRemoval</a>     = 3;
+<a name="l00175"></a><a class="code" href="_c_p_key_value_observing_8j.html#a9eb88fc0de123f2f74c169f2a8d24259">00175</a> <a class="code" href="_c_p_key_value_observing_8j.html#a9eb88fc0de123f2f74c169f2a8d24259">CPKeyValueChangeReplacement</a> = 4;
+<a name="l00176"></a>00176 
+<a name="l00177"></a><a class="code" href="_c_p_key_value_observing_8j.html#a64a138dacc090ac8ef475ed5267ecda9">00177</a> var <a class="code" href="_c_p_key_value_observing_8j.html#a64a138dacc090ac8ef475ed5267ecda9">kvoNewAndOld</a> = <a class="code" href="_c_p_key_value_observing_8j.html#ae30e675d39ba94f39d2c5344f1958c09">CPKeyValueObservingOptionNew</a>|<a class="code" href="_c_p_key_value_observing_8j.html#a6a56c3925217a460c8919703a2f8b641">CPKeyValueObservingOptionOld</a>,
+<a name="l00178"></a><a class="code" href="_c_p_key_value_observing_8j.html#ac0e6f7cfe1f490c16d3b8c19802b7a8b">00178</a>     <a class="code" href="_c_p_key_value_observing_8j.html#ac0e6f7cfe1f490c16d3b8c19802b7a8b">DependentKeysKey</a> = <span class="stringliteral">&quot;$KVODEPENDENT&quot;</span>,
+<a name="l00179"></a><a class="code" href="_c_p_key_value_observing_8j.html#aee97d4ac7f5705928e8220e462fc3873">00179</a>     <a class="code" href="_c_p_key_value_observing_8j.html#aee97d4ac7f5705928e8220e462fc3873">KVOProxyKey</a> = <span class="stringliteral">&quot;$KVOPROXY&quot;</span>;
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181 <span class="comment">//rule of thumb: _ methods are called on the real proxy object, others are called on the &quot;fake&quot; proxy object (aka the real object)</span>
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183 <span class="comment">/* @ignore */</span>
+<a name="l00184"></a>00184 <span class="keyword">@implementation </span>_CPKVOProxy : <a class="code" href="class_c_p_object.html" title="The root class from which most classes are subclassed.">CPObject</a>
+<a name="l00185"></a>00185 {
+<a name="l00186"></a>00186     <span class="keywordtype">id</span>              _targetObject;
+<a name="l00187"></a>00187     Class           _nativeClass;
+<a name="l00188"></a>00188     <a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>    _changesForKey;
+<a name="l00189"></a>00189     Object          _observersForKey;
+<a name="l00190"></a>00190     <span class="keywordtype">int</span>             _observersForKeyLength;
+<a name="l00191"></a>00191     <a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>           _replacedKeys;
+<a name="l00192"></a>00192 }
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194 + (id)proxyForObject:(<a class="code" href="class_c_p_object.html" title="The root class from which most classes are subclassed.">CPObject</a>)anObject
+<a name="l00195"></a>00195 {
+<a name="l00196"></a>00196     var proxy = anObject[KVOProxyKey];
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198     <span class="keywordflow">if</span> (proxy)
+<a name="l00199"></a>00199         <span class="keywordflow">return</span> proxy;
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201     proxy = [[<span class="keyword">self</span> alloc] initWithTarget:anObject];
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203     [proxy _replaceClass];
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205     anObject[KVOProxyKey] = proxy;
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207     <span class="keywordflow">return</span> proxy;
+<a name="l00208"></a>00208 }
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210 - (id)initWithTarget:(<span class="keywordtype">id</span>)aTarget
+<a name="l00211"></a>00211 {
+<a name="l00212"></a>00212     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214     _targetObject       = aTarget;
+<a name="l00215"></a>00215     _nativeClass        = [aTarget class];
+<a name="l00216"></a>00216     _replacedKeys       = [<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a> <a class="code" href="class_c_p_set.html#a89623be28c3a0913db1967b667874d39">set</a>];
+<a name="l00217"></a>00217     _observersForKey    = {};
+<a name="l00218"></a>00218     _changesForKey      = {};
+<a name="l00219"></a>00219     _observersForKeyLength = 0;
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00222"></a>00222 }
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224 - (void)_replaceClass
+<a name="l00225"></a>00225 {
+<a name="l00226"></a>00226     var currentClass = _nativeClass,
+<a name="l00227"></a>00227         kvoClassName = <span class="stringliteral">&quot;$KVO_&quot;</span>+class_getName(_nativeClass),
+<a name="l00228"></a>00228         existingKVOClass = objj_lookUpClass(kvoClassName);
+<a name="l00229"></a>00229     
+<a name="l00230"></a>00230     <span class="keywordflow">if</span> (existingKVOClass)
+<a name="l00231"></a>00231     {
+<a name="l00232"></a>00232         _targetObject.isa = existingKVOClass;
+<a name="l00233"></a>00233         <span class="keywordflow">return</span>;
+<a name="l00234"></a>00234     }
+<a name="l00235"></a>00235     
+<a name="l00236"></a>00236     var kvoClass = objj_allocateClassPair(currentClass, kvoClassName);
+<a name="l00237"></a>00237         
+<a name="l00238"></a>00238     objj_registerClassPair(kvoClass);
+<a name="l00239"></a>00239     _class_initialize(kvoClass);
+<a name="l00240"></a>00240         
+<a name="l00241"></a>00241     <span class="comment">//copy in the methods from our model subclass</span>
+<a name="l00242"></a>00242     var methodList = _CPKVOModelSubclass.method_list,
+<a name="l00243"></a>00243         count = methodList.length;
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245     <span class="keywordflow">for</span> (var i=0; i&lt;count; i++)
+<a name="l00246"></a>00246     {
+<a name="l00247"></a>00247         var method = methodList[i];
+<a name="l00248"></a>00248         class_addMethod(kvoClass, method_getName(method), method_getImplementation(method), <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00249"></a>00249     }
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251     _targetObject.isa = kvoClass;
+<a name="l00252"></a>00252 }
+<a name="l00253"></a>00253 
+<a name="l00254"></a>00254 - (void)_replaceSetterForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00255"></a>00255 {    
+<a name="l00256"></a>00256     <span class="keywordflow">if</span> ([_replacedKeys containsObject:aKey] || ![_nativeClass automaticallyNotifiesObserversForKey:aKey])
+<a name="l00257"></a>00257         <span class="keywordflow">return</span>;
+<a name="l00258"></a>00258         
+<a name="l00259"></a>00259     var currentClass = _nativeClass,
+<a name="l00260"></a>00260         capitalizedKey = aKey.charAt(0).toUpperCase() + aKey.substring(1),
+<a name="l00261"></a>00261         found = false,
+<a name="l00262"></a>00262         replacementMethods = [
+<a name="l00263"></a>00263             &quot;set&quot;+capitalizedKey+&quot;:&quot;, _kvoMethodForMethod,
+<a name="l00264"></a>00264             &quot;_set&quot;+capitalizedKey+&quot;:&quot;, _kvoMethodForMethod,
+<a name="l00265"></a>00265             &quot;insertObject:in&quot;+capitalizedKey+&quot;AtIndex:&quot;, _kvoInsertMethodForMethod,
+<a name="l00266"></a>00266             &quot;replaceObjectIn&quot;+capitalizedKey+&quot;AtIndex:withObject:&quot;, _kvoReplaceMethodForMethod,
+<a name="l00267"></a>00267             &quot;removeObjectFrom&quot;+capitalizedKey+&quot;AtIndex:&quot;, _kvoRemoveMethodForMethod
+<a name="l00268"></a>00268         ];
+<a name="l00269"></a>00269     
+<a name="l00270"></a>00270     <span class="keywordflow">for</span> (var i=0, count=replacementMethods.length; i&lt;count; i+=2)
+<a name="l00271"></a>00271     {
+<a name="l00272"></a>00272         var theSelector = sel_getName(replacementMethods[i]),
+<a name="l00273"></a>00273             theReplacementMethod = replacementMethods[i+1];
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275         <span class="keywordflow">if</span> ([_nativeClass instancesRespondToSelector:theSelector])
+<a name="l00276"></a>00276         {
+<a name="l00277"></a>00277             var theMethod = class_getInstanceMethod(_nativeClass, theSelector);
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279             class_addMethod(_targetObject.isa, theSelector, theReplacementMethod(aKey, theMethod), <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00280"></a>00280         }
+<a name="l00281"></a>00281     }
+<a name="l00282"></a>00282 
+<a name="l00283"></a>00283     var affectingKeys = [[_nativeClass keyPathsForValuesAffectingValueForKey:aKey] allObjects],
+<a name="l00284"></a>00284         affectingKeysCount = affectingKeys ? affectingKeys.length : 0;
+<a name="l00285"></a>00285 
+<a name="l00286"></a>00286     <span class="keywordflow">if</span> (!affectingKeysCount)
+<a name="l00287"></a>00287         <span class="keywordflow">return</span>;
+<a name="l00288"></a>00288 
+<a name="l00289"></a>00289     var dependentKeysForClass = _nativeClass[DependentKeysKey];
+<a name="l00290"></a>00290 
+<a name="l00291"></a>00291     <span class="keywordflow">if</span> (!dependentKeysForClass)
+<a name="l00292"></a>00292     {
+<a name="l00293"></a>00293         dependentKeysForClass = {};
+<a name="l00294"></a>00294         _nativeClass[DependentKeysKey] = dependentKeysForClass;
+<a name="l00295"></a>00295     }
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297     <span class="keywordflow">while</span> (affectingKeysCount--)
+<a name="l00298"></a>00298     {
+<a name="l00299"></a>00299         var affectingKey = affectingKeys[affectingKeysCount],
+<a name="l00300"></a>00300             affectedKeys = dependentKeysForClass[affectingKey];
+<a name="l00301"></a>00301 
+<a name="l00302"></a>00302         <span class="keywordflow">if</span> (!affectedKeys)
+<a name="l00303"></a>00303         {
+<a name="l00304"></a>00304             affectedKeys = [<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a> new];
+<a name="l00305"></a>00305             dependentKeysForClass[affectingKey] = affectedKeys;
+<a name="l00306"></a>00306         }
+<a name="l00307"></a>00307 
+<a name="l00308"></a>00308         [affectedKeys addObject:aKey];
+<a name="l00309"></a>00309         [<span class="keyword">self</span> _replaceSetterForKey:affectingKey];
+<a name="l00310"></a>00310     }
+<a name="l00311"></a>00311 }
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313 - (void)_addObserver:(<span class="keywordtype">id</span>)anObserver forKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath options:(<span class="keywordtype">unsigned</span>)options context:(<span class="keywordtype">id</span>)aContext
+<a name="l00314"></a>00314 {
+<a name="l00315"></a>00315     <span class="keywordflow">if</span> (!anObserver)
+<a name="l00316"></a>00316         <span class="keywordflow">return</span>;
+<a name="l00317"></a>00317 
+<a name="l00318"></a>00318     var forwarder = nil;
+<a name="l00319"></a>00319     
+<a name="l00320"></a>00320     <span class="keywordflow">if</span> (aPath.indexOf(<span class="charliteral">&#39;.&#39;</span>) != <a class="code" href="_c_p_obj_j_runtime_8j.html#a84e3be579b365cc2c1559e1a1f469238">CPNotFound</a>)
+<a name="l00321"></a>00321         forwarder = [[_CPKVOForwardingObserver alloc] initWithKeyPath:aPath <span class="keywordtype">object</span>:_targetObject observer:anObserver options:options context:aContext];
+<a name="l00322"></a>00322     <span class="keywordflow">else</span>
+<a name="l00323"></a>00323         [<span class="keyword">self</span> _replaceSetterForKey:aPath];
+<a name="l00324"></a>00324 
+<a name="l00325"></a>00325     var observers = _observersForKey[aPath];
+<a name="l00326"></a>00326 
+<a name="l00327"></a>00327     <span class="keywordflow">if</span> (!observers)
+<a name="l00328"></a>00328     {
+<a name="l00329"></a>00329         observers = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#af9820df885270d5200f27f9a539aca28">dictionary</a>];
+<a name="l00330"></a>00330         _observersForKey[aPath] = observers;
+<a name="l00331"></a>00331         _observersForKeyLength++;
+<a name="l00332"></a>00332     }
+<a name="l00333"></a>00333 
+<a name="l00334"></a>00334     [observers setObject:_CPKVOInfoMake(anObserver, options, aContext, forwarder) forKey:[anObserver UID]];
+<a name="l00335"></a>00335     
+<a name="l00336"></a>00336     <span class="keywordflow">if</span> (options &amp; <a class="code" href="_c_p_key_value_observing_8j.html#aaffd46ab3ca6bc9da9543f0cf144d85d">CPKeyValueObservingOptionInitial</a>)
+<a name="l00337"></a>00337     {
+<a name="l00338"></a>00338         var newValue = [_targetObject valueForKeyPath:aPath];
+<a name="l00339"></a>00339 
+<a name="l00340"></a>00340         <span class="keywordflow">if</span> (newValue === nil || newValue === undefined)
+<a name="l00341"></a>00341             newValue = [<a class="code" href="class_c_p_null.html" title="An object representation of nil.">CPNull</a> null];
+<a name="l00342"></a>00342 
+<a name="l00343"></a>00343         var changes = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">dictionaryWithObject</a>:newValue <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">forKey</a>:CPKeyValueChangeNewKey];
+<a name="l00344"></a>00344         [anObserver observeValueForKeyPath:aPath ofObject:self change:changes context:aContext];
+<a name="l00345"></a>00345     }
+<a name="l00346"></a>00346 }
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348 - (void)_removeObserver:(<span class="keywordtype">id</span>)anObserver forKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath
+<a name="l00349"></a>00349 {
+<a name="l00350"></a>00350     var observers = _observersForKey[aPath];
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352     <span class="keywordflow">if</span> (aPath.indexOf(<span class="charliteral">&#39;.&#39;</span>) != <a class="code" href="_c_p_obj_j_runtime_8j.html#a84e3be579b365cc2c1559e1a1f469238">CPNotFound</a>)
+<a name="l00353"></a>00353     {
+<a name="l00354"></a>00354         var forwarder = [observers objectForKey:[anObserver UID]].forwarder;
+<a name="l00355"></a>00355         [forwarder finalize];
+<a name="l00356"></a>00356     }
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358     [observers removeObjectForKey:[anObserver UID]];
+<a name="l00359"></a>00359 
+<a name="l00360"></a>00360     <span class="keywordflow">if</span> (![observers count])
+<a name="l00361"></a>00361     {
+<a name="l00362"></a>00362         _observersForKeyLength--;
+<a name="l00363"></a>00363         <span class="keyword">delete</span> _observersForKey[aPath];
+<a name="l00364"></a>00364     }
+<a name="l00365"></a>00365 
+<a name="l00366"></a>00366     <span class="keywordflow">if</span> (!_observersForKeyLength)
+<a name="l00367"></a>00367     {
+<a name="l00368"></a>00368         _targetObject.isa = _nativeClass; <span class="comment">//restore the original class</span>
+<a name="l00369"></a>00369         <span class="keyword">delete</span> _targetObject[KVOProxyKey];
+<a name="l00370"></a>00370     }
+<a name="l00371"></a>00371 }
+<a name="l00372"></a>00372 
+<a name="l00373"></a>00373 <span class="comment">//FIXME: We do not compute and cache if CPKeyValueObservingOptionOld is needed, so we may do unnecessary work</span>
+<a name="l00374"></a>00374 
+<a name="l00375"></a>00375 - (void)_sendNotificationsForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey changeOptions:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)changeOptions isBefore:(BOOL)isBefore
+<a name="l00376"></a>00376 {
+<a name="l00377"></a>00377     var changes = _changesForKey[aKey];
+<a name="l00378"></a>00378 
+<a name="l00379"></a>00379     <span class="keywordflow">if</span> (isBefore)
+<a name="l00380"></a>00380     {
+<a name="l00381"></a>00381         changes = changeOptions;
+<a name="l00382"></a>00382 
+<a name="l00383"></a>00383         var indexes = [changes objectForKey:CPKeyValueChangeIndexesKey];
+<a name="l00384"></a>00384         
+<a name="l00385"></a>00385         <span class="keywordflow">if</span> (indexes)
+<a name="l00386"></a>00386         {
+<a name="l00387"></a>00387             var type = [changes objectForKey:CPKeyValueChangeKindKey];
+<a name="l00388"></a>00388             
+<a name="l00389"></a>00389             <span class="comment">// for to-many relationships, oldvalue is only sensible for replace and remove</span>
+<a name="l00390"></a>00390             <span class="keywordflow">if</span> (type === <a class="code" href="_c_p_key_value_observing_8j.html#a9eb88fc0de123f2f74c169f2a8d24259">CPKeyValueChangeReplacement</a> || type === <a class="code" href="_c_p_key_value_observing_8j.html#a8808275b0d3f2ba94f7fe97e50180b5e">CPKeyValueChangeRemoval</a>)
+<a name="l00391"></a>00391             {
+<a name="l00392"></a>00392                 <span class="comment">//FIXME: do we need to go through and replace &quot;&quot; with CPNull? </span>
+<a name="l00393"></a>00393                 var newValues = [[_targetObject mutableArrayValueForKeyPath:aKey] objectsAtIndexes:indexes];
+<a name="l00394"></a>00394                 [changes setValue:newValues forKey:CPKeyValueChangeOldKey];
+<a name="l00395"></a>00395             }
+<a name="l00396"></a>00396         }
+<a name="l00397"></a>00397         <span class="keywordflow">else</span>
+<a name="l00398"></a>00398         {
+<a name="l00399"></a>00399             var oldValue = [_targetObject valueForKey:aKey];
+<a name="l00400"></a>00400     
+<a name="l00401"></a>00401             <span class="keywordflow">if</span> (oldValue === nil || oldValue === undefined)
+<a name="l00402"></a>00402                 oldValue = [<a class="code" href="class_c_p_null.html" title="An object representation of nil.">CPNull</a> null];
+<a name="l00403"></a>00403 
+<a name="l00404"></a>00404             [changes setObject:oldValue forKey:CPKeyValueChangeOldKey];
+<a name="l00405"></a>00405         }
+<a name="l00406"></a>00406         
+<a name="l00407"></a>00407         [changes setObject:1 forKey:CPKeyValueChangeNotificationIsPriorKey];
+<a name="l00408"></a>00408 
+<a name="l00409"></a>00409         _changesForKey[aKey] = changes;
+<a name="l00410"></a>00410     }
+<a name="l00411"></a>00411     <span class="keywordflow">else</span>
+<a name="l00412"></a>00412     {
+<a name="l00413"></a>00413         [changes removeObjectForKey:CPKeyValueChangeNotificationIsPriorKey];
+<a name="l00414"></a>00414 
+<a name="l00415"></a>00415         var indexes = [changes objectForKey:CPKeyValueChangeIndexesKey];
+<a name="l00416"></a>00416         
+<a name="l00417"></a>00417         <span class="keywordflow">if</span> (indexes)
+<a name="l00418"></a>00418         {
+<a name="l00419"></a>00419             var type = [changes objectForKey:CPKeyValueChangeKindKey];
+<a name="l00420"></a>00420             
+<a name="l00421"></a>00421             <span class="comment">// for to-many relationships, oldvalue is only sensible for replace and remove</span>
+<a name="l00422"></a>00422             <span class="keywordflow">if</span> (type == <a class="code" href="_c_p_key_value_observing_8j.html#a9eb88fc0de123f2f74c169f2a8d24259">CPKeyValueChangeReplacement</a> || type == <a class="code" href="_c_p_key_value_observing_8j.html#a0ec9dcd852629ef5bb58f3f3ef252b9f">CPKeyValueChangeInsertion</a>)
+<a name="l00423"></a>00423             {
+<a name="l00424"></a>00424                 <span class="comment">//FIXME: do we need to go through and replace &quot;&quot; with CPNull? </span>
+<a name="l00425"></a>00425                 var oldValues = [[_targetObject mutableArrayValueForKeyPath:aKey] objectsAtIndexes:indexes];
+<a name="l00426"></a>00426                 [changes setValue:oldValues forKey:CPKeyValueChangeNewKey];
+<a name="l00427"></a>00427             }
+<a name="l00428"></a>00428         }
+<a name="l00429"></a>00429         <span class="keywordflow">else</span>
+<a name="l00430"></a>00430         {
+<a name="l00431"></a>00431             var newValue = [_targetObject valueForKey:aKey];
+<a name="l00432"></a>00432     
+<a name="l00433"></a>00433             <span class="keywordflow">if</span> (newValue === nil || newValue === undefined)
+<a name="l00434"></a>00434                 newValue = [<a class="code" href="class_c_p_null.html" title="An object representation of nil.">CPNull</a> null];
+<a name="l00435"></a>00435     
+<a name="l00436"></a>00436             [changes setObject:newValue forKey:CPKeyValueChangeNewKey];
+<a name="l00437"></a>00437         }
+<a name="l00438"></a>00438     }
+<a name="l00439"></a>00439     
+<a name="l00440"></a>00440     var observers = [_observersForKey[aKey] allValues],
+<a name="l00441"></a>00441         count = observers ? observers.length : 0;
+<a name="l00442"></a>00442 
+<a name="l00443"></a>00443     <span class="keywordflow">while</span> (count--)
+<a name="l00444"></a>00444     {
+<a name="l00445"></a>00445         var observerInfo = observers[count];
+<a name="l00446"></a>00446 
+<a name="l00447"></a>00447         <span class="keywordflow">if</span> (isBefore &amp;&amp; (observerInfo.options &amp; <a class="code" href="_c_p_key_value_observing_8j.html#a1a8822a2c330400b07c002156ab6c4ac">CPKeyValueObservingOptionPrior</a>))
+<a name="l00448"></a>00448             [observerInfo.observer observeValueForKeyPath:aKey ofObject:_targetObject change:changes context:observerInfo.context];
+<a name="l00449"></a>00449         <span class="keywordflow">else</span> if (!isBefore)
+<a name="l00450"></a>00450             [observerInfo.observer observeValueForKeyPath:aKey ofObject:_targetObject change:changes context:observerInfo.context];
+<a name="l00451"></a>00451     }
+<a name="l00452"></a>00452 
+<a name="l00453"></a>00453     var dependentKeysMap = _nativeClass[DependentKeysKey];
+<a name="l00454"></a>00454 
+<a name="l00455"></a>00455     <span class="keywordflow">if</span> (!dependentKeysMap)
+<a name="l00456"></a>00456         <span class="keywordflow">return</span>;
+<a name="l00457"></a>00457 
+<a name="l00458"></a>00458     var dependentKeyPaths = [dependentKeysMap[aKey] allObjects];
+<a name="l00459"></a>00459 
+<a name="l00460"></a>00460     <span class="keywordflow">if</span> (!dependentKeyPaths)
+<a name="l00461"></a>00461         <span class="keywordflow">return</span>;
+<a name="l00462"></a>00462 
+<a name="l00463"></a>00463     var index = 0,
+<a name="l00464"></a>00464         count = [dependentKeyPaths count];
+<a name="l00465"></a>00465 
+<a name="l00466"></a>00466     <span class="keywordflow">for</span> (; index &lt; count; ++index)
+<a name="l00467"></a>00467     {
+<a name="l00468"></a>00468         var keyPath = dependentKeyPaths[index];
+<a name="l00469"></a>00469 
+<a name="l00470"></a>00470         [<span class="keyword">self</span> _sendNotificationsForKey:keyPath
+<a name="l00471"></a>00471                          changeOptions:isBefore ? [changeOptions <a class="code" href="class_c_p_dictionary.html#a735a2d2daeff5890c6246aafe9f3edff">copy</a>] : _changesForKey[keyPath]
+<a name="l00472"></a>00472                               isBefore:isBefore];
+<a name="l00473"></a>00473     }
+<a name="l00474"></a>00474 }
+<a name="l00475"></a>00475 
+<a name="l00476"></a>00476 <span class="keyword">@end</span>
+<a name="l00477"></a>00477 
+<a name="l00478"></a>00478 <span class="keyword">@implementation </span>_CPKVOModelSubclass
+<a name="l00479"></a>00479 {
+<a name="l00480"></a>00480 }
+<a name="l00481"></a>00481 
+<a name="l00482"></a>00482 - (void)willChangeValueForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00483"></a>00483 {
+<a name="l00484"></a>00484     <span class="keywordflow">if</span> (!aKey)
+<a name="l00485"></a>00485         <span class="keywordflow">return</span>;
+<a name="l00486"></a>00486 
+<a name="l00487"></a>00487     var changeOptions = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">dictionaryWithObject</a>:CPKeyValueChangeSetting <a class="code" href="class_c_p_dictionary.html#ae3b91d744723e22ea217f968380c3173">forKey</a>:CPKeyValueChangeKindKey];
+<a name="l00488"></a>00488 
+<a name="l00489"></a>00489     [[_CPKVOProxy proxyForObject:self] _sendNotificationsForKey:aKey changeOptions:changeOptions isBefore:YES];
+<a name="l00490"></a>00490 }
+<a name="l00491"></a>00491 
+<a name="l00492"></a>00492 - (void)didChangeValueForKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00493"></a>00493 {
+<a name="l00494"></a>00494     <span class="keywordflow">if</span> (!aKey)
+<a name="l00495"></a>00495         <span class="keywordflow">return</span>;
+<a name="l00496"></a>00496 
+<a name="l00497"></a>00497     [[_CPKVOProxy proxyForObject:self] _sendNotificationsForKey:aKey changeOptions:nil isBefore:NO];
+<a name="l00498"></a>00498 }
+<a name="l00499"></a>00499 
+<a name="l00500"></a>00500 - (void)willChange:(CPKeyValueChange)change valuesAtIndexes:(<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a>)indexes forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00501"></a>00501 {
+<a name="l00502"></a>00502     <span class="keywordflow">if</span> (!aKey)
+<a name="l00503"></a>00503         <span class="keywordflow">return</span>;
+<a name="l00504"></a>00504 
+<a name="l00505"></a>00505     var changeOptions = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> <a class="code" href="class_c_p_dictionary.html#ac4d7617692c892eaed4d00de281c4c83">dictionaryWithObjects</a>:[change, indexes] <a class="code" href="class_c_p_dictionary.html#ac4d7617692c892eaed4d00de281c4c83">forKeys</a>:[CPKeyValueChangeKindKey, CPKeyValueChangeIndexesKey]];
+<a name="l00506"></a>00506     
+<a name="l00507"></a>00507     [[_CPKVOProxy proxyForObject:self] _sendNotificationsForKey:aKey changeOptions:changeOptions isBefore:YES];
+<a name="l00508"></a>00508 }
+<a name="l00509"></a>00509 
+<a name="l00510"></a>00510 - (void)didChange:(CPKeyValueChange)change valuesAtIndexes:(<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a>)indexes forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00511"></a>00511 {
+<a name="l00512"></a>00512     <span class="keywordflow">if</span> (!aKey)
+<a name="l00513"></a>00513         <span class="keywordflow">return</span>;
+<a name="l00514"></a>00514 
+<a name="l00515"></a>00515     [[_CPKVOProxy proxyForObject:self] _sendNotificationsForKey:aKey changeOptions:nil isBefore:NO];
+<a name="l00516"></a>00516 }
+<a name="l00517"></a>00517 
+<a name="l00518"></a>00518 - (Class)class
+<a name="l00519"></a>00519 {
+<a name="l00520"></a>00520     <span class="keywordflow">return</span> <span class="keyword">self</span>[KVOProxyKey]._nativeClass;
+<a name="l00521"></a>00521 }
+<a name="l00522"></a>00522 
+<a name="l00523"></a>00523 - (Class)superclass
+<a name="l00524"></a>00524 {
+<a name="l00525"></a>00525     <span class="keywordflow">return</span> [[<span class="keyword">self</span> class] superclass];
+<a name="l00526"></a>00526 }
+<a name="l00527"></a>00527 
+<a name="l00528"></a>00528 - (BOOL)isKindOfClass:(Class)aClass
+<a name="l00529"></a>00529 {
+<a name="l00530"></a>00530     <span class="keywordflow">return</span> [[<span class="keyword">self</span> class] isSubclassOfClass:aClass];
+<a name="l00531"></a>00531 }
+<a name="l00532"></a>00532 
+<a name="l00533"></a>00533 - (BOOL)isMemberOfClass:(Class)aClass
+<a name="l00534"></a>00534 {
+<a name="l00535"></a>00535     <span class="keywordflow">return</span> [<span class="keyword">self</span> class] == aClass;
+<a name="l00536"></a>00536 }
+<a name="l00537"></a>00537 
+<a name="l00538"></a>00538 - (<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)className
+<a name="l00539"></a>00539 {
+<a name="l00540"></a>00540     <span class="keywordflow">return</span> [<span class="keyword">self</span> class].name;
+<a name="l00541"></a>00541 }
+<a name="l00542"></a>00542 
+<a name="l00543"></a>00543 <span class="keyword">@end</span>
+<a name="l00544"></a>00544 
+<a name="l00545"></a>00545 <span class="keyword">@implementation </span>_CPKVOForwardingObserver : <a class="code" href="class_c_p_object.html" title="The root class from which most classes are subclassed.">CPObject</a>
+<a name="l00546"></a>00546 {
+<a name="l00547"></a>00547     <span class="keywordtype">id</span>          _object;
+<a name="l00548"></a>00548     <span class="keywordtype">id</span>          _observer;
+<a name="l00549"></a>00549     <span class="keywordtype">id</span>          _context;
+<a name="l00550"></a>00550                              <span class="comment">//a.b</span>
+<a name="l00551"></a>00551     <a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>    _firstPart;  <span class="comment">//a</span>
+<a name="l00552"></a>00552     <a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>    _secondPart; <span class="comment">//b</span>
+<a name="l00553"></a>00553 
+<a name="l00554"></a>00554     <span class="keywordtype">id</span>          _value;
+<a name="l00555"></a>00555 }
+<a name="l00556"></a>00556 
+<a name="l00557"></a>00557 - (id)initWithKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKeyPath object:(<span class="keywordtype">id</span>)anObject observer:(<span class="keywordtype">id</span>)anObserver options:(<span class="keywordtype">unsigned</span>)options context:(<span class="keywordtype">id</span>)aContext
+<a name="l00558"></a>00558 {
+<a name="l00559"></a>00559     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00560"></a>00560         
+<a name="l00561"></a>00561     _context = aContext;
+<a name="l00562"></a>00562     _observer = anObserver;
+<a name="l00563"></a>00563     _object = anObject;
+<a name="l00564"></a>00564     
+<a name="l00565"></a>00565     <span class="comment">//current ignoring options (FIXME?)</span>
+<a name="l00566"></a>00566     
+<a name="l00567"></a>00567     var dotIndex = aKeyPath.indexOf(<span class="charliteral">&#39;.&#39;</span>);
+<a name="l00568"></a>00568     
+<a name="l00569"></a>00569     <span class="keywordflow">if</span> (dotIndex == <a class="code" href="_c_p_obj_j_runtime_8j.html#a84e3be579b365cc2c1559e1a1f469238">CPNotFound</a>)
+<a name="l00570"></a>00570         [<a class="code" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp;amp; raising).">CPException</a> <a class="code" href="class_c_p_exception.html#ac8f34bd11868822e26a7b952810128b8">raise</a>:CPInvalidArgumentException <a class="code" href="class_c_p_exception.html#ac8f34bd11868822e26a7b952810128b8">reason</a>:&quot;Created _CPKVOForwardingObserver without compound key path: &quot;+aKeyPath];
+<a name="l00571"></a>00571     
+<a name="l00572"></a>00572     _firstPart = aKeyPath.substring(0, dotIndex);
+<a name="l00573"></a>00573     _secondPart = aKeyPath.substring(dotIndex+1);
+<a name="l00574"></a>00574     
+<a name="l00575"></a>00575     <span class="comment">//become an observer of the first part of our key (a)</span>
+<a name="l00576"></a>00576     [_object addObserver:self forKeyPath:_firstPart options:kvoNewAndOld context:nil];
+<a name="l00577"></a>00577     
+<a name="l00578"></a>00578     <span class="comment">//the current value of a (not the value of a.b)</span>
+<a name="l00579"></a>00579     _value = [_object valueForKey:_firstPart];
+<a name="l00580"></a>00580     
+<a name="l00581"></a>00581     <span class="keywordflow">if</span> (_value)
+<a name="l00582"></a>00582         [_value addObserver:self forKeyPath:_secondPart options:kvoNewAndOld context:nil]; <span class="comment">//we&#39;re observing b on current a</span>
+<a name="l00583"></a>00583     
+<a name="l00584"></a>00584     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00585"></a>00585 }
+<a name="l00586"></a>00586 
+<a name="l00587"></a>00587 - (void)observeValueForKeyPath:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKeyPath ofObject:(<span class="keywordtype">id</span>)anObject change:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)changes context:(<span class="keywordtype">id</span>)aContext
+<a name="l00588"></a>00588 {
+<a name="l00589"></a>00589     <span class="keywordflow">if</span> (aKeyPath === _firstPart)
+<a name="l00590"></a>00590     {
+<a name="l00591"></a>00591         [_observer observeValueForKeyPath:_firstPart ofObject:_object change:changes context:_context];
+<a name="l00592"></a>00592         
+<a name="l00593"></a>00593         <span class="comment">//since a has changed, we should remove ourselves as an observer of the old a, and observe the new one</span>
+<a name="l00594"></a>00594         <span class="keywordflow">if</span> (_value)
+<a name="l00595"></a>00595             [_value removeObserver:self forKeyPath:_secondPart];
+<a name="l00596"></a>00596             
+<a name="l00597"></a>00597         _value = [_object valueForKey:_firstPart];
+<a name="l00598"></a>00598         
+<a name="l00599"></a>00599         <span class="keywordflow">if</span> (_value)
+<a name="l00600"></a>00600             [_value addObserver:self forKeyPath:_secondPart options:kvoNewAndOld context:nil];
+<a name="l00601"></a>00601     }
+<a name="l00602"></a>00602     <span class="keywordflow">else</span>
+<a name="l00603"></a>00603     {
+<a name="l00604"></a>00604         <span class="comment">//a is the same, but a.b has changed -- nothing to do but forward this message along</span>
+<a name="l00605"></a>00605         [_observer observeValueForKeyPath:_firstPart+&quot;.&quot;+aKeyPath ofObject:_object change:changes context:_context];
+<a name="l00606"></a>00606     }
+<a name="l00607"></a>00607 }
+<a name="l00608"></a>00608 
+<a name="l00609"></a>00609 - (void)finalize
+<a name="l00610"></a>00610 {
+<a name="l00611"></a>00611     <span class="keywordflow">if</span> (_value)
+<a name="l00612"></a>00612         [_value removeObserver:self forKeyPath:_secondPart];
+<a name="l00613"></a>00613     
+<a name="l00614"></a>00614     [_object removeObserver:self forKeyPath:_firstPart];
+<a name="l00615"></a>00615     
+<a name="l00616"></a>00616     _object = nil;
+<a name="l00617"></a>00617     _observer = nil;
+<a name="l00618"></a>00618     _context = nil;
+<a name="l00619"></a>00619     _value = nil;
+<a name="l00620"></a>00620 }
+<a name="l00621"></a>00621 
+<a name="l00622"></a>00622 <span class="keyword">@end</span>
+<a name="l00623"></a>00623 
+<a name="l00624"></a>00624 var _CPKVOInfoMake = function _CPKVOInfoMake(anObserver, theOptions, aContext, aForwarder)
+<a name="l00625"></a>00625 {
+<a name="l00626"></a>00626     <span class="keywordflow">return</span> {
+<a name="l00627"></a>00627         observer: anObserver, 
+<a name="l00628"></a>00628         options: theOptions,
+<a name="l00629"></a>00629         context: aContext,
+<a name="l00630"></a>00630         forwarder: aForwarder
+<a name="l00631"></a>00631     };
+<a name="l00632"></a>00632 }
+<a name="l00633"></a>00633 
+<a name="l00634"></a>00634 var _kvoMethodForMethod = function _kvoMethodForMethod(theKey, theMethod)
+<a name="l00635"></a>00635 {
+<a name="l00636"></a>00636     <span class="keywordflow">return</span> function(<span class="keyword">self</span>, _cmd, <span class="keywordtype">object</span>) 
+<a name="l00637"></a>00637     {
+<a name="l00638"></a>00638         [<span class="keyword">self</span> willChangeValueForKey:theKey];
+<a name="l00639"></a>00639         theMethod.method_imp(<span class="keyword">self</span>, _cmd, <span class="keywordtype">object</span>);
+<a name="l00640"></a>00640         [<span class="keyword">self</span> didChangeValueForKey:theKey];
+<a name="l00641"></a>00641     }
+<a name="l00642"></a>00642 }
+<a name="l00643"></a>00643 
+<a name="l00644"></a>00644 var _kvoInsertMethodForMethod = function _kvoInsertMethodForMethod(theKey, theMethod)
+<a name="l00645"></a>00645 {
+<a name="l00646"></a>00646     <span class="keywordflow">return</span> function(<span class="keyword">self</span>, _cmd, <span class="keywordtype">object</span>, index)
+<a name="l00647"></a>00647     {
+<a name="l00648"></a>00648         [<span class="keyword">self</span> willChange:CPKeyValueChangeInsertion valuesAtIndexes:[<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a> <a class="code" href="class_c_p_index_set.html#a4aa683fde78ba593d0e70040125ed306">indexSetWithIndex</a>:index] <a class="code" href="class_c_p_object.html#afcbc5be019204a8a7220a3e409a1f4a9">forKey</a>:theKey];
+<a name="l00649"></a>00649         theMethod.method_imp(<span class="keyword">self</span>, _cmd, <span class="keywordtype">object</span>, index);
+<a name="l00650"></a>00650         [<span class="keyword">self</span> didChange:CPKeyValueChangeInsertion valuesAtIndexes:[<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a> <a class="code" href="class_c_p_index_set.html#a4aa683fde78ba593d0e70040125ed306">indexSetWithIndex</a>:index] <a class="code" href="class_c_p_object.html#aa7fa96ff8721caadf1a5c5f9f014b3c1">forKey</a>:theKey]
+<a name="l00651"></a>00651     }
+<a name="l00652"></a>00652 }
+<a name="l00653"></a>00653 
+<a name="l00654"></a>00654 var _kvoReplaceMethodForMethod = function _kvoReplaceMethodForMethod(theKey, theMethod)
+<a name="l00655"></a>00655 {
+<a name="l00656"></a>00656     <span class="keywordflow">return</span> function(<span class="keyword">self</span>, _cmd, index, <span class="keywordtype">object</span>)
+<a name="l00657"></a>00657     {
+<a name="l00658"></a>00658         [<span class="keyword">self</span> willChange:CPKeyValueChangeReplacement valuesAtIndexes:[<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a> <a class="code" href="class_c_p_index_set.html#a4aa683fde78ba593d0e70040125ed306">indexSetWithIndex</a>:index] <a class="code" href="class_c_p_object.html#afcbc5be019204a8a7220a3e409a1f4a9">forKey</a>:theKey];
+<a name="l00659"></a>00659         theMethod.method_imp(<span class="keyword">self</span>, _cmd, index, <span class="keywordtype">object</span>);
+<a name="l00660"></a>00660         [<span class="keyword">self</span> didChange:CPKeyValueChangeReplacement valuesAtIndexes:[<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a> <a class="code" href="class_c_p_index_set.html#a4aa683fde78ba593d0e70040125ed306">indexSetWithIndex</a>:index] <a class="code" href="class_c_p_object.html#aa7fa96ff8721caadf1a5c5f9f014b3c1">forKey</a>:theKey]
+<a name="l00661"></a>00661     }
+<a name="l00662"></a>00662 }
+<a name="l00663"></a>00663 
+<a name="l00664"></a>00664 var _kvoRemoveMethodForMethod = function _kvoRemoveMethodForMethod(theKey, theMethod)
+<a name="l00665"></a>00665 {
+<a name="l00666"></a>00666     <span class="keywordflow">return</span> function(<span class="keyword">self</span>, _cmd, index)
+<a name="l00667"></a>00667     {
+<a name="l00668"></a>00668         [<span class="keyword">self</span> willChange:CPKeyValueChangeRemoval valuesAtIndexes:[<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a> <a class="code" href="class_c_p_index_set.html#a4aa683fde78ba593d0e70040125ed306">indexSetWithIndex</a>:index] <a class="code" href="class_c_p_object.html#afcbc5be019204a8a7220a3e409a1f4a9">forKey</a>:theKey];
+<a name="l00669"></a>00669         theMethod.method_imp(<span class="keyword">self</span>, _cmd, index);
+<a name="l00670"></a>00670         [<span class="keyword">self</span> didChange:CPKeyValueChangeRemoval valuesAtIndexes:[<a class="code" href="class_c_p_index_set.html" title="A collection of unique integers.">CPIndexSet</a> <a class="code" href="class_c_p_index_set.html#a4aa683fde78ba593d0e70040125ed306">indexSetWithIndex</a>:index] <a class="code" href="class_c_p_object.html#aa7fa96ff8721caadf1a5c5f9f014b3c1">forKey</a>:theKey]
+<a name="l00671"></a>00671     }
+<a name="l00672"></a>00672 }
+<a name="l00673"></a>00673 
+<a name="l00674"></a>00674 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPArray+KVO.j&quot;</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

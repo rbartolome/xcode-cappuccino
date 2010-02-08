@@ -87,6 +87,8 @@
 <p>A bridged object to native Javascript numbers. </p>
 <p>This class primarily exists for source compatability. The JavaScript <code>Number</code> type can be changed on the fly based on context, so there is no need to call any of these methods.</p>
 <p>In other words, native JavaScript numbers are bridged to <a class="el" href="class_c_p_number.html" title="A bridged object to native Javascript numbers.">CPNumber</a>, so you can use them interchangeably (including operators and methods). </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00042">42</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="afab38f0437a7a3f9d0f271ded205ad55"></a><!-- doxytag: member="CPNumber::boolValue" ref="afab38f0437a7a3f9d0f271ded205ad55" args="()" -->
 <div class="memitem">
@@ -102,6 +104,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00199">199</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00200"></a>00200 {
+<a name="l00201"></a>00201     <span class="comment">// Ensure we return actual booleans.</span>
+<a name="l00202"></a>00202     <span class="keywordflow">return</span> <span class="keyword">self</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00203"></a>00203 }
+</pre></div></p>
 
 </div>
 </div>
@@ -119,6 +129,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00205">205</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00206"></a>00206 {
+<a name="l00207"></a>00207     <span class="keywordflow">return</span> String.fromCharCode(<span class="keyword">self</span>);
+<a name="l00208"></a>00208 }
+</pre></div></p>
 
 </div>
 </div>
@@ -138,6 +155,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00300">300</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00300"></a>00300                              :(<a class="code" href="class_c_p_number.html" title="A bridged object to native Javascript numbers.">CPNumber</a>)aNumber
+<a name="l00301"></a>00301 {
+<a name="l00302"></a>00302     <span class="keywordflow">if</span> (<span class="keyword">self</span> &gt; aNumber) <span class="keywordflow">return</span> <a class="code" href="_c_p_obj_j_runtime_8j.html#aad9efd5d7748d296944239adb552f67c">CPOrderedDescending</a>;
+<a name="l00303"></a>00303     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">self</span> &lt; aNumber) <span class="keywordflow">return</span> <a class="code" href="_c_p_obj_j_runtime_8j.html#a3e9b85c1be28d3092262626ffcf41993">CPOrderedAscending</a>;
+<a name="l00304"></a>00304     
+<a name="l00305"></a>00305     <span class="keywordflow">return</span> <a class="code" href="_c_p_obj_j_runtime_8j.html#af6563f83ad093188bcbdba78aa1848c5">CPOrderedSame</a>;
+<a name="l00306"></a>00306 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0dbbd5404120febb8ab3b361f4a954ef"></a><!-- doxytag: member="CPNumber::decimalValue" ref="a0dbbd5404120febb8ab3b361f4a954ef" args="()" -->
@@ -155,6 +183,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00213">213</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00214"></a>00214 {
+<a name="l00215"></a>00215     objj_throw_exception(<span class="stringliteral">&quot;decimalValue: NOT YET IMPLEMENTED&quot;</span>);
+<a name="l00216"></a>00216 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a1c70c9654fc47fa02fd7acbda0162a9f"></a><!-- doxytag: member="CPNumber::description" ref="a1c70c9654fc47fa02fd7acbda0162a9f" args="()" -->
@@ -171,6 +206,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00225">225</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00226"></a>00226 {
+<a name="l00227"></a>00227     <span class="keywordflow">return</span> [<span class="keyword">self</span> descriptionWithLocale:nil];
+<a name="l00228"></a>00228 }
+</pre></div></p>
 
 </div>
 </div>
@@ -190,6 +232,16 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00218">218</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00218"></a>00218                                  :(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aDictionary
+<a name="l00219"></a>00219 {
+<a name="l00220"></a>00220     <span class="keywordflow">if</span> (!aDictionary) <span class="keywordflow">return</span> toString();
+<a name="l00221"></a>00221     
+<a name="l00222"></a>00222     objj_throw_exception(<span class="stringliteral">&quot;descriptionWithLocale: NOT YET IMPLEMENTED&quot;</span>);
+<a name="l00223"></a>00223 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="af1f1c52fb2f11e0f18b5e53c55967e93"></a><!-- doxytag: member="CPNumber::doubleValue" ref="af1f1c52fb2f11e0f18b5e53c55967e93" args="()" -->
@@ -206,6 +258,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00230">230</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00231"></a>00231 {
+<a name="l00232"></a>00232     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00233"></a>00233     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00234"></a>00234 }
+</pre></div></p>
 
 </div>
 </div>
@@ -225,6 +285,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00322">322</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00322"></a>00322                        :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00323"></a>00323 {
+<a name="l00324"></a>00324     [aCoder encodeNumber:<span class="keyword">self</span> forKey:<span class="stringliteral">@&quot;self&quot;</span>];
+<a name="l00325"></a>00325 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a13bf784211014ed7959f5b36e03cb6d7"></a><!-- doxytag: member="CPNumber::floatValue" ref="a13bf784211014ed7959f5b36e03cb6d7" args="()" -->
@@ -241,6 +309,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00236">236</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00237"></a>00237 {
+<a name="l00238"></a>00238     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00239"></a>00239     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00240"></a>00240 }
+</pre></div></p>
 
 </div>
 </div>
@@ -260,6 +336,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00120">120</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00120"></a>00120                   :(BOOL)aBoolean
+<a name="l00121"></a>00121 {
+<a name="l00122"></a>00122     <span class="keywordflow">return</span> aBoolean;
+<a name="l00123"></a>00123 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6a087d76e08d3c19b99ee623ec3a065a"></a><!-- doxytag: member="CPNumber::initWithChar:" ref="a6a087d76e08d3c19b99ee623ec3a065a" args="(char aChar)" -->
@@ -277,6 +361,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00125">125</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00125"></a>00125                   :(char)aChar
+<a name="l00126"></a>00126 {
+<a name="l00127"></a>00127     <span class="keywordflow">if</span> (aChar.charCodeAt)
+<a name="l00128"></a>00128         <span class="keywordflow">return</span> aChar.charCodeAt(0);
+<a name="l00129"></a>00129     
+<a name="l00130"></a>00130     <span class="keywordflow">return</span> aChar;
+<a name="l00131"></a>00131 }
+</pre></div></p>
 
 </div>
 </div>
@@ -296,6 +391,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00317">317</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00317"></a>00317                    :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00318"></a>00318 {
+<a name="l00319"></a>00319     <span class="keywordflow">return</span> [aCoder decodeNumber];
+<a name="l00320"></a>00320 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a9129ab0d099cdc7c86e516fd72b99e21"></a><!-- doxytag: member="CPNumber::initWithDouble:" ref="a9129ab0d099cdc7c86e516fd72b99e21" args="(double aDouble)" -->
@@ -313,6 +416,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00133">133</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00133"></a>00133                     :(double)aDouble
+<a name="l00134"></a>00134 {
+<a name="l00135"></a>00135     <span class="keywordflow">return</span> aDouble;
+<a name="l00136"></a>00136 }
+</pre></div></p>
 
 </div>
 </div>
@@ -332,6 +443,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00138">138</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00138"></a>00138                    :(float)aFloat
+<a name="l00139"></a>00139 {
+<a name="l00140"></a>00140     <span class="keywordflow">return</span> aFloat;
+<a name="l00141"></a>00141 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ae986aa9ecf3c703a1dc773379451cb0b"></a><!-- doxytag: member="CPNumber::initWithInt:" ref="ae986aa9ecf3c703a1dc773379451cb0b" args="(int anInt)" -->
@@ -349,6 +468,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00143">143</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00143"></a>00143                  :(int)anInt
+<a name="l00144"></a>00144 {
+<a name="l00145"></a>00145     <span class="keywordflow">return</span> anInt;
+<a name="l00146"></a>00146 }
+</pre></div></p>
 
 </div>
 </div>
@@ -368,6 +495,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00148">148</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00148"></a>00148                   :(long)aLong
+<a name="l00149"></a>00149 {
+<a name="l00150"></a>00150     <span class="keywordflow">return</span> aLong;
+<a name="l00151"></a>00151 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a8f115fbf296b7eac4f03390479c7a49b"></a><!-- doxytag: member="CPNumber::initWithLongLong:" ref="a8f115fbf296b7eac4f03390479c7a49b" args="(long long aLongLong)" -->
@@ -385,6 +520,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00153">153</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00153"></a>00153                       :(<span class="keywordtype">long</span> long)aLongLong
+<a name="l00154"></a>00154 {
+<a name="l00155"></a>00155     <span class="keywordflow">return</span> aLongLong;
+<a name="l00156"></a>00156 }
+</pre></div></p>
 
 </div>
 </div>
@@ -404,6 +547,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00158">158</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00158"></a>00158                    :(short)aShort
+<a name="l00159"></a>00159 {
+<a name="l00160"></a>00160     <span class="keywordflow">return</span> aShort;
+<a name="l00161"></a>00161 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a4c2889a7eba54eb7942c6e37f4ef3658"></a><!-- doxytag: member="CPNumber::initWithUnsignedChar:" ref="a4c2889a7eba54eb7942c6e37f4ef3658" args="(unsigned char aChar)" -->
@@ -421,6 +572,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00163">163</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00163"></a>00163                           :(<span class="keywordtype">unsigned</span> char)aChar
+<a name="l00164"></a>00164 {
+<a name="l00165"></a>00165     <span class="keywordflow">if</span> (aChar.charCodeAt)
+<a name="l00166"></a>00166         <span class="keywordflow">return</span> aChar.charCodeAt(0);
+<a name="l00167"></a>00167     
+<a name="l00168"></a>00168     <span class="keywordflow">return</span> aChar;
+<a name="l00169"></a>00169 }
+</pre></div></p>
 
 </div>
 </div>
@@ -440,6 +602,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00171">171</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00171"></a>00171                          :(unsigned)anUnsignedInt
+<a name="l00172"></a>00172 {
+<a name="l00173"></a>00173     <span class="keywordflow">return</span> anUnsignedInt;
+<a name="l00174"></a>00174 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aac5787f251e4d255b59390a21f66aac7"></a><!-- doxytag: member="CPNumber::initWithUnsignedLong:" ref="aac5787f251e4d255b59390a21f66aac7" args="(unsigned long anUnsignedLong)" -->
@@ -457,6 +627,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00176">176</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00176"></a>00176                           :(<span class="keywordtype">unsigned</span> long)anUnsignedLong
+<a name="l00177"></a>00177 {
+<a name="l00178"></a>00178     <span class="keywordflow">return</span> anUnsignedLong;
+<a name="l00179"></a>00179 }
+</pre></div></p>
 
 </div>
 </div>
@@ -476,6 +654,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00186">186</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00186"></a>00186                            :(<span class="keywordtype">unsigned</span> short)anUnsignedShort
+<a name="l00187"></a>00187 {
+<a name="l00188"></a>00188     <span class="keywordflow">return</span> anUnsignedShort;
+<a name="l00189"></a>00189 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0f86a31f42dd81920782609e348a9fce"></a><!-- doxytag: member="CPNumber::intValue" ref="a0f86a31f42dd81920782609e348a9fce" args="()" -->
@@ -492,6 +678,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00242">242</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00243"></a>00243 {
+<a name="l00244"></a>00244     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00245"></a>00245     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00246"></a>00246 }
+</pre></div></p>
 
 </div>
 </div>
@@ -511,6 +705,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00308">308</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00308"></a>00308                        :(<a class="code" href="class_c_p_number.html" title="A bridged object to native Javascript numbers.">CPNumber</a>)aNumber
+<a name="l00309"></a>00309 {
+<a name="l00310"></a>00310     <span class="keywordflow">return</span> <span class="keyword">self</span> == aNumber;
+<a name="l00311"></a>00311 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6dd476b414bbcf9bf47c8108f4298167"></a><!-- doxytag: member="CPNumber::longLongValue" ref="a6dd476b414bbcf9bf47c8108f4298167" args="()" -->
@@ -528,6 +730,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00248">248</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00249"></a>00249 {
+<a name="l00250"></a>00250     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00251"></a>00251     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00252"></a>00252 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ade23c3b7a52f7aeff31291d97839281b"></a><!-- doxytag: member="CPNumber::longValue" ref="ade23c3b7a52f7aeff31291d97839281b" args="()" -->
@@ -544,6 +754,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00254">254</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00255"></a>00255 {
+<a name="l00256"></a>00256     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00257"></a>00257     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00258"></a>00258 }
+</pre></div></p>
 
 </div>
 </div>
@@ -563,6 +781,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00049">49</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00049"></a>00049                     :(BOOL)aBoolean
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051     <span class="keywordflow">return</span> aBoolean;
+<a name="l00052"></a>00052 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a94040e4b8b78efc2be59b0ffbde0d8cf"></a><!-- doxytag: member="CPNumber::numberWithChar:" ref="a94040e4b8b78efc2be59b0ffbde0d8cf" args="(char aChar)" -->
@@ -580,6 +806,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00054">54</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00054"></a>00054                     :(char)aChar
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     <span class="keywordflow">if</span> (aChar.charCodeAt)
+<a name="l00057"></a>00057         <span class="keywordflow">return</span> aChar.charCodeAt(0);
+<a name="l00058"></a>00058     
+<a name="l00059"></a>00059     <span class="keywordflow">return</span> aChar;
+<a name="l00060"></a>00060 }
+</pre></div></p>
 
 </div>
 </div>
@@ -599,6 +836,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00062">62</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00062"></a>00062                       :(double)aDouble
+<a name="l00063"></a>00063 {
+<a name="l00064"></a>00064     <span class="keywordflow">return</span> aDouble;
+<a name="l00065"></a>00065 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a2fb76ebfdcdd8f968df5b3a5ccf539b1"></a><!-- doxytag: member="CPNumber::numberWithFloat:" ref="a2fb76ebfdcdd8f968df5b3a5ccf539b1" args="(float aFloat)" -->
@@ -616,6 +861,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00067">67</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00067"></a>00067                      :(float)aFloat
+<a name="l00068"></a>00068 {
+<a name="l00069"></a>00069     <span class="keywordflow">return</span> aFloat;
+<a name="l00070"></a>00070 }
+</pre></div></p>
 
 </div>
 </div>
@@ -635,6 +888,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00072">72</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00072"></a>00072                    :(int)anInt
+<a name="l00073"></a>00073 {
+<a name="l00074"></a>00074     <span class="keywordflow">return</span> anInt;
+<a name="l00075"></a>00075 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a984813562d095b9a37921d48b1c6be4e"></a><!-- doxytag: member="CPNumber::numberWithLong:" ref="a984813562d095b9a37921d48b1c6be4e" args="(long aLong)" -->
@@ -652,6 +913,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00077">77</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00077"></a>00077                     :(long)aLong
+<a name="l00078"></a>00078 {
+<a name="l00079"></a>00079     <span class="keywordflow">return</span> aLong;
+<a name="l00080"></a>00080 }
+</pre></div></p>
 
 </div>
 </div>
@@ -671,6 +940,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00082">82</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00082"></a>00082                         :(<span class="keywordtype">long</span> long)aLongLong
+<a name="l00083"></a>00083 {
+<a name="l00084"></a>00084     <span class="keywordflow">return</span> aLongLong;
+<a name="l00085"></a>00085 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ab4d3c9c82f3d3ac146f397a6b0c58876"></a><!-- doxytag: member="CPNumber::numberWithShort:" ref="ab4d3c9c82f3d3ac146f397a6b0c58876" args="(short aShort)" -->
@@ -688,6 +965,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00087">87</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00087"></a>00087                      :(short)aShort
+<a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <span class="keywordflow">return</span> aShort;
+<a name="l00090"></a>00090 }
+</pre></div></p>
 
 </div>
 </div>
@@ -707,6 +992,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00092">92</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00092"></a>00092                             :(<span class="keywordtype">unsigned</span> char)aChar
+<a name="l00093"></a>00093 {
+<a name="l00094"></a>00094     <span class="keywordflow">if</span> (aChar.charCodeAt)
+<a name="l00095"></a>00095         <span class="keywordflow">return</span> aChar.charCodeAt(0);
+<a name="l00096"></a>00096     
+<a name="l00097"></a>00097     <span class="keywordflow">return</span> aChar;
+<a name="l00098"></a>00098 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a695c85a14441e184393be86adf1684c1"></a><!-- doxytag: member="CPNumber::numberWithUnsignedInt:" ref="a695c85a14441e184393be86adf1684c1" args="(unsigned anUnsignedInt)" -->
@@ -724,6 +1020,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00100">100</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00100"></a>00100                            :(unsigned)anUnsignedInt
+<a name="l00101"></a>00101 {
+<a name="l00102"></a>00102     <span class="keywordflow">return</span> anUnsignedInt;
+<a name="l00103"></a>00103 }
+</pre></div></p>
 
 </div>
 </div>
@@ -743,6 +1047,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00105">105</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00105"></a>00105                             :(<span class="keywordtype">unsigned</span> long)anUnsignedLong
+<a name="l00106"></a>00106 {
+<a name="l00107"></a>00107     <span class="keywordflow">return</span> anUnsignedLong;
+<a name="l00108"></a>00108 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a8aee3666857b4041ab35071f0c5435f4"></a><!-- doxytag: member="CPNumber::numberWithUnsignedShort:" ref="a8aee3666857b4041ab35071f0c5435f4" args="(unsigned short anUnsignedShort)" -->
@@ -761,6 +1073,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00115">115</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00115"></a>00115                              :(<span class="keywordtype">unsigned</span> short)anUnsignedShort
+<a name="l00116"></a>00116 {
+<a name="l00117"></a>00117     <span class="keywordflow">return</span> anUnsignedShort;
+<a name="l00118"></a>00118 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a7a56c69cc1d73b4958c2e5f002ff879c"></a><!-- doxytag: member="CPNumber::shortValue" ref="a7a56c69cc1d73b4958c2e5f002ff879c" args="()" -->
@@ -777,6 +1097,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00260">260</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00261"></a>00261 {
+<a name="l00262"></a>00262     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00263"></a>00263     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00264"></a>00264 }
+</pre></div></p>
 
 </div>
 </div>
@@ -795,6 +1123,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00266">266</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00267"></a>00267 {
+<a name="l00268"></a>00268     <span class="keywordflow">return</span> toString();
+<a name="l00269"></a>00269 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="afb4dc04183510a2d9c2f4b24400e389e"></a><!-- doxytag: member="CPNumber::UID" ref="afb4dc04183510a2d9c2f4b24400e389e" args="()" -->
@@ -811,6 +1146,16 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00191">191</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00192"></a>00192 {
+<a name="l00193"></a>00193     <span class="keywordflow">if</span> (!_CPNumberHashes[<span class="keyword">self</span>])
+<a name="l00194"></a>00194         _CPNumberHashes[<span class="keyword">self</span>] = _objj_generateObjectHash();
+<a name="l00195"></a>00195         
+<a name="l00196"></a>00196     <span class="keywordflow">return</span> _CPNumberHashes[<span class="keyword">self</span>];
+<a name="l00197"></a>00197 }
+</pre></div></p>
 
 </div>
 </div>
@@ -829,6 +1174,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00271">271</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00272"></a>00272 {
+<a name="l00273"></a>00273     <span class="keywordflow">return</span> String.fromCharCode(<span class="keyword">self</span>);
+<a name="l00274"></a>00274 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a3191009897b265a2841d1005c3e94863"></a><!-- doxytag: member="CPNumber::unsignedIntValue" ref="a3191009897b265a2841d1005c3e94863" args="()" -->
@@ -845,6 +1197,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00276">276</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00277"></a>00277 {
+<a name="l00278"></a>00278     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00279"></a>00279     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00280"></a>00280 }
+</pre></div></p>
 
 </div>
 </div>
@@ -863,6 +1223,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00288">288</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00289"></a>00289 {
+<a name="l00290"></a>00290     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00291"></a>00291     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00292"></a>00292 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a288dceab31120ac740c61b1df0586ffc"></a><!-- doxytag: member="CPNumber::unsignedShortValue" ref="a288dceab31120ac740c61b1df0586ffc" args="()" -->
@@ -880,10 +1248,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a> rivillä <a class="el" href="_c_p_number_8j_source.html#l00294">294</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00295"></a>00295 {
+<a name="l00296"></a>00296     <span class="keywordflow">if</span> (typeof <span class="keyword">self</span> == <span class="stringliteral">&quot;boolean&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">self</span> ? 1 : 0;
+<a name="l00297"></a>00297     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00298"></a>00298 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_number_8j.html">CPNumber.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_number_8j_source.html">CPNumber.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

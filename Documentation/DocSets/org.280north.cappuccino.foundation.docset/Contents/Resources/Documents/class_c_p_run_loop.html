@@ -51,6 +51,8 @@
 <p>The main run loop for the application. </p>
 <p><a class="el" href="class_c_p_run_loop.html" title="The main run loop for the application.">CPRunLoop</a> instances handle various utility tasks that must be performed repetitively in an application, such as processing input events.</p>
 <p>There is one run loop per application, which may always be obtained through the +currentRunLoop method, </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00149">149</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a383693dad4536420c4aca85ff964bb7b"></a><!-- doxytag: member="CPRunLoop::addTimer:forMode:" ref="a383693dad4536420c4aca85ff964bb7b" args="(CPTimer aTimer,[forMode] CPString aMode)" -->
 <div class="memitem">
@@ -77,6 +79,25 @@
 </div>
 <div class="memdoc">
 <p>Registers a given timer with a given input mode. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00256">256</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00256"></a>00256                 :(<a class="code" href="class_c_p_timer.html" title="A timer object that can send a message after the given time interval.">CPTimer</a>)aTimer forMode:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aMode
+<a name="l00257"></a>00257 {
+<a name="l00258"></a>00258     <span class="comment">// FIXME: Timer already added...</span>
+<a name="l00259"></a>00259     <span class="keywordflow">if</span> (_timersForModes[aMode])
+<a name="l00260"></a>00260         _timersForModes[aMode].push(aTimer);
+<a name="l00261"></a>00261     <span class="keywordflow">else</span>
+<a name="l00262"></a>00262         _timersForModes[aMode] = [aTimer];
+<a name="l00263"></a>00263     
+<a name="l00264"></a>00264     _didAddTimer = YES;
+<a name="l00265"></a>00265     
+<a name="l00266"></a>00266     <span class="keywordflow">if</span> (!aTimer._lastNativeRunLoopsForModes)
+<a name="l00267"></a>00267         aTimer._lastNativeRunLoopsForModes = {};
+<a name="l00268"></a>00268         
+<a name="l00269"></a>00269     aTimer._lastNativeRunLoopsForModes[aMode] = <a class="code" href="_c_p_run_loop_8j.html#aea87f8ade30a60e9eb4c73797c491efb">CPRunLoopLastNativeRunLoop</a>;
+<a name="l00270"></a>00270 }
+</pre></div></p>
 
 </div>
 </div>
@@ -120,6 +141,22 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00232">232</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00232"></a>00232                              :(SEL)aSelector target:(<span class="keywordtype">id</span>)aTarget argument:(id)anArgument
+<a name="l00233"></a>00233 {
+<a name="l00234"></a>00234     var count = _orderedPerforms.length;
+<a name="l00235"></a>00235     
+<a name="l00236"></a>00236     <span class="keywordflow">while</span> (count--)
+<a name="l00237"></a>00237     {
+<a name="l00238"></a>00238         var perform = _orderedPerforms[count];
+<a name="l00239"></a>00239         
+<a name="l00240"></a>00240         <span class="keywordflow">if</span> ([perform selector] === aSelector &amp;&amp; [perform target] == aTarget &amp;&amp; [perform argument] == anArgument)
+<a name="l00241"></a>00241             [_orderedPerforms[count] invalidate];
+<a name="l00242"></a>00242     }
+<a name="l00243"></a>00243 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aba93f1cef957bad4353ce060981c0b9d"></a><!-- doxytag: member="CPRunLoop::currentRunLoop" ref="aba93f1cef957bad4353ce060981c0b9d" args="()" -->
@@ -138,6 +175,13 @@
 <div class="memdoc">
 <p>Returns the application's singleton <a class="el" href="class_c_p_run_loop.html" title="The main run loop for the application.">CPRunLoop</a>. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00192">192</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00193"></a>00193 {
+<a name="l00194"></a>00194     <span class="keywordflow">return</span> CPMainRunLoop;
+<a name="l00195"></a>00195 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a7ffba7ebe9eb8cc441a2d6bf51924dad"></a><!-- doxytag: member="CPRunLoop::init" ref="a7ffba7ebe9eb8cc441a2d6bf51924dad" args="()" -->
@@ -155,6 +199,24 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00173">173</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00174"></a>00174 {
+<a name="l00175"></a>00175     <span class="keyword">self</span> = [super <a class="code" href="class_c_p_run_loop.html#a7ffba7ebe9eb8cc441a2d6bf51924dad">init</a>];
+<a name="l00176"></a>00176     
+<a name="l00177"></a>00177     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00178"></a>00178     {
+<a name="l00179"></a>00179         _orderedPerforms = [];
+<a name="l00180"></a>00180         
+<a name="l00181"></a>00181         _timersForModes = {};
+<a name="l00182"></a>00182         _nativeTimersForModes = {};
+<a name="l00183"></a>00183         _nextTimerFireDatesForModes = {};
+<a name="l00184"></a>00184     }
+<a name="l00185"></a>00185     
+<a name="l00186"></a>00186     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00187"></a>00187 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="afdb02a67eda9973703746cbb201aa286"></a><!-- doxytag: member="CPRunLoop::initialize" ref="afdb02a67eda9973703746cbb201aa286" args="()" -->
@@ -171,6 +233,16 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00165">165</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00166"></a>00166 {
+<a name="l00167"></a>00167     <span class="keywordflow">if</span> (<span class="keyword">self</span> != [<a class="code" href="class_c_p_run_loop.html" title="The main run loop for the application.">CPRunLoop</a> <span class="keyword">class</span>])
+<a name="l00168"></a>00168         <span class="keywordflow">return</span>;
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170     CPMainRunLoop = [[<a class="code" href="class_c_p_run_loop.html" title="The main run loop for the application.">CPRunLoop</a> alloc] <a class="code" href="class_c_p_run_loop.html#a7ffba7ebe9eb8cc441a2d6bf51924dad">init</a>];
+<a name="l00171"></a>00171 }
+</pre></div></p>
 
 </div>
 </div>
@@ -191,6 +263,123 @@
 <div class="memdoc">
 <p>Performs one pass through the run loop in the specified mode and returns the date at which the next timer is scheduled to fire. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00275">275</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00275"></a>00275                           :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aMode
+<a name="l00276"></a>00276 {
+<a name="l00277"></a>00277     <span class="comment">//simple locking to try to prevent concurrent iterating over timers</span>
+<a name="l00278"></a>00278     <span class="keywordflow">if</span> (_runLoopLock)
+<a name="l00279"></a>00279         <span class="keywordflow">return</span>;
+<a name="l00280"></a>00280         
+<a name="l00281"></a>00281     _runLoopLock = YES;
+<a name="l00282"></a>00282     
+<a name="l00283"></a>00283     var now = _effectiveDate ? [_effectiveDate laterDate:[<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a> date]] : [<a class="code" href="class_c_p_date.html" title="A representation of a single point in time.">CPDate</a> date],
+<a name="l00284"></a>00284         nextFireDate = nil,
+<a name="l00285"></a>00285         nextTimerFireDate = _nextTimerFireDatesForModes[aMode];
+<a name="l00286"></a>00286     
+<a name="l00287"></a>00287     <span class="comment">// Perform Timers if necessary</span>
+<a name="l00288"></a>00288     <span class="keywordflow">if</span> (_didAddTimer || nextTimerFireDate &amp;&amp; nextTimerFireDate &lt;= now)
+<a name="l00289"></a>00289     {
+<a name="l00290"></a>00290         _didAddTimer = NO;
+<a name="l00291"></a>00291     
+<a name="l00292"></a>00292         <span class="comment">// Cancel existing window.setTimeout</span>
+<a name="l00293"></a>00293         <span class="keywordflow">if</span> (_nativeTimersForModes[aMode] !== nil)
+<a name="l00294"></a>00294         {
+<a name="l00295"></a>00295             window.clearNativeTimeout(_nativeTimersForModes[aMode]);
+<a name="l00296"></a>00296             
+<a name="l00297"></a>00297             _nativeTimersForModes[aMode] = nil;
+<a name="l00298"></a>00298         }
+<a name="l00299"></a>00299     
+<a name="l00300"></a>00300         <span class="comment">// Empty timers to avoid catastrophe if a timer is added during a timer fire.</span>
+<a name="l00301"></a>00301         var timers = _timersForModes[aMode],
+<a name="l00302"></a>00302             index = timers.length;
+<a name="l00303"></a>00303         
+<a name="l00304"></a>00304         _timersForModes[aMode] = nil;
+<a name="l00305"></a>00305         
+<a name="l00306"></a>00306         <span class="comment">//  Loop through timers looking for ones that had fired          </span>
+<a name="l00307"></a>00307         <span class="keywordflow">while</span> (index--)
+<a name="l00308"></a>00308         {
+<a name="l00309"></a>00309             var timer = timers[index];
+<a name="l00310"></a>00310             
+<a name="l00311"></a>00311             <span class="keywordflow">if</span> (timer._lastNativeRunLoopsForModes[aMode] &lt; <a class="code" href="_c_p_run_loop_8j.html#aea87f8ade30a60e9eb4c73797c491efb">CPRunLoopLastNativeRunLoop</a> &amp;&amp; timer._isValid &amp;&amp; timer._fireDate &lt;= now)
+<a name="l00312"></a>00312                 [timer fire];
+<a name="l00313"></a>00313                     
+<a name="l00314"></a>00314             <span class="comment">// Timer may or may not still be valid</span>
+<a name="l00315"></a>00315             <span class="keywordflow">if</span> (timer._isValid)
+<a name="l00316"></a>00316                 nextFireDate = (nextFireDate === nil) ? timer._fireDate : [nextFireDate earlierDate:timer._fireDate];
+<a name="l00317"></a>00317             
+<a name="l00318"></a>00318             <span class="keywordflow">else</span>
+<a name="l00319"></a>00319             {
+<a name="l00320"></a>00320                 <span class="comment">// FIXME: Is there an issue with reseting the fire date in -fire? or adding it back to the run loop?...</span>
+<a name="l00321"></a>00321                 timer._lastNativeRunLoopsForModes[aMode] = 0;
+<a name="l00322"></a>00322                 
+<a name="l00323"></a>00323                 timers.splice(index, 1);
+<a name="l00324"></a>00324             }
+<a name="l00325"></a>00325         }
+<a name="l00326"></a>00326         
+<a name="l00327"></a>00327         <span class="comment">// Timers may have been added during the firing of timers</span>
+<a name="l00328"></a>00328         <span class="comment">// They do NOT get a shot at firing, because they certainly </span>
+<a name="l00329"></a>00329         <span class="comment">// haven&#39;t gone through one native timer.</span>
+<a name="l00330"></a>00330         var newTimers = _timersForModes[aMode];
+<a name="l00331"></a>00331         
+<a name="l00332"></a>00332         <span class="keywordflow">if</span> (newTimers &amp;&amp; newTimers.length)
+<a name="l00333"></a>00333         {
+<a name="l00334"></a>00334             index = newTimers.length;
+<a name="l00335"></a>00335             
+<a name="l00336"></a>00336             <span class="keywordflow">while</span> (index--)
+<a name="l00337"></a>00337             {
+<a name="l00338"></a>00338                 var timer = newTimers[index];
+<a name="l00339"></a>00339                 
+<a name="l00340"></a>00340                 <span class="keywordflow">if</span> ([timer isValid])
+<a name="l00341"></a>00341                     nextFireDate = (nextFireDate === nil) ? timer._fireDate : [nextFireDate earlierDate:timer._fireDate];
+<a name="l00342"></a>00342                 <span class="keywordflow">else</span>
+<a name="l00343"></a>00343                     newTimers.splice(index, 1);
+<a name="l00344"></a>00344             }
+<a name="l00345"></a>00345             
+<a name="l00346"></a>00346             _timersForModes[aMode] = newTimers.concat(timers);
+<a name="l00347"></a>00347         }
+<a name="l00348"></a>00348         <span class="keywordflow">else</span>
+<a name="l00349"></a>00349             _timersForModes[aMode] = timers;
+<a name="l00350"></a>00350         
+<a name="l00351"></a>00351         _nextTimerFireDatesForModes[aMode] = nextFireDate;
+<a name="l00352"></a>00352         
+<a name="l00353"></a>00353         <span class="comment">//initiate a new window.setTimeout if there are any timers</span>
+<a name="l00354"></a>00354         <span class="keywordflow">if</span> (_nextTimerFireDatesForModes[aMode] !== nil)
+<a name="l00355"></a>00355             _nativeTimersForModes[aMode] = window.setNativeTimeout(function() { _effectiveDate = nextFireDate; _nativeTimersForModes[aMode] = nil; ++<a class="code" href="_c_p_run_loop_8j.html#aea87f8ade30a60e9eb4c73797c491efb">CPRunLoopLastNativeRunLoop</a>; [<span class="keyword">self</span> limitDateForMode:aMode]; _effectiveDate = nil; }, <a class="code" href="_c_p_obj_j_runtime_8j.html#a45f5f88d061da0c18bcb6b6a854fe898">MAX</a>(0, [nextFireDate timeIntervalSinceNow] * 1000));
+<a name="l00356"></a>00356     }
+<a name="l00357"></a>00357     
+<a name="l00358"></a>00358     <span class="comment">// Run loop performers</span>
+<a name="l00359"></a>00359     var performs = _orderedPerforms,
+<a name="l00360"></a>00360         index = performs.length;
+<a name="l00361"></a>00361     
+<a name="l00362"></a>00362     _orderedPerforms = [];
+<a name="l00363"></a>00363     
+<a name="l00364"></a>00364     <span class="keywordflow">while</span> (index--)
+<a name="l00365"></a>00365     {
+<a name="l00366"></a>00366         var perform = performs[index];
+<a name="l00367"></a>00367         
+<a name="l00368"></a>00368         <span class="keywordflow">if</span> ([perform fireInMode:<a class="code" href="_c_p_run_loop_8j.html#a51e129fa61aa6aef4c036d4762d468ea">CPDefaultRunLoopMode</a>])
+<a name="l00369"></a>00369         {
+<a name="l00370"></a>00370             [_CPRunLoopPerform _poolPerform:perform];
+<a name="l00371"></a>00371             
+<a name="l00372"></a>00372             performs.splice(index, 1);
+<a name="l00373"></a>00373         }
+<a name="l00374"></a>00374     }
+<a name="l00375"></a>00375     
+<a name="l00376"></a>00376     <span class="keywordflow">if</span> (_orderedPerforms.length)
+<a name="l00377"></a>00377     {
+<a name="l00378"></a>00378         _orderedPerforms = _orderedPerforms.concat(performs);
+<a name="l00379"></a>00379         _orderedPerforms.sort(_CPRunLoopPerformCompare);
+<a name="l00380"></a>00380     }
+<a name="l00381"></a>00381     <span class="keywordflow">else</span>
+<a name="l00382"></a>00382         _orderedPerforms = performs;
+<a name="l00383"></a>00383     
+<a name="l00384"></a>00384     _runLoopLock = NO;
+<a name="l00385"></a>00385     
+<a name="l00386"></a>00386     <span class="keywordflow">return</span> nextFireDate;
+<a name="l00387"></a>00387 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a72897726b6fe227f34337d696b20ec99"></a><!-- doxytag: member="CPRunLoop::mainRunLoop" ref="a72897726b6fe227f34337d696b20ec99" args="()" -->
@@ -208,6 +397,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the application's singleton <a class="el" href="class_c_p_run_loop.html" title="The main run loop for the application.">CPRunLoop</a>. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00200">200</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00201"></a>00201 {
+<a name="l00202"></a>00202     <span class="keywordflow">return</span> CPMainRunLoop;
+<a name="l00203"></a>00203 }
+</pre></div></p>
 
 </div>
 </div>
@@ -265,6 +461,22 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00213">213</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00213"></a>00213                        :(SEL)aSelector target:(<span class="keywordtype">id</span>)aTarget argument:(id)anArgument order:(<span class="keywordtype">int</span>)anOrder modes:(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)modes
+<a name="l00214"></a>00214 {
+<a name="l00215"></a>00215     var perform = [_CPRunLoopPerform performWithSelector:aSelector target:aTarget argument:anArgument order:anOrder modes:modes],
+<a name="l00216"></a>00216         count = _orderedPerforms.length;
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218     <span class="comment">// We sort ourselves in reverse because we iterate this list backwards.</span>
+<a name="l00219"></a>00219     <span class="keywordflow">while</span> (count--)
+<a name="l00220"></a>00220         <span class="keywordflow">if</span> (anOrder &lt; [_orderedPerforms[count] order])
+<a name="l00221"></a>00221             <span class="keywordflow">break</span>;
+<a name="l00222"></a>00222     
+<a name="l00223"></a>00223     _orderedPerforms.splice(count + 1, 0, perform);
+<a name="l00224"></a>00224 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a59741f09cac6a9346fcd5bb125a8b069"></a><!-- doxytag: member="CPRunLoop::performSelectors" ref="a59741f09cac6a9346fcd5bb125a8b069" args="()" -->
@@ -282,10 +494,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a> rivillä <a class="el" href="_c_p_run_loop_8j_source.html#l00248">248</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00249"></a>00249 {
+<a name="l00250"></a>00250     [<span class="keyword">self</span> limitDateForMode:<a class="code" href="_c_p_run_loop_8j.html#a51e129fa61aa6aef4c036d4762d468ea">CPDefaultRunLoopMode</a>];
+<a name="l00251"></a>00251 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_run_loop_8j.html">CPRunLoop.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_run_loop_8j_source.html">CPRunLoop.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

@@ -93,6 +93,8 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00081">81</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="aea5796f30cbb18972c7f183d8126c446"></a><!-- doxytag: member="CPURLConnection::cancel" ref="aea5796f30cbb18972c7f183d8126c446" args="()" -->
 <div class="memitem">
@@ -108,6 +110,22 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00220">220</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00221"></a>00221 {
+<a name="l00222"></a>00222     _isCanceled = YES;
+<a name="l00223"></a>00223     
+<a name="l00224"></a>00224     <span class="keywordflow">try</span>
+<a name="l00225"></a>00225     {
+<a name="l00226"></a>00226         _XMLHTTPRequest.abort();
+<a name="l00227"></a>00227     }
+<a name="l00228"></a>00228     <span class="comment">// We expect an exception in some browsers like FireFox.</span>
+<a name="l00229"></a>00229     <span class="keywordflow">catch</span> (anException)
+<a name="l00230"></a>00230     {
+<a name="l00231"></a>00231     }
+<a name="l00232"></a>00232 }
+</pre></div></p>
 
 </div>
 </div>
@@ -136,6 +154,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00135">135</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00135"></a>00135                                         :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest <a class="code" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a>:(<span class="keywordtype">id</span>)aDelegate
+<a name="l00136"></a>00136 {
+<a name="l00137"></a>00137     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithRequest:aRequest <a class="code" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a>:aDelegate];
+<a name="l00138"></a>00138 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a64b355907daa70fc2a0b6bbc01ce65fd"></a><!-- doxytag: member="CPURLConnection::delegate" ref="a64b355907daa70fc2a0b6bbc01ce65fd" args="()" -->
@@ -152,6 +178,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00183">183</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00184"></a>00184 {
+<a name="l00185"></a>00185     <span class="keywordflow">return</span> _delegate;
+<a name="l00186"></a>00186 }
+</pre></div></p>
 
 </div>
 </div>
@@ -179,6 +212,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00175">175</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00175"></a>00175                      :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest <a class="code" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a>:(<span class="keywordtype">id</span>)aDelegate
+<a name="l00176"></a>00176 {
+<a name="l00177"></a>00177     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithRequest:aRequest <a class="code" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a>:aDelegate startImmediately:YES];
+<a name="l00178"></a>00178 }
+</pre></div></p>
 
 </div>
 </div>
@@ -213,6 +254,37 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00147">147</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00147"></a>00147                      :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest <a class="code" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a>:(<span class="keywordtype">id</span>)aDelegate startImmediately:(BOOL)shouldStartImmediately
+<a name="l00148"></a>00148 {
+<a name="l00149"></a>00149     <span class="keyword">self</span> = [super init];
+<a name="l00150"></a>00150     
+<a name="l00151"></a>00151     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00152"></a>00152     {
+<a name="l00153"></a>00153         _request = aRequest;
+<a name="l00154"></a>00154         _delegate = aDelegate;
+<a name="l00155"></a>00155         _isCanceled = NO;
+<a name="l00156"></a>00156         
+<a name="l00157"></a>00157         var URL = [_request URL],
+<a name="l00158"></a>00158             scheme = [URL scheme];
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160         <span class="comment">// Browsers use &quot;file:&quot;, Titanium uses &quot;app:&quot;</span>
+<a name="l00161"></a>00161         _isLocalFileConnection =    scheme === <span class="stringliteral">&quot;file&quot;</span> ||
+<a name="l00162"></a>00162                                     ((scheme === <span class="stringliteral">&quot;http&quot;</span> || scheme === <span class="stringliteral">&quot;https:&quot;</span>) &amp;&amp;
+<a name="l00163"></a>00163                                     window.location &amp;&amp;
+<a name="l00164"></a>00164                                     (window.location.protocol === <span class="stringliteral">&quot;file:&quot;</span> || window.location.protocol === <span class="stringliteral">&quot;app:&quot;</span>));
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166         _XMLHTTPRequest = objj_request_xmlhttp();
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168         <span class="keywordflow">if</span> (shouldStartImmediately)
+<a name="l00169"></a>00169             [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l_connection.html#a14205617fa4da2200b76d1f4d87a2d23">start</a>];
+<a name="l00170"></a>00170     }
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00173"></a>00173 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a437cae36f68a1cb5bd7c0c6a0dcbcea1"></a><!-- doxytag: member="CPURLConnection::isLocalFileConnection" ref="a437cae36f68a1cb5bd7c0c6a0dcbcea1" args="()" -->
@@ -229,6 +301,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00234">234</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00235"></a>00235 {
+<a name="l00236"></a>00236     <span class="keywordflow">return</span> _isLocalFileConnection;
+<a name="l00237"></a>00237 }
+</pre></div></p>
 
 </div>
 </div>
@@ -263,6 +342,35 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00103">103</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00103"></a>00103                                 :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest returningResponse:({<a class="code" href="class_c_p_u_r_l_response.html" title="Protocol agnostic information about a request to a specifc URL.">CPURLResponse</a>})aURLResponse error:({CPError})anError
+<a name="l00104"></a>00104 {
+<a name="l00105"></a>00105     <span class="keywordflow">try</span>
+<a name="l00106"></a>00106     {
+<a name="l00107"></a>00107         var request = objj_request_xmlhttp();
+<a name="l00108"></a>00108         
+<a name="l00109"></a>00109         request.open([aRequest HTTPMethod], [[aRequest URL] absoluteString], NO);
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111         var fields = [aRequest allHTTPHeaderFields],
+<a name="l00112"></a>00112             key = nil,
+<a name="l00113"></a>00113             keys = [fields keyEnumerator];
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115         <span class="keywordflow">while</span> (key = [keys nextObject])
+<a name="l00116"></a>00116             request.setRequestHeader(key, [fields objectForKey:key]);
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118         request.send([aRequest HTTPBody]);
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <span class="keywordflow">return</span> [<a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a> dataWithString:request.responseText];
+<a name="l00121"></a>00121     }
+<a name="l00122"></a>00122     <span class="keywordflow">catch</span> (anException)
+<a name="l00123"></a>00123     {
+<a name="l00124"></a>00124     }
+<a name="l00125"></a>00125     
+<a name="l00126"></a>00126     <span class="keywordflow">return</span> nil;
+<a name="l00127"></a>00127 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ab5880c5dac87a2a8e64a2fb32f9e5ae1"></a><!-- doxytag: member="CPURLConnection::setClassDelegate:" ref="ab5880c5dac87a2a8e64a2fb32f9e5ae1" args="(id delegate)" -->
@@ -281,6 +389,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00091">91</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00091"></a>00091                         :(id)<a class="code" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a>
+<a name="l00092"></a>00092 {
+<a name="l00093"></a>00093     <a class="code" href="_c_p_u_r_l_connection_8j.html#a3d4811f853e4cc1c2f2d05a5c9e9604f">CPURLConnectionDelegate</a> = <a class="code" href="class_c_p_u_r_l_connection.html#a64b355907daa70fc2a0b6bbc01ce65fd">delegate</a>;
+<a name="l00094"></a>00094 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a14205617fa4da2200b76d1f4d87a2d23"></a><!-- doxytag: member="CPURLConnection::start" ref="a14205617fa4da2200b76d1f4d87a2d23" args="()" -->
@@ -298,10 +414,38 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a> rivillä <a class="el" href="_c_p_u_r_l_connection_8j_source.html#l00191">191</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00192"></a>00192 {
+<a name="l00193"></a>00193     _isCanceled = NO;
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195     <span class="keywordflow">try</span>
+<a name="l00196"></a>00196     {   
+<a name="l00197"></a>00197         _XMLHTTPRequest.open([_request HTTPMethod], [[_request URL] absoluteString], YES);
+<a name="l00198"></a>00198         
+<a name="l00199"></a>00199         _XMLHTTPRequest.onreadystatechange = function() { [<span class="keyword">self</span> _readyStateDidChange]; }
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201         var fields = [_request allHTTPHeaderFields],
+<a name="l00202"></a>00202             key = nil,
+<a name="l00203"></a>00203             keys = [fields keyEnumerator];
+<a name="l00204"></a>00204         
+<a name="l00205"></a>00205         <span class="keywordflow">while</span> (key = [keys nextObject])
+<a name="l00206"></a>00206             _XMLHTTPRequest.setRequestHeader(key, [fields objectForKey:key]);
+<a name="l00207"></a>00207         
+<a name="l00208"></a>00208         _XMLHTTPRequest.send([_request HTTPBody]);
+<a name="l00209"></a>00209     }
+<a name="l00210"></a>00210     <span class="keywordflow">catch</span> (anException)
+<a name="l00211"></a>00211     {
+<a name="l00212"></a>00212         <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(connection:didFailWithError:)])
+<a name="l00213"></a>00213             [_delegate connection:<span class="keyword">self</span> didFailWithError:anException];
+<a name="l00214"></a>00214     }
+<a name="l00215"></a>00215 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_u_r_l_connection_8j.html">CPURLConnection.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_u_r_l_connection_8j_source.html">CPURLConnection.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

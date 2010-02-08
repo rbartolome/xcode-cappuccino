@@ -48,6 +48,8 @@
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>Allows cross domain connections using JSONP protocol. </p>
 <p>Important note: <a class="el" href="class_c_p_j_s_o_n_p_connection.html" title="Allows cross domain connections using JSONP protocol.">CPJSONPConnection</a> is <b>only</b> for JSONP APIs. If aren't sure you <b>need</b> <a href="http://ajaxian.com/archives/jsonp-json-with-padding">JSON<b>P</b></a>, you most likely don't want to use <a class="el" href="class_c_p_j_s_o_n_p_connection.html" title="Allows cross domain connections using JSONP protocol.">CPJSONPConnection</a>, but rather the more standard <a class="el" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a>. <a class="el" href="class_c_p_j_s_o_n_p_connection.html" title="Allows cross domain connections using JSONP protocol.">CPJSONPConnection</a> is designed for cross-domain connections, and if you are making requests to the same domain (as most web applications do), you do not need it. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00042">42</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="aa915f8b07110dff1355c52905acc47fc"></a><!-- doxytag: member="CPJSONPConnection::cancel" ref="aa915f8b07110dff1355c52905acc47fc" args="()" -->
 <div class="memitem">
@@ -63,6 +65,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00137">137</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00138"></a>00138 {
+<a name="l00139"></a>00139     [<span class="keyword">self</span> <a class="code" href="class_c_p_j_s_o_n_p_connection.html#aea3b69f0b3bba4ee550a0fc034f83776">removeScriptTag</a>];
+<a name="l00140"></a>00140 }
+</pre></div></p>
 
 </div>
 </div>
@@ -97,6 +106,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00057">57</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00057"></a>00057                                           :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest callback:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)callbackParameter delegate:(id)aDelegate
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keywordflow">return</span> [[[<span class="keyword">self</span> <span class="keyword">class</span>] alloc] initWithRequest:aRequest callback:callbackParameter delegate:aDelegate startImmediately:YES];;
+<a name="l00060"></a>00060 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6e4223996758d33b2dd1c8636e7bbe48"></a><!-- doxytag: member="CPJSONPConnection::initWithRequest:callback:delegate:" ref="a6e4223996758d33b2dd1c8636e7bbe48" args="(CPURLRequest aRequest,[callback] CPString aString,[delegate] id aDelegate)" -->
@@ -129,6 +146,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00062">62</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00062"></a>00062                      :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest callback:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aString delegate:(id)aDelegate 
+<a name="l00063"></a>00063 {
+<a name="l00064"></a>00064     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithRequest:aRequest callback:aString delegate:aDelegate startImmediately: NO];
+<a name="l00065"></a>00065 }
+</pre></div></p>
 
 </div>
 </div>
@@ -169,6 +194,27 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00067">67</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00067"></a>00067                      :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest callback:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aString delegate:(id)aDelegate startImmediately:(BOOL)shouldStartImmediately
+<a name="l00068"></a>00068 {
+<a name="l00069"></a>00069     <span class="keyword">self</span> = [super init];
+<a name="l00070"></a>00070     
+<a name="l00071"></a>00071     _request = aRequest;
+<a name="l00072"></a>00072     _delegate = aDelegate;
+<a name="l00073"></a>00073     
+<a name="l00074"></a>00074     _callbackParameter = aString;
+<a name="l00075"></a>00075     
+<a name="l00076"></a>00076     <span class="keywordflow">if</span> (!_callbackParameter &amp;&amp; [[_request URL] absoluteString].indexOf(<a class="code" href="_c_p_j_s_o_n_p_connection_8j.html#a06e7fe1c93d8cf52b6a284d65002aea5">CPJSONPCallbackReplacementString</a>) &lt; 0)
+<a name="l00077"></a>00077          [<a class="code" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp;amp; raising).">CPException</a> <span class="keyword">raise</span>:<a class="code" href="_c_p_exception_8j.html#a6fa23775ddcbf086beab6aebeea123c3">CPInvalidArgumentException</a> reason:<span class="stringliteral">@&quot;JSONP source specified without callback parameter or CPJSONPCallbackReplacementString in URL.&quot;</span>];
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079     <span class="keywordflow">if</span>(shouldStartImmediately)
+<a name="l00080"></a>00080         [<span class="keyword">self</span> <a class="code" href="class_c_p_j_s_o_n_p_connection.html#a2ee39d8225428479df829f15a470ad7e">start</a>];
+<a name="l00081"></a>00081         
+<a name="l00082"></a>00082     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00083"></a>00083 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aea3b69f0b3bba4ee550a0fc034f83776"></a><!-- doxytag: member="CPJSONPConnection::removeScriptTag" ref="aea3b69f0b3bba4ee550a0fc034f83776" args="()" -->
@@ -185,6 +231,19 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00126">126</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00127"></a>00127 {
+<a name="l00128"></a>00128     var head = document.getElementsByTagName(<span class="stringliteral">&quot;head&quot;</span>).item(0);
+<a name="l00129"></a>00129     
+<a name="l00130"></a>00130     <span class="keywordflow">if</span>(_scriptTag &amp;&amp; _scriptTag.parentNode == head)
+<a name="l00131"></a>00131         head.removeChild(_scriptTag);
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133     <a class="code" href="_c_p_j_s_o_n_p_connection_8j.html#af99614a5cdb762bbca54e2e78bd4af5d">CPJSONPConnectionCallbacks</a>[<span class="stringliteral">&quot;callback&quot;</span>+[<span class="keyword">self</span> UID]] = nil;
+<a name="l00134"></a>00134     <span class="keyword">delete</span> <a class="code" href="_c_p_j_s_o_n_p_connection_8j.html#af99614a5cdb762bbca54e2e78bd4af5d">CPJSONPConnectionCallbacks</a>[<span class="stringliteral">&quot;callback&quot;</span>+[<span class="keyword">self</span> UID]];
+<a name="l00135"></a>00135 }
+</pre></div></p>
 
 </div>
 </div>
@@ -220,6 +279,14 @@
 <div class="memdoc">
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Vanhentunut:</a></b></dt><dd></dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00052">52</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00052"></a>00052                                 :(<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a>)aRequest callback:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)callbackParameter delegate:(id)aDelegate 
+<a name="l00053"></a>00053 {
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> [<span class="keyword">self</span> connectionWithRequest:aRequest callback:callbackParameter delegate:aDelegate];
+<a name="l00055"></a>00055 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a2ee39d8225428479df829f15a470ad7e"></a><!-- doxytag: member="CPJSONPConnection::start" ref="a2ee39d8225428479df829f15a470ad7e" args="()" -->
@@ -237,10 +304,53 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a> rivillä <a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html#l00085">85</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00086"></a>00086 {
+<a name="l00087"></a>00087     <span class="keywordflow">try</span>
+<a name="l00088"></a>00088     {
+<a name="l00089"></a>00089         <a class="code" href="_c_p_j_s_o_n_p_connection_8j.html#af99614a5cdb762bbca54e2e78bd4af5d">CPJSONPConnectionCallbacks</a>[<span class="stringliteral">&quot;callback&quot;</span>+[<span class="keyword">self</span> UID]] = function(data)
+<a name="l00090"></a>00090         {
+<a name="l00091"></a>00091             [_delegate connection:<span class="keyword">self</span> didReceiveData:data];
+<a name="l00092"></a>00092             [<span class="keyword">self</span> <a class="code" href="class_c_p_j_s_o_n_p_connection.html#aea3b69f0b3bba4ee550a0fc034f83776">removeScriptTag</a>];
+<a name="l00093"></a>00093     
+<a name="l00094"></a>00094             [[<a class="code" href="class_c_p_run_loop.html" title="The main run loop for the application.">CPRunLoop</a> currentRunLoop] limitDateForMode:<a class="code" href="_c_p_run_loop_8j.html#a51e129fa61aa6aef4c036d4762d468ea">CPDefaultRunLoopMode</a>];
+<a name="l00095"></a>00095         };
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097         var head = document.getElementsByTagName(<span class="stringliteral">&quot;head&quot;</span>).item(0),
+<a name="l00098"></a>00098             source = [[_request URL] absoluteString];
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100         <span class="keywordflow">if</span> (_callbackParameter)
+<a name="l00101"></a>00101         {
+<a name="l00102"></a>00102             source += (source.indexOf(<span class="charliteral">&#39;?&#39;</span>) &lt; 0) ? <span class="stringliteral">&quot;?&quot;</span> : <span class="stringliteral">&quot;&amp;&quot;</span>;
+<a name="l00103"></a>00103             source += _callbackParameter+<span class="stringliteral">&quot;=CPJSONPConnectionCallbacks.callback&quot;</span>+[<span class="keyword">self</span> UID];
+<a name="l00104"></a>00104         }
+<a name="l00105"></a>00105         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (source.indexOf(<a class="code" href="_c_p_j_s_o_n_p_connection_8j.html#a06e7fe1c93d8cf52b6a284d65002aea5">CPJSONPCallbackReplacementString</a>) &gt;= 0)
+<a name="l00106"></a>00106         {
+<a name="l00107"></a>00107             source = [source stringByReplacingOccurrencesOfString:<a class="code" href="_c_p_j_s_o_n_p_connection_8j.html#a06e7fe1c93d8cf52b6a284d65002aea5">CPJSONPCallbackReplacementString</a> withString:<span class="stringliteral">&quot;CPJSONPConnectionCallbacks.callback&quot;</span>+[<span class="keyword">self</span> UID]];
+<a name="l00108"></a>00108         }
+<a name="l00109"></a>00109         <span class="keywordflow">else</span>
+<a name="l00110"></a>00110             <span class="keywordflow">return</span>;
+<a name="l00111"></a>00111         
+<a name="l00112"></a>00112         _scriptTag = document.createElement(<span class="stringliteral">&quot;script&quot;</span>);
+<a name="l00113"></a>00113         _scriptTag.setAttribute(<span class="stringliteral">&quot;type&quot;</span>, <span class="stringliteral">&quot;text/javascript&quot;</span>);
+<a name="l00114"></a>00114         _scriptTag.setAttribute(<span class="stringliteral">&quot;charset&quot;</span>, <span class="stringliteral">&quot;utf-8&quot;</span>);
+<a name="l00115"></a>00115         _scriptTag.setAttribute(<span class="stringliteral">&quot;src&quot;</span>, source);
+<a name="l00116"></a>00116         
+<a name="l00117"></a>00117         head.appendChild(_scriptTag);
+<a name="l00118"></a>00118     }
+<a name="l00119"></a>00119     <span class="keywordflow">catch</span> (exception)
+<a name="l00120"></a>00120     {
+<a name="l00121"></a>00121         [_delegate connection: <span class="keyword">self</span> didFailWithError: exception];
+<a name="l00122"></a>00122         [<span class="keyword">self</span> <a class="code" href="class_c_p_j_s_o_n_p_connection.html#aea3b69f0b3bba4ee550a0fc034f83776">removeScriptTag</a>];
+<a name="l00123"></a>00123     }
+<a name="l00124"></a>00124 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_j_s_o_n_p_connection_8j.html">CPJSONPConnection.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_j_s_o_n_p_connection_8j_source.html">CPJSONPConnection.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

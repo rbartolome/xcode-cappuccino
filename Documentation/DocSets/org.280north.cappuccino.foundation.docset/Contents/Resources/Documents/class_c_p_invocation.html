@@ -55,6 +55,8 @@
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>An object representation of a message. </p>
 <p>A <a class="el" href="class_c_p_invocation.html" title="An object representation of a message.">CPInvocation</a> is an object representation of a message sent to an object. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00034">34</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a8d406efcb41fc55ec2795700c7c1c141"></a><!-- doxytag: member="CPInvocation::argumentAtIndex:" ref="a8d406efcb41fc55ec2795700c7c1c141" args="(unsigned anIndex)" -->
 <div class="memitem">
@@ -85,6 +87,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00121">121</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00121"></a>00121                      :(unsigned)anIndex
+<a name="l00122"></a>00122 {
+<a name="l00123"></a>00123     <span class="keywordflow">return</span> _arguments[anIndex];
+<a name="l00124"></a>00124 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ac72a6808080418d315cb237688e1392b"></a><!-- doxytag: member="CPInvocation::encodeWithCoder:" ref="ac72a6808080418d315cb237688e1392b" args="(CPCoder aCoder)" -->
@@ -109,6 +119,15 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00191">191</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00191"></a>00191                        :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00192"></a>00192 {
+<a name="l00193"></a>00193     [aCoder encodeObject:_returnValue forKey:<a class="code" href="_c_p_invocation_8j.html#acac9e63a7b6002cd85fd4c7a860e2a9a">CPInvocationReturnValue</a>];
+<a name="l00194"></a>00194     [aCoder encodeObject:_arguments forKey:<a class="code" href="_c_p_invocation_8j.html#a6f5e2b881d92991879390145e3883c76">CPInvocationArguments</a>];
+<a name="l00195"></a>00195 }
+</pre></div></p>
 
 </div>
 </div>
@@ -136,6 +155,22 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized invocation </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00174">174</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00174"></a>00174                    :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00175"></a>00175 {
+<a name="l00176"></a>00176     <span class="keyword">self</span> = [super init];
+<a name="l00177"></a>00177     
+<a name="l00178"></a>00178     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00179"></a>00179     {
+<a name="l00180"></a>00180         _returnValue = [aCoder decodeObjectForKey:<a class="code" href="_c_p_invocation_8j.html#acac9e63a7b6002cd85fd4c7a860e2a9a">CPInvocationReturnValue</a>];
+<a name="l00181"></a>00181         _arguments = [aCoder decodeObjectForKey:<a class="code" href="_c_p_invocation_8j.html#a6f5e2b881d92991879390145e3883c76">CPInvocationArguments</a>];
+<a name="l00182"></a>00182     }
+<a name="l00183"></a>00183     
+<a name="l00184"></a>00184     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00185"></a>00185 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6db7550b952005be273ba7d380778c3a"></a><!-- doxytag: member="CPInvocation::initWithMethodSignature:" ref="a6db7550b952005be273ba7d380778c3a" args="(CPMethodSignature aMethodSignature)" -->
@@ -161,6 +196,22 @@
   </dd>
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized invocation </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00057">57</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00057"></a>00057                              :(CPMethodSignature)aMethodSignature
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keyword">self</span> = [super init];
+<a name="l00060"></a>00060     
+<a name="l00061"></a>00061     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00062"></a>00062     {
+<a name="l00063"></a>00063         _arguments = [];
+<a name="l00064"></a>00064         _methodSignature = aMethodSignature;
+<a name="l00065"></a>00065     }
+<a name="l00066"></a>00066     
+<a name="l00067"></a>00067     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00068"></a>00068 }
+</pre></div></p>
 
 </div>
 </div>
@@ -188,6 +239,14 @@
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the new invocation </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00047">47</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00047"></a>00047                                    :(CPMethodSignature)aMethodSignature
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithMethodSignature:aMethodSignature];
+<a name="l00050"></a>00050 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a173c729535051b4e9e492a7c8d5e9aa7"></a><!-- doxytag: member="CPInvocation::invoke" ref="a173c729535051b4e9e492a7c8d5e9aa7" args="()" -->
@@ -205,6 +264,13 @@
 </div>
 <div class="memdoc">
 <p>Sends the encapsulated message to the stored target. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00147">147</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00148"></a>00148 {
+<a name="l00149"></a>00149     _returnValue = objj_msgSend.apply(objj_msgSend, _arguments);
+<a name="l00150"></a>00150 }
+</pre></div></p>
 
 </div>
 </div>
@@ -231,6 +297,15 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00156">156</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00156"></a>00156                         :(id)aTarget
+<a name="l00157"></a>00157 {
+<a name="l00158"></a>00158     _arguments[0] = aTarget;
+<a name="l00159"></a>00159     _returnValue = objj_msgSend.apply(objj_msgSend, _arguments);
+<a name="l00160"></a>00160 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ab86b3c4542cafd107e1e7e196d70c62f"></a><!-- doxytag: member="CPInvocation::returnValue" ref="ab86b3c4542cafd107e1e7e196d70c62f" args="()" -->
@@ -249,6 +324,13 @@
 <div class="memdoc">
 <p>Returns the invocation's return value </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00138">138</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00139"></a>00139 {
+<a name="l00140"></a>00140     <span class="keywordflow">return</span> _returnValue;
+<a name="l00141"></a>00141 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a59a413962fbf295fa620f995268bd447"></a><!-- doxytag: member="CPInvocation::selector" ref="a59a413962fbf295fa620f995268bd447" args="()" -->
@@ -266,6 +348,13 @@
 </div>
 <div class="memdoc">
 <p>Returns the invocation's selector </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00083">83</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     <span class="keywordflow">return</span> _arguments[1];
+<a name="l00086"></a>00086 }
+</pre></div></p>
 
 </div>
 </div>
@@ -302,6 +391,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00110">110</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00110"></a>00110                    :(id)anArgument atIndex:(<span class="keywordtype">unsigned</span>)anIndex
+<a name="l00111"></a>00111 {
+<a name="l00112"></a>00112     _arguments[anIndex] = anArgument;
+<a name="l00113"></a>00113 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aca8f5558878e9e5a660ff2f0d36ee96e"></a><!-- doxytag: member="CPInvocation::setReturnValue:" ref="aca8f5558878e9e5a660ff2f0d36ee96e" args="(id aReturnValue)" -->
@@ -326,6 +423,14 @@
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00130">130</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00130"></a>00130                       :(id)aReturnValue
+<a name="l00131"></a>00131 {
+<a name="l00132"></a>00132     _returnValue = aReturnValue;
+<a name="l00133"></a>00133 }
+</pre></div></p>
 
 </div>
 </div>
@@ -352,6 +457,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00075">75</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00075"></a>00075                    :(SEL)aSelector
+<a name="l00076"></a>00076 {
+<a name="l00077"></a>00077     _arguments[1] = aSelector;
+<a name="l00078"></a>00078 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a341b8894e4f34e4f055c516ea8ca1fea"></a><!-- doxytag: member="CPInvocation::setTarget:" ref="a341b8894e4f34e4f055c516ea8ca1fea" args="(id aTarget)" -->
@@ -377,6 +490,14 @@
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00092">92</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00092"></a>00092                  :(id)aTarget
+<a name="l00093"></a>00093 {
+<a name="l00094"></a>00094     _arguments[0] = aTarget;
+<a name="l00095"></a>00095 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ab8df210fcc49e99a792cccf0e7d3d5a9"></a><!-- doxytag: member="CPInvocation::target" ref="ab8df210fcc49e99a792cccf0e7d3d5a9" args="()" -->
@@ -395,10 +516,17 @@
 <div class="memdoc">
 <p>Returns the invocation's target </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a> rivillä <a class="el" href="_c_p_invocation_8j_source.html#l00100">100</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00101"></a>00101 {
+<a name="l00102"></a>00102     <span class="keywordflow">return</span> _arguments[0];
+<a name="l00103"></a>00103 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_invocation_8j.html">CPInvocation.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_invocation_8j_source.html">CPInvocation.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

@@ -59,6 +59,8 @@
 </table>
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>Groups information about an application's code &amp; resources. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00034">34</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a6b2401dce4d84d49261126169d966567"></a><!-- doxytag: member="CPBundle::bundleForClass:" ref="a6b2401dce4d84d49261126169d966567" args="(Class aClass)" -->
 <div class="memitem">
@@ -76,6 +78,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00052">52</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00052"></a>00052                           :(Class)aClass
+<a name="l00053"></a>00053 {
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> objj_bundleForClass(aClass);
+<a name="l00055"></a>00055 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a78c1257ffa66279298ffddc7b0c43600"></a><!-- doxytag: member="CPBundle::bundlePath" ref="a78c1257ffa66279298ffddc7b0c43600" args="()" -->
@@ -92,6 +102,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00081">81</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00082"></a>00082 {
+<a name="l00083"></a>00083     <span class="keywordflow">return</span> [path stringByDeletingLastPathComponent];
+<a name="l00084"></a>00084 }
+</pre></div></p>
 
 </div>
 </div>
@@ -111,6 +128,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00047">47</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00047"></a>00047                           :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049     <span class="keywordflow">return</span> objj_getBundleWithPath(aPath);
+<a name="l00050"></a>00050 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aeea27ecd16b7db62a0cbf9ccb0bd7cd8"></a><!-- doxytag: member="CPBundle::classNamed:" ref="aeea27ecd16b7db62a0cbf9ccb0bd7cd8" args="(CPString aString)" -->
@@ -128,6 +153,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00076">76</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00076"></a>00076                    :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aString
+<a name="l00077"></a>00077 {
+<a name="l00078"></a>00078     <span class="comment">// ???</span>
+<a name="l00079"></a>00079 }
+</pre></div></p>
 
 </div>
 </div>
@@ -156,6 +189,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00190">190</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00190"></a>00190                   :(<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a>)aConnection didFailWithError:(CPError)anError
+<a name="l00191"></a>00191 {
+<a name="l00192"></a>00192     <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(bundle:didFailWithError:)])
+<a name="l00193"></a>00193         [_delegate bundle:<span class="keyword">self</span> didFailWithError:anError];
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195     CPLog.error(<span class="stringliteral">&quot;Could not find bundle: &quot;</span> + <span class="keyword">self</span>);
+<a name="l00196"></a>00196 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6640ca6604dc89d65f581380ac12685b"></a><!-- doxytag: member="CPBundle::connection:didReceiveData:" ref="a6640ca6604dc89d65f581380ac12685b" args="(CPURLConnection aConnection,[didReceiveData] CPString data)" -->
@@ -183,6 +227,50 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00149">149</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00149"></a>00149                   :(<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a>)aConnection didReceiveData:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)data
+<a name="l00150"></a>00150 {
+<a name="l00151"></a>00151     <span class="keywordflow">if</span> (aConnection === <span class="keyword">self</span>._infoConnection)
+<a name="l00152"></a>00152     {
+<a name="l00153"></a>00153         info = CPPropertyListCreateFromData([<a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a> dataWithString:data]);
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155         var environment = [<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#aa111dcf79af54c4fc17839c9c256e4d6">mostEligibleEnvironment</a>];
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157         <span class="keywordflow">if</span> (!environment)
+<a name="l00158"></a>00158             <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Environment not supported for &quot;</span> + [<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#a78c1257ffa66279298ffddc7b0c43600">bundlePath</a>] + <span class="stringliteral">&quot;. Supported environments: &quot;</span> + [<span class="keyword">self</span> objectForInfoDictionaryKey:<span class="stringliteral">&quot;CPBundleEnvironments&quot;</span>] + <span class="stringliteral">&quot;.&quot;</span>;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160         [<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a> connectionWithRequest:[<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a> requestWithURL:[<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#a78c1257ffa66279298ffddc7b0c43600">bundlePath</a>] + <span class="charliteral">&#39;/&#39;</span> + environment + <span class="stringliteral">&quot;.environment/&quot;</span> + [<span class="keyword">self</span> objectForInfoDictionaryKey:<span class="stringliteral">&quot;CPBundleExecutable&quot;</span>]] delegate:<span class="keyword">self</span>];
+<a name="l00161"></a>00161     }
+<a name="l00162"></a>00162     <span class="keywordflow">else</span>
+<a name="l00163"></a>00163     {
+<a name="l00164"></a>00164         objj_decompile([data <span class="keywordtype">string</span>], <span class="keyword">self</span>);
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166         var context = <span class="keyword">new</span> objj_context();
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168         <span class="keywordflow">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(bundleDidFinishLoading:)])
+<a name="l00169"></a>00169             context.didCompleteCallback = function() { [_delegate bundleDidFinishLoading:<span class="keyword">self</span>]; };
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171         var files = [[<span class="keyword">self</span> objectForInfoDictionaryKey:<span class="stringliteral">@&quot;CPBundleReplacedFiles&quot;</span>] objectForKey:[<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#aa111dcf79af54c4fc17839c9c256e4d6">mostEligibleEnvironment</a>]],
+<a name="l00172"></a>00172             count = files ? files.length : 0, <span class="comment">// Perhaps no files? Be liberal in what you accept...</span>
+<a name="l00173"></a>00173             <a class="code" href="class_c_p_bundle.html#a78c1257ffa66279298ffddc7b0c43600">bundlePath</a> = [<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#a78c1257ffa66279298ffddc7b0c43600">bundlePath</a>];
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175         <span class="keywordflow">while</span> (count--)
+<a name="l00176"></a>00176         {
+<a name="l00177"></a>00177             var fileName = files[count];
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179             <span class="keywordflow">if</span> (fileName.indexOf(<span class="stringliteral">&quot;.j&quot;</span>) === fileName.length - 2)
+<a name="l00180"></a>00180                 context.pushFragment(fragment_create_file(<a class="code" href="class_c_p_bundle.html#a78c1257ffa66279298ffddc7b0c43600">bundlePath</a> + <span class="charliteral">&#39;/&#39;</span> + fileName, <span class="keyword">new</span> objj_bundle(<span class="stringliteral">&quot;&quot;</span>), YES, NULL));
+<a name="l00181"></a>00181         }
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183         <span class="keywordflow">if</span> (context.fragments.length)
+<a name="l00184"></a>00184             context.evaluate();
+<a name="l00185"></a>00185         <span class="keywordflow">else</span>
+<a name="l00186"></a>00186             [_delegate bundleDidFinishLoading:<span class="keyword">self</span>];
+<a name="l00187"></a>00187     }
+<a name="l00188"></a>00188 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a44a900d8d89652ed8fbc9e64cf1cf888"></a><!-- doxytag: member="CPBundle::connectionDidFinishLoading:" ref="a44a900d8d89652ed8fbc9e64cf1cf888" args="(CPURLConnection aConnection)" -->
@@ -201,6 +289,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00198">198</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00198"></a>00198                                   :(<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a>)aConnection
+<a name="l00199"></a>00199 {
+<a name="l00200"></a>00200 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="afff5f142724d4a805174178b3f49f10b"></a><!-- doxytag: member="CPBundle::description" ref="afff5f142724d4a805174178b3f49f10b" args="()" -->
@@ -218,6 +313,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00202">202</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00203"></a>00203 {
+<a name="l00204"></a>00204     <span class="keywordflow">return</span> [super <a class="code" href="class_c_p_bundle.html#afff5f142724d4a805174178b3f49f10b">description</a>] + <span class="stringliteral">&quot;(&quot;</span> + path + <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00205"></a>00205 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a7eeee327b653d8e0b1b67e1236d83227"></a><!-- doxytag: member="CPBundle::infoDictionary" ref="a7eeee327b653d8e0b1b67e1236d83227" args="()" -->
@@ -234,6 +336,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00121">121</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00122"></a>00122 {
+<a name="l00123"></a>00123     <span class="keywordflow">return</span> info;
+<a name="l00124"></a>00124 }
+</pre></div></p>
 
 </div>
 </div>
@@ -253,6 +362,23 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00062">62</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00062"></a>00062                   :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aPath
+<a name="l00063"></a>00063 {
+<a name="l00064"></a>00064     <span class="keyword">self</span> = [super init];
+<a name="l00065"></a>00065     
+<a name="l00066"></a>00066     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00067"></a>00067     {
+<a name="l00068"></a>00068         path = aPath;
+<a name="l00069"></a>00069         
+<a name="l00070"></a>00070         objj_setBundleForPath(path, <span class="keyword">self</span>);
+<a name="l00071"></a>00071     }
+<a name="l00072"></a>00072     
+<a name="l00073"></a>00073     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00074"></a>00074 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a3b4ca32b09ae69fb5cf8924dab4c8e80"></a><!-- doxytag: member="CPBundle::loadWithDelegate:" ref="a3b4ca32b09ae69fb5cf8924dab4c8e80" args="(id aDelegate)" -->
@@ -271,6 +397,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00133">133</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00133"></a>00133                         :(id)aDelegate
+<a name="l00134"></a>00134 {
+<a name="l00135"></a>00135     <span class="keyword">self</span>._delegate = aDelegate;
+<a name="l00136"></a>00136     <span class="keyword">self</span>._infoConnection = [<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a> connectionWithRequest:[<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a> requestWithURL:[<a class="code" href="class_c_p_u_r_l.html">CPURL</a> URLWithString:[<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#a78c1257ffa66279298ffddc7b0c43600">bundlePath</a>] + <span class="stringliteral">&quot;/Info.plist&quot;</span>]] delegate:<span class="keyword">self</span>];
+<a name="l00137"></a>00137 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a2f1b74bb845caded5d4d8a1309c7ff0e"></a><!-- doxytag: member="CPBundle::mainBundle" ref="a2f1b74bb845caded5d4d8a1309c7ff0e" args="()" -->
@@ -288,6 +423,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00057">57</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keywordflow">return</span> [<a class="code" href="class_c_p_bundle.html" title="Groups information about an application&amp;#39;s code &amp;amp; resources.">CPBundle</a> bundleWithPath:<span class="stringliteral">&quot;Info.plist&quot;</span>];
+<a name="l00060"></a>00060 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aa111dcf79af54c4fc17839c9c256e4d6"></a><!-- doxytag: member="CPBundle::mostEligibleEnvironment" ref="aa111dcf79af54c4fc17839c9c256e4d6" args="()" -->
@@ -304,6 +446,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00144">144</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00145"></a>00145 {
+<a name="l00146"></a>00146     <span class="keywordflow">return</span> [[<span class="keyword">self</span> <span class="keyword">class</span>] mostEligibleEnvironmentFromArray:[<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#ac7dc0419c1af6e6a2ef996900aba8135">supportedEnvironments</a>]];
+<a name="l00147"></a>00147 }
+</pre></div></p>
 
 </div>
 </div>
@@ -323,6 +472,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00105">105</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00105"></a>00105                                             :(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)environments
+<a name="l00106"></a>00106 {
+<a name="l00107"></a>00107     <span class="keywordflow">return</span> objj_mostEligibleEnvironmentFromArray(environments);
+<a name="l00108"></a>00108 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ac6c5a6f04de1fbb5d99c08f689e1ae6e"></a><!-- doxytag: member="CPBundle::objectForInfoDictionaryKey:" ref="ac6c5a6f04de1fbb5d99c08f689e1ae6e" args="(CPString aKey)" -->
@@ -340,6 +497,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00126">126</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00126"></a>00126                                 :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00127"></a>00127 {
+<a name="l00128"></a>00128     <span class="keywordflow">return</span> [info objectForKey:aKey];
+<a name="l00129"></a>00129 }
+</pre></div></p>
 
 </div>
 </div>
@@ -359,6 +524,20 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00110">110</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00110"></a>00110                            :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aFilename
+<a name="l00111"></a>00111 {
+<a name="l00112"></a>00112     var actualPath = [<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#a8146bc89e2720a035ff21be1b7d8551e">resourcePath</a>] + <span class="charliteral">&#39;/&#39;</span> + aFilename,
+<a name="l00113"></a>00113         mappedPath = _URIMap[<span class="stringliteral">&quot;Resources/&quot;</span> + aFilename];
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115     <span class="keywordflow">if</span> (mappedPath)
+<a name="l00116"></a>00116         <span class="keywordflow">return</span> mappedPath;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118     <span class="keywordflow">return</span> actualPath;
+<a name="l00119"></a>00119 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ace2371648b67a3465bfd07951906342b"></a><!-- doxytag: member="CPBundle::principalClass" ref="ace2371648b67a3465bfd07951906342b" args="()" -->
@@ -375,6 +554,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00096">96</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00097"></a>00097 {
+<a name="l00098"></a>00098     var className = [<span class="keyword">self</span> objectForInfoDictionaryKey:<span class="stringliteral">@&quot;CPPrincipalClass&quot;</span>];
+<a name="l00099"></a>00099     
+<a name="l00100"></a>00100     <span class="comment">//[self load];</span>
+<a name="l00101"></a>00101     
+<a name="l00102"></a>00102     <span class="keywordflow">return</span> className ? <a class="code" href="_c_p_obj_j_runtime_8j.html#a85b5b743b1775c463208227a3b9238dc">CPClassFromString</a>(className) : Nil;
+<a name="l00103"></a>00103 }
+</pre></div></p>
 
 </div>
 </div>
@@ -393,6 +583,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00086">86</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00087"></a>00087 {
+<a name="l00088"></a>00088     var <a class="code" href="class_c_p_bundle.html#a8146bc89e2720a035ff21be1b7d8551e">resourcePath</a> = [<span class="keyword">self</span> <a class="code" href="class_c_p_bundle.html#a78c1257ffa66279298ffddc7b0c43600">bundlePath</a>];
+<a name="l00089"></a>00089     
+<a name="l00090"></a>00090     <span class="keywordflow">if</span> (resourcePath.length)
+<a name="l00091"></a>00091         resourcePath += <span class="charliteral">&#39;/&#39;</span>;
+<a name="l00092"></a>00092         
+<a name="l00093"></a>00093     <span class="keywordflow">return</span> resourcePath + <span class="stringliteral">&quot;Resources&quot;</span>;
+<a name="l00094"></a>00094 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ac7dc0419c1af6e6a2ef996900aba8135"></a><!-- doxytag: member="CPBundle::supportedEnvironments" ref="ac7dc0419c1af6e6a2ef996900aba8135" args="()" -->
@@ -410,10 +612,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a> rivillä <a class="el" href="_c_p_bundle_8j_source.html#l00139">139</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00140"></a>00140 {
+<a name="l00141"></a>00141     <span class="keywordflow">return</span> [<span class="keyword">self</span> objectForInfoDictionaryKey:<span class="stringliteral">&quot;CPBundleEnvironments&quot;</span>] || [<span class="stringliteral">&quot;ObjJ&quot;</span>];
+<a name="l00142"></a>00142 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_bundle_8j.html">CPBundle.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_bundle_8j_source.html">CPBundle.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

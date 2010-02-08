@@ -56,7 +56,9 @@
 // some code here...
 if (input == nil)
     [<a class="el" href="class_c_p_exception.html" title="Used to implement exception handling (creating &amp; raising).">CPException</a> raise:"MyException" reason:"You didn't do something right."];</pre><pre>// code that gets executed if no exception was raised
-</pre> <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
+</pre> 
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00047">47</a>.</p>
+<hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a4d22c3bf8f65e3cc731f0855fab766f5"></a><!-- doxytag: member="CPException::copy" ref="a4d22c3bf8f65e3cc731f0855fab766f5" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -71,6 +73,13 @@ if (input == nil)
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00146">146</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00147"></a>00147 {
+<a name="l00148"></a>00148     <span class="keywordflow">return</span> [[<span class="keyword">self</span> <span class="keyword">class</span>] exceptionWithName:<a class="code" href="class_c_p_exception.html#a06a61739c4a38ed44ef2506c52c6a2d0">name</a> <a class="code" href="class_c_p_exception.html#a3b5a2a3dd133a21c6863d4b79ffabd04">reason</a>:message <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a>:<a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a>];
+<a name="l00149"></a>00149 }
+</pre></div></p>
 
 </div>
 </div>
@@ -89,6 +98,13 @@ if (input == nil)
 </div>
 <div class="memdoc">
 <p>Returns the exception's reason. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00129">129</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00130"></a>00130 {
+<a name="l00131"></a>00131     <span class="keywordflow">return</span> message;
+<a name="l00132"></a>00132 }
+</pre></div></p>
 
 </div>
 </div>
@@ -114,6 +130,16 @@ if (input == nil)
   </table>
   </dd>
 </dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00182">182</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00182"></a>00182                        :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00183"></a>00183 {
+<a name="l00184"></a>00184     [aCoder encodeObject:<a class="code" href="class_c_p_exception.html#a06a61739c4a38ed44ef2506c52c6a2d0">name</a> forKey:<a class="code" href="_c_p_exception_8j.html#ad7326ecf74b379d0ddb68e3d67cdacb9">CPExceptionNameKey</a>];
+<a name="l00185"></a>00185     [aCoder encodeObject:message forKey:<a class="code" href="_c_p_exception_8j.html#a37323f567f3c156f3834388b0eeb31ee">CPExceptionReasonKey</a>];
+<a name="l00186"></a>00186     [aCoder encodeObject:<a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a> forKey:<a class="code" href="_c_p_exception_8j.html#a782368aef183fd8a4e7e746612a4a135">CPExceptionUserInfoKey</a>];
+<a name="l00187"></a>00187 }
+</pre></div></p>
 
 </div>
 </div>
@@ -158,6 +184,14 @@ if (input == nil)
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the new exception </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00076">76</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00076"></a>00076                                 :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aName <a class="code" href="class_c_p_exception.html#a3b5a2a3dd133a21c6863d4b79ffabd04">reason</a>:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aReason <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a>:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aUserInfo
+<a name="l00077"></a>00077 {
+<a name="l00078"></a>00078     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithName:aName <a class="code" href="class_c_p_exception.html#a3b5a2a3dd133a21c6863d4b79ffabd04">reason</a>:aReason <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a>:aUserInfo];
+<a name="l00079"></a>00079 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="af45c39a952bb3ff7d06bbaa07757af1d"></a><!-- doxytag: member="CPException::initWithCoder:" ref="af45c39a952bb3ff7d06bbaa07757af1d" args="(CPCoder aCoder)" -->
@@ -183,6 +217,23 @@ if (input == nil)
   </dd>
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized exception </dd></dl>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00164">164</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00164"></a>00164                    :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00165"></a>00165 {
+<a name="l00166"></a>00166     <span class="keyword">self</span> = [super init];
+<a name="l00167"></a>00167     
+<a name="l00168"></a>00168     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00169"></a>00169     {
+<a name="l00170"></a>00170         <a class="code" href="class_c_p_exception.html#a06a61739c4a38ed44ef2506c52c6a2d0">name</a> = [aCoder decodeObjectForKey:<a class="code" href="_c_p_exception_8j.html#ad7326ecf74b379d0ddb68e3d67cdacb9">CPExceptionNameKey</a>];
+<a name="l00171"></a>00171         message = [aCoder decodeObjectForKey:<a class="code" href="_c_p_exception_8j.html#a37323f567f3c156f3834388b0eeb31ee">CPExceptionReasonKey</a>];
+<a name="l00172"></a>00172         <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a> = [aCoder decodeObjectForKey:<a class="code" href="_c_p_exception_8j.html#a782368aef183fd8a4e7e746612a4a135">CPExceptionUserInfoKey</a>];
+<a name="l00173"></a>00173     }
+<a name="l00174"></a>00174     
+<a name="l00175"></a>00175     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00176"></a>00176 }
+</pre></div></p>
 
 </div>
 </div>
@@ -227,6 +278,23 @@ if (input == nil)
 </dl>
 <dl class="return"><dt><b>Palauttaa:</b></dt><dd>the initialized exception </dd></dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00088">88</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00088"></a>00088                   :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aName <a class="code" href="class_c_p_exception.html#a3b5a2a3dd133a21c6863d4b79ffabd04">reason</a>:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aReason <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a>:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)aUserInfo
+<a name="l00089"></a>00089 {
+<a name="l00090"></a>00090     <span class="keyword">self</span> = [super init];
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00093"></a>00093     {
+<a name="l00094"></a>00094         <a class="code" href="class_c_p_exception.html#a06a61739c4a38ed44ef2506c52c6a2d0">name</a> = aName;
+<a name="l00095"></a>00095         message = aReason;
+<a name="l00096"></a>00096         <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a> = aUserInfo;
+<a name="l00097"></a>00097     }
+<a name="l00098"></a>00098     
+<a name="l00099"></a>00099     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00100"></a>00100 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a06a61739c4a38ed44ef2506c52c6a2d0"></a><!-- doxytag: member="CPException::name" ref="a06a61739c4a38ed44ef2506c52c6a2d0" args="()" -->
@@ -245,6 +313,13 @@ if (input == nil)
 <div class="memdoc">
 <p>Returns the name of the exception. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00105">105</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00106"></a>00106 {
+<a name="l00107"></a>00107     <span class="keywordflow">return</span> <a class="code" href="class_c_p_exception.html#a06a61739c4a38ed44ef2506c52c6a2d0">name</a>;
+<a name="l00108"></a>00108 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a1428cc4e84f1d200dea624a85d6c9336"></a><!-- doxytag: member="CPException::raise" ref="a1428cc4e84f1d200dea624a85d6c9336" args="()" -->
@@ -262,6 +337,13 @@ if (input == nil)
 </div>
 <div class="memdoc">
 <p>Raises the exception and causes the program to go to the exception handler. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00137">137</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00138"></a>00138 {
+<a name="l00139"></a>00139     objj_exception_throw(<span class="keyword">self</span>);
+<a name="l00140"></a>00140 }
+</pre></div></p>
 
 </div>
 </div>
@@ -298,6 +380,14 @@ if (input == nil)
   </dd>
 </dl>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00064">64</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00064"></a>00064              :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aName <a class="code" href="class_c_p_exception.html#a3b5a2a3dd133a21c6863d4b79ffabd04">reason</a>:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aReason
+<a name="l00065"></a>00065 {
+<a name="l00066"></a>00066     [[<span class="keyword">self</span> exceptionWithName:aName <a class="code" href="class_c_p_exception.html#a3b5a2a3dd133a21c6863d4b79ffabd04">reason</a>:aReason <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a>:nil] <span class="keyword">raise</span>];
+<a name="l00067"></a>00067 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a3b5a2a3dd133a21c6863d4b79ffabd04"></a><!-- doxytag: member="CPException::reason" ref="a3b5a2a3dd133a21c6863d4b79ffabd04" args="()" -->
@@ -315,6 +405,13 @@ if (input == nil)
 </div>
 <div class="memdoc">
 <p>Returns the reason for the exception. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00113">113</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00114"></a>00114 {
+<a name="l00115"></a>00115     <span class="keywordflow">return</span> message;
+<a name="l00116"></a>00116 }
+</pre></div></p>
 
 </div>
 </div>
@@ -334,10 +431,17 @@ if (input == nil)
 <div class="memdoc">
 <p>Returns data containing info about the receiver. </p>
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_exception_8j_source.html">CPException.j</a> rivillä <a class="el" href="_c_p_exception_8j_source.html#l00121">121</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00122"></a>00122 {
+<a name="l00123"></a>00123     <span class="keywordflow">return</span> <a class="code" href="class_c_p_exception.html#a81c441e5cf29613a7731718da9df3c8f">userInfo</a>;
+<a name="l00124"></a>00124 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_exception_8j.html">CPException.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_exception_8j_source.html">CPException.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

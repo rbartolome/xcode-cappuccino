@@ -78,6 +78,8 @@
 </table>
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>An unordered collection of objects. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00037">37</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a96ef95142642fef4affe50849b7f5cae"></a><!-- doxytag: member="CPSet::addObject:" ref="a96ef95142642fef4affe50849b7f5cae" args="(id anObject)" -->
 <div class="memitem">
@@ -94,6 +96,18 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00378">378</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00378"></a>00378                  :(id)anObject
+<a name="l00379"></a>00379 {
+<a name="l00380"></a>00380     <span class="keywordflow">if</span> ([<span class="keyword">self</span> containsObject:anObject])
+<a name="l00381"></a>00381         <span class="keywordflow">return</span>;
+<a name="l00382"></a>00382 
+<a name="l00383"></a>00383     _contents[[anObject UID]] = anObject;
+<a name="l00384"></a>00384     _count++;
+<a name="l00385"></a>00385 }
+</pre></div></p>
 
 </div>
 </div>
@@ -113,6 +127,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00391">391</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00391"></a>00391                            :(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)objects
+<a name="l00392"></a>00392 {
+<a name="l00393"></a>00393     var <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a> = [objects count];
+<a name="l00394"></a>00394 
+<a name="l00395"></a>00395     <span class="keywordflow">while</span> (count--)
+<a name="l00396"></a>00396         [<span class="keyword">self</span> addObject:objects[count]];
+<a name="l00397"></a>00397 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a8b13bd927f67c3523d0bf03695fccd1b"></a><!-- doxytag: member="CPSet::allObjects" ref="a8b13bd927f67c3523d0bf03695fccd1b" args="()" -->
@@ -130,6 +155,21 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00202">202</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00203"></a>00203 {
+<a name="l00204"></a>00204     var array = [];
+<a name="l00205"></a>00205     
+<a name="l00206"></a>00206     <span class="keywordflow">for</span> (var <a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a> in _contents)
+<a name="l00207"></a>00207     {
+<a name="l00208"></a>00208         <span class="keywordflow">if</span> (_contents.hasOwnProperty(<a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a>))
+<a name="l00209"></a>00209             array.push(_contents[<a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a>]);
+<a name="l00210"></a>00210     }
+<a name="l00211"></a>00211     
+<a name="l00212"></a>00212     <span class="keywordflow">return</span> array;
+<a name="l00213"></a>00213 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a1ae53aaf4208da99cb88a6ae31fc2e84"></a><!-- doxytag: member="CPSet::anyObject" ref="a1ae53aaf4208da99cb88a6ae31fc2e84" args="()" -->
@@ -146,6 +186,19 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00218">218</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00219"></a>00219 {
+<a name="l00220"></a>00220     <span class="keywordflow">for</span> (var <a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a> in _contents)
+<a name="l00221"></a>00221     {
+<a name="l00222"></a>00222         <span class="keywordflow">if</span> (_contents.hasOwnProperty(<a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a>))
+<a name="l00223"></a>00223             <span class="keywordflow">return</span> _contents[<a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a>];
+<a name="l00224"></a>00224     }
+<a name="l00225"></a>00225     
+<a name="l00226"></a>00226     <span class="keywordflow">return</span> nil;
+<a name="l00227"></a>00227 }
+</pre></div></p>
 
 </div>
 </div>
@@ -165,6 +218,19 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00233">233</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00233"></a>00233                       :(id)anObject
+<a name="l00234"></a>00234 {
+<a name="l00235"></a>00235     var obj = _contents[[anObject UID]];
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237     <span class="keywordflow">if</span> (obj !== undefined &amp;&amp; [obj isEqual:anObject])
+<a name="l00238"></a>00238         <span class="keywordflow">return</span> YES;
+<a name="l00239"></a>00239     
+<a name="l00240"></a>00240     <span class="keywordflow">return</span> NO;
+<a name="l00241"></a>00241 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a108f9edfccea8f158f091b6599defaa1"></a><!-- doxytag: member="CPSet::copy" ref="a108f9edfccea8f158f091b6599defaa1" args="()" -->
@@ -182,6 +248,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00474">474</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00475"></a>00475 {
+<a name="l00476"></a>00476     <span class="keywordflow">return</span> [[<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a> alloc] initWithSet:<span class="keyword">self</span>];
+<a name="l00477"></a>00477 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a04e5051667f80fa447f702ae620aa86c"></a><!-- doxytag: member="CPSet::count" ref="a04e5051667f80fa447f702ae620aa86c" args="()" -->
@@ -198,6 +271,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00246">246</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00247"></a>00247 {
+<a name="l00248"></a>00248     <span class="keywordflow">return</span> _count;
+<a name="l00249"></a>00249 }
+</pre></div></p>
 
 </div>
 </div>
@@ -217,6 +297,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00495">495</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00495"></a>00495                        :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00496"></a>00496 {
+<a name="l00497"></a>00497     [aCoder encodeObject:[<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>] forKey:<a class="code" href="_c_p_set_8j.html#a3dcb00844fab52d2df6d446299e75783">CPSetObjectsKey</a>];
+<a name="l00498"></a>00498 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ad3e95a1d191fb88e3197c0655a24514f"></a><!-- doxytag: member="CPSet::init" ref="ad3e95a1d191fb88e3197c0655a24514f" args="()" -->
@@ -233,6 +321,19 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00108">108</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00109"></a>00109 {
+<a name="l00110"></a>00110     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [super <a class="code" href="class_c_p_set.html#ad3e95a1d191fb88e3197c0655a24514f">init</a>])
+<a name="l00111"></a>00111     {
+<a name="l00112"></a>00112         _count = 0;
+<a name="l00113"></a>00113         _contents = {};
+<a name="l00114"></a>00114     }
+<a name="l00115"></a>00115     
+<a name="l00116"></a>00116     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00117"></a>00117 }
+</pre></div></p>
 
 </div>
 </div>
@@ -252,6 +353,22 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00123">123</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00123"></a>00123                    :(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)anArray
+<a name="l00124"></a>00124 {    
+<a name="l00125"></a>00125     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#ad3e95a1d191fb88e3197c0655a24514f">init</a>])
+<a name="l00126"></a>00126     {
+<a name="l00127"></a>00127         var <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a> = anArray.length;
+<a name="l00128"></a>00128         
+<a name="l00129"></a>00129         <span class="keywordflow">while</span> (count--)
+<a name="l00130"></a>00130             [<span class="keyword">self</span> addObject:anArray[count]];
+<a name="l00131"></a>00131     }
+<a name="l00132"></a>00132     
+<a name="l00133"></a>00133     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00134"></a>00134 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ad0f8994e4b5c67fb8dee7077bca26334"></a><!-- doxytag: member="CPSet::initWithCapacity:" ref="ad0f8994e4b5c67fb8dee7077bca26334" args="(unsigned numItems)" -->
@@ -270,6 +387,16 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00348">348</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00348"></a>00348                       :(unsigned)numItems
+<a name="l00349"></a>00349 {
+<a name="l00350"></a>00350     <span class="comment">// Only here for compatability with Cocoa</span>
+<a name="l00351"></a>00351     <span class="keyword">self</span> = [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#ad3e95a1d191fb88e3197c0655a24514f">init</a>];
+<a name="l00352"></a>00352     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00353"></a>00353 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ae5224a3d664649cf96587d00c9796042"></a><!-- doxytag: member="CPSet::initWithCoder:" ref="ae5224a3d664649cf96587d00c9796042" args="(CPCoder aCoder)" -->
@@ -287,6 +414,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00490">490</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00490"></a>00490                    :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00491"></a>00491 {
+<a name="l00492"></a>00492     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithArray:[aCoder decodeObjectForKey:<a class="code" href="_c_p_set_8j.html#a3dcb00844fab52d2df6d446299e75783">CPSetObjectsKey</a>]];
+<a name="l00493"></a>00493 }
+</pre></div></p>
 
 </div>
 </div>
@@ -315,6 +450,23 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00151">151</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00151"></a>00151                      :(id)anObject, ...
+<a name="l00152"></a>00152 {
+<a name="l00153"></a>00153     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#ad3e95a1d191fb88e3197c0655a24514f">init</a>])
+<a name="l00154"></a>00154     {
+<a name="l00155"></a>00155                 var argLength = arguments.length,
+<a name="l00156"></a>00156                         i = 2;
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158         <span class="keywordflow">for</span>(; i &lt; argLength &amp;&amp; (argument = arguments[i]) != nil; ++i)
+<a name="l00159"></a>00159             [<span class="keyword">self</span> addObject:argument];
+<a name="l00160"></a>00160     }
+<a name="l00161"></a>00161     
+<a name="l00162"></a>00162     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00163"></a>00163 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a5312b54aad33a0165c44a2a6ef58be6d"></a><!-- doxytag: member="CPSet::initWithObjects:count:" ref="a5312b54aad33a0165c44a2a6ef58be6d" args="(id objects,[count] unsigned count)" -->
@@ -342,6 +494,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00141">141</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00141"></a>00141                      :(id)objects <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>:(<span class="keywordtype">unsigned</span>)<a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>
+<a name="l00142"></a>00142 {
+<a name="l00143"></a>00143     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithArray:objects.splice(0, <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>)];
+<a name="l00144"></a>00144 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="acbdd6338cfb52bde7a7749641f060f32"></a><!-- doxytag: member="CPSet::initWithSet:" ref="acbdd6338cfb52bde7a7749641f060f32" args="(CPSet aSet)" -->
@@ -359,6 +519,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00168">168</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00168"></a>00168                  :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)aSet
+<a name="l00169"></a>00169 {
+<a name="l00170"></a>00170     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithSet:aSet copyItems:NO];
+<a name="l00171"></a>00171 }
+</pre></div></p>
 
 </div>
 </div>
@@ -387,6 +555,32 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00176">176</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00176"></a>00176                  :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)aSet copyItems:(BOOL)shouldCopyItems
+<a name="l00177"></a>00177 {
+<a name="l00178"></a>00178     <span class="keyword">self</span> = [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#ad3e95a1d191fb88e3197c0655a24514f">init</a>];
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180     <span class="keywordflow">if</span> (!aSet)
+<a name="l00181"></a>00181         <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00182"></a>00182             
+<a name="l00183"></a>00183     var contents = aSet._contents;
+<a name="l00184"></a>00184     
+<a name="l00185"></a>00185     <span class="keywordflow">for</span> (var <a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a> in contents)
+<a name="l00186"></a>00186     {
+<a name="l00187"></a>00187         <span class="keywordflow">if</span> (contents.hasOwnProperty(<a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a>))
+<a name="l00188"></a>00188         {
+<a name="l00189"></a>00189             <span class="keywordflow">if</span> (shouldCopyItems)
+<a name="l00190"></a>00190                 [<span class="keyword">self</span> addObject:[contents[<a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a>] <a class="code" href="class_c_p_set.html#a108f9edfccea8f158f091b6599defaa1">copy</a>]];
+<a name="l00191"></a>00191             <span class="keywordflow">else</span>
+<a name="l00192"></a>00192                 [<span class="keyword">self</span> addObject:contents[<a class="code" href="_c_p_u_r_l_8j.html#af2b8102aeac8f02ab62ac42828289569">property</a>]];
+<a name="l00193"></a>00193         }
+<a name="l00194"></a>00194     }
+<a name="l00195"></a>00195     
+<a name="l00196"></a>00196     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00197"></a>00197 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a27fa3f93afa7c3973f652205a39de102"></a><!-- doxytag: member="CPSet::intersectSet:" ref="a27fa3f93afa7c3973f652205a39de102" args="(CPSet set)" -->
@@ -404,6 +598,19 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00433">433</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00433"></a>00433                     :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)<span class="keyword">set</span>
+<a name="l00434"></a>00434 {
+<a name="l00435"></a>00435     var items = [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>];
+<a name="l00436"></a>00436     <span class="keywordflow">for</span> (var i = 0, <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a> = items.length; i &lt; <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>; i++)
+<a name="l00437"></a>00437     {
+<a name="l00438"></a>00438         <span class="keywordflow">if</span> (![<span class="keyword">set</span> containsObject:items[i]])
+<a name="l00439"></a>00439             [<span class="keyword">self</span> removeObject:items[i]];
+<a name="l00440"></a>00440     }
+<a name="l00441"></a>00441 }
+</pre></div></p>
 
 </div>
 </div>
@@ -423,6 +630,25 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00259">259</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00259"></a>00259                      :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)aSet
+<a name="l00260"></a>00260 {
+<a name="l00261"></a>00261     <span class="keywordflow">if</span> (<span class="keyword">self</span> === aSet)
+<a name="l00262"></a>00262         <span class="keywordflow">return</span> YES;
+<a name="l00263"></a>00263 
+<a name="l00264"></a>00264     var objects = [aSet <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>],
+<a name="l00265"></a>00265         <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a> = [objects <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>];
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267     <span class="comment">// If the sets share at least one item, they intersect</span>
+<a name="l00268"></a>00268     <span class="keywordflow">while</span> (<a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>--)
+<a name="l00269"></a>00269         <span class="keywordflow">if</span> ([<span class="keyword">self</span> containsObject:objects[<a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>]])
+<a name="l00270"></a>00270             <span class="keywordflow">return</span> YES;
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272     <span class="keywordflow">return</span> NO;
+<a name="l00273"></a>00273 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a378489ea3178c61fafa019059d83a439"></a><!-- doxytag: member="CPSet::isEqualToSet:" ref="a378489ea3178c61fafa019059d83a439" args="(CPSet set)" -->
@@ -440,6 +666,15 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00279">279</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00279"></a>00279                     :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)<span class="keyword">set</span>
+<a name="l00280"></a>00280 {    
+<a name="l00281"></a>00281     <span class="comment">// If both are subsets of each other, they are equal</span>
+<a name="l00282"></a>00282     <span class="keywordflow">return</span> <span class="keyword">self</span> === <span class="keyword">set</span> || ([<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>] === [<span class="keyword">set</span> <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>] &amp;&amp; [<span class="keyword">set</span> isSubsetOfSet:<span class="keyword">self</span>]);
+<a name="l00283"></a>00283 }
+</pre></div></p>
 
 </div>
 </div>
@@ -459,6 +694,22 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00289">289</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00289"></a>00289                      :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)<span class="keyword">set</span>
+<a name="l00290"></a>00290 {
+<a name="l00291"></a>00291     var items = [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>];
+<a name="l00292"></a>00292     <span class="keywordflow">for</span> (var i = 0; i &lt; items.length; i++)
+<a name="l00293"></a>00293     {
+<a name="l00294"></a>00294         <span class="comment">// If at least one item is not in both sets, self isn&#39;t a subset</span>
+<a name="l00295"></a>00295         <span class="keywordflow">if</span> (![<span class="keyword">set</span> containsObject:items[i]])
+<a name="l00296"></a>00296             <span class="keywordflow">return</span> NO;
+<a name="l00297"></a>00297     }
+<a name="l00298"></a>00298     
+<a name="l00299"></a>00299     <span class="keywordflow">return</span> YES;
+<a name="l00300"></a>00300 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a80a80ddefa89fe5276ab9985b5bbb519"></a><!-- doxytag: member="CPSet::makeObjectsPerformSelector:" ref="a80a80ddefa89fe5276ab9985b5bbb519" args="(SEL aSelector)" -->
@@ -476,6 +727,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00306">306</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00306"></a>00306                                   :(SEL)aSelector
+<a name="l00307"></a>00307 {
+<a name="l00308"></a>00308     [<span class="keyword">self</span> makeObjectsPerformSelector:aSelector withObject:nil];
+<a name="l00309"></a>00309 }
+</pre></div></p>
 
 </div>
 </div>
@@ -504,6 +763,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00316">316</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00316"></a>00316                                   :(SEL)aSelector withObject:(<span class="keywordtype">id</span>)argument
+<a name="l00317"></a>00317 {
+<a name="l00318"></a>00318     var items = [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>];
+<a name="l00319"></a>00319     <span class="keywordflow">for</span> (var i = 0; i &lt; items.length; i++)
+<a name="l00320"></a>00320     {
+<a name="l00321"></a>00321         [items[i] performSelector:aSelector withObject:argument];
+<a name="l00322"></a>00322     }
+<a name="l00323"></a>00323 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aff2740470881e2fd8445e284c36411d9"></a><!-- doxytag: member="CPSet::member:" ref="aff2740470881e2fd8445e284c36411d9" args="(id object)" -->
@@ -521,6 +792,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00329">329</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00329"></a>00329             :(id)<span class="keywordtype">object</span>
+<a name="l00330"></a>00330 {
+<a name="l00331"></a>00331     <span class="keywordflow">if</span> ([<span class="keyword">self</span> containsObject:<span class="keywordtype">object</span>])
+<a name="l00332"></a>00332         <span class="keywordflow">return</span> object;
+<a name="l00333"></a>00333     
+<a name="l00334"></a>00334     <span class="keywordflow">return</span> nil;
+<a name="l00335"></a>00335 }
+</pre></div></p>
 
 </div>
 </div>
@@ -540,6 +822,19 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00447">447</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00447"></a>00447                 :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)<span class="keyword">set</span>
+<a name="l00448"></a>00448 {
+<a name="l00449"></a>00449     var items = [<span class="keyword">set</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>];
+<a name="l00450"></a>00450     <span class="keywordflow">for</span> (var i = 0; i &lt; items.length; i++)
+<a name="l00451"></a>00451     {
+<a name="l00452"></a>00452         <span class="keywordflow">if</span> ([<span class="keyword">self</span> containsObject:items[i]])
+<a name="l00453"></a>00453             [<span class="keyword">self</span> removeObject:items[i]];
+<a name="l00454"></a>00454     }
+<a name="l00455"></a>00455 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a62daad29ddb0af719abc3f9e192dffa0"></a><!-- doxytag: member="CPSet::mutableCopy" ref="a62daad29ddb0af719abc3f9e192dffa0" args="()" -->
@@ -556,6 +851,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00479">479</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00480"></a>00480 {
+<a name="l00481"></a>00481     <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#a108f9edfccea8f158f091b6599defaa1">copy</a>];
+<a name="l00482"></a>00482 }
+</pre></div></p>
 
 </div>
 </div>
@@ -574,6 +876,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00337">337</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00338"></a>00338 {
+<a name="l00339"></a>00339     <span class="keywordflow">return</span> [[<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>] <a class="code" href="class_c_p_set.html#a0cd4ebfc573afac8aa9d3b1a6ac91415">objectEnumerator</a>];
+<a name="l00340"></a>00340 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="afa10d381f81831c01a15aabdea07ea3a"></a><!-- doxytag: member="CPSet::removeAllObjects" ref="afa10d381f81831c01a15aabdea07ea3a" args="()" -->
@@ -590,6 +899,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00423">423</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00424"></a>00424 {
+<a name="l00425"></a>00425     _contents = {};
+<a name="l00426"></a>00426     _count = 0;
+<a name="l00427"></a>00427 }
+</pre></div></p>
 
 </div>
 </div>
@@ -609,6 +926,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00403">403</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00403"></a>00403                     :(id)anObject
+<a name="l00404"></a>00404 {
+<a name="l00405"></a>00405     <span class="keywordflow">if</span> ([<span class="keyword">self</span> containsObject:anObject])
+<a name="l00406"></a>00406     {
+<a name="l00407"></a>00407         <span class="keyword">delete</span> _contents[[anObject UID]];
+<a name="l00408"></a>00408         _count--;
+<a name="l00409"></a>00409     }
+<a name="l00410"></a>00410 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a2df201056b8ed4e3a7b530e17f8e01e1"></a><!-- doxytag: member="CPSet::removeObjectsInArray:" ref="a2df201056b8ed4e3a7b530e17f8e01e1" args="(CPArray objects)" -->
@@ -627,6 +956,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00412">412</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00412"></a>00412                             :(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)objects
+<a name="l00413"></a>00413 {
+<a name="l00414"></a>00414     var <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a> = [objects count];
+<a name="l00415"></a>00415 
+<a name="l00416"></a>00416     <span class="keywordflow">while</span> (count--)
+<a name="l00417"></a>00417         [<span class="keyword">self</span> removeObject:objects[count]];
+<a name="l00418"></a>00418 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a89623be28c3a0913db1967b667874d39"></a><!-- doxytag: member="CPSet::set" ref="a89623be28c3a0913db1967b667874d39" args="()" -->
@@ -643,6 +983,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00046">46</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00047"></a>00047 {
+<a name="l00048"></a>00048     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] <a class="code" href="class_c_p_set.html#ad3e95a1d191fb88e3197c0655a24514f">init</a>];
+<a name="l00049"></a>00049 }
+</pre></div></p>
 
 </div>
 </div>
@@ -662,6 +1009,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00368">368</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00368"></a>00368               :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)<span class="keyword">set</span>
+<a name="l00369"></a>00369 {
+<a name="l00370"></a>00370     [<span class="keyword">self</span> <a class="code" href="class_c_p_set.html#afa10d381f81831c01a15aabdea07ea3a">removeAllObjects</a>];
+<a name="l00371"></a>00371     [<span class="keyword">self</span> addObjectsFromArray:[<span class="keyword">set</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>]];
+<a name="l00372"></a>00372 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aa1eded22a7180bd9cf4f07a85c6d058f"></a><!-- doxytag: member="CPSet::setWithArray:" ref="aa1eded22a7180bd9cf4f07a85c6d058f" args="(CPArray array)" -->
@@ -679,6 +1035,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00055">55</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00055"></a>00055                   :(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)array
+<a name="l00056"></a>00056 {
+<a name="l00057"></a>00057     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithArray:array];
+<a name="l00058"></a>00058 }
+</pre></div></p>
 
 </div>
 </div>
@@ -698,6 +1062,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00359">359</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00359"></a>00359                      :(unsigned)numItems
+<a name="l00360"></a>00360 {
+<a name="l00361"></a>00361     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithCapacity:numItems];
+<a name="l00362"></a>00362 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aa7f397281f86ec0e441b5fa26230bb54"></a><!-- doxytag: member="CPSet::setWithObject:" ref="aa7f397281f86ec0e441b5fa26230bb54" args="(id anObject)" -->
@@ -715,6 +1087,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00064">64</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00064"></a>00064                    :(id)anObject
+<a name="l00065"></a>00065 {
+<a name="l00066"></a>00066     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithArray:[anObject]];
+<a name="l00067"></a>00067 }
+</pre></div></p>
 
 </div>
 </div>
@@ -743,6 +1123,21 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00084">84</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00084"></a>00084                     :(id)anObject, ...
+<a name="l00085"></a>00085 {
+<a name="l00086"></a>00086     var <span class="keyword">set</span> = [[<span class="keyword">self</span> alloc] <a class="code" href="class_c_p_set.html#ad3e95a1d191fb88e3197c0655a24514f">init</a>],
+<a name="l00087"></a>00087         argLength = arguments.length,
+<a name="l00088"></a>00088         i = 2;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keywordflow">for</span>(; i &lt; argLength &amp;&amp; ((argument = arguments[i]) !== nil); ++i)
+<a name="l00091"></a>00091         [<span class="keyword">set</span> addObject:argument];
+<a name="l00092"></a>00092     
+<a name="l00093"></a>00093     <span class="keywordflow">return</span> <span class="keyword">set</span>;
+<a name="l00094"></a>00094 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a01f863c9a6ce647c461d8908552c65f0"></a><!-- doxytag: member="CPSet::setWithObjects:count:" ref="a01f863c9a6ce647c461d8908552c65f0" args="(id objects,[count] unsigned count)" -->
@@ -770,6 +1165,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00074">74</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00074"></a>00074                     :(id)objects <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>:(<span class="keywordtype">unsigned</span>)<a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithObjects:objects <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>:<a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>];
+<a name="l00077"></a>00077 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="adade5f2f19be4d1bf434b3ec15a35734"></a><!-- doxytag: member="CPSet::setWithSet:" ref="adade5f2f19be4d1bf434b3ec15a35734" args="(CPSet set)" -->
@@ -787,6 +1190,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00100">100</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00100"></a>00100                 :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)<span class="keyword">set</span>
+<a name="l00101"></a>00101 {
+<a name="l00102"></a>00102     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithSet:<span class="keyword">set</span>];
+<a name="l00103"></a>00103 }
+</pre></div></p>
 
 </div>
 </div>
@@ -806,10 +1217,22 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_set_8j_source.html">CPSet.j</a> rivillä <a class="el" href="_c_p_set_8j_source.html#l00461">461</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00461"></a>00461                 :(<a class="code" href="class_c_p_set.html" title="An unordered collection of objects.">CPSet</a>)<span class="keyword">set</span>
+<a name="l00462"></a>00462 {
+<a name="l00463"></a>00463     var items = [<span class="keyword">set</span> <a class="code" href="class_c_p_set.html#a8b13bd927f67c3523d0bf03695fccd1b">allObjects</a>];
+<a name="l00464"></a>00464     <span class="keywordflow">for</span> (var i = 0, <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a> = items.length; i &lt; <a class="code" href="class_c_p_set.html#a04e5051667f80fa447f702ae620aa86c">count</a>; i++)
+<a name="l00465"></a>00465     {
+<a name="l00466"></a>00466         [<span class="keyword">self</span> addObject:items[i]];
+<a name="l00467"></a>00467     }
+<a name="l00468"></a>00468 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_set_8j.html">CPSet.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_set_8j_source.html">CPSet.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

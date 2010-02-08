@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>CPFoundation: /Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPCoder.j lähdekooditiedosto</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Generoinut Doxygen 1.6.2 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Pääsivu</span></a></li>
+      <li><a href="pages.html"><span>Liittyvät&nbsp;sivut</span></a></li>
+      <li><a href="modules.html"><span>Moduulit</span></a></li>
+      <li><a href="annotated.html"><span>Luokat</span></a></li>
+      <li class="current"><a href="files.html"><span>Tiedostot</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Tiedostolista</span></a></li>
+      <li><a href="globals.html"><span>Tiedoston&nbsp;jäsenet</span></a></li>
+    </ul>
+  </div>
+<h1>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/CPCoder.j</h1><a href="_c_p_coder_8j.html">Siirry tämän tiedoston dokumentaatioon.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * CPCoder.j</span>
+<a name="l00003"></a>00003 <span class="comment"> * Foundation</span>
+<a name="l00004"></a>00004 <span class="comment"> *</span>
+<a name="l00005"></a>00005 <span class="comment"> * Created by Francisco Tolmasky.</span>
+<a name="l00006"></a>00006 <span class="comment"> * Copyright 2008, 280 North, Inc.</span>
+<a name="l00007"></a>00007 <span class="comment"> *</span>
+<a name="l00008"></a>00008 <span class="comment"> * This library is free software; you can redistribute it and/or</span>
+<a name="l00009"></a>00009 <span class="comment"> * modify it under the terms of the GNU Lesser General Public</span>
+<a name="l00010"></a>00010 <span class="comment"> * License as published by the Free Software Foundation; either</span>
+<a name="l00011"></a>00011 <span class="comment"> * version 2.1 of the License, or (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"> *</span>
+<a name="l00013"></a>00013 <span class="comment"> * This library is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU</span>
+<a name="l00016"></a>00016 <span class="comment"> * Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"> *</span>
+<a name="l00018"></a>00018 <span class="comment"> * You should have received a copy of the GNU Lesser General Public</span>
+<a name="l00019"></a>00019 <span class="comment"> * License along with this library; if not, write to the Free Software</span>
+<a name="l00020"></a>00020 <span class="comment"> * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</span>
+<a name="l00021"></a>00021 <span class="comment"> */</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPObject.j&quot;</span>
+<a name="l00024"></a>00024 @<span class="keyword">import</span> <span class="stringliteral">&quot;CPException.j&quot;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 
+<a name="l00035"></a><a class="code" href="class_c_p_coder.html">00035</a> <span class="keyword">@implementation </span><a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a> : <a class="code" href="class_c_p_object.html" title="The root class from which most classes are subclassed.">CPObject</a>
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 }
+<a name="l00039"></a>00039 
+<a name="l00044"></a>00044 -(BOOL)allowsKeyedCoding
+<a name="l00045"></a>00045 {
+<a name="l00046"></a>00046    <span class="keywordflow">return</span> NO;
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00056"></a><a class="code" href="class_c_p_coder.html#a2d6f875899af462553a85d7b4440431d">00056</a> -(void)encodeValueOfObjCType:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aType at:(<span class="keywordtype">id</span>)anObject
+<a name="l00057"></a>00057 {
+<a name="l00058"></a>00058    CPInvalidAbstractInvocation();
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00065"></a><a class="code" href="class_c_p_coder.html#a7aa8cfdea5d51c69e0001aa9d2a0f638">00065</a> -(void)encodeDataObject:(<a class="code" href="class_c_p_data.html" title="A Cappuccino wrapper for any data type.">CPData</a>)aData
+<a name="l00066"></a>00066 {
+<a name="l00067"></a>00067    CPInvalidAbstractInvocation();
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 
+<a name="l00074"></a><a class="code" href="class_c_p_coder.html#a84ebd7baed44333160b23f29bafe901b">00074</a> -(void)encodeObject:(<span class="keywordtype">id</span>)anObject
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076 <span class="comment">//   [self encodeValueOfObjCType:@encode(id) at:object];</span>
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00083"></a><a class="code" href="class_c_p_coder.html#a581508384488b9cefc9052f71aa49be6">00083</a> - (void)encodePoint:(CPPoint)aPoint
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     [<span class="keyword">self</span> encodeNumber:aPoint.x];
+<a name="l00086"></a>00086     [<span class="keyword">self</span> encodeNumber:aPoint.y];
+<a name="l00087"></a>00087 }
+<a name="l00088"></a>00088 
+<a name="l00093"></a><a class="code" href="class_c_p_coder.html#a691b22e9b1d056a60f5b24e11d76cb36">00093</a> - (void)encodeRect:(CGRect)aRect
+<a name="l00094"></a>00094 {
+<a name="l00095"></a>00095     [<span class="keyword">self</span> <a class="code" href="class_c_p_coder.html#a581508384488b9cefc9052f71aa49be6">encodePoint</a>:aRect.origin];
+<a name="l00096"></a>00096     [<span class="keyword">self</span> <a class="code" href="class_c_p_coder.html#a173642698b22e6df2ab3647ae035f4cf">encodeSize</a>:aRect.size];
+<a name="l00097"></a>00097 }
+<a name="l00098"></a>00098 
+<a name="l00103"></a><a class="code" href="class_c_p_coder.html#a173642698b22e6df2ab3647ae035f4cf">00103</a> - (void)encodeSize:(CPSize)aSize
+<a name="l00104"></a>00104 {
+<a name="l00105"></a>00105     [<span class="keyword">self</span> encodeNumber:aSize.width];
+<a name="l00106"></a>00106     [<span class="keyword">self</span> encodeNumber:aSize.height];
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 
+<a name="l00113"></a><a class="code" href="class_c_p_coder.html#ab2bedd2fb213d474b1fa9bc56bdafeb2">00113</a> -(void)encodePropertyList:(<span class="keywordtype">id</span>)aPropertyList
+<a name="l00114"></a>00114 {
+<a name="l00115"></a>00115 <span class="comment">//   [self encodeValueOfObjCType:@encode(id) at:&amp;propertyList];</span>
+<a name="l00116"></a>00116 }
+<a name="l00117"></a>00117 
+<a name="l00122"></a><a class="code" href="class_c_p_coder.html#ad66e6daeb7002a3a6caaed7d92a74c29">00122</a> -(void)encodeRootObject:(<span class="keywordtype">id</span>)anObject
+<a name="l00123"></a>00123 {
+<a name="l00124"></a>00124    [<span class="keyword">self</span> <a class="code" href="class_c_p_coder.html#a84ebd7baed44333160b23f29bafe901b">encodeObject</a>:anObject];
+<a name="l00125"></a>00125 }
+<a name="l00126"></a>00126 
+<a name="l00131"></a><a class="code" href="class_c_p_coder.html#a42d4a3d3347c8fb3047d830c73b648c3">00131</a> -(void)encodeBycopyObject:(<span class="keywordtype">id</span>)anObject
+<a name="l00132"></a>00132 {
+<a name="l00133"></a>00133    [<span class="keyword">self</span> <a class="code" href="class_c_p_coder.html#a84ebd7baed44333160b23f29bafe901b">encodeObject</a>:object];
+<a name="l00134"></a>00134 }
+<a name="l00135"></a>00135 
+<a name="l00140"></a><a class="code" href="class_c_p_coder.html#a33cc1773e8d82bb119b353b38eedf1a0">00140</a> -(void)encodeConditionalObject:(<span class="keywordtype">id</span>)anObject
+<a name="l00141"></a>00141 {
+<a name="l00142"></a>00142    [<span class="keyword">self</span> <a class="code" href="class_c_p_coder.html#a84ebd7baed44333160b23f29bafe901b">encodeObject</a>:object];
+<a name="l00143"></a>00143 }
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145 <span class="keyword">@end</span>
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147 <span class="keyword">@implementation </span><a class="code" href="class_c_p_object.html" title="The root class from which most classes are subclassed.">CPObject</a> (CPCoding)
+<a name="l00148"></a>00148 
+<a name="l00155"></a><a class="code" href="class_c_p_object.html#acd3a681df123c141419d7bdd6871230e">00155</a> - (id)awakeAfterUsingCoder:(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aDecoder
+<a name="l00156"></a>00156 {
+<a name="l00157"></a>00157     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00158"></a>00158 }
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160 <span class="keyword">@end</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.2 </small></address>
+</body>
+</html>

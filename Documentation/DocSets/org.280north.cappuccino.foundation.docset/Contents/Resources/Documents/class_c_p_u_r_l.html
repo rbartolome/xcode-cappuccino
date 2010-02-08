@@ -60,6 +60,9 @@
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_u_r_l.html#aa3eeb979789d9141888dccc3227eda01">URLWithString:</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_u_r_l.html#a2003f8782a1f14c891024ae18aef5090">URLWithString:relativeToURL:</a><code> [implementation]</code></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00030">30</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="ad2ccd2a9c907f4376793a04cc9c6562d"></a><!-- doxytag: member="CPURL::absoluteString" ref="ad2ccd2a9c907f4376793a04cc9c6562d" args="()" -->
 <div class="memitem">
@@ -75,6 +78,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00087">87</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#aebedbf53ce9a15014605e527aec0a6ec">resolve</a>([_base <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>] || <span class="stringliteral">&quot;&quot;</span>, _relative);
+<a name="l00090"></a>00090 }
+</pre></div></p>
 
 </div>
 </div>
@@ -92,6 +102,18 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00077">77</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00078"></a>00078 {
+<a name="l00079"></a>00079     var absStr = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00080"></a>00080     
+<a name="l00081"></a>00081     <span class="keywordflow">if</span> (absStr !== _relative)
+<a name="l00082"></a>00082         <span class="keywordflow">return</span> [[<a class="code" href="class_c_p_u_r_l.html">CPURL</a> alloc] initWithString:absStr];
+<a name="l00083"></a>00083     
+<a name="l00084"></a>00084     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00085"></a>00085 }
+</pre></div></p>
 
 </div>
 </div>
@@ -137,6 +159,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00188">188</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00189"></a>00189 {
+<a name="l00190"></a>00190     <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00191"></a>00191 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ac51be7e76aa81aca82edf3c04323b304"></a><!-- doxytag: member="CPURL::encodeWithCoder:" ref="ac51be7e76aa81aca82edf3c04323b304" args="(CPCoder aCoder)" -->
@@ -155,6 +184,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00214">214</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00214"></a>00214                        :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00215"></a>00215 {
+<a name="l00216"></a>00216     [aCoder encodeObject:_base forKey:<span class="stringliteral">&quot;CPURLBaseKey&quot;</span>];
+<a name="l00217"></a>00217     [aCoder encodeObject:_relative forKey:<span class="stringliteral">&quot;CPURLRelativeKey&quot;</span>];
+<a name="l00218"></a>00218 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aff8a13b393a58dc2419b7303e1749e64"></a><!-- doxytag: member="CPURL::fragment" ref="aff8a13b393a58dc2419b7303e1749e64" args="()" -->
@@ -171,6 +209,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00152">152</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00153"></a>00153 {
+<a name="l00154"></a>00154     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00155"></a>00155     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).anchor || nil) : nil;
+<a name="l00156"></a>00156 }
+</pre></div></p>
 
 </div>
 </div>
@@ -189,6 +235,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00129">129</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00130"></a>00130 {
+<a name="l00131"></a>00131     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00132"></a>00132     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).domain || nil) : nil;
+<a name="l00133"></a>00133 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a1b44875e7ef05abc05a7f1a74d2c6c23"></a><!-- doxytag: member="CPURL::initWithCoder:" ref="a1b44875e7ef05abc05a7f1a74d2c6c23" args="(CPCoder aCoder)" -->
@@ -206,6 +260,16 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00207">207</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00207"></a>00207                    :(<a class="code" href="class_c_p_coder.html" title="Defines methods for use when archiving &amp;amp; restoring (enc/decoding).">CPCoder</a>)aCoder
+<a name="l00208"></a>00208 {
+<a name="l00209"></a>00209     _base = [aCoder decodeObjectForKey:<span class="stringliteral">&quot;CPURLBaseKey&quot;</span>];
+<a name="l00210"></a>00210     _relative = [aCoder decodeObjectForKey:<span class="stringliteral">&quot;CPURLRelativeKey&quot;</span>];
+<a name="l00211"></a>00211     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00212"></a>00212 }
+</pre></div></p>
 
 </div>
 </div>
@@ -240,6 +304,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00038">38</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00038"></a>00038                     :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)scheme host:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)host path:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)path
+<a name="l00039"></a>00039 {
+<a name="l00040"></a>00040     var uri = <span class="keyword">new</span> <a class="code" href="_c_p_u_r_l_8j.html#adf5d75f9eabd8f5b96a1daf69e8fb72b">URI</a>();
+<a name="l00041"></a>00041     uri.scheme = scheme;
+<a name="l00042"></a>00042     uri.authority = host;
+<a name="l00043"></a>00043     uri.path = path;
+<a name="l00044"></a>00044     [<span class="keyword">self</span> initWithString:uri.toString()];
+<a name="l00045"></a>00045 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a1782ee6564e94e8a4ca91a8d2b13d14b"></a><!-- doxytag: member="CPURL::initWithString:" ref="a1782ee6564e94e8a4ca91a8d2b13d14b" args="(CPString URLString)" -->
@@ -257,6 +333,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00047">47</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00047"></a>00047                     :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)URLString
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049     <span class="keywordflow">return</span> [<span class="keyword">self</span> initWithString:URLString relativeToURL:nil];
+<a name="l00050"></a>00050 }
+</pre></div></p>
 
 </div>
 </div>
@@ -285,6 +369,24 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00057">57</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00057"></a>00057                     :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)URLString relativeToURL:(<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)baseURL
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059     <span class="keywordflow">if</span> (!<a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(URLString))
+<a name="l00060"></a>00060         <span class="keywordflow">return</span> nil;
+<a name="l00061"></a>00061     
+<a name="l00062"></a>00062     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00063"></a>00063     {
+<a name="l00064"></a>00064         _base = baseURL;
+<a name="l00065"></a>00065         _relative = URLString;
+<a name="l00066"></a>00066         _resourceValues = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00070"></a>00070 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0f52327b23b897e7bc35bcbec83ae36a"></a><!-- doxytag: member="CPURL::isEqual:" ref="a0f52327b23b897e7bc35bcbec83ae36a" args="(id anObject)" -->
@@ -303,6 +405,16 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00158">158</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00158"></a>00158                :(id)anObject
+<a name="l00159"></a>00159 {
+<a name="l00160"></a>00160     <span class="comment">// Is checking if baseURL isEqual correct? Does &quot;identical&quot; mean same object or equivalent values?</span>
+<a name="l00161"></a>00161     <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ab8c889ba0b4e2288ebc82f574d75c961">relativeString</a>] === [anObject <a class="code" href="class_c_p_u_r_l.html#ab8c889ba0b4e2288ebc82f574d75c961">relativeString</a>] &amp;&amp;
+<a name="l00162"></a>00162         ([<span class="keyword">self</span> baseURL] === [anObject baseURL] || [[<span class="keyword">self</span> baseURL] isEqual:[anObject baseURL]]);
+<a name="l00163"></a>00163 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ad3ab2c98c1dcc3a8aff2395915d8a451"></a><!-- doxytag: member="CPURL::isFileURL" ref="ad3ab2c98c1dcc3a8aff2395915d8a451" args="()" -->
@@ -319,6 +431,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00183">183</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00184"></a>00184 {
+<a name="l00185"></a>00185     <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#a0bb2cde858fbfb3671e894d7db589888">scheme</a>] === <span class="stringliteral">&quot;file&quot;</span>;
+<a name="l00186"></a>00186 }
+</pre></div></p>
 
 </div>
 </div>
@@ -337,6 +456,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00165">165</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00166"></a>00166 {
+<a name="l00167"></a>00167     var <a class="code" href="class_c_p_u_r_l.html#a33b850e8c07c857babcfaae95fd251fd">path</a> = [<span class="keyword">self</span> path];
+<a name="l00168"></a>00168     <span class="keywordflow">return</span> path ? path.split(<span class="stringliteral">&quot;/&quot;</span>).pop() : nil;
+<a name="l00169"></a>00169 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="af1f8687cdf19ae468a9e5eeb2f244258"></a><!-- doxytag: member="CPURL::parameterString" ref="af1f8687cdf19ae468a9e5eeb2f244258" args="()" -->
@@ -353,6 +480,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00146">146</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00147"></a>00147 {
+<a name="l00148"></a>00148     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00149"></a>00149     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).query || nil) : nil;
+<a name="l00150"></a>00150 }
+</pre></div></p>
 
 </div>
 </div>
@@ -371,6 +506,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00123">123</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00124"></a>00124 {
+<a name="l00125"></a>00125     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00126"></a>00126     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).password || nil) : nil;
+<a name="l00127"></a>00127 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a33b850e8c07c857babcfaae95fd251fd"></a><!-- doxytag: member="CPURL::path" ref="a33b850e8c07c857babcfaae95fd251fd" args="()" -->
@@ -387,6 +530,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00098">98</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00099"></a>00099 {
+<a name="l00100"></a>00100     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00101"></a>00101     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).path || nil) : nil;
+<a name="l00102"></a>00102 }
+</pre></div></p>
 
 </div>
 </div>
@@ -405,6 +556,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00171">171</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00172"></a>00172 {
+<a name="l00173"></a>00173     var <a class="code" href="class_c_p_u_r_l.html#a33b850e8c07c857babcfaae95fd251fd">path</a> = [<span class="keyword">self</span> path],
+<a name="l00174"></a>00174         ext = path.match(/\.(\w+)$/);
+<a name="l00175"></a>00175     <span class="keywordflow">return</span> ext ? ext[1] : <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00176"></a>00176 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="afb0b2908b705d989d0873255bf5fbacc"></a><!-- doxytag: member="CPURL::port" ref="afb0b2908b705d989d0873255bf5fbacc" args="()" -->
@@ -421,6 +581,19 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00135">135</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00136"></a>00136 {
+<a name="l00137"></a>00137     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00138"></a>00138     <span class="keywordflow">if</span> (<a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str)) {
+<a name="l00139"></a>00139         var <a class="code" href="class_c_p_u_r_l.html#afb0b2908b705d989d0873255bf5fbacc">port</a> = <a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).port;
+<a name="l00140"></a>00140         <span class="keywordflow">if</span> (port)
+<a name="l00141"></a>00141             <span class="keywordflow">return</span> parseInt(port, 10);
+<a name="l00142"></a>00142     }
+<a name="l00143"></a>00143     <span class="keywordflow">return</span> nil;
+<a name="l00144"></a>00144 }
+</pre></div></p>
 
 </div>
 </div>
@@ -439,6 +612,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00105">105</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00106"></a>00106 {
+<a name="l00107"></a>00107     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(_relative) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(_relative).path || nil) : nil;
+<a name="l00108"></a>00108 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ab8c889ba0b4e2288ebc82f574d75c961"></a><!-- doxytag: member="CPURL::relativeString" ref="ab8c889ba0b4e2288ebc82f574d75c961" args="()" -->
@@ -455,6 +635,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00093">93</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00094"></a>00094 {
+<a name="l00095"></a>00095     <span class="keywordflow">return</span> _relative;
+<a name="l00096"></a>00096 }
+</pre></div></p>
 
 </div>
 </div>
@@ -474,6 +661,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00193">193</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00193"></a>00193                          :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00194"></a>00194 {
+<a name="l00195"></a>00195     <span class="keywordflow">return</span> [_resourceValues objectForKey:aKey];
+<a name="l00196"></a>00196 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a0bb2cde858fbfb3671e894d7db589888"></a><!-- doxytag: member="CPURL::scheme" ref="a0bb2cde858fbfb3671e894d7db589888" args="()" -->
@@ -490,6 +685,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00111">111</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00112"></a>00112 {
+<a name="l00113"></a>00113     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00114"></a>00114     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).protocol || nil) : nil;
+<a name="l00115"></a>00115 }
+</pre></div></p>
 
 </div>
 </div>
@@ -518,6 +721,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00198">198</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00198"></a>00198                       :(id)anObject forKey:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aKey
+<a name="l00199"></a>00199 {
+<a name="l00200"></a>00200     [_resourceValues setObject:anObject forKey:aKey];
+<a name="l00201"></a>00201 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a18ab1e7766f0ba63401a628572dd9267"></a><!-- doxytag: member="CPURL::standardizedURL" ref="a18ab1e7766f0ba63401a628572dd9267" args="()" -->
@@ -534,6 +745,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00178">178</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00179"></a>00179 {
+<a name="l00180"></a>00180     <span class="keywordflow">return</span> [<a class="code" href="class_c_p_u_r_l.html">CPURL</a> URLWithString:<a class="code" href="_c_p_u_r_l_8j.html#adcb923889bccfbcacbd75505c9667b42">format</a>(<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(_relative)) relativeToURL:_base];
+<a name="l00181"></a>00181 }
+</pre></div></p>
 
 </div>
 </div>
@@ -552,6 +770,14 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00052">52</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00052"></a>00052                    :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)URLString
+<a name="l00053"></a>00053 {
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithString:URLString];
+<a name="l00055"></a>00055 }
+</pre></div></p>
 
 </div>
 </div>
@@ -580,6 +806,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00072">72</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00072"></a>00072                    :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)URLString relativeToURL:(<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)baseURL
+<a name="l00073"></a>00073 {
+<a name="l00074"></a>00074     <span class="keywordflow">return</span> [[<span class="keyword">self</span> alloc] initWithString:URLString relativeToURL:baseURL];
+<a name="l00075"></a>00075 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="ac224515efcfc617dc33a174ed6da3def"></a><!-- doxytag: member="CPURL::user" ref="ac224515efcfc617dc33a174ed6da3def" args="()" -->
@@ -597,10 +831,18 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a> rivillä <a class="el" href="_c_p_u_r_l_8j_source.html#l00117">117</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00118"></a>00118 {
+<a name="l00119"></a>00119     var str = [<span class="keyword">self</span> <a class="code" href="class_c_p_u_r_l.html#ad2ccd2a9c907f4376793a04cc9c6562d">absoluteString</a>];
+<a name="l00120"></a>00120     <span class="keywordflow">return</span> <a class="code" href="_c_p_u_r_l_8j.html#ad4078f5246f71ca88b310beeb2192ef6">URI_RE</a>.test(str) ? (<a class="code" href="_c_p_u_r_l_8j.html#afbb224ef64380e0c03fd28ca64a949ab">parse</a>(str).user || nil) : nil;
+<a name="l00121"></a>00121 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_u_r_l_8j.html">CPURL.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_u_r_l_8j_source.html">CPURL.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

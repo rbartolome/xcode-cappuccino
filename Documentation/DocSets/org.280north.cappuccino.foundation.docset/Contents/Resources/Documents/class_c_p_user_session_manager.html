@@ -38,6 +38,9 @@
 <tr><td colspan="2"><h2>Staattiset julkiset jäsenfunktiot</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="class_c_p_user_session_manager.html#ad8b6e9325bf10427d1248f2f5743014d">defaultManager</a><code> [implementation]</code></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a> rivillä <a class="el" href="_c_p_user_session_manager_8j_source.html#l00036">36</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="ad8b6e9325bf10427d1248f2f5743014d"></a><!-- doxytag: member="CPUserSessionManager::defaultManager" ref="ad8b6e9325bf10427d1248f2f5743014d" args="()" -->
 <div class="memitem">
@@ -53,6 +56,16 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a> rivillä <a class="el" href="_c_p_user_session_manager_8j_source.html#l00043">43</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00044"></a>00044 {
+<a name="l00045"></a>00045     <span class="keywordflow">if</span> (!<a class="code" href="_c_p_user_session_manager_8j.html#a260eac33634410dfce712e214e92b1f2">CPDefaultUserSessionManager</a>)
+<a name="l00046"></a>00046         <a class="code" href="_c_p_user_session_manager_8j.html#a260eac33634410dfce712e214e92b1f2">CPDefaultUserSessionManager</a> = [[<a class="code" href="class_c_p_user_session_manager.html">CPUserSessionManager</a> alloc] <a class="code" href="class_c_p_user_session_manager.html#a0a76c8c8f921851ca8c910cb7b2fc83a">init</a>];
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048     <span class="keywordflow">return</span> <a class="code" href="_c_p_user_session_manager_8j.html#a260eac33634410dfce712e214e92b1f2">CPDefaultUserSessionManager</a>;
+<a name="l00049"></a>00049 }
+</pre></div></p>
 
 </div>
 </div>
@@ -70,6 +83,18 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a> rivillä <a class="el" href="_c_p_user_session_manager_8j_source.html#l00051">51</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00052"></a>00052 {
+<a name="l00053"></a>00053     <span class="keyword">self</span> = [super <a class="code" href="class_c_p_user_session_manager.html#a0a76c8c8f921851ca8c910cb7b2fc83a">init</a>];
+<a name="l00054"></a>00054     
+<a name="l00055"></a>00055     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00056"></a>00056         _status = <a class="code" href="_c_p_user_session_manager_8j.html#a458d5fa09f02a116804d438cf888d03c">CPUserSessionUndeterminedStatus</a>;
+<a name="l00057"></a>00057     
+<a name="l00058"></a>00058     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00059"></a>00059 }
+</pre></div></p>
 
 </div>
 </div>
@@ -89,6 +114,24 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a> rivillä <a class="el" href="_c_p_user_session_manager_8j_source.html#l00066">66</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00066"></a>00066                  :(CPUserSessionStatus)aStatus
+<a name="l00067"></a>00067 {
+<a name="l00068"></a>00068     <span class="keywordflow">if</span> (_status == aStatus)
+<a name="l00069"></a>00069         <span class="keywordflow">return</span>;
+<a name="l00070"></a>00070     
+<a name="l00071"></a>00071     _status = aStatus;
+<a name="l00072"></a>00072     
+<a name="l00073"></a>00073     [[<a class="code" href="class_c_p_notification_center.html" title="Sends messages (CPNotification) between objects.">CPNotificationCenter</a> defaultCenter]
+<a name="l00074"></a>00074         postNotificationName:<a class="code" href="_c_p_user_session_manager_8j.html#a20b83f8838f0b6602a68c9a27361d323">CPUserSessionManagerStatusDidChangeNotification</a>
+<a name="l00075"></a>00075                       <span class="keywordtype">object</span>:<span class="keyword">self</span>];
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     <span class="keywordflow">if</span> (_status != <a class="code" href="_c_p_user_session_manager_8j.html#a00afda6f7992e51029ca9a599d2d6c5c">CPUserSessionLoggedInStatus</a>)
+<a name="l00078"></a>00078         [<span class="keyword">self</span> setUserIdentifier:nil];
+<a name="l00079"></a>00079 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a8bf763c076e78312b6512838e6ea94d6"></a><!-- doxytag: member="CPUserSessionManager::setUserIdentifier:" ref="a8bf763c076e78312b6512838e6ea94d6" args="(CPString anIdentifier)" -->
@@ -107,6 +150,21 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a> rivillä <a class="el" href="_c_p_user_session_manager_8j_source.html#l00086">86</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00086"></a>00086                          :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)anIdentifier
+<a name="l00087"></a>00087 {
+<a name="l00088"></a>00088     <span class="keywordflow">if</span> (_userIdentifier == anIdentifier)
+<a name="l00089"></a>00089         <span class="keywordflow">return</span>;
+<a name="l00090"></a>00090     
+<a name="l00091"></a>00091     _userIdentifier = anIdentifier;
+<a name="l00092"></a>00092     
+<a name="l00093"></a>00093     [[<a class="code" href="class_c_p_notification_center.html" title="Sends messages (CPNotification) between objects.">CPNotificationCenter</a> defaultCenter]
+<a name="l00094"></a>00094         postNotificationName:<a class="code" href="_c_p_user_session_manager_8j.html#a9e832000a542a9f7880117d967358b2a">CPUserSessionManagerUserIdentifierDidChangeNotification</a>
+<a name="l00095"></a>00095                       <span class="keywordtype">object</span>:<span class="keyword">self</span>];
+<a name="l00096"></a>00096 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a05fb16e88c2f81c4e0b1add51213e725"></a><!-- doxytag: member="CPUserSessionManager::status" ref="a05fb16e88c2f81c4e0b1add51213e725" args="()" -->
@@ -123,6 +181,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a> rivillä <a class="el" href="_c_p_user_session_manager_8j_source.html#l00061">61</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00062"></a>00062 {
+<a name="l00063"></a>00063     <span class="keywordflow">return</span> _status;
+<a name="l00064"></a>00064 }
+</pre></div></p>
 
 </div>
 </div>
@@ -141,10 +206,17 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a> rivillä <a class="el" href="_c_p_user_session_manager_8j_source.html#l00081">81</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00082"></a>00082 {
+<a name="l00083"></a>00083     <span class="keywordflow">return</span> _userIdentifier;
+<a name="l00084"></a>00084 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_user_session_manager_8j.html">CPUserSessionManager.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_user_session_manager_8j_source.html">CPUserSessionManager.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

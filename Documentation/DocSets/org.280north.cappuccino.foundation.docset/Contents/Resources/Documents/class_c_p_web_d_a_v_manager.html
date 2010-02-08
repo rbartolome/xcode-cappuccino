@@ -35,6 +35,9 @@
 <tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="class_c_p_dictionary.html">CPDictionary</a>)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_web_d_a_v_manager.html#a6a77a982b4549c7992892d073bbed32f">PROPFIND:properties:depth:block:</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="class_c_p_web_d_a_v_manager.html#a69b75222aefccf5715df73fcb1e54a7c">connection:didReceiveData:</a><code> [implementation]</code></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html">CPWebDAVManager.j</a> rivillä <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html#l00029">29</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a69b75222aefccf5715df73fcb1e54a7c"></a><!-- doxytag: member="CPWebDAVManager::connection:didReceiveData:" ref="a69b75222aefccf5715df73fcb1e54a7c" args="(CPURLConnection aURLConnection,[didReceiveData] CPString aString)" -->
 <div class="memitem">
@@ -60,6 +63,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html">CPWebDAVManager.j</a> rivillä <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html#l00113">113</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00113"></a>00113                   :(<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a>)aURLConnection didReceiveData:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aString
+<a name="l00114"></a>00114 {
+<a name="l00115"></a>00115     var block = [_blocksForConnections objectForKey:[aURLConnection UID]];
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117     <span class="comment">// FIXME: get the request...</span>
+<a name="l00118"></a>00118     block([aURLConnection._request URL], parsePROPFINDResponse(aString));
+<a name="l00119"></a>00119 }
+</pre></div></p>
 
 </div>
 </div>
@@ -100,6 +114,49 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html">CPWebDAVManager.j</a> rivillä <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html#l00044">44</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00044"></a>00044                                    :(<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)aURL includingPropertiesForKeys:(<a class="code" href="class_c_p_array.html" title="A mutable array backed by a JavaScript Array.A mutable array class backed by a JavaScript...">CPArray</a>)keys options:(CPDirectoryEnumerationOptions)aMask block:(Function)aBlock
+<a name="l00045"></a>00045 {
+<a name="l00046"></a>00046     var properties = [],
+<a name="l00047"></a>00047         count = [keys count];
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     <span class="keywordflow">while</span> (count--)
+<a name="l00050"></a>00050         properties.push(<a class="code" href="_c_p_web_d_a_v_manager_8j.html#a9bb95d23bb0417a339febf598347720d">WebDAVPropertiesForURLKeys</a>[keys[count]]);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     var makeContents = function(aURL, response)
+<a name="l00053"></a>00053     {
+<a name="l00054"></a>00054         var contents = [],
+<a name="l00055"></a>00055             URLString = nil,
+<a name="l00056"></a>00056             URLStrings = [response keyEnumerator];
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         <span class="keywordflow">while</span> (URLString = [URLStrings nextObject])
+<a name="l00059"></a>00059         {
+<a name="l00060"></a>00060             var URL = [<a class="code" href="class_c_p_u_r_l.html">CPURL</a> URLWithString:URLString],
+<a name="l00061"></a>00061                 properties = [response objectForKey:URLString];
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063             <span class="comment">// FIXME: We need better way of comparing URLs.</span>
+<a name="l00064"></a>00064             <span class="keywordflow">if</span> (![[URL absoluteString] isEqual:[aURL absoluteString]])
+<a name="l00065"></a>00065             {
+<a name="l00066"></a>00066                 contents.push(URL);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068                 <a class="code" href="_c_p_web_d_a_v_manager_8j.html#a7d2f8f1e807e36285795f4c3c530028a">setURLResourceValuesForKeysFromProperties</a>(URL, keys, properties);
+<a name="l00069"></a>00069             }
+<a name="l00070"></a>00070         }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072         <span class="keywordflow">return</span> contents;
+<a name="l00073"></a>00073     }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     <span class="keywordflow">if</span> (!aBlock)
+<a name="l00076"></a>00076         <span class="keywordflow">return</span> makeContents(aURL, response);
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     [<span class="keyword">self</span> PROPFIND:aURL properties:properties depth:1 block:function(aURL, response)
+<a name="l00079"></a>00079     {
+<a name="l00080"></a>00080         aBlock(aURL, makeContents(aURL, response));
+<a name="l00081"></a>00081     }];
+<a name="l00082"></a>00082 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a34507449e3b9df8829f7a1cf9ee2ccc0"></a><!-- doxytag: member="CPWebDAVManager::init" ref="a34507449e3b9df8829f7a1cf9ee2ccc0" args="()" -->
@@ -116,6 +173,18 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html">CPWebDAVManager.j</a> rivillä <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html#l00034">34</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00035"></a>00035 {
+<a name="l00036"></a>00036     <span class="keyword">self</span> = [super <a class="code" href="class_c_p_web_d_a_v_manager.html#a34507449e3b9df8829f7a1cf9ee2ccc0">init</a>];
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00039"></a>00039         _blocksForConnections = [<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a> dictionary];
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00042"></a>00042 }
+</pre></div></p>
 
 </div>
 </div>
@@ -156,10 +225,42 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html">CPWebDAVManager.j</a> rivillä <a class="el" href="_c_p_web_d_a_v_manager_8j_source.html#l00084">84</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00084"></a>00084                         :(<a class="code" href="class_c_p_u_r_l.html">CPURL</a>)aURL properties:(<a class="code" href="class_c_p_dictionary.html" title="A mutable key-value pair collection.">CPDictionary</a>)properties depth:(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aDepth block:(Function)aBlock
+<a name="l00085"></a>00085 {
+<a name="l00086"></a>00086     var request = [<a class="code" href="class_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection.">CPURLRequest</a> requestWithURL:aURL];
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088     [request setHTTPMethod:<span class="stringliteral">@&quot;PROPFIND&quot;</span>];
+<a name="l00089"></a>00089     [request setValue:aDepth forHTTPHeaderField:<span class="stringliteral">@&quot;Depth&quot;</span>];
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091     var HTTPBody = [<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;&lt;a:propfind xmlns:a=\&quot;DAV:\&quot;&gt;&quot;</span>],
+<a name="l00092"></a>00092         index = 0,
+<a name="l00093"></a>00093         count = properties.length;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095     <span class="keywordflow">for</span> (; index &lt; count; ++index)
+<a name="l00096"></a>00096         HTTPBody.push(<span class="stringliteral">&quot;&lt;a:prop&gt;&lt;a:&quot;</span>, properties[index], <span class="stringliteral">&quot;/&gt;&lt;/a:prop&gt;&quot;</span>);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     HTTPBody.push(<span class="stringliteral">&quot;&lt;/a:propfind&gt;&quot;</span>);
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100     [request setHTTPBody:HTTPBody.join(<span class="stringliteral">&quot;&quot;</span>)];
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102     <span class="keywordflow">if</span> (!aBlock)
+<a name="l00103"></a>00103         <span class="keywordflow">return</span> parsePROPFINDResponse([[<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a> sendSynchronousRequest:request returningResponse:nil error:nil] <span class="keywordtype">string</span>]);
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105     <span class="keywordflow">else</span>
+<a name="l00106"></a>00106     {
+<a name="l00107"></a>00107         var connection = [<a class="code" href="class_c_p_u_r_l_connection.html" title="Provides loading of a URL request.">CPURLConnection</a> connectionWithRequest:request delegate:<span class="keyword">self</span>];
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109         [_blocksForConnections setObject:aBlock forKey:[connection UID]];
+<a name="l00110"></a>00110     }
+<a name="l00111"></a>00111 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_web_d_a_v_manager_8j.html">CPWebDAVManager.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_web_d_a_v_manager_8j_source.html">CPWebDAVManager.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

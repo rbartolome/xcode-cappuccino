@@ -52,6 +52,8 @@
 </table>
 <hr/><a name="_details"></a><h2>Yksityiskohtainen selite</h2>
 <p>A Cappuccino wrapper for any data type. </p>
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00034">34</a>.</p>
 <hr/><h2>Jäsenfunktioiden dokumentaatio</h2>
 <a class="anchor" id="a5e08220a123356a64b8ad91fd13335ab"></a><!-- doxytag: member="CPData::alloc" ref="a5e08220a123356a64b8ad91fd13335ab" args="()" -->
 <div class="memitem">
@@ -67,6 +69,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00039">39</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00040"></a>00040 {
+<a name="l00041"></a>00041     <span class="keywordflow">return</span> <span class="keyword">new</span> objj_data();
+<a name="l00042"></a>00042 }
+</pre></div></p>
 
 </div>
 </div>
@@ -84,6 +93,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00044">44</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00045"></a>00045 {
+<a name="l00046"></a>00046     <span class="keywordflow">return</span> [[<span class="keyword">self</span> <a class="code" href="class_c_p_data.html#a5e08220a123356a64b8ad91fd13335ab">alloc</a>] initWithPlistObject:nil];
+<a name="l00047"></a>00047 }
+</pre></div></p>
 
 </div>
 </div>
@@ -103,6 +119,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00054">54</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00054"></a>00054                              :(id)aPlistObject
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     <span class="keywordflow">return</span> [[<span class="keyword">self</span> <a class="code" href="class_c_p_data.html#a5e08220a123356a64b8ad91fd13335ab">alloc</a>] initWithPlistObject:aPlistObject];
+<a name="l00057"></a>00057 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a5bf5de0e2a91a0f256de0afda5180493"></a><!-- doxytag: member="CPData::dataWithString:" ref="a5bf5de0e2a91a0f256de0afda5180493" args="(CPString aString)" -->
@@ -121,6 +145,14 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00049">49</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00049"></a>00049                         :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aString
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051     <span class="keywordflow">return</span> [[<span class="keyword">self</span> <a class="code" href="class_c_p_data.html#a5e08220a123356a64b8ad91fd13335ab">alloc</a>] initWithString:aString];
+<a name="l00052"></a>00052 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a7e75c7afe9c2c60efa361e656cf072c1"></a><!-- doxytag: member="CPData::description" ref="a7e75c7afe9c2c60efa361e656cf072c1" args="()" -->
@@ -137,6 +169,13 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00084">84</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00085"></a>00085 {
+<a name="l00086"></a>00086     <span class="keywordflow">return</span> <a class="code" href="class_c_p_data.html#a3a3ee96798e73c86f45ae896f057c1cc">string</a>;
+<a name="l00087"></a>00087 }
+</pre></div></p>
 
 </div>
 </div>
@@ -156,6 +195,19 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00069">69</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00069"></a>00069                          :(id)aPlistObject
+<a name="l00070"></a>00070 {
+<a name="l00071"></a>00071     <span class="keyword">self</span> = [super init];
+<a name="l00072"></a>00072     
+<a name="l00073"></a>00073     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00074"></a>00074         _plistObject = aPlistObject;
+<a name="l00075"></a>00075         
+<a name="l00076"></a>00076     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00077"></a>00077 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a3b89d6611ca65d7ad30c0a98ccbd76f0"></a><!-- doxytag: member="CPData::initWithString:" ref="a3b89d6611ca65d7ad30c0a98ccbd76f0" args="(CPString aString)" -->
@@ -174,6 +226,19 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00059">59</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00059"></a>00059                     :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aString
+<a name="l00060"></a>00060 {
+<a name="l00061"></a>00061     <span class="keyword">self</span> = [super init];
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063     <span class="keywordflow">if</span> (<span class="keyword">self</span>)
+<a name="l00064"></a>00064         <span class="keywordtype">string</span> = aString;
+<a name="l00065"></a>00065   
+<a name="l00066"></a>00066     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00067"></a>00067 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a6bd56191ee2c05fc0af604aea1532630"></a><!-- doxytag: member="CPData::length" ref="a6bd56191ee2c05fc0af604aea1532630" args="()" -->
@@ -191,6 +256,13 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00079">79</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00080"></a>00080 {
+<a name="l00081"></a>00081     <span class="keywordflow">return</span> [[<span class="keyword">self</span> <a class="code" href="class_c_p_data.html#a3a3ee96798e73c86f45ae896f057c1cc">string</a>] <a class="code" href="class_c_p_data.html#a6bd56191ee2c05fc0af604aea1532630">length</a>];
+<a name="l00082"></a>00082 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a13d7ed7382103a2d4cf45faaa3c278dd"></a><!-- doxytag: member="CPData::plistObject" ref="a13d7ed7382103a2d4cf45faaa3c278dd" args="()" -->
@@ -207,6 +279,17 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00103">103</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00104"></a>00104 {
+<a name="l00105"></a>00105     <span class="keywordflow">if</span> (<span class="keywordtype">string</span> &amp;&amp; !_plistObject)
+<a name="l00106"></a>00106         <span class="comment">// Attempt to autodetect the format.</span>
+<a name="l00107"></a>00107         _plistObject = [<a class="code" href="class_c_p_property_list_serialization.html">CPPropertyListSerialization</a> propertyListFromData:<span class="keyword">self</span> <a class="code" href="_c_p_u_r_l_8j.html#adcb923889bccfbcacbd75505c9667b42">format</a>:0 errorDescription:NULL];
+<a name="l00108"></a>00108     
+<a name="l00109"></a>00109     <span class="keywordflow">return</span> _plistObject;
+<a name="l00110"></a>00110 }
+</pre></div></p>
 
 </div>
 </div>
@@ -226,6 +309,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00112">112</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00112"></a>00112                       :(id)aPlistObject
+<a name="l00113"></a>00113 {
+<a name="l00114"></a>00114     <span class="keywordtype">string</span> = nil;
+<a name="l00115"></a>00115     _plistObject = aPlistObject;
+<a name="l00116"></a>00116 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="aaecbb194249bb549dc3eb08b99351063"></a><!-- doxytag: member="CPData::setString:" ref="aaecbb194249bb549dc3eb08b99351063" args="(CPString aString)" -->
@@ -244,6 +336,15 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00097">97</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00097"></a>00097                  :(<a class="code" href="class_c_p_string.html" title="An immutable string (collection of characters).">CPString</a>)aString
+<a name="l00098"></a>00098 {
+<a name="l00099"></a>00099     <span class="keywordtype">string</span> = aString;
+<a name="l00100"></a>00100     _plistObject = nil;
+<a name="l00101"></a>00101 }
+</pre></div></p>
+
 </div>
 </div>
 <a class="anchor" id="a3a3ee96798e73c86f45ae896f057c1cc"></a><!-- doxytag: member="CPData::string" ref="a3a3ee96798e73c86f45ae896f057c1cc" args="()" -->
@@ -261,10 +362,20 @@
 </div>
 <div class="memdoc">
 
+<p>Määrittely tiedoston <a class="el" href="_c_p_data_8j_source.html">CPData.j</a> rivillä <a class="el" href="_c_p_data_8j_source.html#l00089">89</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00090"></a>00090 {
+<a name="l00091"></a>00091     <span class="keywordflow">if</span> (!<span class="keywordtype">string</span> &amp;&amp; _plistObject)
+<a name="l00092"></a>00092         <span class="keywordtype">string</span> = [[<a class="code" href="class_c_p_property_list_serialization.html">CPPropertyListSerialization</a> dataFromPropertyList:_plistObject <a class="code" href="_c_p_u_r_l_8j.html#adcb923889bccfbcacbd75505c9667b42">format</a>:<a class="code" href="_c_p_property_list_serialization_8j.html#ad4d22945026a7f3fd309aa1d1abe04bb">CPPropertyList280NorthFormat_v1_0</a> errorDescription:NULL] <a class="code" href="class_c_p_data.html#a3a3ee96798e73c86f45ae896f057c1cc">string</a>];
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094     <span class="keywordflow">return</span> <a class="code" href="class_c_p_data.html#a3a3ee96798e73c86f45ae896f057c1cc">string</a>;
+<a name="l00095"></a>00095 }
+</pre></div></p>
+
 </div>
 </div>
 <hr/>Dokumentaatio tälle luokalle luotiin seuraavasta tiedostosta:<ul>
-<li>Foundation/<a class="el" href="_c_p_data_8j.html">CPData.j</a></li>
+<li>/Users/raphael/Development/public/ForkedProjects/cappuccino/source/Foundation/<a class="el" href="_c_p_data_8j_source.html">CPData.j</a></li>
 </ul>
 </div>
 <hr size="1"/><address style="text-align: right;"><small>Generoinut&nbsp;

@@ -19,11 +19,11 @@ if !File.exist?("#{ENV['HOME']}/Library/Developer/Shared")
 	mkdir "#{ENV['HOME']}/Library/Developer/Shared"
 end
 
-cp_r "Documentation", "#{ENV['HOME']}/Library/Developer/Shared/"
+#!cp_r "Documentation", "#{ENV['HOME']}/Library/Developer/Shared/"
 
-if File.exist?("#{ENV['HOME']}/Library/Developer/Shared/Documentation/DocSets/Cappuccino.docset")
-	rm_r "#{ENV['HOME']}/Library/Developer/Shared/Documentation/DocSets/Cappuccino.docset"
-end
+#!if File.exist?("#{ENV['HOME']}/Library/Developer/Shared/Documentation/DocSets/Cappuccino.docset")
+#!	rm_r "#{ENV['HOME']}/Library/Developer/Shared/Documentation/DocSets/Cappuccino.docset"
+#!end
 
 end
 

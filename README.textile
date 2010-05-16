@@ -29,6 +29,7 @@ h2. Custom Build Target Keys
 | *CUSTOM_FRAMEWORKS*    | whitespace separated list of files/folders
 that needs to be copied into the Project Frameworks folder	| /MyFrameworks/CoreData /MoreFrameworks/LPKit	|
 | *BROWSER_APP_NAME*     | Browser app bundle name      | Safari.app                                        |
+| *LINK_FRAMEWORKS*		 | YES or NO					| If YES the Frameworks will linked into your Project |
 
 If your leave a value for key blank the build script search for the latest version on your local maschine, and hopefully with a result :-)
 

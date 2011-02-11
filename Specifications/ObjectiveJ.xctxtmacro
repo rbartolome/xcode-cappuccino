@@ -27,6 +27,7 @@
         {
             Identifier = objj.try;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Try / Catch Block";
             TextString = "@try$(BlockSeparator){\n\t<#!statements!#>\n}$(PostBlockSeparator)@catch$(PreExpressionsSpacing)($(InExpressionsSpacing)CPException * e$(InExpressionsSpacing))$(BlockSeparator){\n\t<#handler#>\n}$(PostBlockSeparator)@finally$(BlockSeparator){\n\t<#statements#>\n}";
@@ -37,6 +38,7 @@
         {
             Identifier = objj.catch;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Catch Block";
             TextString = "@catch$(PreExpressionsSpacing)($(InExpressionsSpacing)<#exception#>$(InExpressionsSpacing))$(BlockSeparator){\n\t<#!handler!#>\n}";
@@ -47,6 +49,7 @@
         {
             Identifier = objj.finally;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Finally Block";
             TextString = "@finally$(BlockSeparator){\n\t<#!handler!#>\n}";
@@ -57,6 +60,7 @@
         {
             Identifier = objj.log;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "CPLog() Call";
             TextString = "CPLog$(PreFunctionArgsSpacing)($(InFunctionArgsSpacing)@\"<#message#>\"$(InFunctionArgsSpacing));";
@@ -67,6 +71,7 @@
         {
             Identifier = objj.bracket;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Bracket Expression";
             TextString = "[<#!expression!#> ]";
@@ -76,6 +81,7 @@
         {
             Identifier = objj.allocinit;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Alloc / Init Call";
             TextString = "[[<#!class!#> alloc] init]";
@@ -85,6 +91,7 @@
         {
             Identifier = objj.array;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Array Declaration";
             TextString = "CPArray * array;";
@@ -94,6 +101,7 @@
         {
             Identifier = objj.mutablearray;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Mutable Array Declaration";
             TextString = "CPMutableArray * array;";
@@ -103,6 +111,7 @@
         {
             Identifier = objj.arrayiteration;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Array For Loop";
             TextString = "CPUInteger i, count = [<#array#> count];\nfor$(PreExpressionsSpacing)($(InExpressionsSpacing)i = 0; i < count; i++$(InExpressionsSpacing))$(BlockSeparator){\n\tCPObject * obj = [<#array#> objectAtIndex:i];\n\t<#!statements!#>\n}";
@@ -113,6 +122,7 @@
         {
             Identifier = objj.arrayiteration.foreach;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Array Foreach Loop";
             TextString = "for$(PreExpressionsSpacing)($(InExpressionsSpacing)<#object#> in <#array#>$(InExpressionsSpacing))$(BlockSeparator){\n\t<#!statements!#>\n}";
@@ -124,6 +134,7 @@
         {
             Identifier = objj.block;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             TextString = "$(Statement)$(BlockSeparator){\n\t<#!statements!#>\n}";
             Statement = "$(Command)$(PreExpressionsSpacing)($(InExpressionsSpacing)$(Expressions)$(InExpressionsSpacing))";
             IncludeContexts = ( "xcode.lang.objj.block", "xcode.lang.java.block" );    // these all work in Java too
@@ -218,6 +229,7 @@
         {
             Identifier = objj.caseblock;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Case Block";
             TextString = "case <#constant#>:\n\t<#!statements!#>\n\tbreak;\n";
@@ -229,6 +241,7 @@
         {
             Identifier = objj.elseblock;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Else Block";
             TextString = "else$(BlockSeparator){\n\t<#!statements!#>\n}\n";
@@ -244,6 +257,7 @@
         {
             Identifier = objj.paren;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Parenthesize Selection";
             TextString = "($(InExpressionsSpacing)<#!expression!#>$(InExpressionsSpacing))";
@@ -252,6 +266,7 @@
         {
             Identifier = objj.quote;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Quote Selection";
             TextString = "\"<#!text!#>\"";
@@ -261,6 +276,7 @@
         {
             Identifier = objj.pragmamark;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "#Pragma Mark";
             TextString = "#pragma mark <#!label!#>";
@@ -269,6 +285,7 @@
         {
             Identifier = objj.pp.pragmamark;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = NO;
             Name = "Pragma Mark";
             TextString = "pragma mark <#!label!#>";
@@ -278,6 +295,7 @@
         {
             Identifier = objj.import;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "#Import Statement";
             TextString = "@import \"<#!file!#>\"";
@@ -309,6 +327,7 @@
         {
             Identifier = objj.pif;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "#If Block";
             IfText = "if";
@@ -359,6 +378,7 @@
         {
             Identifier = objj.copyright;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Copyright Comment";
             TextString = "//\n// Copyright (c) $(YEAR), $(ORGANIZATIONNAME)\n// All rights reserved.\n//\n";
@@ -369,6 +389,7 @@
         {
             Identifier = objj.comment;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Comment Selection";
             TextString = "/* <#!comment!#> */";
@@ -379,6 +400,7 @@
         {
             Identifier = objj.separatorcomment;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "Separator Comment";
             TextString = "/****************************************************************************/\n";
@@ -390,6 +412,7 @@
         {
             Identifier = objj.init;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "init Definition";
             TextString = "-$(PreMethodTypeSpacing)(id)$(PreMethodDeclSpacing)init$(FunctionBlockSeparator){\n\tself = [super init];\n\tif$(PreExpressionsSpacing)($(InExpressionsSpacing)self != nil$(InExpressionsSpacing))$(BlockSeparator){\n\t\t<#!initializations!#>\n\t}\n\treturn self;\n}\n";
@@ -401,6 +424,7 @@
         {
             Identifier = objj.dealloc;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "dealloc Definition";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)dealloc$(FunctionBlockSeparator){\n\t<#!deallocations!#>\n\t[super dealloc];\n}\n";
@@ -412,6 +436,7 @@
         {
             Identifier = objj.observe;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "observeValueForKeyPath: Definition";
             TextString =
@@ -431,6 +456,7 @@
         {
             Identifier = objj.observe.decl;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "observeValueForKeyPath: Declaration";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)observeValueForKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)keyPath ofObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)object change$(PreColonSpacing):$(PostColonSpacing)(CPDictionary)$(MessageArgSpacing)change context$(PreColonSpacing):$(PostColonSpacing)(void)$(MessageArgSpacing)context;\n";
@@ -442,6 +468,7 @@
         {
             Identifier = objj.bind;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "bind: Definition";
             TextString =
@@ -462,6 +489,7 @@
         {
             Identifier = objj.observe.bind;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "bind: Declaration";
             TextString = "-$(PreMethodTypeSpacing)(void)$(PreMethodDeclSpacing)bind$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)binding toObject$(PreColonSpacing):$(PostColonSpacing)(id)$(MessageArgSpacing)observable withKeyPath$(PreColonSpacing):$(PostColonSpacing)(CPString)$(MessageArgSpacing)keyPath options$(PreColonSpacing):$(PostColonSpacing)(CPDictionary)$(MessageArgSpacing)options;\n";
@@ -476,6 +504,7 @@
         {
             Identifier = objj.interface;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "@interface Definition";
             TextString = "@interface <#class#> : <#superclass#>$(FunctionBlockSeparator){\n\t<#ivars#>\n}\n\n<#methods#>\n\n@end\n";
@@ -486,6 +515,7 @@
         {
             Identifier = objj.implementation;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "@implementation Definition";
             TextString = "@implementation <#class#>\n\n<#methods#>\n\n@end\n";
@@ -496,6 +526,7 @@
         {
             Identifier = objj.protocol;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = YES;
             Name = "@protocol Definition";
             TextString = "@protocol <#protocol#>\n\n<#methods#>\n\n@end\n";
@@ -509,6 +540,7 @@
         {
             Identifier = objj.cps;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = NO;
             Name = "CPString";
             TextString = "CPString";
@@ -517,6 +549,7 @@
         {
             Identifier = objj.cpa;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = NO;
             Name = "CPArray";
             TextString = "CPArray";
@@ -525,6 +558,7 @@
         {
             Identifier = objj.cpma;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = NO;
             Name = "CPMutableArray";
             TextString = "CPMutableArray";
@@ -533,6 +567,7 @@
         {
             Identifier = objj.cpd;
             BasedOn = objj;
+			OnlyAtBOL = YES;
             IsMenuItem = NO;
             Name = "CPDictionary";
             TextString = "CPDictionary";

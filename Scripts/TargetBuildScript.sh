@@ -124,20 +124,27 @@ PATH=${PATH}:$objjBinPath;
 ###############
 
 #search for narwhal bin with spotlight
-narwhalBinPaths=$(mdfind "kMDItemContentType == 'public.unix-executable' && kMDItemDisplayName == 'narwhal'");
-narwhalBinPath="narwhalBin";
-for aNarwhalBin in $narwhalBinPaths; do
-	if test $aNarwhalBin -nt $narwhalBinPath;
-	then
-		if test ! -z "$(echo $aNarwhalBin | awk '/narwhal\/bin/')";
-			then 
-			narwhalBin=$aNarwhalBin;
+if test -d "$NARWHAL_BIN_PATH";
+then
+	narwhalBinPath="$NARWHAL_BIN_PATH";
+else
+	narwhalBinPaths=$(mdfind "kMDItemContentType == 'public.unix-executable' && kMDItemDisplayName == 'narwhal'");
+	narwhalBinPath="narwhalBin";
+	for aNarwhalBin in $narwhalBinPaths; do
+		if test $aNarwhalBin -nt $narwhalBinPath;
+		then
+			if test ! -z "$(echo $aNarwhalBin | awk '/narwhal\/bin/')";
+				then 
+				narwhalBinPath=$aNarwhalBin;
+			fi
 		fi
-	fi
-done;
-narwhalBin=$(echo $narwhalBin | sed -e 's/\/narwhal$//');
-PATH=${PATH}:$narwhalBin;
-echo "NARWHAL binary path is '$narwhalBin'";
+	done;
+	narwhalBinPath=$(echo $narwhalBinPath | sed -e 's/\/narwhal$//');
+fi
+
+#add narwhal bin to profile
+PATH=${PATH}:$narwhalBinPath;
+echo "NARWHAL binary path is '$narwhalBinPath'";
 
 
 ### Handle custom frameworks ###

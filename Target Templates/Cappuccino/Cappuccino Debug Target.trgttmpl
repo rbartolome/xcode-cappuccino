@@ -6,7 +6,7 @@
 		CAPP_BIN_PATH = /usr/local/narwhal/packages/cappuccino/bin;
 		OBJJ_RUNTIME_PATH = /usr/local/narwhal/packages/objective-j/Frameworks;
 		OBJJ_BIN_PATH = /usr/local/narwhal/packages/objective-j/bin;
-		NARWHAL_BIN_PATH = /usr/local/narwhal/;
+		NARWHAL_BIN_PATH = /usr/local/narwhal/bin;
 		CUSTOM_FRAMEWORKS = "";
 		INDEX_FILE = "index-debug.html";
 		BROWSER_APP_NAME = Safari.app;

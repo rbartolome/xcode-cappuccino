@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.base</string>
+		<string>com.apple.dt.unit.macBase</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Definitions</key>
+	<dict>
+		<key>AppController.j</key>
+		<dict>
+			<key>Group</key>
+			<string>Classes</string>
+			<key>Path</key>
+			<string>AppController.j</string>
+		</dict>
+		<key>main.j</key>
+		<dict>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>Path</key>
+			<string>main.j</string>
+		</dict>
+		<key>index.html</key>
+		<dict>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>Path</key>
+			<string>index.html</string>
+		</dict>
+		<key>index-debug.html</key>
+		<dict>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>Path</key>
+			<string>index-debug.html</string>
+		</dict>
+		<key>Info.plist</key>
+		<dict>
+			<key>Group</key>
+			<string>Supporting Files</string>
+			<key>Path</key>
+			<string>Info.plist</string>
+		</dict>
+		<key>Resources/spinner.gif</key>
+		<dict>
+			<key>Group</key>
+			<string>Resources</string>
+			<key>Path</key>
+			<string>Resources/spinner.gif</string>
+		</dict>
+		<key>Resources/MainMenu.xib</key>
+		<dict>
+			<key>Group</key>
+			<string>Resources</string>
+			<key>Path</key>
+			<string>Resources/MainMenu.xib</string>
+		</dict>
+	</dict>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.cocoaApplication</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Description</key>
+	<string>This template provides a starting point for a cappuccino xib based application.</string>
+	<key>Nodes</key>
+	<array>
+		<string>Resources/MainMenu.xib</string>
+		<string>AppController.j</string>
+		<string>main.j</string>
+		<string>index.html</string>
+		<string>index-debug.html</string>
+		<string>Info.plist</string>
+		<string>Resources/spinner.gif</string>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Product Name</string>
+			<key>Required</key>
+			<true/>
+			<key>Description</key>
+			<string>Your new product&apos;s name.</string>
+		</dict>
+	</array>
+</dict>
+</plist>

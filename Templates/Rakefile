@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require 'rake'
+
+if !File.exist?("#{ENV['HOME']}/Library/Developer/Xcode/Templates/")
+  mkdir "#{ENV['HOME']}/Library/Developer/Xcode/Templates/"
+end
+
+if !File.exist?("#{ENV['HOME']}/Library/Developer/Xcode/Templates/Cappuccino/")
+  mkdir "#{ENV['HOME']}/Library/Developer/Xcode/Templates/Cappuccino/"
+end
+
+task :install do
+  ["File Templates", "Project Templates"].each do |directory|
+    cp_r directory, "#{ENV['HOME']}/Library/Developer/Xcode/Templates/Cappuccino/"
+  end
+end
+
+
+task :default => [:install] 

@@ -1,4 +1,4 @@
-h1. Xcode extensions for Cappuccino and Objective-J
+h1. Xcode 4 extensions for Cappuccino and Objective-J
 
 Before you can use the following templates, you need to install the developer
 tools from "cappuccino.org":http://cappuccino.org or the "Cappuccino repository on GitHub":http://github.com/280north/cappuccino
@@ -13,7 +13,7 @@ In order to use the extensions you have to copy the folders
 
 to the following directory:
   
-  ~/Library/Application Support/Developer/Shared/Xcode/
+  ~/Library/Developer/Xcode/Templates/Cappuccino/
 
 If you got rake installed, you can copy the files by running  
 

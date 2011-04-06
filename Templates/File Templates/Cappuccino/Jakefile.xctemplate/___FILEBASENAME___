@@ -1,0 +1,43 @@
+/*
+ *	___FILENAME___
+ *  ___PROJECTNAME___
+ *
+ *  Created by ___FULLUSERNAME___ on ___DATE___.
+ *  Copyright ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
+ */
+
+var ENV = require("system").env,
+    FILE = require("file"),
+    task = require("jake").task,
+    CLEAN = require("jake/clean").CLEAN,
+    FileList = require("jake").FileList,
+    app = require("cappuccino/jake").app,
+    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Release";
+
+app ("___PROJECTNAME___", function(task)
+{
+    task.setBuildIntermediatesPath(FILE.join("build", "___PROJECTNAME___.build", configuration));
+    task.setBuildPath(FILE.join("build", configuration));
+
+    task.setProductName("___PROJECTNAME___");
+    task.setIdentifier("___IDENTIFIER___");
+    task.setVersion("1.0");
+    task.setAuthor("___ORGANIZATIONNAME___");
+    task.setEmail("feedback@___ORGANIZATIONNAME___.com");
+    task.setSummary("___PROJECTNAME___");
+    task.setSources(new FileList("**/*.j"));
+    task.setResources(new FileList("Resources/*"));
+    task.setFlattensSources(true);
+    task.setInfoPlistPath("Info.plist");
+	task.setIndexFilePath("index.html");
+	
+    if (configuration === "Debug")
+        task.setCompilerFlags("-DDEBUG -g");
+    else
+        task.setCompilerFlags("-O");
+});
+
+CLEAN.include(FILE.join("Build", "___PROJECTNAME___.build"));
+
+task ("default", ["___PROJECTNAME___", "clean"]);
+
